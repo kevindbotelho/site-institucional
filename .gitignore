@@ -1,0 +1,30 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# environment
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# debug and system files
+*.tsbuildinfo
+npm-debug.log*
+.DS_Store
+
+# local working materials
+/.masterskill.json
+/tmp/
+/prompts/
+/imagens/
+/lumen-lp-system/
+/cv_linkedin.pdf
+/video_hero.mp4
