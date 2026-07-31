@@ -74,7 +74,7 @@ Contexto: explicar a experiência de Kevin em dados, automação e construção 
 ## Publicação e domínio
 
 - [x] Criar repositório remoto público e publicar o código-fonte higienizado no GitHub.
-- [ ] Publicar uma versão de prévia na Vercel.
+- [x] Criar o projeto `site-institucional` e publicar a versão de produção na Vercel.
 - [ ] Revisar o site publicado em celular e desktop, incluindo todos os CTAs.
 - [ ] Escolher o nome da marca e comprar o domínio principal.
 - [ ] Conectar o domínio principal à Vercel.

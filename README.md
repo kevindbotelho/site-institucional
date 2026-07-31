@@ -49,7 +49,11 @@ npm run build
 
 ## Publicação
 
-O projeto será publicado na Vercel em uma etapa separada. A marca e o domínio principal ainda serão definidos.
+O projeto está publicado na Vercel:
+
+- `https://site-institucional-plum.vercel.app`
+
+A marca e o domínio principal ainda serão definidos.
 
 ## Licença
 

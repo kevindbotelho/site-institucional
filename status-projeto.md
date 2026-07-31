@@ -6,7 +6,8 @@
 
 - A Home está construída e funciona localmente.
 - O código-fonte está versionado publicamente em `https://github.com/kevindbotelho/site-institucional`.
-- Ainda não há uma URL pública confirmada neste documento.
+- A versão de produção está publicada em `https://site-institucional-plum.vercel.app`.
+- O deploy de produção está conectado à branch `main` do GitHub.
 - O MVP ainda não está liberado para iniciar a prospecção.
 - Não existem páginas internas de Serviços, Projetos ou Sobre.
 - Sobre continuará apenas como seção da Home.
@@ -48,13 +49,17 @@ O CTA final usa WhatsApp como canal principal e e-mail como alternativa. O ender
 - Rodapé existente, integrado ao fundo contínuo da Home após o CTA final.
 - O e-mail do rodapé pode abrir o cliente configurado por `mailto:` ou ser copiado por uma ação dedicada.
 
-## Gate atual para o MVP publicável
+## Gate atual para liberar o MVP
 
-Antes do primeiro ciclo comercial:
+O deploy publicado foi validado em 2026-07-30 com:
 
-1. revisar a Home completa, seus CTAs, desktop, mobile e console;
-2. publicar uma URL utilizável na Vercel;
-3. registrar aqui a URL e o resultado da revisão.
+- resposta HTTP 200;
+- headline e links de WhatsApp e e-mail presentes;
+- assets principais referenciados corretamente;
+- nenhuma referência a `localhost` no HTML;
+- nenhum erro de runtime registrado pela Vercel após a publicação.
+
+Antes do primeiro ciclo comercial, ainda é necessário revisar visualmente a Home completa, seus CTAs, desktop, mobile e console.
 
 ## Páginas futuras
 
