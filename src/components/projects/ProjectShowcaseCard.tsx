@@ -31,7 +31,7 @@ function ProjectLink({
   href: string;
   title: string;
 }) {
-  const label = `Abrir demonstração de ${title}`;
+  const label = `Abrir projeto ${title}`;
   const className =
     "absolute inset-0 z-30 rounded-[1.75rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600";
 
@@ -189,7 +189,7 @@ export function ProjectShowcaseCard({
 
         {project.link ? (
           <span className="mt-7 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-blue-700">
-            Abrir demonstração
+            Abrir projeto
             <svg
               aria-hidden="true"
               className="size-4"

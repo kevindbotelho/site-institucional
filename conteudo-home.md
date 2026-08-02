@@ -100,7 +100,7 @@ Ela resume serviços, projetos e trajetória. As páginas `/servicos` e `/projet
 
 **Complemento discreto:**
 
-> Também avalio automações leves com planilhas e dados quando elas fizerem sentido para a operação.
+> Também avalio automações com planilhas e dados quando elas fizerem sentido para a operação.
 
 **Link:** Conhecer todos os serviços → `/servicos`
 
@@ -124,7 +124,7 @@ Ela resume serviços, projetos e trajetória. As páginas `/servicos` e `/projet
 
 ### 6. Projetos em destaque
 
-**Objetivo:** aproximar o visitante das soluções que podem ser construídas para o seu negócio. A dobra deve priorizar demonstrações de sites, dados e fluxos de trabalho; projetos autorais ficam como prova complementar, nunca como o assunto principal.
+**Objetivo:** aproximar o visitante das soluções que podem ser construídas para o seu negócio. A dobra deve priorizar possibilidades de sites, dados e fluxos de trabalho; projetos autorais ficam como prova complementar, nunca como o assunto principal.
 
 **Título:**
 
@@ -132,33 +132,33 @@ Ela resume serviços, projetos e trajetória. As páginas `/servicos` e `/projet
 
 **Texto de introdução:**
 
-> Exemplos para visualizar como uma necessidade do dia a dia pode se transformar em uma presença digital mais clara, uma rotina mais organizada ou um próximo passo mais simples.
+> Possibilidades para visualizar como uma necessidade do dia a dia pode se transformar em uma presença digital mais clara, uma rotina mais organizada ou um próximo passo mais simples.
 
 #### 1. Site institucional
 
-**Etiqueta discreta:** Projeto-exemplo
+**Etiqueta discreta:** Presença digital
 
-> Um site para um negócio local ou prestador de serviço apresentar o que faz, seus diferenciais, formas de contato e localização — por exemplo, um pet shop.
+> Um site para um negócio local ou prestador de serviço apresentar o que faz, seus diferenciais, formas de contato e localização.
 
 #### 2. Dashboard e dados
 
-**Etiqueta discreta:** Projeto-exemplo
+**Etiqueta discreta:** Visão operacional
 
 > Um painel para transformar informações da operação em uma leitura mais simples, útil para acompanhar a rotina e tomar decisões.
 
-#### 3. Automação leve
+#### 3. Automação de processos
 
-**Etiqueta discreta:** Projeto-exemplo
+**Etiqueta discreta:** Fluxos conectados
 
 > Um fluxo com planilhas e dados para reduzir uma tarefa repetitiva e deixar uma etapa do trabalho mais organizada.
 
 #### 4. Landing page
 
-**Etiqueta discreta:** Projeto-exemplo
+**Etiqueta discreta:** Conversão
 
 > Uma página direta para apresentar uma campanha, serviço ou nova oferta e facilitar o próximo contato pelo WhatsApp.
 
-**Nota de transparência:** os exemplos devem ser identificados em letras pequenas como projetos-exemplo ou demonstrações de solução. Não devem usar marcas, depoimentos, resultados ou nomes que sugiram um cliente real.
+**Nota editorial:** as etiquetas funcionam como categorias de cada solução. Os cards não devem usar marcas, depoimentos, resultados ou nomes que sugiram um cliente real.
 
 **Projetos autorais:** Fin Planner, Transcribe Hub e Academy AI podem aparecer em uma faixa secundária ou na página `/projetos`, como demonstração de capacidade de produto. Eles não lideram a narrativa comercial desta dobra.
 
@@ -204,7 +204,7 @@ Ela resume serviços, projetos e trajetória. As páginas `/servicos` e `/projet
 
 ## Itens que ficam para depois
 
-- Screenshots e links públicos dos projetos-exemplo para negócios.
+- Screenshots e links públicos das soluções para negócios.
 - Screenshots e links públicos dos projetos autorais, se fizerem sentido como conteúdo complementar.
 - Foto profissional, se for coerente com a direção visual escolhida.
 - Depoimentos e cases reais, quando existirem e houver autorização.

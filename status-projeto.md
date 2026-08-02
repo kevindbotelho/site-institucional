@@ -1,6 +1,6 @@
 # Status atual — Site institucional
 
-> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-07-30.
+> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-08-01.
 
 ## Estado geral
 
@@ -25,6 +25,8 @@ A ordem atual das seções é:
 7. CTA final.
 
 O CTA final usa WhatsApp como canal principal e e-mail como alternativa. O endereço pode ser copiado diretamente com confirmação visual e acessível. Os contatos são gerados pela configuração central.
+
+A seção de Serviços apresenta automações com planilhas e dados sem limitar a oferta a uma escala específica. Na seção de Projetos, os cards usam categorias editoriais próprias — Presença digital, Visão operacional, Fluxos conectados e Conversão — sem rotulá-los como exemplos ou demonstrações e sem atribuir clientes ou resultados reais. Os cards de Site institucional e Landing page usam imagens distintas.
 
 ## Navegação e links
 

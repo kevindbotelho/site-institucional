@@ -19,7 +19,7 @@ Construir o site institucional para transformar contatos de prospecção manual,
 2. Sites institucionais simples.
 3. Dashboards e visualização de dados.
 
-Automações leves com planilhas e dados podem ser apresentadas como oferta complementar. Captação de contatos pode levar o visitante ao WhatsApp para atendimento humano; não prometer chatbot de IA ou automação oficial de WhatsApp nesta fase. Mini-sistemas são uma possibilidade sob demanda, não a oferta de entrada.
+Automações com planilhas e dados podem ser apresentadas como oferta complementar, sem limitar a comunicação a uma escala específica. Captação de contatos pode levar o visitante ao WhatsApp para atendimento humano; não prometer chatbot de IA ou automação oficial de WhatsApp nesta fase. Mini-sistemas são uma possibilidade sob demanda, não a oferta de entrada.
 
 ## Público inicial
 

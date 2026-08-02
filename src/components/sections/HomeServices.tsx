@@ -15,7 +15,7 @@ const serviceExamples = {
   automations: [
     "planilhas conectadas",
     "rotinas repetitivas",
-    "fluxos simples",
+    "fluxos integrados",
   ],
 } as const;
 
@@ -488,10 +488,10 @@ export function HomeServices() {
                 <CardMeta icon={<FlowIcon className="size-3.5" />} label="Fluxo conectado" number="03" />
                 <div className="mt-8 sm:mt-9">
                   <h3 className="font-[family-name:Manrope,Arial,sans-serif] text-2xl font-extrabold leading-tight text-white sm:text-[1.7rem]">
-                    Automações leves
+                    Automações
                   </h3>
                   <p className="mt-3 max-w-xl text-sm leading-6 text-slate-300 sm:text-base sm:leading-7">
-                    Pequenos fluxos com planilhas e dados para reduzir tarefas
+                    Automações com planilhas e dados para reduzir tarefas
                     repetitivas da operação.
                   </p>
                   <ExampleList examples={serviceExamples.automations} />

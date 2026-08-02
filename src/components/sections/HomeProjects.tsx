@@ -33,7 +33,7 @@ function ArrowRightIcon() {
 export function HomeProjects() {
   const whatsappUrl = getWhatsAppUrl(
     siteConfig.contact.whatsappNumber,
-    "Olá, Kevin! Vi os projetos-exemplo do seu site e queria conversar sobre uma solução semelhante para o meu negócio.",
+    "Olá, Kevin! Vi as soluções no seu site e queria conversar sobre algo semelhante para o meu negócio.",
   );
 
   return (
@@ -79,9 +79,9 @@ export function HomeProjects() {
             data-scroll-reveal="true"
             data-scroll-reveal-delay="90"
           >
-            Exemplos para visualizar como uma necessidade do dia a dia pode se
-            transformar em uma presença digital mais clara, uma rotina mais
-            organizada ou um próximo passo mais simples.
+            Possibilidades para visualizar como uma necessidade do dia a dia
+            pode se transformar em uma presença digital mais clara, uma rotina
+            mais organizada ou um próximo passo mais simples.
           </p>
         </header>
 
@@ -136,10 +136,6 @@ export function HomeProjects() {
               </p>
               <p className="mt-3 font-[family-name:Manrope,Arial,sans-serif] text-xl font-extrabold leading-tight tracking-[-0.025em] text-slate-950 sm:text-2xl">
                 Quer levar uma solução como essa para o seu negócio?
-              </p>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Projetos-exemplo — não são trabalhos contratados nem cases de
-                clientes.
               </p>
             </div>
 

@@ -39,11 +39,12 @@ Contexto: é a principal página de entrada e deve resumir a proposta, os servi�
 - [x] Criar prévia de projetos na Home.
 - [x] Criar breve apresentação profissional como seção da Home.
 - [x] Criar CTA de encerramento para iniciar uma conversa no WhatsApp.
+- [x] Apresentar automações sem limitar a oferta a uma escala específica e usar categorias editoriais próprias nos cards de projetos.
 - [ ] Validar que a página comunica o que é oferecido sem depender das páginas internas.
 
 ## Página de serviços
 
-Contexto: detalhar sites, captação de contatos, automações leves, dashboards e mini-sistemas.
+Contexto: detalhar sites, captação de contatos, automações, dashboards e mini-sistemas.
 
 - [ ] Definir a narrativa e a ordem das dobras da página de serviços.
 - [ ] Criar apresentação dos serviços com problema, público e possíveis entregas.
@@ -53,14 +54,14 @@ Contexto: detalhar sites, captação de contatos, automações leves, dashboards
 
 ## Página de projetos
 
-Contexto: provar capacidade de execução, separando projetos autorais de demonstrações voltadas a negócios.
+Contexto: provar capacidade de execução, separando projetos autorais de soluções voltadas a negócios.
 
 - [ ] Definir a narrativa e a ordem das dobras da página de projetos.
-- [ ] Criar seção de soluções demonstrativas para negócios, identificadas com transparência.
+- [ ] Criar seção de soluções para negócios com categorias editoriais próprias.
 - [ ] Criar seção para projetos autorais: planner financeiro, resumidor de áudios e plataforma de estudos com IA.
-- [ ] Adicionar links de demonstração apenas nos projetos que já estiverem publicados.
+- [ ] Adicionar links para versões navegáveis apenas nos projetos que já estiverem publicados.
 - [ ] Adicionar CTA para o visitante solicitar uma solução semelhante.
-- [ ] Validar que nenhum projeto demonstrativo parece ser case de cliente real.
+- [ ] Validar que nenhum card sugere um case de cliente real quando isso não existir.
 
 ## Seção sobre na Home
 

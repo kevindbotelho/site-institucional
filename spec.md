@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Este projeto é um site institucional voltado a apresentar e vender soluções digitais acessíveis para pequenas e médias empresas. O site deve mostrar, de forma clara e confiável, como problemas cotidianos de presença digital e operação podem ser resolvidos com sites, captação de contatos, automações simples, dashboards e mini-sistemas.
+Este projeto é um site institucional voltado a apresentar e vender soluções digitais acessíveis para pequenas e médias empresas. O site deve mostrar, de forma clara e confiável, como problemas cotidianos de presença digital e operação podem ser resolvidos com sites, captação de contatos, automações, dashboards e mini-sistemas.
 
 O objetivo principal é transformar visitas originadas de prospecção manual — sobretudo pelo WhatsApp — em conversas comerciais. A comunicação deve vender o resultado para o negócio, e não a tecnologia de IA usada para construir as soluções.
 
@@ -34,7 +34,7 @@ O visitante pode entender as soluções oferecidas e para que tipo de necessidad
 - Landing pages.
 - Sites institucionais.
 - Dashboards e visualização de dados.
-- Automações leves com planilhas e dados, quando forem pertinentes.
+- Automações com planilhas e dados, quando forem pertinentes.
 
 Captação de contatos pode direcionar o visitante para atendimento humano pelo WhatsApp. Chatbots de IA e automações oficiais de WhatsApp não fazem parte da oferta inicial. Mini-sistemas internos podem ser avaliados sob demanda, mas não são a oferta prioritária de entrada.
 
@@ -50,9 +50,9 @@ O visitante pode ver provas visuais de capacidade de execução, separadas entre
 **Critérios de aceite:**
 
 - Separa claramente "Soluções para negócios" de "Projetos autorais".
-- Inclui demonstrações para nichos comerciais, identificadas de modo transparente como conceitos demonstrativos ou projetos-exemplo, nunca como trabalhos contratados.
+- Inclui soluções para nichos comerciais apresentadas como possibilidades, sem atribuir clientes, marcas ou resultados reais.
 - Inclui os projetos autorais: Fin Planner, Transcribe Hub e Academy AI (em desenvolvimento).
-- Cada projeto pode direcionar para uma demonstração, quando ela existir.
+- Cada projeto pode direcionar para uma versão navegável, quando ela existir.
 
 ### 4. Seção sobre na Home
 
@@ -87,7 +87,7 @@ Entra pela página inicial ou diretamente pela página de serviços, identifica 
 
 ### Visitante que quer avaliar qualidade visual
 
-Entra pela página de projetos, navega por soluções demonstrativas e projetos autorais e, ao encontrar uma referência relevante, inicia contato.
+Entra pela página de projetos, navega por soluções para negócios e projetos autorais e, ao encontrar uma referência relevante, inicia contato.
 
 ## Fora do Escopo do MVP
 
@@ -95,15 +95,15 @@ Entra pela página de projetos, navega por soluções demonstrativas e projetos 
 - Orçamento automático, pagamento online ou contratação sem conversa prévia.
 - CRM próprio, integração oficial com WhatsApp ou automações complexas no próprio site.
 - Catálogo de estilos navegáveis e interativos. Essa é uma evolução futura do projeto.
-- Apresentar projetos demonstrativos como cases de clientes reais.
+- Apresentar soluções conceituais como cases de clientes reais.
 
 ## Regras de Negócio
 
 - O WhatsApp é o canal de contato prioritário; o e-mail é secundário.
 - O foco da mensagem é o resultado entregue ao negócio, não a IA como produto.
-- Os projetos devem diferenciar explicitamente trabalhos autorais, demonstrações e futuros cases reais.
+- As soluções apresentadas não devem sugerir clientes, resultados ou trabalhos contratados quando isso não existir.
 - A página inicial é a principal página de conversão e precisa conter um resumo útil de todo o site, com links para aprofundamento. Sua estrutura textual de referência está em `conteudo-home.md`.
-- A navegação inicial terá: Início, Serviços, Projetos e Sobre. A seção Estilos será adicionada apenas quando houver demonstrações suficientes para formar um catálogo útil.
+- A navegação inicial terá: Início, Serviços, Projetos e Sobre. A seção Estilos será adicionada apenas quando houver referências suficientes para formar um catálogo útil.
 - O nome de marca ainda não está definido; o conteúdo deve ser preparado para permitir a troca futura sem alteração estrutural.
 
 ## Perguntas em Aberto
