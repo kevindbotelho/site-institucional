@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { focusAndScrollToHomeSection } from "@/components/navigation/homeSectionNavigation";
@@ -138,22 +137,23 @@ export function SiteNavigation() {
         aria-label="Navegação principal"
         className="mx-auto flex min-h-[4.75rem] max-w-6xl items-center justify-between px-1.5 sm:px-0"
       >
-        <Link
+        <HomeSectionLink
           aria-label={`${siteConfig.brandName}, início`}
           className="flex shrink-0 items-center py-2 focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
           href="/"
+          targetId="inicio"
         >
           <Image
             alt=""
             className="h-8 w-auto sm:h-9"
-            height={609}
+            height={479}
             priority
             quality={90}
-            sizes="(min-width: 640px) 6.125rem, 5.4rem"
-            src="/brand/keni-wordmark-dark.png"
-            width={1644}
+            sizes="(min-width: 640px) 8.25rem, 7.4rem"
+            src="/brand/zucco-lockup-gradient.png"
+            width={1766}
           />
-        </Link>
+        </HomeSectionLink>
 
         <NavigationLinks />
 

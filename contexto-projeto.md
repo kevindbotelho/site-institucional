@@ -8,10 +8,11 @@ Construir o site institucional para transformar contatos de prospecção manual,
 
 ## Momento atual
 
-- Arquitetura do projeto e setup técnico concluídos.
-- Próxima etapa: criar um design system fora deste repositório, usando `conteudo-home.md` como insumo.
-- Depois: construir visualmente a página inicial, dobra a dobra.
-- Nome da marca ainda não foi decidido; usar "Kevin Botelho" temporariamente quando necessário.
+- A Home está construída, funciona localmente e possui uma versão publicada na Vercel.
+- O MVP ainda depende da revisão visual final da Home, dos CTAs, do comportamento em celular e desktop e do console.
+- As páginas internas de Serviços e Projetos permanecem como evoluções futuras; Sobre continua apenas como seção da Home.
+- O nome da marca foi definido como **Zucco**. O domínio principal ainda não foi escolhido nem comprado; `zuccoweb.com` e `zuccoweb.com.br` são os candidatos atuais.
+- **Design e Tecnologia** é o descritor institucional aprovado para metadados e peças de marca. A assinatura compacta usada no cabeçalho e no rodapé permanece sem essa linha.
 
 ## Oferta inicial — em ordem de prioridade
 

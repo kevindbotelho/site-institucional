@@ -26,7 +26,7 @@ O projeto começa pequeno, mas deve permitir adicionar projetos, serviços e est
 - Usar Tailwind CSS para estilos. Não usar estilos inline salvo quando um valor realmente precisar ser dinâmico.
 - Usar componentes de servidor por padrão. Marcar componentes como cliente somente quando houver interação que exija isso.
 - Todo link de contato deve usar uma única fonte de configuração, para que telefone e e-mail possam ser trocados facilmente no futuro.
-- Textos de projetos demonstrativos devem informar claramente sua natureza; nunca sugerir que são clientes reais.
+- Cards de soluções devem usar categorias editoriais úteis e nunca sugerir clientes, trabalhos contratados ou resultados reais quando isso não existir.
 - Projetos autorais em desenvolvimento não devem ser apresentados como produtos já disponíveis ou plenamente concluídos.
 - Experiências profissionais devem reforçar credibilidade sem revelar dados, fluxos, resultados, nomes internos ou outros detalhes confidenciais de empregadores.
 - Todo layout deve ser planejado primeiro para telas pequenas e então expandido para desktop.
@@ -51,7 +51,7 @@ Antes de escrever código para uma funcionalidade, verificar:
 
 - [ ] A seção deixa claro qual problema resolve ou qual resultado entrega?
 - [ ] O texto evita promessas vagas e jargão técnico desnecessário?
-- [ ] Os projetos demonstrativos estão identificados com transparência?
+- [ ] Os cards evitam sugerir clientes, trabalhos contratados ou resultados reais quando isso não existir?
 - [ ] O resultado está bom em celular antes de ser considerado concluído?
 
 ### Gate Anti-Invenção

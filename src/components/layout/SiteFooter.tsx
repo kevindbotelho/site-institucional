@@ -39,11 +39,11 @@ export function SiteFooter() {
               <Image
                 alt=""
                 className="h-9 w-auto sm:h-10"
-                height={609}
+                height={479}
                 quality={90}
-                sizes="(min-width: 640px) 6.75rem, 6.125rem"
-                src="/brand/keni-wordmark-dark.png"
-                width={1644}
+                sizes="(min-width: 640px) 9.25rem, 8.25rem"
+                src="/brand/zucco-lockup-gradient.png"
+                width={1766}
               />
             </HomeSectionLink>
             <p className="mt-4 text-sm leading-6 text-slate-600">

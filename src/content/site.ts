@@ -1,7 +1,7 @@
 import type { ContactConfig } from "@/types/content";
 
 export const siteConfig = {
-  brandName: process.env.NEXT_PUBLIC_BRAND_NAME || "Keni",
+  brandName: process.env.NEXT_PUBLIC_BRAND_NAME || "Zucco",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   social: {
     linkedin: "https://www.linkedin.com/in/kevindbotelho/",

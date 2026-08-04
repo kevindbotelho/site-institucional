@@ -9,7 +9,7 @@ O objetivo principal é transformar visitas originadas de prospecção manual �
 ## Usuários-Alvo
 
 - Donos e gestores de pequenas e médias empresas que chegam ao site por indicação ou contato direto.
-- Negócios que ainda não têm site, têm presença digital insuficiente ou executam processos operacionais simples de forma manual.
+- Negócios que ainda não têm site, têm presença digital insuficiente ou executam processos operacionais de forma manual.
 - Perfis iniciais prioritários: negócios locais e prestadores de serviço com decisão ágil e baixa carga regulatória, como pet shops, imobiliárias pequenas, contabilidades, comércio local e outros serviços. Evitar inicialmente segmentos com comunicação fortemente regulada e organizações grandes ou complexas.
 
 ## Funcionalidades do MVP
@@ -104,8 +104,8 @@ Entra pela página de projetos, navega por soluções para negócios e projetos 
 - As soluções apresentadas não devem sugerir clientes, resultados ou trabalhos contratados quando isso não existir.
 - A página inicial é a principal página de conversão e precisa conter um resumo útil de todo o site, com links para aprofundamento. Sua estrutura textual de referência está em `conteudo-home.md`.
 - A navegação inicial terá: Início, Serviços, Projetos e Sobre. A seção Estilos será adicionada apenas quando houver referências suficientes para formar um catálogo útil.
-- O nome de marca ainda não está definido; o conteúdo deve ser preparado para permitir a troca futura sem alteração estrutural.
+- A marca definida é **Zucco**, com **Design e Tecnologia** como descritor institucional aprovado para metadados e peças de marca; o conteúdo e a configuração continuam preparados para permitir uma evolução futura sem alteração estrutural.
 
 ## Perguntas em Aberto
 
-Nenhuma para o escopo de produto do MVP. Nome de marca, identidade visual e decisões técnicas serão tratados nas próximas etapas.
+Nenhuma para o escopo de produto do MVP. A escolha e compra do domínio principal permanecem como decisão de publicação.

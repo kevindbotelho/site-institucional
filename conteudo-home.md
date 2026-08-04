@@ -160,7 +160,7 @@ Ela resume serviços, projetos e trajetória. As páginas `/servicos` e `/projet
 
 **Nota editorial:** as etiquetas funcionam como categorias de cada solução. Os cards não devem usar marcas, depoimentos, resultados ou nomes que sugiram um cliente real.
 
-**Projetos autorais:** Fin Planner, Transcribe Hub e Academy AI podem aparecer em uma faixa secundária ou na página `/projetos`, como demonstração de capacidade de produto. Eles não lideram a narrativa comercial desta dobra.
+**Projetos autorais:** Fin Planner, Transcribe Hub e Academy AI podem aparecer em uma faixa secundária ou na página `/projetos`, como prova complementar de capacidade de produto. Eles não lideram a narrativa comercial desta dobra.
 
 **Links:** Ver soluções e projetos → `/projetos` · Conversar sobre uma solução semelhante → WhatsApp
 

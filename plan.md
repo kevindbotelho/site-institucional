@@ -74,7 +74,7 @@ public/
 
 ### Vercel e domínio próprio
 
-**Decisão:** publicar na Vercel e conectar um domínio quando o nome for decidido.
+**Decisão:** publicar na Vercel e conectar o domínio principal depois que a extensão for escolhida e o endereço for comprado.
 
 **Por quê:** oferece publicação e HTTPS com pouca configuração, além de facilitar a criação de subdomínios no futuro.
 
@@ -109,10 +109,10 @@ public/
 - `slug`: identificador único.
 - `title`: nome do projeto.
 - `category`: solução para negócios ou projeto autoral.
-- `disclosure`: identificação de demonstração, projeto autoral ou case real.
+- `disclosure`: etiqueta editorial exibida no card; na Home, comunica a categoria da solução sem rotulá-la como exemplo ou demonstração.
 - `problem`: problema resolvido.
 - `solution`: solução construída.
-- `link`: endereço de demonstração, quando existir.
+- `link`: endereço do projeto ou de uma versão navegável, quando existir.
 - `image`: imagem de apresentação, quando existir.
 
 ## Variáveis de Ambiente
@@ -123,5 +123,5 @@ As variáveis abaixo são públicas por definição e existem para que marca, do
 |---|---|---|
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número do WhatsApp com código do país, sem `+` nem espaços. | Número profissional definido pelo proprietário |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | E-mail exibido como canal alternativo de contato. | E-mail profissional definido pelo proprietário |
-| `NEXT_PUBLIC_BRAND_NAME` | Nome exibido na navegação, metadados e textos institucionais. | Nome temporário até a marca ser definida |
+| `NEXT_PUBLIC_BRAND_NAME` | Nome exibido na navegação, metadados e textos institucionais. | `Zucco` |
 | `NEXT_PUBLIC_SITE_URL` | URL pública usada em metadados e links absolutos. | `http://localhost:3000` durante o desenvolvimento |

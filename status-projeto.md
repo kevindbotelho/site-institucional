@@ -1,12 +1,14 @@
 # Status atual — Site institucional
 
-> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-08-01.
+> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-08-04.
 
 ## Estado geral
 
 - A Home está construída e funciona localmente.
+- A marca local foi definida como **Zucco**, com logo em gradiente azul-elétrico para índigo e o descritor institucional **Design e Tecnologia**. O título do navegador usa `Zucco — Design e Tecnologia`; a assinatura compacta do cabeçalho e do rodapé permanece sem o descritor. O domínio principal ainda não foi escolhido nem comprado.
 - O código-fonte está versionado publicamente em `https://github.com/kevindbotelho/site-institucional`.
 - A versão de produção está publicada em `https://site-institucional-plum.vercel.app`.
+- A versão publicada ainda pode exibir a identidade anterior até o próximo deploy da branch `main`.
 - O deploy de produção está conectado à branch `main` do GitHub.
 - O MVP ainda não está liberado para iniciar a prospecção.
 - Não existem páginas internas de Serviços, Projetos ou Sobre.
@@ -33,6 +35,7 @@ A seção de Serviços apresenta automações com planilhas e dados sem limitar 
 - O cabeçalho permanece visível durante a rolagem com comportamento sticky.
 - Uma barra fina na base do cabeçalho indica o progresso de leitura da Home, do início ao fim da página, e é ocultada quando o visitante prefere movimento reduzido.
 - Início aponta para `/` e retorna ao começo da Home.
+- A logo do cabeçalho usa o mesmo comportamento do link Início: retorna ao topo com rolagem suave e respeita `prefers-reduced-motion`.
 - Serviços aponta temporariamente para `/#servicos`.
 - Projetos aponta temporariamente para `/#projetos`.
 - Sobre aponta para `/#sobre`.
@@ -65,7 +68,7 @@ Antes do primeiro ciclo comercial, ainda é necessário revisar visualmente a Ho
 
 ## Páginas futuras
 
-- `/projetos`: construir primeiro se as conversas comerciais indicarem necessidade recorrente de provas ou demonstrações.
+- `/projetos`: construir primeiro se as conversas comerciais indicarem necessidade recorrente de provas ou referências visuais.
 - `/servicos`: construir primeiro se houver confusão recorrente sobre escopo e entregas.
 - `/sobre`: não está planejada.
 

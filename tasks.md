@@ -10,6 +10,7 @@
 - [x] Confirmar que o alias de importação `@/*` aponta para `src/*`.
 - [x] Copiar `.env.example` para `.env.local` e preencher as configurações públicas iniciais.
 - [x] Configurar metadados básicos do site e remover o conteúdo padrão do framework.
+- [x] Aplicar o símbolo da Zucco em placa clara no favicon e no ícone de dispositivos.
 - [x] Criar a configuração central de contato com WhatsApp e e-mail.
 - [x] Validar o setup executando lint e build de produção sem erros.
 
@@ -77,7 +78,9 @@ Contexto: explicar a experiência de Kevin em dados, automação e construção 
 - [x] Criar repositório remoto público e publicar o código-fonte higienizado no GitHub.
 - [x] Criar o projeto `site-institucional` e publicar a versão de produção na Vercel.
 - [ ] Revisar o site publicado em celular e desktop, incluindo todos os CTAs.
-- [ ] Escolher o nome da marca e comprar o domínio principal.
+- [x] Escolher o nome da marca: Zucco.
+- [x] Aprovar **Design e Tecnologia** como descritor institucional, mantendo a assinatura compacta do site sem essa linha.
+- [ ] Escolher entre `zuccoweb.com` e `zuccoweb.com.br`, verificar a disponibilidade e comprar o domínio principal.
 - [ ] Conectar o domínio principal à Vercel.
 - [ ] Configurar domínio de e-mail profissional, se desejado.
 
