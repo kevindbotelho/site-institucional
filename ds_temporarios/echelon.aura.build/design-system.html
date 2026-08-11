@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Echelon Atelier — Design System &amp; Biblioteca de Padrões</title>
+<!-- fonts: família Inter usada em toda a interface -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="assets/74b6d68958a54de6_css2.css" rel="stylesheet"/>
+<!-- css -->
+<!-- tailwind.css: utilitários Tailwind 3.4.17 pré-gerados usados em todo o layout -->
+<link rel="stylesheet" href="assets/css/tailwind.css"/>
+<!-- theme.css: variáveis de cor, sombras, painéis de foto, animações de revelação e marquee -->
+<link rel="stylesheet" href="assets/css/theme.css"/>
+<!-- head js: runtime Tailwind, web component iconify-icon, GSAP + ScrollTrigger -->
+<script src="assets/176e894661aa9cdc_3.4.17"></script>
+<script src="assets/851bed7af266f96a_iconify-icon.min.js"></script>
+<script src="assets/28033e449a31ebcc_gsap.min.js"></script>
+<script src="assets/ad33c2df9ada8a66_ScrollTrigger.min.js"></script>
+</head>
+<body>
+<div class="noise"></div>
+<canvas height="1080" id="bg-canvas" width="1920"></canvas>
+<main class="w-full max-w-[1480px] mx-auto my-4 md:my-8 bg-white soft-shadow min-h-screen relative z-10">
+
+<!-- top-utility-bar -->
+<div class="hidden lg:block border-b border-[#E7D8C8] bg-[#FBF4EC]">
+<div class="px-6 lg:px-12 h-10 flex items-center justify-between text-[10px] uppercase tracking-[.22em] text-[#7B6A5F]">
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B78A56]"></span>Echelon Atelier Design System v2.0</span>
+<span>Especificações visuais e biblioteca de componentes vivos</span>
+</div>
+<div class="flex items-center gap-6">
+<span>Versão 1.0.0 · 2026</span>
+<a class="text-[#B78A56] hover:text-[#946D40] transition-colors" href="#typography">Ir para Tipografia</a>
+</div>
+</div>
+</div>
+
+<!-- header / navigation -->
+<header class="sticky top-0 z-50 bg-[#FFFCF7]/90 backdrop-blur-xl border-b border-[#E7D8C8]">
+<div class="px-6 lg:px-12 h-20 flex items-center justify-between gap-6">
+<a class="flex items-center gap-2 bg-[#FCF7F1] rounded-sm pr-5 pl-1 py-1 border border-[#EADFD3] w-max hover:border-[#B78A56]/60 transition-colors" href="#hero">
+<div class="w-8 h-8 rounded-sm bg-[#B78A56] flex items-center justify-center text-white soft-shadow">
+<iconify-icon icon="solar:star-shine-linear" width="1.2em"></iconify-icon>
+</div>
+<span class="text-xs font-medium tracking-[.18em] uppercase text-[#5D473F]">Echelon · Design System</span>
+</a>
+<nav class="hidden lg:flex items-center gap-2 overflow-x-auto">
+<a class="border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-3 py-1.5 text-[11px] font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#hero">Hero</a>
+<a class="border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-3 py-1.5 text-[11px] font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#typography">01. Tipografia</a>
+<a class="border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-3 py-1.5 text-[11px] font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#colors">02. Cores &amp; Superfícies</a>
+<a class="border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-3 py-1.5 text-[11px] font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#components">03. Componentes UI</a>
+<a class="border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-3 py-1.5 text-[11px] font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#layout">04. Layout &amp; Espaçamento</a>
+<a class="border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-3 py-1.5 text-[11px] font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#motion">05. Movimento</a>
+<a class="border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-3 py-1.5 text-[11px] font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#icons">06. Ícones</a>
+</nav>
+<a class="bg-[#B78A56] text-white rounded-sm px-1 pl-4 py-1 flex items-center gap-3 text-xs font-light hover:bg-[#946D40] transition-colors group soft-shadow" href="#typography">
+Ver Especificações
+<span class="w-7 h-7 rounded-sm bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-[#B78A56] transition-colors">
+<iconify-icon icon="solar:arrow-right-linear" width="1em"></iconify-icon>
+</span>
+</a>
+</div>
+</header>
+
+<!-- 0) HERO (EXACT CLONE, TEXT ADAPTED FOR DESIGN SYSTEM) -->
+<section class="px-6 lg:px-12 py-12 lg:py-20 relative overflow-hidden" id="hero">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 min-h-[680px] relative z-10">
+<div class="lg:col-span-7 flex flex-col">
+<div class="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[.28em] text-[#7B6A5F]">
+<span class="w-2 h-2 bg-[#B78A56]"></span>Especificação do Sistema Visual
+<span class="hidden md:block h-[1px] bg-[#E7D8C8] flex-1"></span>
+</div>
+<h1 class="gsap-title text-4xl md:text-6xl lg:text-[4.55rem] xl:text-[5.05rem] leading-[1.02] tracking-tight font-extralight uppercase text-[#241A16] mb-8 max-w-[920px]">
+<span class="block whitespace-nowrap">
+<span class="reveal-line"><span class="reveal-word">Sistema</span></span>
+<span class="reveal-line"><span class="reveal-word">de</span></span>
+<span class="reveal-line"><span class="reveal-word">Design</span></span>
+</span>
+<span class="block whitespace-nowrap">
+<span class="reveal-line"><span class="reveal-word">e</span></span>
+<span class="reveal-line"><span class="reveal-word">biblioteca</span></span>
+<span class="reveal-line"><span class="reveal-word">de</span></span>
+</span>
+<span class="block whitespace-nowrap">
+<span class="reveal-line"><span class="reveal-word">padrões</span></span>
+<span class="reveal-line"><span class="reveal-word">visuais</span></span>
+</span>
+<span class="block overflow-hidden mt-5">
+<span class="reveal-word inline-flex items-center gap-4">
+<span class="w-11 h-11 md:w-14 md:h-14 bg-[#B78A56] text-white flex items-center justify-center rounded-sm soft-shadow">
+<iconify-icon icon="solar:magic-stick-3-linear" width="1.35em"></iconify-icon>
+</span>
+<span class="text-[#B78A56] font-medium tracking-[.34em] text-xs md:text-sm">GUIA COMPLETO DO ATELIÊ</span>
+</span>
+</span>
+</h1>
+<div class="fade-in-up mb-10 max-w-xl">
+<p class="text-sm md:text-base text-[#7B6A5F] leading-relaxed font-light">
+Documentação interativa dos componentes visuais, hierarquia tipográfica, paleta de cores, elevação de superfícies e micro-interações do Echelon Atelier.
+</p>
+</div>
+<div class="fade-in-up flex flex-wrap items-center gap-5 md:gap-10 mb-10">
+<a class="bg-[#241A16] text-white rounded-sm px-1 pl-6 py-1 flex items-center gap-8 text-xs font-light hover:bg-[#B78A56] transition-colors group soft-shadow" href="#typography">
+Explorar Componentes
+<span class="w-9 h-9 rounded-sm bg-white/10 flex items-center justify-center">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</a>
+<div class="flex flex-wrap items-center gap-5 text-[10px] font-medium tracking-[.22em] uppercase text-[#7B6A5F]">
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#B78A56]"></span>Tipografia</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#B78A56]"></span>Cores</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#B78A56]"></span>Componentes</span>
+</div>
+</div>
+<div class="fade-in-up grid grid-cols-3 max-w-xl border-y border-[#E7D8C8] divide-x divide-[#E7D8C8] mb-14">
+<div class="py-4 pr-5">
+<div class="text-2xl md:text-3xl font-extralight tracking-tight text-[#241A16]">07</div>
+<p class="text-[9px] uppercase tracking-[.22em] text-[#7B6A5F] mt-1">Escalas de texto</p>
+</div>
+<div class="py-4 px-5">
+<div class="text-2xl md:text-3xl font-extralight tracking-tight text-[#241A16]">06</div>
+<p class="text-[9px] uppercase tracking-[.22em] text-[#7B6A5F] mt-1">Superfícies &amp; Cores</p>
+</div>
+<div class="py-4 pl-5">
+<div class="text-2xl md:text-3xl font-extralight tracking-tight text-[#241A16]">10+</div>
+<p class="text-[9px] uppercase tracking-[.22em] text-[#7B6A5F] mt-1">Ícones do sistema</p>
+</div>
+</div>
+<div class="fade-in-up grid grid-cols-1 md:grid-cols-3 gap-4 mt-auto">
+<div class="relative p-[1px] rounded-sm overflow-hidden bg-gradient-to-br from-[#B78A56]/25 via-[#E7D8C8] to-transparent group">
+<div class="bg-[#FBF4EC] p-5 min-h-[132px] relative border border-transparent group-hover:border-[#B78A56]/25 transition-colors">
+<div class="mb-5"><span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">01 / Fundamentos</span></div>
+<h3 class="text-sm font-medium tracking-tight text-[#241A16] mb-2">Fundamentos Visuais</h3>
+<p class="text-xs text-[#5D473F] leading-relaxed font-light pr-5">Cores, papéis, texturas de ruído e malha, sombras suaves e profundas.</p>
+<span class="absolute -right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 bg-[#F6F0E8] text-[#B78A56] border border-[#E7D8C8] flex items-center justify-center group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+<div class="relative p-[1px] rounded-sm overflow-hidden bg-gradient-to-br from-[#B78A56]/25 via-[#E7D8C8] to-transparent group">
+<div class="bg-[#FBF4EC] p-5 min-h-[132px] relative border border-transparent group-hover:border-[#B78A56]/25 transition-colors">
+<div class="mb-5"><span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">02 / Componentes</span></div>
+<h3 class="text-sm font-medium tracking-tight text-[#241A16] mb-2">Interface &amp; Ações</h3>
+<p class="text-xs text-[#5D473F] leading-relaxed font-light pr-5">Botões, formulários, badges, tags e cartões interativos em múltiplos estados.</p>
+<span class="absolute -right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 bg-[#F6F0E8] text-[#B78A56] border border-[#E7D8C8] flex items-center justify-center group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+<div class="relative p-[1px] rounded-sm overflow-hidden bg-gradient-to-br from-[#B78A56]/25 via-[#E7D8C8] to-transparent group">
+<div class="bg-[#FBF4EC] p-5 min-h-[132px] relative border border-transparent group-hover:border-[#B78A56]/25 transition-colors">
+<div class="mb-5"><span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">03 / Movimento</span></div>
+<h3 class="text-sm font-medium tracking-tight text-[#241A16] mb-2">Comportamento Dinâmico</h3>
+<p class="text-xs text-[#5D473F] leading-relaxed font-light pr-5">Revelações GSAP, efeitos de profundidade, marquees e partículas em tempo real.</p>
+<span class="absolute -right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 bg-[#F6F0E8] text-[#B78A56] border border-[#E7D8C8] flex items-center justify-center group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative min-h-[560px]">
+<div class="absolute top-0 right-0 w-64 text-right z-20 hidden md:block">
+<div class="flex justify-end gap-1.5 mb-4">
+<span class="hero-dot w-1.5 h-1.5 bg-[#E7D8C8]"></span>
+<span class="hero-dot w-1.5 h-1.5 bg-[#E7D8C8]"></span>
+<span class="hero-dot w-1.5 h-1.5 bg-[#B78A56]"></span>
+</div>
+<p class="text-xs text-[#7B6A5F] leading-relaxed font-light transition-opacity duration-500" id="hero-rotating-copy" style="opacity:1">A produção permanece invisível, para que o momento pareça natural da chegada até a despedida final.</p>
+</div>
+<div class="flex items-end gap-3 h-full pt-24">
+<div class="fade-in-up photo-panel hero-img-private w-1/3 h-[55%] mb-20 soft-shadow">
+<div class="flex flex-col z-10 pt-4 pr-4 pb-4 pl-4 absolute top-0 right-0 bottom-0 left-0 justify-end">
+<span class="text-[9px] uppercase tracking-[.22em] text-[#E7D8C8] mb-2">01 / Privado</span>
+<h3 class="text-white text-sm font-light tracking-wide mb-1">Salão Privado</h3>
+</div>
+</div>
+<div class="fade-in-up photo-panel hero-img-gala w-1/3 h-[92%] deep-shadow">
+<div class="absolute inset-0 p-5 flex flex-col justify-end z-10">
+<span class="text-[9px] uppercase tracking-[.22em] text-[#E7D8C8] mb-2">02 / Gala</span>
+<h3 class="text-white text-base font-medium tracking-wide mb-3">Gala Exclusiva</h3>
+<p class="text-[#E7D8C8] text-[10px] leading-relaxed mb-6 font-light opacity-90">Produção multiambiente, mesas editoriais e transições de convidados controladas.</p>
+<button class="w-full bg-black/30 backdrop-blur-sm border border-white/30 rounded-sm py-2 px-3 flex justify-between items-center text-white text-xs hover:bg-white hover:text-[#241A16] transition-colors font-light">
+Ver Direção
+<iconify-icon class="text-[#B78A56]" icon="solar:arrow-right-up-linear"></iconify-icon>
+</button>
+</div>
+</div>
+<div class="fade-in-up photo-panel hero-img-brand w-1/3 h-[66%] mb-8 soft-shadow">
+<div class="absolute inset-0 p-4 flex flex-col justify-end z-10">
+<span class="text-[9px] uppercase tracking-[.22em] text-[#E7D8C8] mb-2">03 / Marca</span>
+<h3 class="text-white text-sm font-light tracking-wide mb-1 leading-snug">Lançamento de Marca</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MARQUEE DIVIDER -->
+<div class="py-6 bg-white border-y border-[#E7D8C8] overflow-hidden">
+<div class="marquee flex w-max text-[10px] uppercase tracking-[.28em] text-[#7B6A5F]">
+<span class="px-8">Especificação de Tipografia</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Cores &amp; Superfícies</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Componentes UI</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Padrões de Layout</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Animações &amp; Movimento</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Especificação de Tipografia</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Cores &amp; Superfícies</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Componentes UI</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Padrões de Layout</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Animações &amp; Movimento</span><span class="text-[#B78A56]">◆</span>
+</div>
+</div>
+
+<!-- 1) TYPOGRAPHY SECTION -->
+<section class="px-6 lg:px-12 py-24 bg-white" id="typography">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-3 uppercase tracking-[.3em]">01 / Fundamentos</p>
+<h2 class="text-4xl md:text-5xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+Tipografia &amp; Escala Hierárquica
+</h2>
+<p class="text-sm text-[#7B6A5F] mt-3 max-w-xl font-light">
+Especificação exata dos estilos tipográficos extraídos da referência HTML. Fonte principal: <code class="bg-[#FBF4EC] px-2 py-0.5 rounded text-[#241A16] font-mono text-xs">Inter</code> (Google Fonts).
+</p>
+</div>
+
+<!-- Spec Table -->
+<div class="border border-[#E7D8C8] bg-[#FFFCF7] shadow-sm divide-y divide-[#E7D8C8]">
+<!-- Table Header -->
+<div class="grid grid-cols-12 px-6 py-3 bg-[#FBF4EC] text-[10px] font-medium uppercase tracking-[.22em] text-[#7B6A5F]">
+<div class="col-span-3">Estilo / Nome</div>
+<div class="col-span-7">Demonstração ao Vivo</div>
+<div class="col-span-2 text-right">Tamanho / Entrelinha</div>
+</div>
+
+<!-- Heading 1 -->
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Heading 1</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Hero Title · Extralight</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<h1 class="text-4xl md:text-6xl lg:text-[4.55rem] leading-[1.02] tracking-tight font-extralight uppercase text-[#241A16]">
+Eventos Curados
+</h1>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+80.8px / 82.4px
+</div>
+</div>
+
+<!-- Heading 2 -->
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Heading 2</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Section Title · Extralight</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<h2 class="text-4xl md:text-6xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+Planejamento Completo
+</h2>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+60px / 62.4px
+</div>
+</div>
+
+<!-- Heading 3 -->
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Heading 3</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Card Title · Light</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<h3 class="text-3xl md:text-4xl font-light tracking-tight text-[#241A16]">
+Celebrações Privadas
+</h3>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+36px / 40px
+</div>
+</div>
+
+<!-- Heading 4 -->
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Heading 4</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Article Title · Light</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<h4 class="text-2xl font-light tracking-tight text-[#241A16]">
+Definir o Momento do Evento
+</h4>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+24px / 32px
+</div>
+</div>
+
+<!-- Bold L / Bold M / Bold S -->
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Bold M / Medium Label</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Nav &amp; Label · Medium</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<span class="text-xs font-medium tracking-[.18em] uppercase text-[#5D473F]">
+Echelon Atelier · Retiro Executivo
+</span>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+12px / 16px
+</div>
+</div>
+
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Bold S / Micro Tag</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Overline / Tag · Uppercase</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<span class="text-[10px] font-medium uppercase tracking-[.3em] text-[#7B6A5F]">
+/ Capacidades &amp; Ateliê de Produção /
+</span>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+10px / 14px
+</div>
+</div>
+
+<!-- Paragraph L (Larger Body) -->
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Paragraph L (Hero Body)</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Lead Paragraph · Light</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<p class="text-sm md:text-base text-[#7B6A5F] leading-relaxed font-light">
+Projetamos, planejamos e produzimos encontros elevados com a precisão de uma central de comando e a atmosfera de um ateliê privado.
+</p>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+16px / 26px
+</div>
+</div>
+
+<!-- Regular M (Card Body) -->
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Regular M (Card Body)</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Body Text · Light</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<p class="text-sm text-[#7B6A5F] leading-relaxed font-light">
+Encontros íntimos concebidos com a precisão de um plano de produção e o calor de uma residência privada. Cada detalhe é moldado em torno do fluxo de convidados.
+</p>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+14px / 22.4px
+</div>
+</div>
+
+<!-- Regular S (Micro Description) -->
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Regular S (Small Body)</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Small Description · Light</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<p class="text-xs text-[#5D473F] leading-relaxed font-light">
+Propósito, público, jornada do convidado, mapa de produção e conceito integral do evento.
+</p>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+12px / 19.2px
+</div>
+</div>
+
+<!-- Micro Label -->
+<div class="grid grid-cols-12 px-6 py-8 items-center gap-4 hover:bg-[#FBF4EC]/50 transition-colors">
+<div class="col-span-12 lg:col-span-3">
+<span class="text-xs font-medium text-[#241A16] block">Micro Tag / Legal</span>
+<span class="text-[10px] text-[#A99683] font-mono block mt-1">Meta Label · Uppercase</span>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">
+01 / BRIEFING ESTRATÉGICO · MONTREAL
+</span>
+</div>
+<div class="col-span-12 lg:col-span-2 text-left lg:text-right font-mono text-xs text-[#B78A56]">
+9px / 12px
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 2) COLORS & SURFACES SECTION -->
+<section class="px-6 lg:px-12 py-24 bg-[#FBF4EC]" id="colors">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-3 uppercase tracking-[.3em]">02 / Paleta &amp; Materiais</p>
+<h2 class="text-4xl md:text-5xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+Cores, Superfícies &amp; Efeitos Visuais
+</h2>
+<p class="text-sm text-[#7B6A5F] mt-3 max-w-xl font-light">
+Sistema de variáveis CSS e tokens de elevação que definem os tons terrosos, dourados e superfícies táteis do projeto.
+</p>
+</div>
+
+<!-- Swatches Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+<!-- Paper Canvas -->
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 shadow-sm">
+<div class="h-24 w-full rounded-sm bg-[#F6F0E8] border border-[#E7D8C8] mb-4 flex items-end p-3">
+<span class="text-[10px] font-mono uppercase bg-white/80 px-2 py-0.5 rounded text-[#241A16]">#F6F0E8</span>
+</div>
+<h3 class="text-sm font-medium text-[#241A16]">Paper Background</h3>
+<p class="text-xs text-[#7B6A5F] mt-1 font-mono">var(--paper)</p>
+<p class="text-xs text-[#5D473F] mt-3 leading-relaxed font-light">Fundo principal do body e áreas de respiro.</p>
+</div>
+
+<!-- Surface White -->
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 shadow-sm">
+<div class="h-24 w-full rounded-sm bg-[#FFFCF7] border border-[#E7D8C8] mb-4 flex items-end p-3">
+<span class="text-[10px] font-mono uppercase bg-[#241A16] text-white px-2 py-0.5 rounded">#FFFCF7</span>
+</div>
+<h3 class="text-sm font-medium text-[#241A16]">Primary Surface</h3>
+<p class="text-xs text-[#7B6A5F] mt-1 font-mono">var(--surface)</p>
+<p class="text-xs text-[#5D473F] mt-3 leading-relaxed font-light">Superfície clara de cartões e cabeçalho.</p>
+</div>
+
+<!-- Secondary Surface -->
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 shadow-sm">
+<div class="h-24 w-full rounded-sm bg-[#FBF4EC] border border-[#E7D8C8] mb-4 flex items-end p-3">
+<span class="text-[10px] font-mono uppercase bg-white/80 px-2 py-0.5 rounded text-[#241A16]">#FBF4EC</span>
+</div>
+<h3 class="text-sm font-medium text-[#241A16]">Secondary Surface</h3>
+<p class="text-xs text-[#7B6A5F] mt-1 font-mono">var(--surface-2)</p>
+<p class="text-xs text-[#5D473F] mt-3 leading-relaxed font-light">Fundos secundários e seções destacadas.</p>
+</div>
+
+<!-- Accent Gold -->
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 shadow-sm">
+<div class="h-24 w-full rounded-sm bg-[#B78A56] mb-4 flex items-end p-3">
+<span class="text-[10px] font-mono uppercase bg-white text-[#241A16] px-2 py-0.5 rounded">#B78A56</span>
+</div>
+<h3 class="text-sm font-medium text-[#241A16]">Accent Gold</h3>
+<p class="text-xs text-[#7B6A5F] mt-1 font-mono">var(--accent)</p>
+<p class="text-xs text-[#5D473F] mt-3 leading-relaxed font-light">Cor de destaque, badges, botões e ícones.</p>
+</div>
+
+<!-- Dark Ink -->
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 shadow-sm">
+<div class="h-24 w-full rounded-sm bg-[#241A16] mb-4 flex items-end p-3">
+<span class="text-[10px] font-mono uppercase bg-white text-[#241A16] px-2 py-0.5 rounded">#241A16</span>
+</div>
+<h3 class="text-sm font-medium text-[#241A16]">Ink / Dark Surface</h3>
+<p class="text-xs text-[#7B6A5F] mt-1 font-mono">var(--ink)</p>
+<p class="text-xs text-[#5D473F] mt-3 leading-relaxed font-light">Texto principal e superfícies escuras premium.</p>
+</div>
+
+<!-- Muted Brown -->
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 shadow-sm">
+<div class="h-24 w-full rounded-sm bg-[#7B6A5F] mb-4 flex items-end p-3">
+<span class="text-[10px] font-mono uppercase bg-white text-[#241A16] px-2 py-0.5 rounded">#7B6A5F</span>
+</div>
+<h3 class="text-sm font-medium text-[#241A16]">Muted Text</h3>
+<p class="text-xs text-[#7B6A5F] mt-1 font-mono">var(--muted)</p>
+<p class="text-xs text-[#5D473F] mt-3 leading-relaxed font-light">Textos secundários e descrições suavizadas.</p>
+</div>
+
+<!-- Line Border -->
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 shadow-sm">
+<div class="h-24 w-full rounded-sm bg-[#E7D8C8] mb-4 flex items-end p-3">
+<span class="text-[10px] font-mono uppercase bg-white text-[#241A16] px-2 py-0.5 rounded">#E7D8C8</span>
+</div>
+<h3 class="text-sm font-medium text-[#241A16]">Line / Border</h3>
+<p class="text-xs text-[#7B6A5F] mt-1 font-mono">var(--line)</p>
+<p class="text-xs text-[#5D473F] mt-3 leading-relaxed font-light">Divisores, bordas sutis e limites de grid.</p>
+</div>
+
+<!-- Deep Dark -->
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 shadow-sm">
+<div class="h-24 w-full rounded-sm bg-[#1D1714] mb-4 flex items-end p-3">
+<span class="text-[10px] font-mono uppercase bg-white text-[#241A16] px-2 py-0.5 rounded">#1D1714</span>
+</div>
+<h3 class="text-sm font-medium text-[#241A16]">Deep Dark</h3>
+<p class="text-xs text-[#7B6A5F] mt-1 font-mono">var(--deep)</p>
+<p class="text-xs text-[#5D473F] mt-3 leading-relaxed font-light">Fundo do rodapé e barras de recursos.</p>
+</div>
+</div>
+
+<!-- Special Textures & Gradients Showcase -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Grid Paper Texture -->
+<div class="grid-paper bg-[#FFFCF7] border border-[#E7D8C8] p-6 relative">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56] block mb-3">Textura 01</span>
+<h4 class="text-base font-light text-[#241A16] mb-2">Grid Paper (.grid-paper)</h4>
+<p class="text-xs text-[#7B6A5F] leading-relaxed">Malha milimetrada técnica de 42px inspirada em ateliê de arquitetura.</p>
+</div>
+
+<!-- Gradient Border Card -->
+<div class="relative p-[1px] rounded-sm overflow-hidden bg-gradient-to-br from-[#B78A56]/25 via-[#E7D8C8] to-transparent">
+<div class="bg-[#FBF4EC] p-6">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56] block mb-3">Borda 02</span>
+<h4 class="text-base font-light text-[#241A16] mb-2">Borda em Gradiente</h4>
+<p class="text-xs text-[#5D473F] leading-relaxed">Gradiente linear suave de ouro sutil para bege translúcido.</p>
+</div>
+</div>
+
+<!-- Dark Surface Glow -->
+<div class="bg-[#241A16] text-white p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-[#B78A56]/30 blur-[40px] rounded-full pointer-events-none"></div>
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56] block mb-3">Efeito 03</span>
+<h4 class="text-base font-light text-white mb-2">Atmospheric Glow</h4>
+<p class="text-xs text-[#E7D8C8] leading-relaxed font-light">Luz ambiente difusa com blur de alta extensão em painéis escuros.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3) UI COMPONENTS SECTION -->
+<section class="px-6 lg:px-12 py-24 bg-white" id="components">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-3 uppercase tracking-[.3em]">03 / Interface Viva</p>
+<h2 class="text-4xl md:text-5xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+Componentes de UI &amp; Estados
+</h2>
+<p class="text-sm text-[#7B6A5F] mt-3 max-w-xl font-light">
+Exibição lado a lado dos botões, campos de formulário, cartões de produto e elementos interativos em seus estados Padrão, Hover e Foco.
+</p>
+</div>
+
+<!-- Buttons Showcase -->
+<div class="mb-16 border border-[#E7D8C8] bg-[#FFFCF7] p-8">
+<h3 class="text-lg font-light text-[#241A16] mb-6 pb-3 border-b border-[#E7D8C8]">
+1. Botões &amp; Ações de Controle
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Primary Dark Button -->
+<div>
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F] block mb-3">Primary CTA (Dark)</span>
+<div class="space-y-3">
+<div>
+<p class="text-[9px] text-[#A99683] mb-1 font-mono">Padrão (Default)</p>
+<a class="bg-[#241A16] text-white rounded-sm px-1 pl-6 py-1 inline-flex items-center gap-8 text-xs font-light soft-shadow" href="#">
+Iniciar Briefing
+<span class="w-9 h-9 rounded-sm bg-white/10 flex items-center justify-center">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</a>
+</div>
+<div>
+<p class="text-[9px] text-[#A99683] mb-1 font-mono">Hover State (.hover:bg-[#B78A56])</p>
+<a class="bg-[#B78A56] text-white rounded-sm px-1 pl-6 py-1 inline-flex items-center gap-8 text-xs font-light soft-shadow" href="#">
+Iniciar Briefing
+<span class="w-9 h-9 rounded-sm bg-white/10 flex items-center justify-center">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Accent Gold Button -->
+<div>
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F] block mb-3">Accent CTA (Gold)</span>
+<div class="space-y-3">
+<div>
+<p class="text-[9px] text-[#A99683] mb-1 font-mono">Padrão (Default)</p>
+<a class="bg-[#B78A56] text-white rounded-sm px-1 pl-5 py-1 inline-flex items-center gap-4 text-xs font-light soft-shadow" href="#">
+Agendar Reunião
+<span class="w-8 h-8 rounded-sm bg-white/10 flex items-center justify-center">
+<iconify-icon icon="solar:calendar-add-linear" width="1.2em"></iconify-icon>
+</span>
+</a>
+</div>
+<div>
+<p class="text-[9px] text-[#A99683] mb-1 font-mono">Hover State (.hover:bg-[#946D40])</p>
+<a class="bg-[#946D40] text-white rounded-sm px-1 pl-5 py-1 inline-flex items-center gap-4 text-xs font-light soft-shadow" href="#">
+Agendar Reunião
+<span class="w-8 h-8 rounded-sm bg-white/10 flex items-center justify-center">
+<iconify-icon icon="solar:calendar-add-linear" width="1.2em"></iconify-icon>
+</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Glass Outline Button -->
+<div class="bg-[#241A16] p-4 rounded-sm">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#B78A56] block mb-3">Glass Outline (Dark Background)</span>
+<div class="space-y-3">
+<div>
+<p class="text-[9px] text-[#A99683] mb-1 font-mono">Padrão (Default)</p>
+<button class="w-full bg-black/30 backdrop-blur-sm border border-white/30 rounded-sm py-2 px-3 flex justify-between items-center text-white text-xs font-light">
+Ver Direção
+<iconify-icon class="text-[#B78A56]" icon="solar:arrow-right-up-linear"></iconify-icon>
+</button>
+</div>
+<div>
+<p class="text-[9px] text-[#A99683] mb-1 font-mono">Hover State (Hover fill white)</p>
+<button class="w-full bg-white text-[#241A16] rounded-sm py-2 px-3 flex justify-between items-center text-xs font-light">
+Ver Direção
+<iconify-icon class="text-[#241A16]" icon="solar:arrow-right-up-linear"></iconify-icon>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Form Input Showcase -->
+<div class="mb-16 border border-[#E7D8C8] bg-[#FFFCF7] p-8">
+<h3 class="text-lg font-light text-[#241A16] mb-6 pb-3 border-b border-[#E7D8C8]">
+2. Entrada de Formulário (Input Field)
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+<!-- Input Default -->
+<div>
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F] block mb-2">Default Input</span>
+<form class="flex bg-white p-1 border border-[#E7D8C8]">
+<input class="flex-1 px-4 py-2.5 text-xs text-[#241A16] outline-none" placeholder="Seu e-mail profissional..." type="email"/>
+<button class="bg-[#B78A56] text-white px-4 text-[10px] uppercase tracking-[.18em]">Enviar</button>
+</form>
+</div>
+
+<!-- Input Focused -->
+<div>
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F] block mb-2">Focused State</span>
+<form class="flex bg-white p-1 border border-[#B78A56] ring-1 ring-[#B78A56]">
+<input class="flex-1 px-4 py-2.5 text-xs text-[#241A16] outline-none" value="contato@echelon.com" type="email"/>
+<button class="bg-[#B78A56] text-white px-4 text-[10px] uppercase tracking-[.18em]">Enviar</button>
+</form>
+</div>
+
+<!-- Input Disabled -->
+<div>
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F] block mb-2">Disabled State</span>
+<form class="flex bg-[#F6F0E8] p-1 border border-[#E7D8C8] opacity-60 pointer-events-none">
+<input class="flex-1 px-4 py-2.5 text-xs text-[#7B6A5F] outline-none bg-transparent" disabled value="Indisponível no momento" type="email"/>
+<button class="bg-[#7B6A5F] text-white px-4 text-[10px] uppercase tracking-[.18em]" disabled>Enviar</button>
+</form>
+</div>
+</div>
+</div>
+
+<!-- Component Cards Showcase -->
+<div class="border border-[#E7D8C8] bg-[#FFFCF7] p-8">
+<h3 class="text-lg font-light text-[#241A16] mb-6 pb-3 border-b border-[#E7D8C8]">
+3. Modelos Canônicos de Cartões
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+<!-- Light Card -->
+<article class="bg-[#FFFCF7] border border-[#E7D8C8] p-6 relative overflow-hidden shadow-[0_14px_36px_rgba(36,26,22,.07)]">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/45 to-transparent"></div>
+<span class="text-[10px] tracking-[.26em] uppercase text-[#B78A56] block mb-4">Cartão Claro</span>
+<h4 class="text-xl font-light text-[#241A16] mb-3">Experiência Curada</h4>
+<p class="text-xs text-[#7B6A5F] leading-relaxed font-light mb-6">
+Estrutura visual para artigos, módulos de serviço e apresentação de capacidades.
+</p>
+<div class="border-t border-[#E7D8C8] pt-4 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F]">Ver Detalhes</span>
+<span class="w-7 h-7 border border-[#E7D8C8] flex items-center justify-center text-[#B78A56]">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</article>
+
+<!-- Dark Card -->
+<article class="bg-[#241A16] text-white border border-[#241A16] p-6 relative overflow-hidden shadow-[0_22px_55px_rgba(36,26,22,.18)]">
+<div class="absolute inset-0 grid-paper opacity-10"></div>
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/60 to-transparent"></div>
+<div class="relative z-10">
+<span class="text-[10px] tracking-[.26em] uppercase text-[#B78A56] block mb-4">Cartão Escuro</span>
+<h4 class="text-xl font-light text-white mb-3">Ateliê Privado</h4>
+<p class="text-xs text-[#E7D8C8] leading-relaxed font-light mb-6">
+Cartão de destaque para conteúdo institucional ou depoimentos de clientes vip.
+</p>
+<div class="border-t border-white/10 pt-4 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#A99683]">Especificação</span>
+<span class="w-7 h-7 border border-white/15 flex items-center justify-center text-[#B78A56]">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+</article>
+
+<!-- Photo Panel Card -->
+<article class="photo-panel note-img-pacing h-64 flex flex-col justify-end p-6 shadow-sm group">
+<div class="relative z-10">
+<span class="text-[10px] uppercase tracking-[.22em] text-[#E7D8C8] mb-1 block">Foto Panel (.photo-panel)</span>
+<h4 class="text-white text-lg font-light">Efeito Hover Zoom</h4>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4) LAYOUT & SPACING SECTION -->
+<section class="px-6 lg:px-12 py-24 bg-[#FBF4EC]" id="layout">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-3 uppercase tracking-[.3em]">04 / Arquitetura de Tela</p>
+<h2 class="text-4xl md:text-5xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+Padrões de Layout &amp; Grids
+</h2>
+<p class="text-sm text-[#7B6A5F] mt-3 max-w-xl font-light">
+Demostração real dos 3 principais padrões de layout e alinhamento responsivo empregados na landing page.
+</p>
+</div>
+
+<!-- Layout Pattern 1: Hero Grid Split -->
+<div class="mb-12 border border-[#E7D8C8] bg-[#FFFCF7] p-8">
+<div class="flex items-center justify-between mb-4 pb-3 border-b border-[#E7D8C8]">
+<h3 class="text-sm font-medium uppercase tracking-[.18em] text-[#241A16]">Padrão 1: Hero 12-Columns Asymmetrical Grid</h3>
+<span class="text-xs font-mono text-[#B78A56]">grid-cols-12 (7 cols + 5 cols)</span>
+</div>
+<div class="grid grid-cols-12 gap-4 text-center text-xs font-mono">
+<div class="col-span-12 lg:col-span-7 bg-[#FBF4EC] border border-[#E7D8C8] p-8 flex items-center justify-center text-[#7B6A5F]">
+Colunas 1–7: Tipografia de Impacto, Lead Paragraph, Ações &amp; Passos
+</div>
+<div class="col-span-12 lg:col-span-5 bg-[#241A16] text-[#E7D8C8] p-8 flex items-center justify-center border border-[#241A16]">
+Colunas 8–12: Tríptico de Painéis Fotográficos Sobrepostos
+</div>
+</div>
+</div>
+
+<!-- Layout Pattern 2: 2-Column Featured Split -->
+<div class="mb-12 border border-[#E7D8C8] bg-[#FFFCF7] p-8">
+<div class="flex items-center justify-between mb-4 pb-3 border-b border-[#E7D8C8]">
+<h3 class="text-sm font-medium uppercase tracking-[.18em] text-[#241A16]">Padrão 2: Dual Split Card Grid (Contraste Claro/Escuro)</h3>
+<span class="text-xs font-mono text-[#B78A56]">grid-cols-1 lg:grid-cols-2 gap-8</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-6 text-xs text-[#7B6A5F] flex items-center justify-center font-mono">
+Coluna A: Cartão Claro (#FFFCF7)
+</div>
+<div class="bg-[#241A16] text-white p-6 text-xs flex items-center justify-center font-mono">
+Coluna B: Cartão Escuro (#241A16)
+</div>
+</div>
+</div>
+
+<!-- Layout Pattern 3: 4-Column Process Step Cards -->
+<div class="border border-[#E7D8C8] bg-[#FFFCF7] p-8">
+<div class="flex items-center justify-between mb-4 pb-3 border-b border-[#E7D8C8]">
+<h3 class="text-sm font-medium uppercase tracking-[.18em] text-[#241A16]">Padrão 3: Grid de 4 Colunas com Elevação Deslocada</h3>
+<span class="text-xs font-mono text-[#B78A56]">grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center font-mono text-xs">
+<div class="bg-[#FBF4EC] border border-[#E7D8C8] p-4 text-[#7B6A5F]">Passo 01 (Base)</div>
+<div class="bg-[#241A16] text-white p-4 lg:-translate-y-2 border border-[#241A16]">Passo 02 (-translate-y-2)</div>
+<div class="bg-[#241A16] text-white p-4 lg:-translate-y-2 border border-[#241A16]">Passo 03 (-translate-y-2)</div>
+<div class="bg-[#FBF4EC] border border-[#E7D8C8] p-4 text-[#7B6A5F]">Passo 04 (Base)</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5) MOTION & INTERACTION SECTION -->
+<section class="px-6 lg:px-12 py-24 bg-white" id="motion">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-3 uppercase tracking-[.3em]">05 / Animações &amp; Efeitos</p>
+<h2 class="text-4xl md:text-5xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+Galeria de Movimento &amp; Micro-interações
+</h2>
+<p class="text-sm text-[#7B6A5F] mt-3 max-w-xl font-light">
+Demonstração das transições GSAP, animações keyframe e interações ativadas pelo cursor.
+</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Motion 1: GSAP Text Reveal -->
+<div class="border border-[#E7D8C8] bg-[#FFFCF7] p-6">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56] block mb-2">Animação 01</span>
+<h3 class="text-base font-medium text-[#241A16] mb-3">GSAP Text Reveal Up</h3>
+<p class="text-xs text-[#7B6A5F] mb-6 font-light">Linhas mascaradas em overflow hidden que sobem suavemente com <code class="font-mono bg-[#FBF4EC] px-1">power4.out</code>.</p>
+<div class="bg-[#FBF4EC] p-4 border border-[#E7D8C8]">
+<span class="reveal-line block overflow-hidden">
+<span class="reveal-word block text-xl font-extralight uppercase text-[#241A16]">Revelação</span>
+</span>
+<span class="reveal-line block overflow-hidden">
+<span class="reveal-word block text-xl font-extralight uppercase text-[#B78A56]">Elegante</span>
+</span>
+</div>
+</div>
+
+<!-- Motion 2: Continuous Marquee -->
+<div class="border border-[#E7D8C8] bg-[#FFFCF7] p-6">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56] block mb-2">Animação 02</span>
+<h3 class="text-base font-medium text-[#241A16] mb-3">Marquee Infinito (CSS)</h3>
+<p class="text-xs text-[#7B6A5F] mb-6 font-light">Loop linear contínuo de 28 segundos com transição infinita horizontal.</p>
+<div class="bg-[#FCF7F1] border border-[#E7D8C8] overflow-hidden py-3">
+<div class="marquee flex w-max text-[9px] uppercase tracking-[.25em] text-[#7B6A5F]">
+<span class="px-4">Design System</span><span class="text-[#B78A56]">◆</span>
+<span class="px-4">Biblioteca Viva</span><span class="text-[#B78A56]">◆</span>
+<span class="px-4">Componentes</span><span class="text-[#B78A56]">◆</span>
+<span class="px-4">Design System</span><span class="text-[#B78A56]">◆</span>
+</div>
+</div>
+</div>
+
+<!-- Motion 3: Photo Panel Scale -->
+<div class="border border-[#E7D8C8] bg-[#FFFCF7] p-6">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56] block mb-2">Animação 03</span>
+<h3 class="text-base font-medium text-[#241A16] mb-3">Hover Lift &amp; Image Zoom</h3>
+<p class="text-xs text-[#7B6A5F] mb-6 font-light">Ampliação da imagem de fundo para <code class="font-mono bg-[#FBF4EC] px-1">scale(1.06)</code> com easing cúbico.</p>
+<div class="photo-panel hero-img-gala h-28 flex items-center justify-center text-white text-xs font-light">
+Passe o mouse para testar
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 6) ICONS SECTION -->
+<section class="px-6 lg:px-12 py-24 bg-[#FBF4EC]" id="icons">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-3 uppercase tracking-[.3em]">06 / Simbologia</p>
+<h2 class="text-4xl md:text-5xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+Conjunto de Ícones do Sistema
+</h2>
+<p class="text-sm text-[#7B6A5F] mt-3 max-w-xl font-light">
+Web component <code class="bg-white px-2 py-0.5 rounded text-[#241A16] font-mono text-xs">iconify-icon</code> utilizando a biblioteca <code class="bg-white px-2 py-0.5 rounded text-[#241A16] font-mono text-xs">solar</code>.
+</p>
+</div>
+
+<!-- Icons Spec Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#B78A56] text-white flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:star-shine-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">star-shine</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Logo / Brand</span>
+</div>
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#241A16] text-[#B78A56] flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:arrow-right-up-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">arrow-right-up</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Link externo</span>
+</div>
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#241A16] text-white flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:calendar-add-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">calendar-add</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Agendamento</span>
+</div>
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#B78A56] text-white flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:magic-stick-3-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">magic-stick-3</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Hero Badge</span>
+</div>
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#FBF4EC] text-[#B78A56] border border-[#E7D8C8] flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:arrow-right-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">arrow-right</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Ação / CTA</span>
+</div>
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#1D1714] text-[#B78A56] flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:clipboard-list-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">clipboard-list</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Estratégia</span>
+</div>
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#1D1714] text-[#B78A56] flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:buildings-3-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">buildings-3</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Espaço</span>
+</div>
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#1D1714] text-[#B78A56] flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:soundwave-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">soundwave</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Atmosfera</span>
+</div>
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#1D1714] text-[#B78A56] flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:user-check-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">user-check</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Hospitalidade</span>
+</div>
+
+<div class="bg-[#FFFCF7] border border-[#E7D8C8] p-5 text-center flex flex-col items-center justify-center hover:border-[#B78A56] transition-colors">
+<div class="w-10 h-10 bg-[#B78A56] text-white flex items-center justify-center rounded-sm mb-3">
+<iconify-icon icon="solar:letter-linear" width="1.4em"></iconify-icon>
+</div>
+<span class="text-xs font-mono text-[#241A16] block">letter</span>
+<span class="text-[9px] text-[#A99683] uppercase tracking-[.18em] block mt-1">Contato</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#241A16] text-white px-6 lg:px-12 py-14 relative overflow-hidden">
+<div class="absolute inset-0 grid-paper opacity-10"></div>
+<div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/10 pt-8 text-[10px] uppercase tracking-[.22em] text-[#A99683]">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 bg-[#B78A56] text-white flex items-center justify-center">
+<iconify-icon icon="solar:star-shine-linear" width="1em"></iconify-icon>
+</div>
+<span>Echelon Atelier Design System v2.0</span>
+</div>
+<span>Documentação Oficial · Montreal · Paris · Nova York</span>
+</div>
+</footer>
+</main>
+
+<!-- js -->
+<!-- interactions.js: GSAP scroll/reveal animations, fundo de partículas no canvas e copy rotativo do hero -->
+<script src="assets/js/interactions.js"></script>
+</body>
+</html>

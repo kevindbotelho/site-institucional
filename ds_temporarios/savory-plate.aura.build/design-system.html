@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Design System v2 - The Savory Plate</title>
+<!-- fonts: Plus Jakarta Sans (sans), Playfair Display (serif), Geist Mono (mono) -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<!-- css: typography, brand colors, glass panel, grid background, scrollbar, marquee -->
+<link rel="stylesheet" href="assets/css/base.css"/>
+<!-- css: fade-up scroll-reveal animation used by the community grid -->
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<!-- head-only js: Tailwind CDN runtime (must run before tailwind.config) -->
+<script src="assets/resource_3fa48481346f.es"></script>
+<!-- head-only js: extends Tailwind with rotate-x/y/z, perspective, transform-style utilities and brand colors -->
+<script src="assets/js/tailwind-3d-config.js"></script>
+<!-- head-only js: Iconify icon library + web component used throughout for solar:* and brandico:* icons -->
+<script src="assets/iconify_654a1ef798a3.js"></script>
+<script src="assets/iconify-icon_9a6f357c8b9e.js"></script>
+<!-- head-only js: Google Analytics 4 -->
+<script async src="assets/js_19c0e2c2c8a8.js"></script>
+<script src="assets/js/ga4-init.js"></script>
+</head>
+<body class="antialiased selection:bg-brand-rose selection:text-white text-slate-800 relative bg-[#faf9f6]">
+
+<!-- background-grid -->
+<div class="fixed inset-0 z-0 pointer-events-none bg-grid h-full w-full opacity-60"></div>
+
+<!-- design-system top horizontal nav -->
+<nav class="fixed flex flex-col z-50 pr-4 pl-4 top-4 right-0 left-0 items-center">
+<div class="glass-panel flex shadow-black/5 gap-2 w-full max-w-6xl rounded-full p-2 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] items-center justify-between relative z-20">
+<a class="flex items-center gap-2 px-4 group shrink-0" href="#hero">
+<div class="w-8 h-8 bg-brand-black text-white rounded-full flex items-center justify-center group-hover:bg-brand-rose transition-colors duration-300">
+<span class="font-serif italic font-bold text-lg">S</span>
+</div>
+<span class="font-bold tracking-tight text-sm hidden sm:block">Savory Plate Design System</span>
+</a>
+<div class="flex bg-slate-100/50 rounded-full p-1 items-center overflow-x-auto text-xs font-medium uppercase tracking-wider shadow-inner">
+<a class="px-4 py-2 rounded-full hover:bg-white hover:shadow-sm transition-all duration-300 whitespace-nowrap" href="#hero">00. Hero</a>
+<a class="px-4 py-2 rounded-full hover:bg-white hover:shadow-sm transition-all duration-300 whitespace-nowrap" href="#typography">01. Tipografia</a>
+<a class="px-4 py-2 rounded-full hover:bg-white hover:shadow-sm transition-all duration-300 whitespace-nowrap" href="#colors">02. Cores & Superfícies</a>
+<a class="px-4 py-2 rounded-full hover:bg-white hover:shadow-sm transition-all duration-300 whitespace-nowrap" href="#components">03. Componentes UI</a>
+<a class="px-4 py-2 rounded-full hover:bg-white hover:shadow-sm transition-all duration-300 whitespace-nowrap" href="#layout">04. Layout & Espaçamento</a>
+<a class="px-4 py-2 rounded-full hover:bg-white hover:shadow-sm transition-all duration-300 whitespace-nowrap" href="#motion">05. Motion & Interação</a>
+<a class="px-4 py-2 rounded-full hover:bg-white hover:shadow-sm transition-all duration-300 whitespace-nowrap" href="#icons">06. Ícones</a>
+</div>
+</div>
+</nav>
+
+<main class="relative z-10 pt-28 px-4 md:px-8 max-w-[1600px] mx-auto space-y-24 pb-24">
+
+<!-- 0) HERO (Exact Clone, Text Adapted for Design System) -->
+<section id="hero" class="grid grid-cols-1 md:grid-cols-12 gap-4 md:h-[85vh] min-h-[600px]">
+<div class="md:col-span-8 bg-white rounded-[2rem] overflow-hidden relative group border border-slate-200 shadow-sm">
+<img alt="Capa de cozinha" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/6586e163-951e-453e-abaa-5e0480_77f8f0585bfb.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-white text-black px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest font-mono">Design System v2</span>
+<span class="text-white/80 text-xs font-mono">DOCUMENTAÇÃO VIVA</span>
+</div>
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-[0.9] mb-6 text-balance">The Savory Plate <span class="italic text-brand-rose">Design System</span></h1>
+<div class="flex items-center justify-between border-t border-white/20 pt-6">
+<p class="text-white/80 max-w-md text-sm md:text-base line-clamp-2">Biblioteca de componentes, padrões de cores, escala tipográfica e micro-interações fiéis à aplicação original.</p>
+<a href="#typography" class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
+<iconify-icon class="text-2xl" icon="solar:arrow-right-up-linear"></iconify-icon>
+</a>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-4 h-full">
+<div class="flex-1 overflow-hidden group hover:shadow-md transition-all bg-[#F5F2EA] bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f04154e7-08c7-4859-be2d-ebf0eeb3c84d_1600w.jpg)] bg-cover bg-center border-slate-200 border rounded-[2rem] pt-8 pr-8 pb-8 pl-8 relative">
+<div class="group-hover:opacity-100 transition-opacity duration-500 transform group-hover:rotate-12 opacity-20 pt-8 pr-8 pb-8 pl-8 absolute top-0 right-0">
+<svg class="text-brand-rose text-6xl w-[64px] h-[64px] z-10" height="64" viewBox="0 0 24 24" width="64" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M12 22c-4.418 0-8-3.646-8-8.143c0-4.462 2.553-9.67 6.537-11.531A3.45 3.45 0 0 1 12 2z" fill="currentColor" fill-rule="evenodd"/><path d="M13.463 2.326A3.45 3.45 0 0 0 12 2v7l4.432-4.432c-.863-.947-1.86-1.724-2.97-2.242" fill="currentColor" opacity=".3"/><path d="M12 9v5.5l6.614-6.614c-.572-1.22-1.308-2.357-2.182-3.318z" fill="currentColor" opacity=".4"/><path d="m12 19.5l7.811-7.811a15 15 0 0 0-1.197-3.803L12 14.5z" fill="currentColor" opacity=".6"/><path d="M19.811 11.689L12 19.5V22c4.418 0 8-3.646 8-8.143c0-.71-.064-1.438-.189-2.168" fill="currentColor" opacity=".7"/></svg>
+</div>
+<div class="flex flex-col z-10 h-full relative justify-between">
+<div>
+<span class="text-[10px] uppercase block font-bold text-slate-500 tracking-widest font-mono mb-2">Visão Geral</span>
+<h2 class="leading-tight text-2xl font-serif">Biblioteca de Padrões Interativa</h2>
+</div>
+<div class="flex gap-2 mt-4">
+<img alt="Avatar do chef" class="w-12 h-12 rounded-full object-cover border-2 border-white" src="assets/f5d29712-71a8-43a4-b382-2ab031_864b5044f5fe.webp"/>
+<div class="flex flex-col justify-center">
+<span class="text-xs font-bold">Chef Gabriella</span>
+<span class="text-[10px] text-slate-950">Guia de Especificação</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 bg-brand-black rounded-[2rem] p-8 relative overflow-hidden group">
+<div class="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700">
+<img alt="Utensílios de cozinha" class="w-full h-full object-cover grayscale" src="assets/6e8517d2-d2e3-4ae9-8229-c11652_f2ac7cb26604.webp"/>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-end">
+<div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10">
+<h3 class="text-white text-lg font-medium leading-snug mb-2">Padrões Visuais & Tokens 2024</h3>
+<a class="text-xs text-white/70 hover:text-white uppercase tracking-widest font-bold flex items-center gap-2" href="#components">Explorar Componentes <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 1) TYPOGRAPHY -->
+<section id="typography" class="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-12 shadow-sm">
+<div class="mb-10 pb-6 border-b border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
+<span class="text-brand-rose font-mono text-xs font-bold uppercase tracking-[0.2em] mb-2 block">01. Tipografia</span>
+<h2 class="text-4xl font-serif text-slate-900">Escala Tipográfica & Hierarquia</h2>
+</div>
+<p class="text-slate-500 text-sm max-w-md">Fontes em uso: <strong class="text-slate-900">Playfair Display</strong> (Serif), <strong class="text-slate-900">Plus Jakarta Sans</strong> (Sans-Serif) e <strong class="text-slate-900">Geist Mono</strong> (Monospace).</p>
+</div>
+
+<div class="divide-y divide-slate-200">
+<!-- Row: Heading 1 -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Heading 1</span>
+<span class="text-xs text-slate-400 font-mono">Playfair Display / Serif</span>
+</div>
+<div class="flex-1">
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-slate-900 leading-[0.9] text-balance">Domine a Arte da <span class="italic text-brand-rose">Cozinha em Casa</span></h1>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">72px / 0.9</span>
+</div>
+</div>
+
+<!-- Row: Heading 2 -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Heading 2</span>
+<span class="text-xs text-slate-400 font-mono">Playfair Display / Serif</span>
+</div>
+<div class="flex-1">
+<h2 class="text-3xl md:text-5xl font-serif leading-none text-slate-900">Magia Culinária, <span class="italic text-slate-400">Gabriella</span>.</h2>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">48px / 1.0</span>
+</div>
+</div>
+
+<!-- Row: Heading 3 -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Heading 3</span>
+<span class="text-xs text-slate-400 font-mono">Playfair Display Italic</span>
+</div>
+<div class="flex-1">
+<h2 class="text-4xl font-serif italic text-slate-800">Direto da Cozinha</h2>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">36px / 1.1</span>
+</div>
+</div>
+
+<!-- Row: Heading 4 -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Heading 4</span>
+<span class="text-xs text-slate-400 font-mono">Playfair Display / Serif</span>
+</div>
+<div class="flex-1">
+<h2 class="text-4xl font-serif text-slate-900 tracking-tight">Faça Parte do Movimento</h2>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">36px / 1.2</span>
+</div>
+</div>
+
+<!-- Row: Bold L -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Bold L</span>
+<span class="text-xs text-slate-400 font-mono">Plus Jakarta Sans</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-xl text-slate-900">Cardápio Semanal & Receitas Exclusivas</h3>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">20px / 28px</span>
+</div>
+</div>
+
+<!-- Row: Bold M -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Bold M</span>
+<span class="text-xs text-slate-400 font-mono">Plus Jakarta Sans</span>
+</div>
+<div class="flex-1">
+<h3 class="text-lg font-bold leading-tight text-slate-900">Tagliatelle Artesanal com Sálvia e Manteiga</h3>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">18px / 24px</span>
+</div>
+</div>
+
+<!-- Row: Subhead Serif -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Subhead Serif</span>
+<span class="text-xs text-slate-400 font-mono">Playfair Display</span>
+</div>
+<div class="flex-1">
+<h2 class="leading-tight text-2xl font-serif text-slate-900">Ervas Essenciais da Primavera</h2>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">24px / 30px</span>
+</div>
+</div>
+
+<!-- Row: Bold S -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Bold S</span>
+<span class="text-xs text-slate-400 font-mono">Plus Jakarta Sans</span>
+</div>
+<div class="flex-1">
+<span class="text-sm font-bold uppercase tracking-widest text-slate-900">01. Italiana — Patisserie e Pratos Clássicos</span>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">14px / 20px</span>
+</div>
+</div>
+
+<!-- Row: Paragraph (Larger Body) -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Paragraph (Large)</span>
+<span class="text-xs text-slate-400 font-mono">Plus Jakarta Sans</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-500 text-lg leading-relaxed">Mais de 2.000.000 de apaixonados por gastronomia e cozinheiros caseiros compartilhando sua paixão por sabores.</p>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">18px / 28px</span>
+</div>
+</div>
+
+<!-- Row: Regular M (Body) -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Regular M</span>
+<span class="text-xs text-slate-400 font-mono">Plus Jakarta Sans</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-600 leading-relaxed max-w-xl">Após uma década no mundo corporativo, segui o coração até a Toscana para aprender os antigos segredos da autêntica cozinha italiana.</p>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">16px / 24px</span>
+</div>
+</div>
+
+<!-- Row: Regular S (Body Small) -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Regular S</span>
+<span class="text-xs text-slate-400 font-mono">Plus Jakarta Sans</span>
+</div>
+<div class="flex-1">
+<p class="text-sm text-slate-500 leading-relaxed">Entrevistas com chefs renomados e produtores locais explorando o futuro das artes culinárias.</p>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">14px / 20px</span>
+</div>
+</div>
+
+<!-- Row: Eyebrow Mono -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Eyebrow Mono</span>
+<span class="text-xs text-slate-400 font-mono">Geist Mono</span>
+</div>
+<div class="flex-1">
+<span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest font-mono">DA ESTAÇÃO — PREPARO 15 MIN</span>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">10px / 14px</span>
+</div>
+</div>
+
+<!-- Row: Brand Rose Mono Eyebrow -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Rose Mono Label</span>
+<span class="text-xs text-slate-400 font-mono">Geist Mono</span>
+</div>
+<div class="flex-1">
+<span class="text-brand-rose font-mono text-xs font-bold uppercase tracking-[0.2em]">A MESA DA COZINHA</span>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">12px / 16px</span>
+</div>
+</div>
+
+<!-- Row: Display Wordmark -->
+<div class="py-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="w-48 shrink-0">
+<span class="block text-sm font-bold text-slate-900">Display Wordmark</span>
+<span class="text-xs text-slate-400 font-mono">Playfair Display</span>
+</div>
+<div class="flex-1">
+<h2 class="text-6xl md:text-7xl leading-none text-slate-200 font-serif select-none">SABORES</h2>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-3 py-1.5 rounded-full font-semibold">14vw / 1.0</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 2) COLORS & SURFACES -->
+<section id="colors" class="space-y-8">
+<div class="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-12 shadow-sm">
+<div class="mb-10 pb-6 border-b border-slate-200">
+<span class="text-brand-rose font-mono text-xs font-bold uppercase tracking-[0.2em] mb-2 block">02. Cores & Superfícies</span>
+<h2 class="text-4xl font-serif text-slate-900">Paleta de Cores & Tokens Visuais</h2>
+</div>
+
+<!-- Color Swatches Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+<!-- Swatch: Brand Rose -->
+<div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+<div class="h-28 rounded-xl bg-brand-rose mb-4 flex items-end p-3 text-white font-mono text-xs font-bold">#e11d48</div>
+<h4 class="font-bold text-slate-900 text-sm">Brand Rose</h4>
+<p class="text-xs text-slate-500 font-mono">bg-brand-rose / text-brand-rose</p>
+</div>
+<!-- Swatch: Brand Black -->
+<div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+<div class="h-28 rounded-xl bg-brand-black mb-4 flex items-end p-3 text-white font-mono text-xs font-bold">#0b0b0b</div>
+<h4 class="font-bold text-slate-900 text-sm">Brand Black</h4>
+<p class="text-xs text-slate-500 font-mono">bg-brand-black / text-brand-black</p>
+</div>
+<!-- Swatch: Warm Off-White -->
+<div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+<div class="h-28 rounded-xl bg-[#faf9f6] border border-slate-200 mb-4 flex items-end p-3 text-slate-900 font-mono text-xs font-bold">#faf9f6</div>
+<h4 class="font-bold text-slate-900 text-sm">Page Canvas Background</h4>
+<p class="text-xs text-slate-500 font-mono">bg-[#faf9f6]</p>
+</div>
+<!-- Swatch: Warm Beige -->
+<div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+<div class="h-28 rounded-xl bg-[#F5F2EA] mb-4 flex items-end p-3 text-slate-900 font-mono text-xs font-bold">#F5F2EA</div>
+<h4 class="font-bold text-slate-900 text-sm">Warm Bento Surface</h4>
+<p class="text-xs text-slate-500 font-mono">bg-[#F5F2EA]</p>
+</div>
+<!-- Swatch: Slate 950 -->
+<div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+<div class="h-28 rounded-xl bg-slate-950 mb-4 flex items-end p-3 text-white font-mono text-xs font-bold">#020617</div>
+<h4 class="font-bold text-slate-900 text-sm">Slate 950</h4>
+<p class="text-xs text-slate-500 font-mono">bg-slate-950 / Buttons</p>
+</div>
+<!-- Swatch: Slate 900 -->
+<div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+<div class="h-28 rounded-xl bg-slate-900 mb-4 flex items-end p-3 text-white font-mono text-xs font-bold">#0f172a</div>
+<h4 class="font-bold text-slate-900 text-sm">Slate 900</h4>
+<p class="text-xs text-slate-500 font-mono">bg-slate-900 / Global Map</p>
+</div>
+<!-- Swatch: Slate 500 -->
+<div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+<div class="h-28 rounded-xl bg-slate-500 mb-4 flex items-end p-3 text-white font-mono text-xs font-bold">#64748b</div>
+<h4 class="font-bold text-slate-900 text-sm">Slate 500</h4>
+<p class="text-xs text-slate-500 font-mono">text-slate-500 / Body Secondary</p>
+</div>
+<!-- Swatch: Brand Rose 5% Tint -->
+<div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+<div class="h-28 rounded-xl bg-brand-rose/5 border border-brand-rose/20 mb-4 flex items-end p-3 text-brand-rose font-mono text-xs font-bold">rgba(225,29,72,0.05)</div>
+<h4 class="font-bold text-slate-900 text-sm">Rose Tint Surface</h4>
+<p class="text-xs text-slate-500 font-mono">bg-brand-rose/5</p>
+</div>
+</div>
+
+<!-- Surfaces & Overlays Gallery -->
+<h3 class="text-xl font-bold text-slate-900 mb-6">Superfícies & Efeitos de Vidro (Glassmorphism)</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Surface 1: Glass Panel -->
+<div class="glass-panel p-8 rounded-3xl relative overflow-hidden shadow-lg">
+<span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-500 block mb-2">Class: .glass-panel</span>
+<h4 class="font-bold text-slate-900 text-lg mb-2">Painel de Vidro com Blur</h4>
+<p class="text-xs text-slate-600 leading-relaxed">Fundo semi-transparente (rgba 255,255,255,0.65) com efeito de desfoque de 16px e borda suave.</p>
+</div>
+<!-- Surface 2: Bento Card Soft -->
+<div class="bg-[#F5F2EA] p-8 rounded-3xl border border-slate-200">
+<span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-500 block mb-2">Class: bg-[#F5F2EA]</span>
+<h4 class="font-bold text-slate-900 text-lg mb-2">Superfície Bento Bege</h4>
+<p class="text-xs text-slate-600 leading-relaxed">Tom bege aconchegante utilizado para destacar cards de produtos ou novidades sazonais.</p>
+</div>
+<!-- Surface 3: Dark Overlay Surface -->
+<div class="bg-brand-black p-8 rounded-3xl relative overflow-hidden text-white">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+<div class="relative z-10">
+<span class="text-[10px] font-mono font-bold uppercase tracking-widest text-white/60 block mb-2">Overlay: bg-gradient-to-t</span>
+<h4 class="font-bold text-white text-lg mb-2">Card Escuro com Gradiente</h4>
+<p class="text-xs text-white/80 leading-relaxed">Contraste com imagens de fundo para legibilidade em títulos e descrições.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3) UI COMPONENTS -->
+<section id="components" class="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-12 shadow-sm space-y-12">
+<div class="pb-6 border-b border-slate-200">
+<span class="text-brand-rose font-mono text-xs font-bold uppercase tracking-[0.2em] mb-2 block">03. UI Components</span>
+<h2 class="text-4xl font-serif text-slate-900">Componentes de Interface & Estados</h2>
+</div>
+
+<!-- Sub-section: Buttons -->
+<div>
+<h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+<iconify-icon class="text-brand-rose" icon="solar:box-linear"></iconify-icon> Botões & Ações
+</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center">
+<!-- Button 1: Primary Pill -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Pill Dark Action</span>
+<button class="uppercase hover:bg-brand-rose transition-colors duration-300 flex text-xs font-bold text-white tracking-widest bg-slate-950 rounded-full pt-2.5 pr-5 pb-2.5 pl-5 gap-x-2 gap-y-2 items-center">
+<span>Inscrever-se</span>
+</button>
+</div>
+
+<!-- Button 2: Rounded Dark -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Rounded Dark Action</span>
+<button class="uppercase hover:bg-brand-rose transition-colors text-xs font-bold text-white tracking-widest bg-slate-900 rounded-xl pt-4 pr-8 pb-4 pl-8">Explorar Pratos</button>
+</div>
+
+<!-- Button 3: Outline Button -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Outline Secondary</span>
+<button class="border border-slate-200 px-8 py-4 rounded-xl text-xs font-bold uppercase tracking-widest hover:border-slate-900 transition-colors">Masterclasses</button>
+</div>
+
+<!-- Button 4: Full-width CTA -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Card Full Width</span>
+<a class="inline-flex items-center justify-center uppercase hover:bg-slate-900 hover:scale-[1.02] transition-all duration-300 shadow-brand-rose/20 text-xs font-bold text-white tracking-widest bg-slate-900 rounded-xl px-6 py-3 shadow-lg" href="#">Inscreva-se Grátis</a>
+</div>
+
+<!-- Button 5: Glass Blur Circle -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Glass Backdrop Circle</span>
+<div class="bg-slate-900 p-4 rounded-2xl inline-block">
+<button class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
+<iconify-icon class="text-2xl" icon="solar:arrow-right-up-linear"></iconify-icon>
+</button>
+</div>
+</div>
+
+<!-- Button 6: Icon Only Circle Button -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Circle Navigation Icon</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-900 hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-left-linear"></iconify-icon>
+</button>
+<button class="w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-900 hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</button>
+</div>
+</div>
+
+<!-- Button 7: Underline Text Link -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Underline Action Link</span>
+<a class="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-900 py-2 border-b border-slate-200 hover:border-brand-rose hover:text-brand-rose transition-all" href="#">
+<span>Ouvir Agora</span>
+<iconify-icon class="transition-transform group-hover:translate-x-1" icon="solar:arrow-right-linear"></iconify-icon>
+</a>
+</div>
+
+<!-- Button 8: Search Icon Pill -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Nav Search Circle</span>
+<button class="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors">
+<iconify-icon class="text-xl" icon="solar:magnifer-linear"></iconify-icon>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Sub-section: Badges & Tags -->
+<div class="pt-6 border-t border-slate-200">
+<h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+<iconify-icon class="text-brand-rose" icon="solar:star-bold"></iconify-icon> Badges, Tags & Indicadores
+</h3>
+<div class="flex flex-wrap items-center gap-6">
+<!-- Badge 1 -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Chef Choice Mono Badge</span>
+<span class="bg-white border border-slate-200 text-black px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest font-mono">Escolha do Chef</span>
+</div>
+<!-- Badge 2 -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Glass Floating Category</span>
+<span class="bg-white/90 border border-slate-200 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">Jantar</span>
+</div>
+<!-- Badge 3 -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Rose New Tag</span>
+<div class="bg-brand-rose text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-sm uppercase tracking-wider inline-block">Novo</div>
+</div>
+<!-- Badge 4 -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Dark Popular Badge</span>
+<div class="bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg inline-block">Mais Popular</div>
+</div>
+<!-- Badge 5: Pulse Status -->
+<div class="space-y-2">
+<span class="text-[10px] font-mono text-slate-400 block uppercase">Live Pulse Status</span>
+<div class="flex items-center gap-3 bg-white border border-slate-200 p-2.5 rounded-2xl shadow-sm">
+<div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-800 font-mono">Abrindo Massa</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Sub-section: Segmented Nav Control -->
+<div class="pt-6 border-t border-slate-200">
+<h3 class="text-xl font-bold text-slate-900 mb-6">Controle Segmentado de Navegação</h3>
+<div class="bg-slate-100/50 p-1.5 rounded-full inline-flex border border-slate-200 shadow-inner items-center gap-1">
+<a class="px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider bg-white shadow-sm text-slate-900" href="#">Receitas</a>
+<a class="px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider text-slate-600 hover:bg-white hover:shadow-sm transition-all duration-300" href="#">Sazonal</a>
+<a class="px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider text-slate-600 hover:bg-white hover:shadow-sm transition-all duration-300" href="#">Despensa</a>
+<a class="px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider text-slate-600 hover:bg-white hover:shadow-sm transition-all duration-300" href="#">Loja</a>
+</div>
+</div>
+</section>
+
+<!-- 4) LAYOUT & SPACING -->
+<section id="layout" class="space-y-12">
+<div class="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-12 shadow-sm">
+<div class="mb-10 pb-6 border-b border-slate-200">
+<span class="text-brand-rose font-mono text-xs font-bold uppercase tracking-[0.2em] mb-2 block">04. Layout & Espaçamento</span>
+<h2 class="text-4xl font-serif text-slate-900">Padrões Estruturais & Containers</h2>
+<p class="text-slate-500 text-sm mt-2">Demonstração dos 3 padrões de layout reais utilizados na aplicação.</p>
+</div>
+
+<!-- Pattern 1: Recipe Grid Sample (4-Columns) -->
+<div class="mb-12 space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-slate-900 font-serif italic">Padrão 1: Grid de Receitas (4 Colunas)</h3>
+<span class="text-xs font-mono text-slate-400">grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<article class="group cursor-pointer bg-slate-50 p-3 rounded-2xl border border-slate-200">
+<div class="aspect-[3/4] rounded-xl overflow-hidden relative mb-3">
+<img alt="Massa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/a303e4a0-923e-4f94-8213-c2d1ff_515c572c731e.jpg"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">Jantar</span>
+</div>
+</div>
+<h4 class="text-sm font-bold leading-tight group-hover:text-brand-rose transition-colors">Tagliatelle Artesanal com Sálvia</h4>
+<div class="flex items-center gap-2 mt-2 text-slate-400 text-[10px] font-mono">
+<span>45 Min</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>Médio</span>
+</div>
+</article>
+
+<article class="group cursor-pointer bg-slate-50 p-3 rounded-2xl border border-slate-200">
+<div class="aspect-[3/4] rounded-xl overflow-hidden relative mb-3">
+<img alt="Salada" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/3d5615e8-afc9-4652-988c-3a8245_9b58e904115a.jpg"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">Saudável</span>
+</div>
+</div>
+<h4 class="text-sm font-bold leading-tight group-hover:text-brand-rose transition-colors">Salada de Cítricos e Erva-doce</h4>
+<div class="flex items-center gap-2 mt-2 text-slate-400 text-[10px] font-mono">
+<span>15 Min</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>Fácil</span>
+</div>
+</article>
+
+<article class="group cursor-pointer bg-slate-50 p-3 rounded-2xl border border-slate-200">
+<div class="aspect-[3/4] rounded-xl overflow-hidden relative mb-3">
+<img alt="Sobremesa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/0f742445-55e3-4a85-8e6b-fa5330_965abdc60348.jpg"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">Sobremesa</span>
+</div>
+</div>
+<h4 class="text-sm font-bold leading-tight group-hover:text-brand-rose transition-colors">Torta Decadente de Chocolate</h4>
+<div class="flex items-center gap-2 mt-2 text-slate-400 text-[10px] font-mono">
+<span>60 Min</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>Difícil</span>
+</div>
+</article>
+
+<article class="group cursor-pointer bg-slate-50 p-3 rounded-2xl border border-slate-200">
+<div class="aspect-[3/4] rounded-xl overflow-hidden relative mb-3">
+<img alt="Marmita" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/bb14d50f-45f8-42e5-b0ca-5e941c_c60e0be96baf.jpg"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">Guias</span>
+</div>
+</div>
+<h4 class="text-sm font-bold leading-tight group-hover:text-brand-rose transition-colors">Meal Prep Semanal de Grãos</h4>
+<div class="flex items-center gap-2 mt-2 text-slate-400 text-[10px] font-mono">
+<span>2 Horas</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>Fácil</span>
+</div>
+</article>
+</div>
+</div>
+
+<!-- Pattern 2: Split Chef Profile Layout -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-slate-900 font-serif italic">Padrão 2: Split Feature Card (2 Colunas com Arredondamento 3rem)</h3>
+<span class="text-xs font-mono text-slate-400">grid md:grid-cols-2 rounded-[3rem]</span>
+</div>
+<div class="bg-slate-50 border border-slate-200 rounded-[2.5rem] overflow-hidden">
+<div class="grid md:grid-cols-2">
+<div class="p-8 md:p-12 flex flex-col justify-center items-start">
+<iconify-icon class="text-3xl text-brand-rose mb-4 opacity-20" icon="solar:chef-hat-bold"></iconify-icon>
+<h4 class="text-2xl font-serif mb-4">Magia Culinária em Casa</h4>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">Aprenda a arte de preparar pratos clássicos com técnicas simples e ingredientes de alta qualidade.</p>
+<button class="bg-slate-900 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-brand-rose transition-colors">Ver Masterclass</button>
+</div>
+<div class="relative min-h-[220px]">
+<img alt="Perfil da chef" class="absolute inset-0 w-full h-full object-cover" src="assets/f5d29712-71a8-43a4-b382-2ab031_2d91ee876e1d.webp"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5) MOTION & INTERACTION -->
+<section id="motion" class="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-12 shadow-sm space-y-12">
+<div class="pb-6 border-b border-slate-200">
+<span class="text-brand-rose font-mono text-xs font-bold uppercase tracking-[0.2em] mb-2 block">05. Motion & Interação</span>
+<h2 class="text-4xl font-serif text-slate-900">Galeria de Animações & Interações</h2>
+</div>
+
+<!-- Motion Item 1: Marquee Infinite Scroll -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-slate-900">1. Letreiro Infinito (.animate-marquee)</h3>
+<span class="text-xs font-mono text-slate-400">animation: marquee 30s linear infinite</span>
+</div>
+<div class="w-full overflow-hidden py-4 border-y border-slate-200 bg-slate-50 rounded-xl">
+<div class="flex whitespace-nowrap gap-12 animate-marquee items-center text-slate-600">
+<span class="flex items-center gap-4 text-xs font-bold tracking-[0.3em] uppercase"><iconify-icon class="text-brand-rose" icon="solar:star-bold"></iconify-icon> Da fazenda à mesa</span>
+<span class="flex items-center gap-4 text-xs font-bold tracking-[0.3em] uppercase"><iconify-icon class="text-brand-rose" icon="solar:star-bold"></iconify-icon> Ingredientes orgânicos</span>
+<span class="flex items-center gap-4 text-xs font-bold tracking-[0.3em] uppercase"><iconify-icon class="text-brand-rose" icon="solar:star-bold"></iconify-icon> Artes culinárias</span>
+<span class="flex items-center gap-4 text-xs font-bold tracking-[0.3em] uppercase"><iconify-icon class="text-brand-rose" icon="solar:star-bold"></iconify-icon> Menus sazonais</span>
+<span class="flex items-center gap-4 text-xs font-bold tracking-[0.3em] uppercase"><iconify-icon class="text-brand-rose" icon="solar:star-bold"></iconify-icon> Harmonização de vinhos</span>
+<span class="flex items-center gap-4 text-xs font-bold tracking-[0.3em] uppercase"><iconify-icon class="text-brand-rose" icon="solar:star-bold"></iconify-icon> Da fazenda à mesa</span>
+</div>
+</div>
+</div>
+
+<!-- Motion Item 2: Draggable Swipe Deck (Interactive Testimonials) -->
+<div class="space-y-4 pt-6 border-t border-slate-200">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-slate-900">2. Baralho de Depoimentos Interativo (Drag/Swipe Physics)</h3>
+<span class="text-xs font-mono text-slate-400">assets/js/swipe-deck.js</span>
+</div>
+<p class="text-xs text-slate-500">Arraste o card principal abaixo para experimentar o efeito de arremesso inercial e ciclagem do baralho.</p>
+
+<div class="relative h-[420px] w-full flex items-center justify-center select-none perspective-1000 bg-slate-50/50 rounded-3xl border border-slate-200 overflow-hidden" id="swipe-container">
+<div class="absolute w-[320px] bg-white p-6 rounded-3xl shadow-lg border border-slate-200/60 opacity-40 scale-90 translate-y-8 z-10 transition-all duration-500 ease-out pointer-events-none" data-card="2">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Marcus" class="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100" src="assets/photo-1507003211169-0a1dd7228f_d85d39bb137a.jpg"/>
+<div>
+<h4 class="font-semibold text-slate-900 text-sm">Marcus Chen</h4>
+<span class="text-[10px] text-slate-400 font-mono uppercase tracking-wider">Sous Chef</span>
+</div>
+</div>
+<p class="text-slate-600 text-xs leading-relaxed italic mb-4">"O workshop de habilidades com facas é essencial. Cozinho há anos e ele corrigiu vícios que eu nem sabia."</p>
+<div class="flex gap-1 text-yellow-400 text-xs">
+<iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon>
+</div>
+</div>
+
+<div class="absolute w-[320px] bg-white p-6 rounded-3xl shadow-xl border border-slate-200/60 opacity-70 scale-95 translate-y-4 z-20 transition-all duration-500 ease-out pointer-events-none" data-card="1">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Sarah" class="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100" src="assets/photo-1438761681033-6461ffad8d_daaee9d2b8c4.jpg"/>
+<div>
+<h4 class="font-semibold text-slate-900 text-sm">Sarah Miller</h4>
+<span class="text-[10px] text-slate-400 font-mono uppercase tracking-wider">Blogueira</span>
+</div>
+</div>
+<p class="text-slate-600 text-xs leading-relaxed italic mb-4">"Finalmente uma plataforma focada em técnica, e não só em ingredientes. Meu empratamento melhorou muito."</p>
+<div class="flex gap-1 text-yellow-400 text-xs">
+<iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon>
+</div>
+</div>
+
+<div class="absolute w-[320px] bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 z-30 cursor-grab active:cursor-grabbing touch-none transform-gpu will-change-transform" data-card="0" id="active-card">
+<div class="absolute -top-3 -right-3 bg-brand-rose text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-sm uppercase tracking-wider">Arraste-me</div>
+<div class="flex items-center gap-4 mb-4 pointer-events-none">
+<img alt="Elena" class="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100" src="assets/b41e0982-e59c-4c4a-b89f-66f692_30f676540eaa.jpg"/>
+<div>
+<h4 class="font-semibold text-slate-900 text-sm">Elena Rodriguez</h4>
+<span class="text-[10px] text-slate-400 font-mono uppercase tracking-wider">Padeira Caseira</span>
+</div>
+</div>
+<p class="text-slate-600 text-xs leading-relaxed italic mb-4 pointer-events-none">"O guia de fermentação natural transformou minha panificação. Minha família me pede esse pão toda semana!"</p>
+<div class="flex gap-1 text-yellow-400 text-xs pointer-events-none">
+<iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon>
+</div>
+<div class="absolute bottom-4 right-4 text-slate-300 animate-pulse pointer-events-none">
+<svg class="lucide lucide-hand-metal" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M18 12.5V10a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v1.4"/><path d="M14 11V9a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v3.1"/><path d="M10 12.5V8a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6"/><path d="M6 12v-2a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6a7 7 0 0 0 7 7h9a5 5 0 0 0 5-5v-5a5 5 0 0 0-5-5h-4"/></svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 6) ICONS -->
+<section id="icons" class="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-12 shadow-sm">
+<div class="mb-10 pb-6 border-b border-slate-200">
+<span class="text-brand-rose font-mono text-xs font-bold uppercase tracking-[0.2em] mb-2 block">06. Ícones</span>
+<h2 class="text-4xl font-serif text-slate-900">Catálogo de Ícones do Sistema</h2>
+<p class="text-slate-500 text-sm mt-2">Biblioteca de ícones renderizados via <strong class="text-slate-900">&lt;iconify-icon&gt;</strong> (Solar & Brandico Iconsets) e SVG inlined.</p>
+</div>
+
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+<!-- Icon 1 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:magnifer-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:magnifer-linear</span>
+</div>
+<!-- Icon 2 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:chef-hat-bold"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:chef-hat-bold</span>
+</div>
+<!-- Icon 3 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:hamburger-menu-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:hamburger-menu</span>
+</div>
+<!-- Icon 4 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-yellow-400" icon="solar:star-bold"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:star-bold</span>
+</div>
+<!-- Icon 5 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:arrow-right-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:arrow-right-linear</span>
+</div>
+<!-- Icon 6 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:arrow-left-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:arrow-left-linear</span>
+</div>
+<!-- Icon 7 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:arrow-right-up-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:arrow-right-up</span>
+</div>
+<!-- Icon 8 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:leaf-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:leaf-linear</span>
+</div>
+<!-- Icon 9 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:box-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:box-linear</span>
+</div>
+<!-- Icon 10 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:bag-3-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:bag-3-linear</span>
+</div>
+<!-- Icon 11 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:microphone-3-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:microphone-3</span>
+</div>
+<!-- Icon 12 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:letter-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:letter-linear</span>
+</div>
+<!-- Icon 13 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:shop-2-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:shop-2-linear</span>
+</div>
+<!-- Icon 14 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="solar:camera-linear"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">solar:camera-linear</span>
+</div>
+<!-- Icon 15 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="brandico:tiktok"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">brandico:tiktok</span>
+</div>
+<!-- Icon 16 -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<iconify-icon class="text-3xl text-slate-700 group-hover:text-brand-rose transition-colors" icon="brandico:pinterest"></iconify-icon>
+<span class="text-[10px] font-mono text-slate-500">brandico:pinterest</span>
+</div>
+<!-- Icon 17: Inline SVG -->
+<div class="p-4 border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center gap-3 hover:border-brand-rose transition-colors group">
+<svg class="lucide lucide-hand-metal text-slate-700 group-hover:text-brand-rose transition-colors" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M18 12.5V10a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v1.4"/><path d="M14 11V9a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v3.1"/><path d="M10 12.5V8a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6"/><path d="M6 12v-2a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6a7 7 0 0 0 7 7h9a5 5 0 0 0 5-5v-5a5 5 0 0 0-5-5h-4"/></svg>
+<span class="text-[10px] font-mono text-slate-500">lucide-hand-metal</span>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- footer -->
+<footer class="bg-white border-t border-slate-200 pt-16 pb-10">
+<div class="max-w-[1600px] mx-auto px-6 md:px-12">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-slate-100 pb-10">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-brand-black text-white rounded-full flex items-center justify-center font-serif italic font-bold text-lg">S</div>
+<span class="font-bold tracking-tight text-xl">The Savory Plate Design System v2</span>
+</div>
+<span class="text-xs font-mono text-slate-400 uppercase">Preservação de Padrões & Guia de Especificação</span>
+</div>
+<div class="pt-8">
+<h2 class="text-[12vw] leading-none text-slate-100 font-serif text-center select-none pointer-events-none">SABORES</h2>
+<div class="flex justify-between items-center text-xs text-slate-400 mt-4 font-mono uppercase">
+<span>© 2024 The Savory Plate</span>
+<div class="flex gap-4">
+<a class="hover:text-slate-800" href="#hero">Início</a>
+<a class="hover:text-slate-800" href="#typography">Tipografia</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- js: drag-to-swipe testimonial card stack with spring/inertia and infinite cycling -->
+<script src="assets/js/swipe-deck.js"></script>
+<!-- js: deterministic image fallback for any broken <img> -->
+<script src="assets/js/img-fallback.js"></script>
+
+</body>
+</html>

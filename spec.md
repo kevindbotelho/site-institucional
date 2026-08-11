@@ -45,14 +45,21 @@ Captação de contatos pode direcionar o visitante para atendimento humano pelo 
 
 ### 3. Página de projetos
 
-O visitante pode ver provas visuais de capacidade de execução, separadas entre soluções voltadas a negócios e projetos autorais.
+O visitante pode ver provas visuais de capacidade de execução. A primeira fase da página apresenta somente dois projetos próprios voltados a negócios: Lume & Pata e Brisa de Tecido.
 
 **Critérios de aceite:**
 
-- Separa claramente "Soluções para negócios" de "Projetos autorais".
-- Inclui soluções para nichos comerciais apresentadas como possibilidades, sem atribuir clientes, marcas ou resultados reais.
-- Inclui os projetos autorais: Fin Planner, Transcribe Hub e Academy AI (em desenvolvimento).
-- Cada projeto pode direcionar para uma versão navegável, quando ela existir.
+- A fase atual apresenta exatamente os dois trabalhos publicados, pelo nicho, problema e solução construída.
+- Os trabalhos próprios para negócios não são atribuídos a clientes, contratos, resultados ou sinais de mercado inexistentes.
+- Cada card leva à experiência navegável correspondente.
+- A página possui CTA para conversar sobre uma solução semelhante.
+
+**Evolução planejada:**
+
+- Enquanto existirem somente os dois trabalhos atuais, eles permanecem como destaques e a Home continua exibindo apenas essa seleção.
+- Quando um terceiro trabalho estiver pronto para publicação, ou quando pelo menos um projeto autoral possuir apresentação pública adequada, `/projetos` deverá migrar para uma composição mais escalável: destaques maiores no início e uma grade compacta para os demais itens.
+- A arquitetura futura terá no máximo dois agrupamentos: **Projetos para negócios**, reunindo trabalhos próprios de demonstração e futuros trabalhos reais autorizados, e **Projetos autorais**, para produtos pessoais como Fin Planner, Transcribe Hub e Academy AI quando estiverem prontos para apresentação.
+- Não haverá uma seção separada apenas para “cases reais”. A natureza de cada trabalho deve ser comunicada com precisão no próprio item, sem transformar a página em três catálogos concorrentes.
 
 ### 4. Seção sobre na Home
 
@@ -87,7 +94,7 @@ Entra pela página inicial ou diretamente pela página de serviços, identifica 
 
 ### Visitante que quer avaliar qualidade visual
 
-Entra pela página de projetos, navega por soluções para negócios e projetos autorais e, ao encontrar uma referência relevante, inicia contato.
+Entra pela página de projetos, navega pelos trabalhos publicados e, ao encontrar uma referência relevante, inicia contato. Quando projetos autorais públicos forem adicionados, poderá explorar também esse segundo agrupamento.
 
 ## Fora do Escopo do MVP
 
@@ -108,4 +115,6 @@ Entra pela página de projetos, navega por soluções para negócios e projetos 
 
 ## Perguntas em Aberto
 
-Nenhuma para o escopo de produto do MVP. A escolha e compra do domínio principal permanecem como decisão de publicação.
+- Definir e aprovar o design system de cada demonstração antes da próxima refatoração visual.
+- Definir os critérios editoriais usados para indicar a natureza de cada trabalho quando projetos próprios e trabalhos reais passarem a coexistir na mesma seção de negócios.
+- A escolha e compra do domínio principal permanecem como decisão de publicação.

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { focusAndScrollToHomeSection } from "@/components/navigation/homeSectionNavigation";
@@ -12,7 +13,7 @@ import { getWhatsAppUrl } from "@/lib/contact";
 const navigationItems = [
   { href: "/", label: "Início", targetId: "inicio" },
   { href: "/#servicos", label: "Serviços", targetId: "servicos" },
-  { href: "/#projetos", label: "Projetos", targetId: "projetos" },
+  { href: "/projetos", label: "Projetos" },
   { href: "/#sobre", label: "Sobre", targetId: "sobre" },
 ] as const;
 
@@ -77,18 +78,32 @@ function NavigationLinks({
     >
       {navigationItems.map((item) => (
         <li key={item.href}>
-          <HomeSectionLink
-            className={
-              mobile
-                ? "block rounded-xl px-3 py-2.5 font-medium text-slate-700 transition-colors hover:bg-blue-50 hover:text-blue-700 focus-visible:bg-blue-50 focus-visible:text-blue-700"
-                : "py-2 font-medium transition-colors hover:text-blue-700 focus-visible:text-blue-700"
-            }
-            href={item.href}
-            onNavigate={onNavigate}
-            targetId={item.targetId}
-          >
-            {item.label}
-          </HomeSectionLink>
+          {"targetId" in item ? (
+            <HomeSectionLink
+              className={
+                mobile
+                  ? "block rounded-xl px-3 py-2.5 font-medium text-slate-700 transition-colors hover:bg-blue-50 hover:text-blue-700 focus-visible:bg-blue-50 focus-visible:text-blue-700"
+                  : "py-2 font-medium transition-colors hover:text-blue-700 focus-visible:text-blue-700"
+              }
+              href={item.href}
+              onNavigate={onNavigate}
+              targetId={item.targetId}
+            >
+              {item.label}
+            </HomeSectionLink>
+          ) : (
+            <Link
+              className={
+                mobile
+                  ? "block rounded-xl px-3 py-2.5 font-medium text-slate-700 transition-colors hover:bg-blue-50 hover:text-blue-700 focus-visible:bg-blue-50 focus-visible:text-blue-700"
+                  : "py-2 font-medium transition-colors hover:text-blue-700 focus-visible:text-blue-700"
+              }
+              href={item.href}
+              onClick={onNavigate}
+            >
+              {item.label}
+            </Link>
+          )}
         </li>
       ))}
     </ul>

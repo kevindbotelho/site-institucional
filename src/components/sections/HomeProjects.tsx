@@ -1,15 +1,11 @@
-import { HomeSectionLink } from "@/components/navigation/HomeSectionLink";
+import Link from "next/link";
+
 import { ProjectShowcaseCard } from "@/components/projects/ProjectShowcaseCard";
 import { homeProjectExamples } from "@/content/projects";
 import { siteConfig } from "@/content/site";
 import { getWhatsAppUrl } from "@/lib/contact";
 
-const cardLayouts = [
-  "featured",
-  "standard",
-  "standard",
-  "wide",
-] as const;
+const cardLayouts = ["featured", "wide"] as const;
 
 function ArrowRightIcon() {
   return (
@@ -88,22 +84,13 @@ export function HomeProjects() {
         <div className="mt-10 grid min-w-0 grid-cols-12 gap-5 sm:mt-12 lg:mt-16 lg:gap-6">
           {homeProjectExamples.map((project, index) => (
             <div
-              className={
-                index === 1 || index === 2
-                  ? "col-span-12 min-w-0 lg:col-span-6"
-                  : "col-span-12 min-w-0"
-              }
+              className="col-span-12 min-w-0"
               data-scroll-reveal="true"
               data-scroll-reveal-delay={index * 70}
               key={project.slug}
             >
               <ProjectShowcaseCard
-                eager={
-                  index === 0 ||
-                  homeProjectExamples
-                    .slice(0, index)
-                    .some((item) => item.image === project.image)
-                }
+                eager={index === 0}
                 index={index}
                 layout={cardLayouts[index]}
                 project={project}
@@ -149,14 +136,13 @@ export function HomeProjects() {
                 Conversar no WhatsApp
                 <ArrowRightIcon />
               </a>
-              <HomeSectionLink
+              <Link
                 className="inline-flex min-h-11 w-full items-center justify-center gap-2 px-2 text-xs font-bold text-blue-700 transition-colors hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 sm:w-auto"
-                href="/#projetos"
-                targetId="projetos"
+                href="/projetos"
               >
                 Ver soluções e projetos
                 <ArrowRightIcon />
-              </HomeSectionLink>
+              </Link>
             </div>
           </div>
         </footer>

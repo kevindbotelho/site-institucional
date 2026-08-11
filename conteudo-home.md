@@ -124,43 +124,33 @@ Ela resume serviços, projetos e trajetória. As páginas `/servicos` e `/projet
 
 ### 6. Projetos em destaque
 
-**Objetivo:** aproximar o visitante das soluções que podem ser construídas para o seu negócio. A dobra deve priorizar possibilidades de sites, dados e fluxos de trabalho; projetos autorais ficam como prova complementar, nunca como o assunto principal.
+**Objetivo:** aproximar o visitante das soluções que podem ser construídas para o seu negócio. A Home mostra somente uma seleção curta; o catálogo e sua evolução pertencem a `/projetos`.
 
 **Título:**
 
-> Soluções que já podem ganhar forma no seu negócio.
+> Dois caminhos para transformar uma necessidade em presença digital.
 
 **Texto de introdução:**
 
-> Possibilidades para visualizar como uma necessidade do dia a dia pode se transformar em uma presença digital mais clara, uma rotina mais organizada ou um próximo passo mais simples.
+> Dois trabalhos navegáveis para visualizar como um negócio local pode apresentar seus serviços com clareza e conduzir o próximo contato.
 
-#### 1. Site institucional
+#### 1. Lume & Pata
 
-**Etiqueta discreta:** Presença digital
+**Etiqueta discreta:** Pet shop e banho e tosa · Site institucional
 
-> Um site para um negócio local ou prestador de serviço apresentar o que faz, seus diferenciais, formas de contato e localização.
+> Um site institucional acolhedor para organizar cuidados, explicar a forma de atendimento e conduzir o tutor ao WhatsApp.
 
-#### 2. Dashboard e dados
+**Destino:** `/projetos/lume-e-pata`
 
-**Etiqueta discreta:** Visão operacional
+#### 2. Brisa de Tecido
 
-> Um painel para transformar informações da operação em uma leitura mais simples, útil para acompanhar a rotina e tomar decisões.
+**Etiqueta discreta:** Higienização de estofados · Landing page
 
-#### 3. Automação de processos
+> Uma landing page direta para apresentar uma oferta local, responder dúvidas essenciais e transformar interesse em pedido de orçamento pelo WhatsApp.
 
-**Etiqueta discreta:** Fluxos conectados
+**Destino:** `/projetos/brisa-de-tecido`
 
-> Um fluxo com planilhas e dados para reduzir uma tarefa repetitiva e deixar uma etapa do trabalho mais organizada.
-
-#### 4. Landing page
-
-**Etiqueta discreta:** Conversão
-
-> Uma página direta para apresentar uma campanha, serviço ou nova oferta e facilitar o próximo contato pelo WhatsApp.
-
-**Nota editorial:** as etiquetas funcionam como categorias de cada solução. Os cards não devem usar marcas, depoimentos, resultados ou nomes que sugiram um cliente real.
-
-**Projetos autorais:** Fin Planner, Transcribe Hub e Academy AI podem aparecer em uma faixa secundária ou na página `/projetos`, como prova complementar de capacidade de produto. Eles não lideram a narrativa comercial desta dobra.
+**Nota editorial:** os cards não usam depoimentos, resultados ou nomes que sugiram clientes reais. Fin Planner, Transcribe Hub e Academy AI permanecem fora da Home enquanto não tiverem apresentação pública adequada. Quando entrarem no portfólio, serão conteúdo complementar da página `/projetos`, não novos destaques obrigatórios da Home.
 
 **Links:** Ver soluções e projetos → `/projetos` · Conversar sobre uma solução semelhante → WhatsApp
 
@@ -204,7 +194,8 @@ Ela resume serviços, projetos e trajetória. As páginas `/servicos` e `/projet
 
 ## Itens que ficam para depois
 
-- Screenshots e links públicos das soluções para negócios.
+- Design systems formais para as duas demonstrações, preservando a estrutura e o conteúdo já construídos.
+- Uma composição escalável de `/projetos`, ativada quando houver um terceiro trabalho publicável ou um projeto autoral pronto para apresentação.
 - Screenshots e links públicos dos projetos autorais, se fizerem sentido como conteúdo complementar.
 - Foto profissional, se for coerente com a direção visual escolhida.
 - Depoimentos e cases reais, quando existirem e houver autorização.

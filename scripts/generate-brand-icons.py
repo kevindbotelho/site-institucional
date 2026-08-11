@@ -55,6 +55,48 @@ def build_icon(size: int, *, platform_masked: bool = False) -> Image.Image:
     return canvas.resize((size, size), Image.Resampling.LANCZOS)
 
 
+def build_whatsapp_profile(size: int) -> Image.Image:
+    """Build an opaque square profile image that is safe for circular cropping."""
+    canvas_size = size * SUPERSAMPLING
+    canvas = Image.new("RGBA", (canvas_size, canvas_size), TILE_FILL)
+    draw = ImageDraw.Draw(canvas)
+
+    tile_inset = max(SUPERSAMPLING, round(canvas_size * 0.025))
+    tile_radius = round(canvas_size * 0.21)
+    border_width = max(SUPERSAMPLING, round(canvas_size * 0.012))
+    tile_bounds = (
+        tile_inset,
+        tile_inset,
+        canvas_size - tile_inset - 1,
+        canvas_size - tile_inset - 1,
+    )
+    draw.rounded_rectangle(
+        tile_bounds,
+        radius=tile_radius,
+        fill=TILE_FILL,
+        outline=TILE_BORDER,
+        width=border_width,
+    )
+
+    with Image.open(SOURCE).convert("RGBA") as source:
+        alpha_bounds = source.getchannel("A").getbbox()
+        if alpha_bounds is None:
+            raise ValueError(f"O símbolo não possui pixels visíveis: {SOURCE}")
+        symbol = source.crop(alpha_bounds)
+
+    # A margem maior mantém o Z inteiro e legível dentro do recorte circular.
+    target_height = round(canvas_size * 0.64)
+    target_width = round(target_height * symbol.width / symbol.height)
+    symbol = symbol.resize((target_width, target_height), Image.Resampling.LANCZOS)
+    position = (
+        (canvas_size - target_width) // 2,
+        (canvas_size - target_height) // 2,
+    )
+    canvas.alpha_composite(symbol, position)
+
+    return canvas.convert("RGB").resize((size, size), Image.Resampling.LANCZOS)
+
+
 def main() -> None:
     ICON_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -67,6 +109,14 @@ def main() -> None:
     }
 
     for path, image in outputs.items():
+        image.save(path, optimize=True)
+
+    profile_outputs = {
+        ICON_DIR / "zucco-whatsapp-profile-2048.png": build_whatsapp_profile(2048),
+        ICON_DIR / "zucco-whatsapp-profile-640.png": build_whatsapp_profile(640),
+    }
+
+    for path, image in profile_outputs.items():
         image.save(path, optimize=True)
 
     copyfile(ICON_DIR / "zucco-icon-512.png", ROOT / "src" / "app" / "icon.png")

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { EmailCopyButton } from "@/components/contact/EmailCopyButton";
 import { HomeSectionLink } from "@/components/navigation/HomeSectionLink";
@@ -8,7 +9,7 @@ import { getEmailUrl, getWhatsAppUrl } from "@/lib/contact";
 const footerNavigationItems = [
   { href: "/", label: "Início", targetId: "inicio" },
   { href: "/#servicos", label: "Serviços", targetId: "servicos" },
-  { href: "/#projetos", label: "Projetos", targetId: "projetos" },
+  { href: "/projetos", label: "Projetos" },
   { href: "/#sobre", label: "Sobre", targetId: "sobre" },
 ] as const;
 
@@ -59,13 +60,19 @@ export function SiteFooter() {
             <ul className="mt-3 grid grid-cols-2 gap-x-7 gap-y-1 lg:grid-cols-1">
               {footerNavigationItems.map((item) => (
                 <li key={item.href}>
-                  <HomeSectionLink
-                    className={externalLinkClassName}
-                    href={item.href}
-                    targetId={item.targetId}
-                  >
-                    {item.label}
-                  </HomeSectionLink>
+                  {"targetId" in item ? (
+                    <HomeSectionLink
+                      className={externalLinkClassName}
+                      href={item.href}
+                      targetId={item.targetId}
+                    >
+                      {item.label}
+                    </HomeSectionLink>
+                  ) : (
+                    <Link className={externalLinkClassName} href={item.href}>
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

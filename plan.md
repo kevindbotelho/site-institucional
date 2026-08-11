@@ -22,6 +22,8 @@ seudominio.com/servicos     Serviços
 seudominio.com/projetos     Projetos
 ```
 
+No desenvolvimento local, este repositório usa `http://localhost:3001`. A porta `3000` permanece disponível para outros projetos executados em paralelo.
+
 O item Sobre da navegação aponta para `/#sobre`, a seção de credibilidade já presente na Home.
 
 Em uma evolução futura, os estilos demonstrativos poderão ganhar um subdomínio, por exemplo `estilos.seudominio.com`. Isso usa o mesmo domínio comprado: é uma configuração de DNS e hospedagem, não a compra de um segundo domínio.
@@ -63,6 +65,26 @@ public/
 **Por quê:** o conteúdo inicial é pequeno e muda sob controle do proprietário; assim, adicionar projetos ou alterar contato será simples e seguro.
 
 **Alternativa descartada:** CMS ou banco de dados. Não justificam a complexidade do MVP.
+
+### Evolução do portfólio em duas fases
+
+**Decisão:** manter os dois trabalhos atuais como destaques enquanto forem os únicos itens publicados. Quando houver um terceiro trabalho publicável ou um projeto autoral pronto, reorganizar `/projetos` em destaques maiores seguidos de uma grade compacta.
+
+**Agrupamentos futuros:** no máximo dois — Projetos para negócios e Projetos autorais. Trabalhos próprios de demonstração e futuros trabalhos reais autorizados compartilham o agrupamento de negócios; a natureza de cada item é informada com precisão no próprio conteúdo quando necessário.
+
+**Por quê:** evita criar catálogos separados para exemplos, clientes e produtos pessoais, preserva a clareza comercial e permite crescimento sem repetir cards muito grandes.
+
+### Design systems das demonstrações
+
+**Decisão:** preservar a implementação existente e refatorar a camada visual após revisão conjunta, em vez de reconstruir as páginas do zero.
+
+**Base compartilhada:** primitivas técnicas de container, seção, botão, foco, espaçamento, breakpoints e moldura de retorno à Zucco.
+
+**Temas próprios:** cada demonstração define seus tokens de cor, tipografia, escala, raio, sombra e movimento, além de poder variar composição, cabeçalho e CTA. O compartilhamento técnico não deve produzir sites visualmente idênticos.
+
+**Referências aprovadas:** Lume & Pata parte do Savory Plate. Brisa de Tecido usa a estrutura editorial do OpenDesign, mas preserva a paleta verde profundo, eucalipto, verde ácido e papel/linho já construída para o serviço local.
+
+**Execução:** cada projeto segue contrato visual curto, passada estrutural completa, acabamento dirigido e QA. O acompanhamento granular e os prompts para novas tasks vivem em `plano-refatoracao-projetos.md`.
 
 ### WhatsApp sem integração oficial
 
@@ -117,11 +139,10 @@ public/
 
 ## Variáveis de Ambiente
 
-As variáveis abaixo são públicas por definição e existem para que marca, domínio e contato sejam trocados sem alterar os componentes. Elas devem ser copiadas de `.env.example` para `.env.local` ao iniciar o projeto.
+As variáveis abaixo são públicas por definição e existem para que domínio e contato sejam trocados sem alterar os componentes. Elas devem ser copiadas de `.env.example` para `.env.local` ao iniciar o projeto. O nome da marca permanece definido no código para evitar divergências entre ambientes.
 
 | Variável | Descrição | Valor inicial |
 |---|---|---|
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número do WhatsApp com código do país, sem `+` nem espaços. | Número profissional definido pelo proprietário |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | E-mail exibido como canal alternativo de contato. | E-mail profissional definido pelo proprietário |
-| `NEXT_PUBLIC_BRAND_NAME` | Nome exibido na navegação, metadados e textos institucionais. | `Zucco` |
-| `NEXT_PUBLIC_SITE_URL` | URL pública usada em metadados e links absolutos. | `http://localhost:3000` durante o desenvolvimento |
+| `NEXT_PUBLIC_SITE_URL` | URL pública usada em metadados e links absolutos. | `http://localhost:3001` durante o desenvolvimento |

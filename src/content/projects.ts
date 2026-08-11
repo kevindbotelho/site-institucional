@@ -7,56 +7,34 @@ export type HomeProject = Pick<
   image: string;
   imageAlt: string;
   summary: string;
-  visual: "site" | "dashboard" | "automation" | "landing";
+  visual: "site" | "landing";
 };
 
 export const homeProjectExamples: readonly HomeProject[] = [
   {
-    slug: "site-institucional",
-    title: "Site institucional",
+    slug: "lume-e-pata",
+    title: "Lume & Pata",
     category: "business-demo",
-    disclosure: "Presença digital",
-    image: "/images/projects/site-institucional.jpg",
+    disclosure: "Pet shop e banho e tosa",
+    link: "/projetos/lume-e-pata",
+    image: "/images/projects/lume-e-pata-hero.png",
     imageAlt:
-      "Captura de uma página digital com apresentação de produto e painel de tarefas.",
+      "Cachorro de pelo caramelo em um espaço acolhedor de banho e tosa.",
     summary:
-      "Um site para um negócio local ou prestador de serviço apresentar o que faz, seus diferenciais, formas de contato e localização.",
+      "Um site institucional simples que organiza cuidados, produtos e contato em uma presença de bairro clara e acolhedora.",
     visual: "site",
   },
   {
-    slug: "dashboard-e-dados",
-    title: "Dashboard e dados",
+    slug: "brisa-de-tecido",
+    title: "Brisa de Tecido",
     category: "business-demo",
-    disclosure: "Visão operacional",
-    image: "/images/projects/dashboard.webp",
+    disclosure: "Higienização de estofados",
+    link: "/projetos/brisa-de-tecido",
+    image: "/images/projects/brisa-de-tecido-hero.png",
     imageAlt:
-      "Captura de um dashboard com indicadores, gráficos e acompanhamento de projetos.",
+      "Sofá claro de tecido em uma sala iluminada e arejada.",
     summary:
-      "Um painel para transformar informações da operação em uma leitura mais simples, útil para acompanhar a rotina e tomar decisões.",
-    visual: "dashboard",
-  },
-  {
-    slug: "automacao-de-processos",
-    title: "Automação de processos",
-    category: "business-demo",
-    disclosure: "Fluxos conectados",
-    image: "/images/projects/n8n.webp",
-    imageAlt:
-      "Captura de um fluxo de automação visual com etapas e integrações conectadas.",
-    summary:
-      "Um fluxo com planilhas e dados para reduzir uma tarefa repetitiva e deixar uma etapa do trabalho mais organizada.",
-    visual: "automation",
-  },
-  {
-    slug: "landing-page",
-    title: "Landing page",
-    category: "business-demo",
-    disclosure: "Conversão",
-    image: "/images/projects/landing-page.jpg",
-    imageAlt:
-      "Recorte de uma landing page com mensagem principal, produto e chamadas para ação.",
-    summary:
-      "Uma página direta para apresentar uma campanha, serviço ou nova oferta e facilitar o próximo contato pelo WhatsApp.",
+      "Uma landing page dedicada a uma oferta, com argumentos objetivos e um caminho curto até o orçamento pelo WhatsApp.",
     visual: "landing",
   },
 ];

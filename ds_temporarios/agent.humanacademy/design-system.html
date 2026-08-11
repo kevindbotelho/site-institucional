@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Design System &amp; Pattern Library — Agent Lab | Human Academy</title>
+<meta content="Living Design System e biblioteca de componentes visuais do Agent Lab - Human Academy." name="description"/>
+<meta content="Human Academy" name="author"/>
+<!-- head-only js -->
+<script src="assets/js/asset-resolve.js"></script>
+<link href="assets/a5f3d2b62bd375f6_favicon.png" rel="icon" type="image/png"/>
+<link href="assets/a5f3d2b62bd375f6_favicon.png" rel="shortcut icon" type="image/png"/>
+<link href="assets/a5f3d2b62bd375f6_favicon.png" rel="apple-touch-icon"/>
+<meta content="website" property="og:type"/>
+<meta content="Design System &amp; Pattern Library — Agent Lab | Human Academy" property="og:title"/>
+<meta content="Design System &amp; Pattern Library — Agent Lab | Human Academy" name="twitter:title"/>
+<meta content="Living Design System e biblioteca de componentes visuais do Agent Lab - Human Academy." property="og:description"/>
+<!-- fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+<link href="assets/47c0ef8a05416e93_css.css" rel="stylesheet"/>
+<link href="assets/78640e9d233d4d32_css2.css" rel="stylesheet"/>
+<!-- css -->
+<link href="assets/14c235b7e4d46905_index-BIISZeGo.css" rel="stylesheet"/>
+<link href="assets/css/sonner-toaster.css" rel="stylesheet"/>
+<link href="assets/css/custom-animations.css" rel="stylesheet"/>
+<link href="assets/css/cinematic-footer.css" rel="stylesheet"/>
+<link href="assets/css/lovable-badge.css" rel="stylesheet"/>
+<link href="assets/css/offline-visibility.css" rel="stylesheet"/>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: rgb(28, 26, 24) !important;
+    color: rgb(255, 255, 255) !important;
+  }
+  /* Force all animated elements to remain 100% visible with full opacity */
+  .animate-fade-in-up, .animate-scale-in, .animate-slide-up {
+    opacity: 1 !important;
+  }
+  .spec-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.75rem;
+    transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  }
+  .spec-card:hover {
+    border-color: rgba(234, 250, 168, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .swatch-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .swatch-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.6);
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  }
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+  }
+  .faq-item.active .faq-chevron {
+    transform: rotate(180deg);
+  }
+</style>
+</head>
+<body class="antialiased min-h-screen" style="background-color: rgb(28, 26, 24); color: rgb(255, 255, 255);">
+<div id="root">
+
+<!-- ==========================================
+     TOP HORIZONTAL NAVIGATION BAR (ANCHOR LINKS)
+     ========================================== -->
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" style="height: 64px; background: rgba(28, 26, 24, 0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.12);">
+  <div class="flex items-center justify-between h-full mx-auto px-6 md:px-12 lg:px-20" style="max-width: 1320px;">
+    <div class="flex items-center gap-3">
+      <a href="#hero">
+        <img alt="Human Academy" class="h-6 md:h-8 w-auto cursor-pointer" src="assets/c11881c1ea957696_agent-lab.png"/>
+      </a>
+      <span class="text-[10px] font-mono tracking-[0.15em] uppercase px-2.5 py-0.5 rounded hidden sm:inline-block" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">DESIGN SYSTEM V2</span>
+    </div>
+    <div class="hidden md:flex items-center gap-6 text-xs uppercase tracking-wider font-medium" style="color: rgba(255, 255, 255, 0.75);">
+      <a href="#hero" class="hover:text-[#EAFAA8] transition-colors">00. Hero</a>
+      <a href="#typography" class="hover:text-[#EAFAA8] transition-colors">01. Tipografia</a>
+      <a href="#colors" class="hover:text-[#EAFAA8] transition-colors">02. Cores</a>
+      <a href="#components" class="hover:text-[#EAFAA8] transition-colors">03. Componentes</a>
+      <a href="#layout" class="hover:text-[#EAFAA8] transition-colors">04. Layout</a>
+      <a href="#motion" class="hover:text-[#EAFAA8] transition-colors">05. Motion</a>
+      <a href="#icons" class="hover:text-[#EAFAA8] transition-colors">06. Ícones</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="#components" class="inline-flex items-center justify-center font-semibold text-xs rounded-full px-5 py-2.5 transition-all hover:scale-105" style="background: rgb(234, 250, 168); color: rgb(26, 26, 26);">Spec System</a>
+    </div>
+  </div>
+</nav>
+
+<div class="pt-16">
+
+<!-- ==========================================
+     SECTION 0: HERO (EXACT CLONE, TEXT ADAPTED)
+     ========================================== -->
+<section id="hero" class="relative min-h-screen overflow-hidden" style='background-color: rgb(236, 94, 38); background-image: url("assets/0dbb4e84a15b43e7_bg.jpg"); background-size: cover; background-position: center center; background-repeat: no-repeat;'>
+<div class="relative z-10 pt-32 md:pt-36 pb-16 md:pb-16 min-h-screen flex flex-col mx-auto px-6 md:px-12 lg:px-20" style="max-width: 1320px;">
+<div class="flex-1 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-center">
+<div class="flex-1 max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
+<div class="flex items-center justify-center lg:justify-start gap-2 mb-5 md:mb-6 animate-fade-in-up [animation-delay:0ms]">
+<img alt="Human Academy" class="h-3.5 md:h-5 w-auto opacity-50" src="assets/b0242641afe25861_HUMANACA.png"/>
+<span class="text-[9px] md:text-[11px] uppercase tracking-[0.15em] font-medium" style="color: rgba(255, 255, 255, 0.35);">DESIGN SYSTEM V2</span></div>
+<h1 class="heading-h1 text-white text-center lg:text-left text-[36px] md:text-[56px] lg:text-[64px] xl:text-[72px] animate-fade-in-up [animation-delay:0ms]" style="font-weight: 500;">Sistema de Design &amp;<br class="lg:hidden"/> Biblioteca<br class="hidden lg:inline"/> de Padrões Visuais<br/>do <span class="relative whitespace-nowrap">Agent Lab.<img alt="" class="absolute left-0 -bottom-1 md:-bottom-2 w-full h-auto pointer-events-none" src="assets/f055c4e3e743eb56_subli.png"/></span></h1>
+<p class="text-sm md:text-lg max-w-md leading-relaxed mt-6 md:mt-12 mx-auto lg:mx-0 animate-fade-in-up [animation-delay:200ms]" style="color: rgba(255, 255, 255, 0.7);">Especificações completas de componentes, escala tipográfica, superfícies, layouts e catálogo de motion extraídos da Human Academy.</p></div>
+<div class="flex-1 flex flex-col items-center lg:items-end gap-3 md:gap-5 w-full lg:w-auto">
+<div class="w-full max-w-sm hidden lg:block animate-fade-in-up [animation-delay:300ms]">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-semibold" style="color: rgb(234, 250, 168);">Pattern Library</p>
+<p class="text-sm" style="color: rgb(234, 250, 168);">
+<span class="line-through mr-1 opacity-60">v1.0</span>
+<span class="font-semibold">v2.0</span></p></div>
+<div class="relative w-full rounded-full overflow-hidden" style="background: rgb(26, 26, 26); height: 14px;">
+<div class="absolute inset-y-0 left-0 rounded-full transition-all duration-1000" style="width: 100%; background: rgb(234, 250, 168);"></div></div></div>
+<div class="relative w-full max-w-[320px] lg:max-w-[480px] h-44 lg:h-[340px] mx-auto lg:mx-0 pointer-events-none select-none animate-fade-in-up [animation-delay:400ms]">
+<img alt="" class="absolute w-36 lg:w-52 top-[5%] lg:top-[15%] -left-[2%] lg:left-0" height="208" src="assets/8feaa847f4570cc1_asterisk.png" style="animation: 6s ease-in-out 0s infinite normal none running sticker-float-0;" width="208"/>
+<img alt="" class="absolute w-40 lg:w-56 top-[0%] lg:top-[5%] left-[22%] lg:left-[28%] z-10" height="224" src="assets/8736e3b2e76bc0f5_cross.png" style="animation: 6s ease-in-out 300ms infinite normal none running sticker-float-1;" width="224"/>
+<img alt="" class="absolute w-28 lg:w-44 top-[8%] lg:top-0 right-[-2%] lg:right-[8%]" height="176" src="assets/e9777ddae9f925b6_arrows.png" style="animation: 6s ease-in-out 600ms infinite normal none running sticker-float-2;" width="176"/>
+<img alt="" class="absolute w-36 lg:w-52 bottom-[-5%] lg:bottom-0 right-[2%] lg:right-0" height="208" src="assets/353bf4e5ed435714_globe.png" style="animation: 6s ease-in-out 900ms infinite normal none running sticker-float-0;" width="208"/></div>
+<div class="w-full max-w-sm animate-fade-in-up [animation-delay:500ms]">
+<div class="bg-white rounded-[28px] overflow-hidden shadow-lg ticket-card transition-transform">
+<div class="flex items-center px-6 py-5">
+<div class="flex-1">
+<p class="text-base font-bold text-black">Componentes &amp; Spec</p>
+<p class="text-sm text-black/50">Human Academy System</p></div>
+<div class="w-px h-10 bg-black/15 mx-4"></div>
+<div class="flex-1 text-right">
+<p class="text-base font-bold text-black">Agent Lab</p>
+<p class="text-sm text-black/50">Living Library</p></div></div>
+<a class="block w-full text-center text-black font-semibold text-sm tracking-wide py-4 hover:brightness-95 transition-all" href="#typography" style="background: rgb(234, 250, 168);">EXPLORAR COMPONENTES</a></div></div>
+<div class="w-full max-w-sm lg:hidden mt-4 animate-fade-in-up [animation-delay:600ms]">
+<div class="text-center mb-4">
+<span class="text-white/40 text-sm line-through mr-2">v1.0</span>
+<span class="font-heading font-bold text-3xl" style="color: rgb(234, 250, 168);">v2.0</span></div>
+<div class="flex items-center justify-between mb-1.5">
+<p class="text-xs font-semibold" style="color: rgb(234, 250, 168);">Design System</p>
+<p class="text-[10px]" style="color: rgba(234, 250, 168, 0.5);">Living Library</p></div>
+<div class="relative w-full rounded-full overflow-hidden" style="background: rgb(26, 26, 26); height: 10px;">
+<div class="absolute inset-y-0 left-0 rounded-full transition-all duration-1000" style="width: 100%; background: rgb(234, 250, 168);"></div></div></div></div></div>
+<div class="mt-14 lg:mt-auto pt-0 text-center overflow-hidden animate-fade-in-up [animation-delay:700ms]">
+<p class="text-[10px] tracking-[0.2em] uppercase mb-8 font-medium" style="color: rgba(255, 255, 255, 0.85);">Marcas e Ferramentas Integradas</p>
+<div class="relative w-full overflow-hidden" style="mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);">
+<div class="flex items-center gap-12 md:gap-16 animate-marquee whitespace-nowrap">
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/423917a68b2da6c2_africa.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/9fc293b660777157_betmgm.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/27bad53f566b5ee2_dga.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/85a1f451f0f9d8e3_dpz.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/31dfb6515bc89095_dreamers.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/759e68ed1644e7bc_h.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/c648e238152e15f1_nio.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/2974c11a65eb8cd3_trident.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/58788ce38d28a8f6_will.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/423917a68b2da6c2_africa.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/9fc293b660777157_betmgm.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/27bad53f566b5ee2_dga.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/85a1f451f0f9d8e3_dpz.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/31dfb6515bc89095_dreamers.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/759e68ed1644e7bc_h.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/c648e238152e15f1_nio.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/2974c11a65eb8cd3_trident.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/>
+<img alt="" class="w-auto object-contain shrink-0" height="56" loading="lazy" src="assets/58788ce38d28a8f6_will.svg" style="filter: brightness(0) invert(1); opacity: 0.75; height: 56px;" width="120"/></div></div></div></div></section>
+
+<div class="section-divider"></div>
+
+<!-- ==========================================
+     SECTION 1: TYPOGRAPHY (FULL-WIDTH SPEC CARDS)
+     ========================================== -->
+<section id="typography" class="section-spacing" style="background: rgb(28, 26, 24); color: rgb(255, 255, 255);">
+  <div class="container-main">
+    <div class="mb-12 animate-fade-in-up">
+      <div class="section-header-line">
+        <span class="label-tag">01. Typography</span>
+      </div>
+      <h2 class="heading-h2 mt-5">Escala Tipográfica &amp; Hierarquia</h2>
+      <p class="text-base leading-relaxed mt-2" style="color: rgba(255, 255, 255, 0.6);">Fontes Satoshi e Inter aplicadas com as classes CSS originais e métricas exatas de dimensionamento.</p>
+    </div>
+
+    <!-- SPEC CARDS CONTAINER -->
+    <div class="space-y-6">
+
+      <!-- Heading 1 -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Heading 1</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.heading-h1 · Satoshi 500</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">72px / 76px</span>
+        </div>
+        <div class="w-full">
+          <h1 class="heading-h1 text-white text-[36px] md:text-[56px] lg:text-[64px] xl:text-[72px]" style="font-weight: 500;">Monte seu sistema de agentes criativos</h1>
+        </div>
+      </div>
+
+      <!-- Heading 2 -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Heading 2</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.heading-h2 · Satoshi 500</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">36px / 40px</span>
+        </div>
+        <div class="w-full">
+          <h2 class="heading-h2 text-white">Agentes de IA estão em todo lugar</h2>
+        </div>
+      </div>
+
+      <!-- Heading 3 -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Heading 3</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.heading-h3 · Satoshi 500</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">24px / 32px</span>
+        </div>
+        <div class="w-full">
+          <h3 class="heading-h3 text-white">Do zero ao seu primeiro agente criativo</h3>
+        </div>
+      </div>
+
+      <!-- Heading 4 -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Heading 4</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.font-heading.font-semibold</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">16px / 24px</span>
+        </div>
+        <div class="w-full">
+          <h4 class="font-heading font-semibold text-[15px] md:text-base tracking-tight text-white">Claude Code &amp; Extensions MCP</h4>
+        </div>
+      </div>
+
+      <!-- Bold L -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Bold L</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.font-heading.font-bold.text-3xl</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">30px / 36px</span>
+        </div>
+        <div class="w-full">
+          <p class="font-heading font-bold text-2xl md:text-3xl text-white">23.000+ alunos já passaram pela comunidade</p>
+        </div>
+      </div>
+
+      <!-- Bold M -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Bold M</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.text-base.font-bold</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">16px / 24px</span>
+        </div>
+        <div class="w-full">
+          <p class="text-base font-bold text-white">30 e 31 de Maio — Online ao vivo</p>
+        </div>
+      </div>
+
+      <!-- Bold S -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Bold S</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.text-xs.font-semibold</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">12px / 16px</span>
+        </div>
+        <div class="w-full">
+          <p class="text-xs font-semibold" style="color: rgb(234, 250, 168);">Lote 04 — Vagas Limitadas</p>
+        </div>
+      </div>
+
+      <!-- Paragraph -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Paragraph</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.text-base.md:text-lg.leading-relaxed</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">18px / 28px</span>
+        </div>
+        <div class="w-full">
+          <p class="text-base md:text-lg leading-relaxed" style="color: rgba(255, 255, 255, 0.8);">Um workshop ao vivo para quem quer usar IA como equipe criativa. De imagens e vídeos a campanhas automatizadas, tudo na prática.</p>
+        </div>
+      </div>
+
+      <!-- Regular L -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Regular L</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.text-base.leading-relaxed</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">16px / 24px</span>
+        </div>
+        <div class="w-full">
+          <p class="text-base leading-relaxed text-white/70">Dois dias intensivos pra você sair criando. Com sistema, repertório e as ferramentas certas.</p>
+        </div>
+      </div>
+
+      <!-- Regular M -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Regular M</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.text-sm</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">14px / 20px</span>
+        </div>
+        <div class="w-full">
+          <p class="text-sm text-white/60">Online ao vivo — 12 horas de workshop prático</p>
+        </div>
+      </div>
+
+      <!-- Regular S -->
+      <div class="spec-card">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono uppercase font-bold px-2.5 py-1 rounded" style="color: rgb(26, 26, 26); background: rgb(234, 250, 168);">Regular S</span>
+            <span class="text-xs font-mono" style="color: rgba(255, 255, 255, 0.5);">.text-[11px].tracking-[0.2em]</span>
+          </div>
+          <span class="font-mono text-xs px-3 py-1 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.25);">11px / 16px</span>
+        </div>
+        <div class="w-full">
+          <span class="text-[11px] font-medium tracking-[0.2em] uppercase text-white/60">Ao vivo em Zoom ✦ Vagas limitadas</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ==========================================
+     SECTION 2: COLORS & SURFACES
+     ========================================== -->
+<section id="colors" class="section-spacing" style="background: rgb(17, 17, 17); color: rgb(255, 255, 255);">
+  <div class="container-main">
+    <div class="mb-12 animate-fade-in-up">
+      <div class="section-header-line">
+        <span class="label-tag">02. Colors &amp; Surfaces</span>
+      </div>
+      <h2 class="heading-h2 mt-5">Cores, Superfícies &amp; Gradientes</h2>
+      <p class="text-base leading-relaxed mt-2" style="color: rgba(255, 255, 255, 0.6);">Paleta oficial de cores, superfícies de vidro (glassmorphism), overlays e gradientes contextuais.</p>
+    </div>
+
+    <!-- COLOR PALETTE SWATCHES -->
+    <h3 class="text-lg font-heading font-semibold mb-6" style="color: rgb(234, 250, 168);">Paleta Principal</h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-14">
+
+      <!-- Brand Primary -->
+      <div class="swatch-card rounded-2xl overflow-hidden p-3" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="h-24 rounded-xl mb-3 shadow-inner" style="background: rgb(236, 94, 38);"></div>
+        <p class="text-xs font-bold text-white">Brand Primary</p>
+        <p class="text-[11px] font-mono mt-0.5" style="color: rgb(236, 94, 38);">#EC5E26</p>
+        <p class="text-[10px] text-white/40 font-mono">rgb(236, 94, 38)</p>
+      </div>
+
+      <!-- Accent Lime -->
+      <div class="swatch-card rounded-2xl overflow-hidden p-3" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="h-24 rounded-xl mb-3 shadow-inner" style="background: rgb(234, 250, 168);"></div>
+        <p class="text-xs font-bold text-white">Accent Lime</p>
+        <p class="text-[11px] font-mono mt-0.5" style="color: rgb(234, 250, 168);">#EAFAA8</p>
+        <p class="text-[10px] text-white/40 font-mono">rgb(234, 250, 168)</p>
+      </div>
+
+      <!-- Dark Surface -->
+      <div class="swatch-card rounded-2xl overflow-hidden p-3" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="h-24 rounded-xl mb-3 shadow-inner" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);"></div>
+        <p class="text-xs font-bold text-white">Dark Surface</p>
+        <p class="text-[11px] font-mono text-white/70 mt-0.5">#1C1A18</p>
+        <p class="text-[10px] text-white/40 font-mono">rgb(28, 26, 24)</p>
+      </div>
+
+      <!-- Pitch Black -->
+      <div class="swatch-card rounded-2xl overflow-hidden p-3" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="h-24 rounded-xl mb-3 shadow-inner" style="background: rgb(17, 17, 17); border: 1px solid rgba(255, 255, 255, 0.1);"></div>
+        <p class="text-xs font-bold text-white">Pitch Black</p>
+        <p class="text-[11px] font-mono text-white/70 mt-0.5">#111111</p>
+        <p class="text-[10px] text-white/40 font-mono">rgb(17, 17, 17)</p>
+      </div>
+
+      <!-- Light Grey Surface -->
+      <div class="swatch-card rounded-2xl overflow-hidden p-3" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="h-24 rounded-xl mb-3 shadow-inner" style="background: rgb(241, 241, 241);"></div>
+        <p class="text-xs font-bold text-white">Light Grey</p>
+        <p class="text-[11px] font-mono text-white/70 mt-0.5">#F1F1F1</p>
+        <p class="text-[10px] text-white/40 font-mono">rgb(241, 241, 241)</p>
+      </div>
+
+      <!-- Pure White -->
+      <div class="swatch-card rounded-2xl overflow-hidden p-3" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="h-24 rounded-xl mb-3 shadow-inner" style="background: rgb(255, 255, 255);"></div>
+        <p class="text-xs font-bold text-white">Pure White</p>
+        <p class="text-[11px] font-mono text-white/70 mt-0.5">#FFFFFF</p>
+        <p class="text-[10px] text-white/40 font-mono">rgb(255, 255, 255)</p>
+      </div>
+
+    </div>
+
+    <!-- SURFACES & GLASS CARDS -->
+    <h3 class="text-lg font-heading font-semibold mb-6" style="color: rgb(234, 250, 168);">Superfícies &amp; Glassmorphic Cards</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+      <!-- Glass Dark -->
+      <div class="glass-dark rounded-2xl p-6" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-xs font-mono uppercase" style="color: rgb(234, 250, 168);">.glass-dark</span>
+        <h4 class="text-lg font-bold text-white mt-2">Superfície Glass Escura</h4>
+        <p class="text-xs text-white/50 mt-1">background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1);</p>
+      </div>
+
+      <!-- Glass Card -->
+      <div class="glass-card rounded-2xl p-6 border-0">
+        <span class="text-xs font-mono uppercase" style="color: rgb(234, 250, 168);">.glass-card</span>
+        <h4 class="text-lg font-bold text-white mt-2">Superfície Glass Card</h4>
+        <p class="text-xs text-white/50 mt-1">background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.06);</p>
+      </div>
+
+      <!-- Ticket Card Surface -->
+      <div class="bg-white rounded-[24px] p-6 text-black shadow-lg">
+        <span class="text-xs font-mono uppercase font-bold" style="color: rgb(236, 94, 38);">.ticket-card</span>
+        <h4 class="text-lg font-bold text-black mt-2">Superfície Ticket Card</h4>
+        <p class="text-xs text-black/50 mt-1">background: rgb(255, 255, 255); shadow-lg; rounded-[28px]; transition-transform;</p>
+      </div>
+
+    </div>
+
+    <!-- GRADIENTS & MASKS -->
+    <h3 class="text-lg font-heading font-semibold mb-6" style="color: rgb(234, 250, 168);">Gradientes Contextuais</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Radial Flame -->
+      <div class="rounded-2xl overflow-hidden p-6 relative" style="background: radial-gradient(at 50% 60%, rgb(140, 26, 0) 0%, rgb(236, 94, 38) 38%, rgb(245, 160, 74) 65%, rgb(253, 232, 204) 100%); min-height: 160px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-xs font-mono text-black font-bold uppercase bg-white/80 px-2 py-1 rounded">Radial Glow Gradient</span>
+        <p class="text-xs text-black/80 font-mono mt-3 max-w-md">radial-gradient(at 50% 60%, rgb(140, 26, 0) 0%, rgb(236, 94, 38) 38%, rgb(245, 160, 74) 65%, rgb(253, 232, 204) 100%)</p>
+      </div>
+
+      <!-- Certificate Sunset Linear -->
+      <div class="rounded-2xl overflow-hidden p-6 relative" style="background: linear-gradient(140deg, rgb(236, 94, 38) 0%, rgb(196, 74, 26) 55%, rgb(143, 50, 16) 100%); min-height: 160px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-xs font-mono text-white font-bold uppercase bg-black/40 px-2 py-1 rounded">Certificate Linear Sunset</span>
+        <p class="text-xs text-white/80 font-mono mt-3 max-w-md">linear-gradient(140deg, rgb(236, 94, 38) 0%, rgb(196, 74, 26) 55%, rgb(143, 50, 16) 100%)</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ==========================================
+     SECTION 3: UI COMPONENTS (SIDE-BY-SIDE STATES)
+     ========================================== -->
+<section id="components" class="section-spacing" style="background: rgb(28, 26, 24); color: rgb(255, 255, 255);">
+  <div class="container-main">
+    <div class="mb-12 animate-fade-in-up">
+      <div class="section-header-line">
+        <span class="label-tag">03. UI Components</span>
+      </div>
+      <h2 class="heading-h2 mt-5">Biblioteca de Componentes Interativos</h2>
+      <p class="text-base leading-relaxed mt-2" style="color: rgba(255, 255, 255, 0.6);">Exemplos canônicos com exibição de estados interativos (Default, Hover, Active, Focus, Disabled).</p>
+    </div>
+
+    <!-- BUTTONS SPEC -->
+    <div class="mb-16">
+      <h3 class="text-lg font-heading font-semibold mb-6" style="color: rgb(234, 250, 168);">1. Botões &amp; CTAs Interativos</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Button CTA Primary -->
+        <div class="glass-dark rounded-2xl p-6" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+          <p class="text-xs font-mono uppercase mb-4" style="color: rgb(234, 250, 168);">.btn-cta / Pill CTA</p>
+          <div class="space-y-4">
+            <div>
+              <span class="text-[10px] text-white/40 uppercase font-mono block mb-1">Default State</span>
+              <a class="inline-flex items-center justify-center font-semibold text-[13px] rounded-full px-6 py-3 min-h-[44px] text-white border border-white/30 hover:bg-white/10 transition-all duration-300" href="#garanta-sua-vaga">Garantir Ingresso</a>
+            </div>
+            <div>
+              <span class="text-[10px] text-white/40 uppercase font-mono block mb-1">Hover State (Interactive)</span>
+              <a class="inline-flex items-center justify-center font-semibold text-[13px] rounded-full px-6 py-3 min-h-[44px] text-white border border-white/60 bg-white/10 scale-[1.03]" href="#garanta-sua-vaga">Garantir Ingresso</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button Accent Lime -->
+        <div class="glass-dark rounded-2xl p-6" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+          <p class="text-xs font-mono uppercase mb-4" style="color: rgb(234, 250, 168);">Lime Accent Button</p>
+          <div class="space-y-4">
+            <div>
+              <span class="text-[10px] text-white/40 uppercase font-mono block mb-1">Default State</span>
+              <a class="inline-flex items-center justify-center font-semibold text-sm rounded-full px-6 py-3 text-black transition-all duration-300 hover:scale-105 hover:brightness-110" style="background: rgb(234, 250, 168);" href="#garanta-sua-vaga">GARANTIR INGRESSO</a>
+            </div>
+            <div>
+              <span class="text-[10px] text-white/40 uppercase font-mono block mb-1">Hover State</span>
+              <a class="inline-flex items-center justify-center font-semibold text-sm rounded-full px-6 py-3 text-black brightness-110 scale-105" style="background: rgb(234, 250, 168);" href="#garanta-sua-vaga">GARANTIR INGRESSO</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button Dark Solid -->
+        <div class="glass-dark rounded-2xl p-6" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+          <p class="text-xs font-mono uppercase mb-4" style="color: rgb(234, 250, 168);">.btn-dark / Solid Dark</p>
+          <div class="space-y-4">
+            <div>
+              <span class="text-[10px] text-white/40 uppercase font-mono block mb-1">Default State</span>
+              <button class="btn-dark text-sm px-6 py-3 min-h-[40px] cursor-pointer">GARANTIR INGRESSO</button>
+            </div>
+            <div>
+              <span class="text-[10px] text-white/40 uppercase font-mono block mb-1">Hover State</span>
+              <button class="btn-dark text-sm px-6 py-3 min-h-[40px] cursor-pointer scale-105">GARANTIR INGRESSO</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AUDIO TOGGLE CTA COMPONENT -->
+    <div class="mb-16">
+      <h3 class="text-lg font-heading font-semibold mb-6" style="color: rgb(234, 250, 168);">2. Audio Activate Floating CTA</h3>
+      <div class="glass-dark rounded-2xl p-8 flex items-center justify-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <button aria-label="Ativar som" class="cursor-pointer group">
+          <div class="flex flex-col items-center justify-center gap-4 rounded-3xl px-12 py-10 transition-all duration-300 group-hover:scale-105 group-active:scale-95" style="background: rgb(236, 94, 38); box-shadow: rgba(236, 94, 38, 0.6) 0px 12px 40px, rgba(236, 94, 38, 0.2) 0px 0px 0px 6px;">
+            <svg class="w-12 h-12" fill="none" height="48" viewbox="0 0 24 24" width="48">
+              <path d="M11 5L6 9H2v6h4l5 4V5z" fill="rgba(255,255,255,0.9)"></path>
+              <path d="M16 8.5c.94.94 1.5 2.24 1.5 3.5s-.56 2.56-1.5 3.5" stroke="rgba(255,255,255,0.4)" stroke-linecap="round" stroke-width="1.5"></path>
+              <path d="M19 5.5c1.73 1.73 2.75 4.1 2.75 6.5s-1.02 4.77-2.75 6.5" stroke="rgba(255,255,255,0.2)" stroke-linecap="round" stroke-width="1.5"></path>
+              <line stroke="#fff" stroke-linecap="round" stroke-width="2" x1="3" x2="21" y1="3" y2="21"></line>
+            </svg>
+            <span class="text-white font-semibold text-xs tracking-widest uppercase">Ativar som</span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- TICKETS & FAQ ACCORDION SPEC -->
+    <div class="mb-16">
+      <h3 class="text-lg font-heading font-semibold mb-6" style="color: rgb(234, 250, 168);">3. Cards &amp; Accordion Interativo</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
+        <!-- Ticket Card Component -->
+        <div class="glass-dark rounded-2xl p-6" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+          <p class="text-xs font-mono uppercase mb-4" style="color: rgb(234, 250, 168);">Ticket Card (.ticket-card) — Passe o mouse para interagir</p>
+          <div class="bg-white rounded-[28px] overflow-hidden shadow-lg ticket-card max-w-sm mx-auto cursor-pointer">
+            <div class="flex items-center px-6 py-5">
+              <div class="flex-1">
+                <p class="text-base font-bold text-black">30 e 31 de Maio</p>
+                <p class="text-sm text-black/50">Online ao vivo</p>
+              </div>
+              <div class="w-px h-10 bg-black/15 mx-4"></div>
+              <div class="flex-1 text-right">
+                <p class="text-base font-bold text-black">Agent Lab</p>
+                <p class="text-sm text-black/50">12 horas de workshop</p>
+              </div>
+            </div>
+            <a class="block w-full text-center text-black font-semibold text-sm tracking-wide py-4 hover:brightness-95 transition-all" href="#garanta-sua-vaga" style="background: rgb(234, 250, 168);">GARANTIR INGRESSO</a>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion Component (Real Click Handler) -->
+        <div class="glass-dark rounded-2xl p-6" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+          <p class="text-xs font-mono uppercase mb-4" style="color: rgb(234, 250, 168);">FAQ Accordion (.glass-card) — Clique para abrir/fechar</p>
+          <div class="space-y-3">
+            
+            <div class="glass-card px-6 rounded-xl border-0 faq-item cursor-pointer">
+              <button class="flex flex-1 w-full items-center justify-between py-4 text-left font-medium text-[15px] text-white accordion-toggle">
+                <span>Qual a duração do workshop Agent Lab?</span>
+                <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 transition-transform duration-300 faq-chevron"></i>
+              </button>
+              <div class="faq-answer pb-4 text-xs text-white/80 leading-relaxed">
+                O Agent Lab é um workshop intensivo de 2 dias (30 e 31 de maio), totalizando 12 horas de conteúdo prático ao vivo em Zoom.
+              </div>
+            </div>
+
+            <div class="glass-card px-6 rounded-xl border-0 faq-item active cursor-pointer">
+              <button class="flex flex-1 w-full items-center justify-between py-4 text-left font-medium text-[15px] accordion-toggle" style="color: rgb(234, 250, 168);">
+                <span>Preciso saber programar para participar?</span>
+                <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 transition-transform duration-300 faq-chevron"></i>
+              </button>
+              <div class="faq-answer pb-4 text-xs text-white/80 leading-relaxed">
+                Não! O workshop é estruturado para ensinar desde o nível zero até a construção de agentes completos utilizando Claude Code e ferramentas no-code/low-code.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BADGES & PILLS SPEC -->
+    <div>
+      <h3 class="text-lg font-heading font-semibold mb-6" style="color: rgb(234, 250, 168);">4. Badges, Tags &amp; Pills</h3>
+      <div class="flex flex-wrap gap-6 items-center glass-dark p-8 rounded-2xl" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        
+        <!-- Label Tag -->
+        <div>
+          <span class="text-[10px] text-white/40 font-mono uppercase block mb-2">.label-tag</span>
+          <span class="label-tag">Conteúdo</span>
+        </div>
+
+        <!-- Countdown Pill -->
+        <div>
+          <span class="text-[10px] text-white/40 font-mono uppercase block mb-2">.countdown-pill</span>
+          <div class="countdown-pill" style="color: rgba(255, 255, 255, 0.9); background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15);">
+            <span class="dot"></span>
+            <span class="font-semibold text-xs text-white">Faltam <span class="font-mono tabular-nums text-white timer-digits">3d 03h 49m 18s</span></span>
+          </div>
+        </div>
+
+        <!-- Module Tag Pill -->
+        <div>
+          <span class="text-[10px] text-white/40 font-mono uppercase block mb-2">Perforated Tab Pill</span>
+          <span class="text-[9px] font-semibold uppercase tracking-[0.14em] px-4 py-1.5 rounded-full" style="background: rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.9); border: 1px solid rgba(255, 255, 255, 0.1);">Fundamentos</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ==========================================
+     SECTION 4: LAYOUT & SPACING
+     ========================================== -->
+<section id="layout" class="section-spacing" style="background: rgb(17, 17, 17); color: rgb(255, 255, 255);">
+  <div class="container-main">
+    <div class="mb-12 animate-fade-in-up">
+      <div class="section-header-line">
+        <span class="label-tag">04. Layout &amp; Spacing</span>
+      </div>
+      <h2 class="heading-h2 mt-5">Estruturas de Layout &amp; Containers</h2>
+      <p class="text-base leading-relaxed mt-2" style="color: rgba(255, 255, 255, 0.6);">Exemplos reais de grids de colunas, containers principais e divisores de seção.</p>
+    </div>
+
+    <!-- LAYOUT PATTERN 1: 3-COLUMN CARDS GRID -->
+    <div class="mb-14">
+      <h3 class="text-sm font-mono uppercase mb-4" style="color: rgb(234, 250, 168);">Padrão 01: Grid de Módulos (3 Colunas) — .grid.md:grid-cols-3</h3>
+      <div class="grid md:grid-cols-3 gap-5 items-start">
+        
+        <div class="rounded-[24px] overflow-hidden p-3 transition-all duration-300 hover:scale-[1.02]" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);">
+          <div class="h-[140px] rounded-[14px]" style="background: radial-gradient(at 50% 60%, rgb(140, 26, 0) 0%, rgb(236, 94, 38) 38%, rgb(245, 160, 74) 65%, rgb(253, 232, 204) 100%);"></div>
+          <div class="px-4 pt-4 pb-2">
+            <h4 class="font-heading font-medium text-white text-xl">Introdução aos Agentes</h4>
+            <p class="text-xs text-white/50 mt-1.5 leading-relaxed">Entenda o ecossistema, configure seu ambiente e monte seu primeiro agente criativo.</p>
+          </div>
+        </div>
+
+        <div class="rounded-[24px] overflow-hidden p-3 transition-all duration-300 hover:scale-[1.02]" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);">
+          <div class="h-[140px] rounded-[14px]" style="background: radial-gradient(at 15% 85%, rgb(236, 94, 38) 0%, rgb(196, 74, 26) 30%, transparent 65%), linear-gradient(135deg, rgb(28, 8, 0) 0%, rgb(46, 18, 0) 50%, rgb(14, 6, 0) 100%);"></div>
+          <div class="px-4 pt-4 pb-2">
+            <h4 class="font-heading font-medium text-white text-xl">Criação Visual &amp; Vídeo</h4>
+            <p class="text-xs text-white/50 mt-1.5 leading-relaxed">Gere imagens de estúdio, product shots, motion graphics e vídeos via terminal.</p>
+          </div>
+        </div>
+
+        <div class="rounded-[24px] overflow-hidden p-3 transition-all duration-300 hover:scale-[1.02]" style="background: rgb(28, 26, 24); border: 1px solid rgba(255, 255, 255, 0.1);">
+          <div class="h-[140px] rounded-[14px]" style="background: conic-gradient(from 200deg at 60% 55%, rgb(253, 232, 204) 0deg, rgb(245, 160, 74) 60deg, rgb(236, 94, 38) 120deg, rgb(196, 74, 26) 180deg);"></div >
+          <div class="px-4 pt-4 pb-2">
+            <h4 class="font-heading font-medium text-white text-xl">Automação &amp; Escala</h4>
+            <p class="text-xs text-white/50 mt-1.5 leading-relaxed">Monte pipelines que produzem conteúdo em escala sem perder qualidade criativa.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LAYOUT PATTERN 2: CHRONOGRAM STICKY SPLIT -->
+    <div>
+      <h3 class="text-sm font-mono uppercase mb-4" style="color: rgb(234, 250, 168);">Padrão 02: Layout Dividido com Header Sticky — .grid.md:grid-cols-2</h3>
+      <div class="grid md:grid-cols-2 gap-8 glass-dark p-8 rounded-[24px]" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div>
+          <span class="text-[11px] uppercase tracking-[0.15em] font-medium" style="color: rgb(236, 94, 38);">ESTRUTURA</span>
+          <h3 class="font-heading text-3xl mt-2 font-medium text-white">Layout Split Sticky</h3>
+          <p class="text-xs text-white/60 mt-3 leading-relaxed">Coluna da esquerda permanece fixa no scroll (sticky) enquanto a coluna da direita exibe os itens de conteúdo em formato glass.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="p-5 rounded-xl flex justify-between items-center transition-colors hover:bg-white/[0.08]" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div>
+              <p class="font-heading font-semibold text-lg text-white">Abertura e Início</p>
+              <p class="text-xs text-white/40 mt-0.5">Workshop ao vivo em Zoom</p>
+            </div>
+            <span class="text-sm font-mono" style="color: rgb(234, 250, 168);">10:00</span>
+          </div>
+          <div class="p-5 rounded-xl flex justify-between items-center transition-colors hover:bg-white/[0.08]" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div>
+              <p class="font-heading font-semibold text-lg text-white">Sessão Prática</p>
+              <p class="text-xs text-white/40 mt-0.5">Mão na massa e criação de agentes</p>
+            </div>
+            <span class="text-sm font-mono" style="color: rgb(234, 250, 168);">13:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ==========================================
+     SECTION 5: MOTION & INTERACTION (GALLERY)
+     ========================================== -->
+<section id="motion" class="section-spacing" style="background: rgb(28, 26, 24); color: rgb(255, 255, 255);">
+  <div class="container-main">
+    <div class="mb-12 animate-fade-in-up">
+      <div class="section-header-line">
+        <span class="label-tag">05. Motion &amp; Interaction</span>
+      </div>
+      <h2 class="heading-h2 mt-5">Galeria de Animações &amp; Keyframes</h2>
+      <p class="text-base leading-relaxed mt-2" style="color: rgba(255, 255, 255, 0.6);">Demonstração ao vivo de todas as animações CSS, loops e transições interativas do sistema.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Marquee Ticker -->
+      <div class="glass-dark rounded-2xl p-6 overflow-hidden" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-xs font-mono uppercase block mb-3" style="color: rgb(234, 250, 168);">.animate-marquee</span>
+        <div class="relative w-full overflow-hidden py-3 rounded-lg" style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.05);">
+          <div class="flex animate-marquee whitespace-nowrap">
+            <span class="mx-4 text-xs font-mono" style="color: rgb(234, 250, 168);">✦ ANIMATE MARQUEE INFINITE ✦</span>
+            <span class="mx-4 text-xs font-mono" style="color: rgb(234, 250, 168);">✦ ANIMATE MARQUEE INFINITE ✦</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sticker Float -->
+      <div class="glass-dark rounded-2xl p-6 text-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-xs font-mono uppercase block mb-3" style="color: rgb(234, 250, 168);">sticker-float keyframe</span>
+        <div class="h-24 flex items-center justify-center">
+          <img alt="" class="w-16 h-16 object-contain" src="assets/8feaa847f4570cc1_asterisk.png" style="animation: 4s ease-in-out 0s infinite normal none running sticker-float-0;"/>
+        </div>
+      </div>
+
+      <!-- Float Bubble -->
+      <div class="glass-dark rounded-2xl p-6 text-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-xs font-mono uppercase block mb-3" style="color: rgb(234, 250, 168);">floatBubble keyframe</span>
+        <div class="h-24 flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-white/50" style="animation: 2s ease-in-out 0s infinite alternate none running floatBubble;">
+            <img alt="" class="w-full h-full object-cover" src="assets/d7d2744e3e91940c_leandralambert.jpg"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pulse Dot -->
+      <div class="glass-dark rounded-2xl p-6 text-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-xs font-mono uppercase block mb-3" style="color: rgb(234, 250, 168);">pulse-dot keyframe</span>
+        <div class="h-24 flex items-center justify-center gap-2">
+          <span class="w-3 h-3 rounded-full" style="background: rgb(234, 250, 168); animation: 2s ease-in-out infinite pulse-dot;"></span>
+          <span class="text-xs font-mono text-white/70">Status Pulse Active</span>
+        </div>
+      </div>
+
+      <!-- Underline Draw -->
+      <div class="glass-dark rounded-2xl p-6 text-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-xs font-mono uppercase block mb-3" style="color: rgb(234, 250, 168);">underline-draw keyframe</span>
+        <div class="h-24 flex items-center justify-center">
+          <span class="relative font-heading font-bold text-xl text-white">
+            Certificado
+            <span class="absolute left-0 -bottom-1 h-1 w-full rounded" style="background: rgb(234, 250, 168); animation: 1.5s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate underline-draw;"></span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Fade In Up -->
+      <div class="glass-dark rounded-2xl p-6 text-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-xs font-mono uppercase block mb-3" style="color: rgb(234, 250, 168);">.animate-fade-in-up</span>
+        <div class="h-24 flex items-center justify-center">
+          <span class="animate-fade-in-up text-xs font-mono px-3 py-2 rounded" style="color: rgb(234, 250, 168); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(234, 250, 168, 0.2);">Fade Entrance Active</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ==========================================
+     SECTION 6: ICONS (LUCIDE & VECTOR SVGS)
+     ========================================== -->
+<section id="icons" class="section-spacing" style="background: rgb(17, 17, 17); color: rgb(255, 255, 255);">
+  <div class="container-main">
+    <div class="mb-12 animate-fade-in-up">
+      <div class="section-header-line">
+        <span class="label-tag">06. Icons</span>
+      </div>
+      <h2 class="heading-h2 mt-5">Sistema de Ícones &amp; Marcas</h2>
+      <p class="text-base leading-relaxed mt-2" style="color: rgba(255, 255, 255, 0.6);">Coleção de ícones Lucide, vetores SVG inline e marcas de ferramentas parceiras.</p>
+    </div>
+
+    <!-- LUCIDE & UI SVGS -->
+    <h3 class="text-lg font-heading font-semibold mb-6" style="color: rgb(234, 250, 168);">1. Ícones de Interface (Lucide &amp; UI Vectors)</h3>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mb-14">
+
+      <!-- Chevron Down -->
+      <div class="glass-dark rounded-xl p-4 text-center flex flex-col items-center justify-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <i data-lucide="chevron-down" class="h-6 w-6 mb-2" style="color: rgb(234, 250, 168);"></i>
+        <span class="text-[10px] font-mono text-white/50">chevron-down</span>
+      </div>
+
+      <!-- Speaker Sound -->
+      <div class="glass-dark rounded-xl p-4 text-center flex flex-col items-center justify-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" style="color: rgb(236, 94, 38);">
+          <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"></path>
+        </svg>
+        <span class="text-[10px] font-mono text-white/50 mt-2">audio-speaker</span>
+      </div>
+
+      <!-- Arrow External -->
+      <div class="glass-dark rounded-xl p-4 text-center flex flex-col items-center justify-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M7 17L17 7"></path>
+          <path d="M7 7h10v10"></path>
+        </svg>
+        <span class="text-[10px] font-mono text-white/50 mt-2">arrow-external</span>
+      </div>
+
+      <!-- Checkmark Circle -->
+      <div class="glass-dark rounded-xl p-4 text-center flex flex-col items-center justify-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="w-6 h-6 rounded-full flex items-center justify-center" style="background: rgba(234, 250, 168, 0.2); border: 1px solid rgb(234, 250, 168);">
+          <svg fill="none" height="10" viewbox="0 0 11 11" width="10">
+            <path d="M2 5.5l2.5 2.5L9 2.5" stroke="#EAFAA8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+          </svg>
+        </div>
+        <span class="text-[10px] font-mono text-white/50 mt-2">check-badge</span>
+      </div>
+
+      <!-- Support / Chat -->
+      <div class="glass-dark rounded-xl p-4 text-center flex flex-col items-center justify-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" style="color: rgb(236, 94, 38);">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="text-[10px] font-mono text-white/50 mt-2">chat-support</span>
+      </div>
+
+      <!-- Certificate Star -->
+      <div class="glass-dark rounded-xl p-4 text-center flex flex-col items-center justify-center" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="text-lg font-bold" style="color: rgb(236, 94, 38);">✦</span>
+        <span class="text-[10px] font-mono text-white/50 mt-1">star-asterisk</span>
+      </div>
+
+    </div>
+
+    <!-- TOOL BRANDS SVG ICONS -->
+    <h3 class="text-lg font-heading font-semibold mb-6" style="color: rgb(234, 250, 168);">2. Ícones de Ferramentas Parceiras</h3>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+
+      <div class="glass-dark rounded-xl p-4 flex items-center gap-3" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <img alt="Claude" class="h-6 w-auto" src="assets/a3101f3047a119aa_claude.svg" style="filter: brightness(0) invert(1);"/>
+        <span class="text-xs font-mono text-white/70">Claude</span>
+      </div>
+
+      <div class="glass-dark rounded-xl p-4 flex items-center gap-3" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <img alt="Recraft" class="h-6 w-auto" src="assets/ccb97a588aebf55a_recraft.svg" style="filter: brightness(0) invert(1);"/>
+        <span class="text-xs font-mono text-white/70">Recraft</span>
+      </div>
+
+      <div class="glass-dark rounded-xl p-4 flex items-center gap-3" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <img alt="Remotion" class="h-6 w-auto" src="assets/2512708909957119_remotion.svg" style="filter: brightness(0) invert(1);"/>
+        <span class="text-xs font-mono text-white/70">Remotion</span>
+      </div>
+
+      <div class="glass-dark rounded-xl p-4 flex items-center gap-3" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <img alt="ElevenLabs" class="h-6 w-auto" src="assets/152a4a89fd522892_elevenlabs.svg" style="filter: brightness(0) invert(1);"/>
+        <span class="text-xs font-mono text-white/70">ElevenLabs</span>
+      </div>
+
+      <div class="glass-dark rounded-xl p-4 flex items-center gap-3" style="border: 1px solid rgba(255, 255, 255, 0.1);">
+        <img alt="Midjourney" class="h-6 w-auto" src="assets/e09640ccbf6f643b_midjourney.svg" style="filter: brightness(0) invert(1);"/>
+        <span class="text-xs font-mono text-white/70">Midjourney</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================
+     CINEMATIC FOOTER
+     ========================================== -->
+<div class="relative h-screen w-full" style="clip-path: polygon(0% 0px, 100% 0%, 100% 100%, 0px 100%);">
+<footer class="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden text-white cinematic-footer-wrapper" style="background: rgb(28, 26, 24);">
+<div class="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] pointer-events-none z-0"></div>
+<div class="absolute inset-0 pointer-events-none z-[5] hidden md:block" style="opacity: 0.7;">
+<img alt="" class="absolute" src="assets/68212e6f00f46f7c_robot.png" style="width: 82px; left: 2%; top: 6%; animation: 4s ease-in-out 0s infinite normal none running sticker-float-0; transform: rotate(-10deg);"/>
+<img alt="" class="absolute" src="assets/68212e6f00f46f7c_robot.png" style="width: 52px; left: 8%; top: 78%; animation: 5s ease-in-out 0.4s infinite normal none running sticker-float-1; transform: rotate(15deg);"/>
+<img alt="" class="absolute" src="assets/68212e6f00f46f7c_robot.png" style="width: 36px; left: 4%; top: 42%; animation: 6s ease-in-out 0.8s infinite normal none running sticker-float-2; transform: rotate(-5deg);"/>
+<img alt="" class="absolute" src="assets/68212e6f00f46f7c_robot.png" style="width: 68px; left: 12%; top: 12%; animation: 4s ease-in-out 1.2s infinite normal none running sticker-float-0; transform: rotate(20deg);"/>
+<img alt="" class="absolute" src="assets/68212e6f00f46f7c_robot.png" style="width: 84px; left: 88%; top: 8%; animation: 5s ease-in-out 1.6s infinite normal none running sticker-float-1; transform: rotate(12deg);"/>
+<img alt="" class="absolute" src="assets/68212e6f00f46f7c_robot.png" style="width: 38px; left: 92%; top: 72%; animation: 6s ease-in-out 2s infinite normal none running sticker-float-2; transform: rotate(-18deg);"/>
+</div>
+<div class="absolute top-12 left-0 w-full overflow-hidden border-y py-4 z-10 -rotate-2 scale-110 shadow-2xl" style="border-color: rgba(255, 255, 255, 0.05); background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px);">
+<div class="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-bold tracking-[0.3em] uppercase" style="color: rgba(255, 255, 255, 0.3);">
+<div class="flex items-center space-x-12 px-6">
+<span>Agent Lab Living Design System</span> <span style="color: rgba(231, 249, 154, 0.4);">✦</span>
+<span>Especificações e Padrões</span> <span style="color: rgba(184, 165, 227, 0.4);">✦</span>
+<span>Human Academy v2.0</span> <span style="color: rgba(231, 249, 154, 0.4);">✦</span></div>
+<div class="flex items-center space-x-12 px-6">
+<span>Agent Lab Living Design System</span> <span style="color: rgba(231, 249, 154, 0.4);">✦</span>
+<span>Especificações e Padrões</span> <span style="color: rgba(184, 165, 227, 0.4);">✦</span>
+<span>Human Academy v2.0</span> <span style="color: rgba(231, 249, 154, 0.4);">✦</span></div></div></div>
+<div class="relative z-10 flex flex-1 flex-col items-center justify-center px-6 mt-20 w-full max-w-5xl mx-auto text-center">
+<img alt="Human Academy" class="h-4 w-auto opacity-40 mb-6 mx-auto" src="assets/b0242641afe25861_HUMANACA.png"/>
+<h2 class="heading-h2 mb-12 text-center text-white">Agent Lab Design System v2</h2>
+<div class="flex flex-wrap justify-center gap-4 w-full">
+<a class="cursor-pointer px-10 py-5 rounded-full font-bold text-sm md:text-base flex items-center justify-center transition-all duration-300 hover:brightness-110 hover:scale-[1.03]" href="#hero" style="background: rgb(236, 94, 38); color: rgb(255, 255, 255);">VOLTAR AO TOPO</a>
+</div></div>
+<div class="relative z-20 w-full pb-8 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1" style="color: rgba(255, 255, 255, 0.3);">© 2026 Human Academy. Todos os direitos reservados.</div>
+<a href="#hero" class="cursor-pointer w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center group order-3" style="color: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255,255,255,0.2);">
+<svg class="w-5 h-5 transform group-hover:-translate-y-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></div></footer></div>
+
+</div> <!-- /pt-16 -->
+</div> <!-- /root -->
+
+<!-- js -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+  // Initialize lucide icons
+  lucide.createIcons();
+
+  // Interactive Accordion Click Handler
+  document.querySelectorAll('.accordion-toggle').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const parent = button.closest('.faq-item');
+      if (parent) {
+        parent.classList.toggle('active');
+        const answer = parent.querySelector('.faq-answer');
+        const chevron = parent.querySelector('.faq-chevron');
+        if (parent.classList.contains('active')) {
+          if (answer) answer.style.maxHeight = answer.scrollHeight + "px";
+          if (chevron) chevron.style.transform = "rotate(180deg)";
+        } else {
+          if (answer) answer.style.maxHeight = "0px";
+          if (chevron) chevron.style.transform = "rotate(0deg)";
+        }
+      }
+    });
+  });
+
+  // Ensure initially active FAQ accordion opens correctly
+  document.querySelectorAll('.faq-item.active').forEach(item => {
+    const answer = item.querySelector('.faq-answer');
+    const chevron = item.querySelector('.faq-chevron');
+    if (answer) answer.style.maxHeight = answer.scrollHeight + "px";
+    if (chevron) chevron.style.transform = "rotate(180deg)";
+  });
+</script>
+<script src="assets/js/offline-fix.js"></script>
+</body>
+</html>

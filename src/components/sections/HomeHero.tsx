@@ -1,8 +1,8 @@
 "use client";
 
 import { type PointerEvent, useRef } from "react";
+import Link from "next/link";
 
-import { HomeSectionLink } from "@/components/navigation/HomeSectionLink";
 import { siteConfig } from "@/content/site";
 import { getWhatsAppUrl } from "@/lib/contact";
 
@@ -168,14 +168,13 @@ export function HomeHero() {
                 <span className="relative">Tirar uma ideia do papel</span>
                 <ArrowRightIcon />
               </a>
-              <HomeSectionLink
+              <Link
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/75 px-6 text-sm font-bold text-slate-800 shadow-[0_8px_22px_rgba(30,64,175,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50/70 hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
-                href="/#projetos"
-                targetId="projetos"
+                href="/projetos"
               >
                 Ver projetos
                 <ArrowRightIcon />
-              </HomeSectionLink>
+              </Link>
             </div>
             <dl className="hero-metadata hero-support-enter mt-10 flex max-w-xl [--hero-delay:1280ms]">
               <div>

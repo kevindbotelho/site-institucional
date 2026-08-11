@@ -138,9 +138,7 @@ export function ProjectShowcaseCard({
   const imagePosition =
     project.visual === "landing"
       ? "50% 46%"
-      : project.visual === "site"
-        ? "50% 42%"
-        : "50% 50%";
+      : "50% 42%";
 
   return (
     <article
@@ -154,7 +152,7 @@ export function ProjectShowcaseCard({
       style={
         {
           "--project-accent-rgb":
-            project.visual === "automation" ? "79 70 229" : "37 99 235",
+            project.visual === "landing" ? "79 70 229" : "37 99 235",
         } as ProjectCardStyle
       }
     >

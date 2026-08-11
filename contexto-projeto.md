@@ -8,9 +8,11 @@ Construir o site institucional para transformar contatos de prospecção manual,
 
 ## Momento atual
 
-- A Home está construída, funciona localmente e possui uma versão publicada na Vercel.
-- O MVP ainda depende da revisão visual final da Home, dos CTAs, do comportamento em celular e desktop e do console.
-- As páginas internas de Serviços e Projetos permanecem como evoluções futuras; Sobre continua apenas como seção da Home.
+- A Home, a página `/projetos` e duas experiências próprias navegáveis estão construídas e publicadas na Vercel.
+- O site institucional **Lume & Pata** e a landing page **Brisa de Tecido** formam a primeira fase do portfólio comercial.
+- O MVP técnico foi revisado em celular e desktop; o próximo ciclo é uma revisão colaborativa do sistema visual antes de novas expansões.
+- A página interna de Serviços permanece como evolução futura; Sobre continua apenas como seção da Home.
+- No desenvolvimento local, este projeto usa a porta `3001` para não disputar a porta `3000` com outros projetos.
 - O nome da marca foi definido como **Zucco**. O domínio principal ainda não foi escolhido nem comprado; `zuccoweb.com` e `zuccoweb.com.br` são os candidatos atuais.
 - **Design e Tecnologia** é o descritor institucional aprovado para metadados e peças de marca. A assinatura compacta usada no cabeçalho e no rodapé permanece sem essa linha.
 
@@ -50,6 +52,8 @@ Sem links públicos por enquanto. Nunca descrever projetos em desenvolvimento co
 ## Referência visual oficial
 
 O **Lumen LP System** é a única referência visual oficial do site institucional. Ele orienta os princípios de interface; seus códigos, textos, marca, vídeos, métricas e conteúdos demonstrativos não devem ser reutilizados.
+
+As experiências publicadas em `/projetos` possuem direções visuais próprias, mas ainda não foram consolidadas em design systems formais. A evolução deve preservar o conteúdo, as rotas, a responsividade e os assets existentes, refatorando a camada visual em componentes e tokens reutilizáveis em vez de reconstruir as páginas do zero.
 
 ## Operação comercial relacionada
 
