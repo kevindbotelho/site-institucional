@@ -12,6 +12,5 @@ export default defineConfig([
     "next-env.d.ts",
     "materiais_curso/**",
     "site_exemplo/**",
-    "skills/**",
   ]),
 ]);

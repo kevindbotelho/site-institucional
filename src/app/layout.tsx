@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/onest";
+
 import { siteConfig } from "@/content/site";
 
 import "./globals.css";

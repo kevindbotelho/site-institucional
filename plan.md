@@ -76,15 +76,15 @@ public/
 
 ### Design systems das demonstrações
 
-**Decisão:** preservar a implementação existente e refatorar a camada visual após revisão conjunta, em vez de reconstruir as páginas do zero.
+**Decisão revisada após o gate do L-02:** preservar a implementação técnica e comercial válida, mas permitir reconstrução ampla da camada visual quando a comparação demonstrar falta de identidade. Nenhuma passada completa começa sem um alvo visual concreto aprovado.
 
 **Base compartilhada:** primitivas técnicas de container, seção, botão, foco, espaçamento, breakpoints e moldura de retorno à Zucco.
 
-**Temas próprios:** cada demonstração define seus tokens de cor, tipografia, escala, raio, sombra e movimento, além de poder variar composição, cabeçalho e CTA. O compartilhamento técnico não deve produzir sites visualmente idênticos.
+**Temas próprios:** cada demonstração define seus tokens de cor, tipografia, escala, raio, sombra e movimento, além de variar composição, cabeçalho, CTA, footer e narrativa de interação. O compartilhamento técnico não deve ser perceptível como identidade visual comum.
 
-**Referências aprovadas:** Lume & Pata parte do Savory Plate. Brisa de Tecido usa a estrutura editorial do OpenDesign, mas preserva a paleta verde profundo, eucalipto, verde ácido e papel/linho já construída para o serviço local.
+**Referências aprovadas:** Lume & Pata parte do Savory Plate para composição e interação e usa OpenDesign como apoio de profundidade editorial; Home/Lumen são somente régua de qualidade. Brisa de Tecido usa a estrutura editorial do OpenDesign, mas preserva a paleta verde profundo, eucalipto, verde ácido e papel/linho já construída para o serviço local.
 
-**Execução:** cada projeto segue contrato visual curto, passada estrutural completa, acabamento dirigido e QA. O acompanhamento granular e os prompts para novas tasks vivem em `plano-refatoracao-projetos.md`.
+**Execução:** cada dobra começa com auditoria e exatamente três opções visuais; Kevin escolhe ou rejeita; somente a opção escolhida é implementada e validada. Após todas as dobras aprovadas, o projeto recebe acabamento global e QA. O acompanhamento granular vive em `plano-refatoracao-projetos.md`; o arquivo móvel `PROMPT-PROXIMA-TASK.md` contém sempre o próximo prompt completo e autocontido.
 
 ### WhatsApp sem integração oficial
 

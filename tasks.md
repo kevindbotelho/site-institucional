@@ -69,12 +69,20 @@ Contexto: provar capacidade de execução com exatamente dois projetos próprios
 
 ### Próximo ciclo de design
 
-Plano detalhado, checkpoints e prompts de retomada: `plano-refatoracao-projetos.md`.
+Plano detalhado e checkpoints: `plano-refatoracao-projetos.md`. Prompt sempre pronto para a próxima conversa: `PROMPT-PROXIMA-TASK.md`.
 
 - [x] Revisar as duas experiências com Kevin e escolher as referências visuais da refatoração.
 - [x] Definir a estratégia híbrida: fundação curta, passada estrutural completa, acabamento dirigido e QA por projeto.
-- [ ] Executar L-01: contrato visual e mapa completo do Lume & Pata a partir do Savory Plate.
-- [ ] Executar L-02: passada estrutural completa do Lume & Pata.
+- [x] Executar L-01: documentar contrato visual e mapa completo do Lume & Pata a partir do Savory Plate.
+- [x] Aprovar com Kevin o contrato e o mapa do Lume & Pata antes de iniciar L-02.
+- [x] Executar a primeira versão do L-02: passada estrutural completa do Lume & Pata.
+- [x] Revisar visualmente a primeira versão do L-02 com Kevin — resultado reprovado por ser genérico, superficial e próximo demais da Home da Zucco.
+- [x] Auditar o processo, Savory Plate, OpenDesign e a régua visual da Zucco; documentar o redirecionamento criativo em `src/app/projetos/lume-e-pata/DIRECAO-CRIATIVA-L02R.md`.
+- [x] Aprovar L-02R1: Kevin substituiu a direção C pela opção A — Portal de acolhimento —, aprovou o refinamento final em 2026-08-13 e encerrou o gate da fundação, cabeçalho local e hero.
+- [x] Aprovar L-02R2: direção B — Mosaico de rotinas — correção de fidelidade, encerramento em três camadas e remoção do traço residual aprovados explicitamente por Kevin em 2026-08-13.
+- [x] Encerrar L-02R3: opção B — Palco em três tempos — implementada e aprovada explicitamente por Kevin para avanço em 2026-08-18; a captura comparativa automatizada permaneceu bloqueada e está registrada como ressalva em `design-qa.md`.
+- [ ] Encerrar L-02R4: opção A — Prateleira editorial — escolhida, implementada e validada em 390, 768, 1024 e 1440 px; aguarda aprovação visual explícita de Kevin.
+- [ ] Executar L-02R5: refazer CTA/footer e costurar a linguagem global de movimento.
 - [ ] Executar L-03: acabamento dirigido do Lume & Pata.
 - [ ] Executar L-04: QA e publicação do Lume & Pata.
 - [ ] Executar B-01: contrato visual e mapa completo da Brisa usando a estrutura do OpenDesign e preservando sua paleta verde/linho.

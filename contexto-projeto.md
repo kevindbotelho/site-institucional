@@ -53,7 +53,7 @@ Sem links públicos por enquanto. Nunca descrever projetos em desenvolvimento co
 
 O **Lumen LP System** é a única referência visual oficial do site institucional. Ele orienta os princípios de interface; seus códigos, textos, marca, vídeos, métricas e conteúdos demonstrativos não devem ser reutilizados.
 
-As experiências publicadas em `/projetos` possuem direções visuais próprias, mas ainda não foram consolidadas em design systems formais. A evolução deve preservar o conteúdo, as rotas, a responsividade e os assets existentes, refatorando a camada visual em componentes e tokens reutilizáveis em vez de reconstruir as páginas do zero.
+As experiências publicadas em `/projetos` precisam possuir direções visuais próprias e não podem parecer variações da Home. A evolução preserva conteúdo honesto, rotas, contato, semântica e acessibilidade, mas pode reconstruir composição, componentes, tipografia, assets e movimento quando necessário. Depois da reprovação visual do primeiro L-02 do Lume, o processo passou a exigir três alvos visuais concretos e aprovação dobra a dobra antes do código definitivo.
 
 ## Operação comercial relacionada
 

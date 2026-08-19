@@ -1,10 +1,10 @@
 # Plano de execução — refatoração dos projetos navegáveis
 
-> Fonte operacional para retomar o trabalho em novas tasks sem depender do histórico da conversa. Antes de executar qualquer checkpoint, leia `AGENTS.md`, `contexto-projeto.md`, `status-projeto.md`, `tasks.md`, este arquivo e os documentos de design citados no checkpoint.
+> Fonte operacional para retomar o trabalho em novas tasks sem depender do histórico da conversa. O prompt pronto para copiar fica sempre em `PROMPT-PROXIMA-TASK.md`.
 
 ## Objetivo
 
-Elevar os dois projetos atuais do portfólio — **Lume & Pata** e **Brisa de Tecido** — usando referências visuais explícitas, sem reconstruir do zero e sem transformar o refinamento em uma sequência longa de microtarefas.
+Elevar os dois projetos atuais do portfólio — **Lume & Pata** e **Brisa de Tecido** — usando referências visuais explícitas, alvos visuais concretos e aprovação progressiva. A estrutura técnica válida é preservada, mas composição, componentes e movimento podem ser reconstruídos quando a revisão demonstrar que a direção não atingiu o nível esperado.
 
 Os projetos continuam exercendo papéis diferentes:
 
@@ -15,16 +15,20 @@ Os projetos continuam exercendo papéis diferentes:
 
 - As duas rotas já existem, são navegáveis e estão publicadas.
 - Conteúdo, semântica, CTAs, links de WhatsApp, responsividade e parte dos assets podem ser preservados.
-- Os temas atuais possuem boa base, mas repetem a mesma fórmula de cabeçalho, hero dividido, cards, CTA e rodapé.
-- A refatoração visual ainda não foi iniciada.
+- Os temas publicados repetem parte da mesma fórmula de cabeçalho, hero dividido, cards, CTA e rodapé.
+- O primeiro L-02 do Lume foi implementado localmente, passou pela validação técnica e foi reprovado no gate visual por ser genérico, superficial e próximo demais da Home da Zucco.
 - `/projetos` permanece com a composição atual enquanto as duas experiências são refinadas.
 
 ## Direções aprovadas
 
 ### Lume & Pata
 
-- Referência principal: `ds_temporarios/savory-plate.aura.build/`.
-- Usar a gramática visual do Savory Plate: composição bento, fotografia dominante, Playfair Display, Plus Jakarta Sans, labels monoespaçadas pontuais, superfícies quentes, grandes raios e movimento editorial leve.
+- Referência principal de composição e interação: `ds_temporarios/savory-plate.aura.build/` e a cópia-fonte em `C:\Projetos\design systems\savory-plate.aura.build\`.
+- Referência secundária de profundidade editorial: `C:\Projetos\design systems\open-design.ai\`.
+- Usar do Savory Plate a composição multicamada, o encontro entre texto e fotografia, glass cards funcionais, variedade de proporções, marquee e interações táteis quando servirem à narrativa.
+- Usar do OpenDesign a ideia de cada dobra como uma prancha/história própria, além de anotações, linhas, numeração, sticky narrative e assimetria controlada.
+- A Home da Zucco e o Lumen são apenas régua de qualidade; não copiar cabeçalho, tipografia, CTA, silhueta de hero ou coreografia de entrada.
+- Playfair Display e Plus Jakarta Sans deixaram de ser decisões aprovadas. A nova direção deve explorar uma identidade tipográfica própria, preferencialmente sans-forward, antes de codificar.
 - Preservar o coral, creme, tinta e verde suave já associados ao Lume, ajustando contraste quando necessário.
 - Preservar o tom próximo, acolhedor e de negócio de bairro. Evitar que a marca pareça uma boutique cara.
 - Não reutilizar textos, marca, imagens, depoimentos, estrelas, métricas, integrações ou código externo do material de referência.
@@ -46,22 +50,27 @@ Os projetos continuam exercendo papéis diferentes:
 
 ## Método de trabalho
 
-O fluxo será **híbrido**:
+O fluxo passa a ser **visual-target-first e dobra a dobra**:
 
-1. Aprovar uma fundação visual pequena antes de editar.
-2. Fazer uma passada estrutural completa em um projeto por vez.
-3. Revisar o resultado dobra a dobra, mas agrupar as correções em uma única rodada de acabamento.
-4. Fazer QA e publicação somente após o conjunto estar coerente.
+1. Auditar a dobra atual e os padrões relevantes das referências.
+2. Definir história, função comercial, composição e comportamento antes do código.
+3. Produzir exatamente três opções visuais concretas e recomendar uma.
+4. Aguardar Kevin escolher ou rejeitar as opções; ele não precisa projetar a solução.
+5. Implementar somente a direção escolhida e somente a dobra em escopo.
+6. Validar desktop, mobile, interação, teclado e movimento reduzido.
+7. Avançar apenas depois da aprovação visual daquela dobra.
+8. Fazer acabamento global, QA e publicação somente após todas as dobras estarem coerentes.
 
-Isso reduz o risco de construir uma página inteira na direção errada, mas evita transformar cada card, botão ou subseção em uma task separada.
+O processo detalhado, a auditoria e os critérios criativos do Lume vivem em `src/app/projetos/lume-e-pata/DIRECAO-CRIATIVA-L02R.md`.
 
 ### Regras operacionais
 
 - Trabalhar primeiro no Lume & Pata; iniciar a Brisa somente após o Lume estar aprovado.
 - Uma única pessoa ou agente edita a rota ativa. Subagentes podem apoiar pesquisa, inventário de assets e QA, sem editar simultaneamente os mesmos arquivos.
-- Cada task executa somente um checkpoint identificado neste documento.
+- Cada task executa somente um checkpoint identificado neste documento. Checkpoints de dobra podem ocupar vários turnos: exploração, escolha de Kevin, implementação e revisão.
 - Ao concluir um checkpoint, atualizar este arquivo, `tasks.md` e, quando o estado público ou material mudar, `status-projeto.md`.
-- Toda task concluída deve entregar o prompt exato para iniciar o próximo checkpoint em uma conversa nova.
+- Toda task concluída deve substituir `PROMPT-PROXIMA-TASK.md` pelo prompt exato do próximo checkpoint e também reproduzi-lo na resposta final.
+- Todo novo prompt deve manter a lista-base de documentos permanentes e acrescentar os arquivos específicos produzidos ou necessários para o checkpoint seguinte.
 - Referências em `ds_temporarios/` são especificações visuais, não dependências de produção.
 - Novos assets devem ser escolhidos ou gerados somente depois de a composição que os receberá estar aprovada.
 - Nenhuma publicação de produção acontece no meio de uma passada estrutural.
@@ -81,7 +90,7 @@ Resultado:
 
 ### L-01 — contrato visual e mapa completo do Lume
 
-Estado: **próximo**.
+Estado: **concluído e aprovado por Kevin em 2026-08-11**.
 
 Escopo:
 
@@ -100,11 +109,21 @@ Saída esperada:
 - inventário de assets;
 - nenhuma refatoração ampla ainda.
 
+Resultado do checkpoint:
+
+- contrato visual, tokens, componentes, fotografia e movimento consolidados;
+- página inteira mapeada com função comercial por dobra;
+- hero bento especificado para desktop, tablet e mobile;
+- asset atual inventariado e dois novos slots fotográficos mínimos identificados;
+- rota e código de produção preservados sem refatoração estrutural.
+
 Gate: Kevin aprova a fundação e o mapa, ou solicita ajustes objetivos.
+
+Gate concluído: Kevin registrou a aprovação explícita na conversa do checkpoint L-02 em 2026-08-11.
 
 ### L-02 — passada estrutural completa do Lume
 
-Estado: **pendente**.
+Estado: **implementado tecnicamente e reprovado no gate visual por Kevin em 2026-08-11; substituído pelo ciclo L-02R**.
 
 Escopo:
 
@@ -114,11 +133,76 @@ Escopo:
 - Criar ou inserir apenas os assets já aprovados no L-01.
 - Entregar a página inteira navegável em desktop e mobile.
 
-Gate: revisão visual dobra a dobra, gerando uma lista única e priorizada de acabamento.
+Resultado do checkpoint:
+
+- tokens locais e a estrutura completa aprovada foram implementados somente em `/projetos/lume-e-pata`;
+- a foto anterior permanece exclusivamente em `LUME-H01`; `LUME-W01` e `LUME-D01` foram criados e inseridos nos únicos slots novos aprovados;
+- moldura da Zucco, cabeçalho local, hero bento, Cuidados essenciais, Nosso jeito, Essenciais do dia a dia, CTA final e footer foram entregues responsivos;
+- rota, metadados, único `h1`, conteúdo válido e mensagem do WhatsApp foram preservados;
+- foi necessário trocar `next/font` por importação CSS limitada ao módulo da rota, com fallbacks locais, porque o build offline não podia baixar as fontes; nenhuma fundação visual aprovada foi alterada;
+- desktop e mobile foram revisados visualmente; navegação, âncoras, WhatsApp, foco, alvos de toque, contraste, movimento reduzido, imagens, overflow e console foram conferidos;
+- ESLint restrito aos arquivos envolvidos e build de produção concluíram sem erros; o lint global continua contaminado por bundles de referência preexistentes em `ds_temporarios/`;
+- nenhuma publicação foi realizada.
+
+Lista histórica de acabamento, invalidada pela reprovação estrutural:
+
+1. **P1 — primeira dobra e ritmo responsivo:** revisar com Kevin os enquadramentos em 390, 768, 1024 e desktop; ajustar apenas proporções, quebras e respiros apontados na revisão, com atenção ao peso da foto no mobile e à entrada do painel de sinais no desktop.
+2. **P1 — CTA final:** conferir as quebras do título e a relação entre texto e botão nos mesmos breakpoints, reduzindo linhas ou espaço somente se a revisão apontar desequilíbrio.
+3. **P2 — transições entre dobras:** calibrar em lote os espaços entre Cuidados essenciais, Nosso jeito, Essenciais do dia a dia e CTA final conforme a leitura dobra a dobra, preservando a escala aprovada.
+4. **P2 — crops intermediários e movimento:** confirmar pontos focais de `LUME-H01`, `LUME-W01` e `LUME-D01` em tablet e desktop estreito e ajustar apenas `object-position`; revisar a sutileza dos reveals e hovers sem acrescentar animações.
+5. **P3 — acabamento técnico após a aparência ser aprovada:** otimizar o peso de `LUME-W01` e `LUME-D01`, avaliar fontes auto-hospedadas para eliminar a dependência remota e remover regras CSS antigas que ficaram sem uso, sem mudança visual deliberada.
+
+Gate: **reprovado**. O resultado não alcançou identidade própria, profundidade, variedade de composição ou movimento suficientes. Não executar essa lista como L-03.
+
+### L-02R1 — fundação, cabeçalho e hero do Lume
+
+Estado: **concluído e aprovado por Kevin em 2026-08-13**. Kevin inicialmente escolheu a opção C — **Percurso de cuidado** — e, antes do gate final, substituiu essa escolha pela opção A — **Portal de acolhimento**, por ser mais limpa e tornar o WhatsApp mais evidente. A implementação recebeu o refinamento de fidelidade solicitado, a QA comparativa final passou sem diferenças P0–P2 e o gate visual foi encerrado explicitamente.
+
+Escopo:
+
+- Auditar a primeira dobra atual contra Savory Plate, OpenDesign e a Home usada apenas como régua de qualidade.
+- Criar exatamente três opções visuais concretas para a fundação, o cabeçalho local e o hero.
+- Parar e aguardar Kevin escolher uma opção ou rejeitar o conjunto.
+- Depois da escolha, implementar somente a direção aprovada para a fundação, o cabeçalho e o hero.
+- Preservar temporariamente as demais dobras, mesmo que ainda estejam visualmente reprovadas.
+
+Gate: Kevin aprova a direção escolhida e a implementação da primeira dobra.
+
+### L-02R2 — Cuidados essenciais
+
+Estado: **concluído e aprovado explicitamente por Kevin em 2026-08-13**.
+
+Escopo: a grade genérica foi substituída por um mosaico de leitura contínua. A faixa “Rotina leve, pet feliz sempre.” encerra a própria dobra depois dos cards, em uma transição de três camadas; os três cuidados ficam visíveis no fluxo de rolagem, sem carrossel, setas, indicadores ou seleção obrigatória. Depois da reprovação da primeira passada de fidelidade, cards, fios e ilustrações foram refeitos a partir das medidas e dos elementos exatos da direção aprovada. A correção foi comparada com as referências em 390, 768, 1024 e 1133 px, sem diferenças P0–P2.
+
+Gate: **aprovado**. A última correção removeu o asset pontilhado residual atrás da pata no encerramento, sem alterar a composição aprovada.
+
+### L-02R3 — Nosso jeito
+
+Estado: **concluído por aprovação explícita de Kevin para avanço em 2026-08-18**.
+
+Escopo: opção B — Palco em três tempos — implementada como narrativa sticky. Fotografia, título e contexto permanecem fixos; scroll, teclado ou toque alternam o passo em destaque e o contador `01/03` → `02/03` → `03/03`. Em movimento reduzido, os três passos aparecem no fluxo estático.
+
+Gate: **aprovado por Kevin para avanço**. A comparação browser-rendered automatizada permaneceu bloqueada e continua documentada como dívida de QA; por decisão explícita de Kevin, a dobra atual fica preservada e `L-02R4` foi aberto.
+
+### L-02R4 — Essenciais do dia a dia
+
+Estado: **opção A — Prateleira editorial — escolhida, implementada e validada; aguardando aprovação visual explícita**.
+
+Escopo implementado: cabeçalho editorial, fio pontilhado, CTA de WhatsApp, quatro categorias sempre visíveis e palco fotográfico panorâmico com cenas próprias para alimentação, passeio, higiene e descanso. Hover pré-visualiza; clique ou foco fixa; toque e teclado selecionam; movimento reduzido remove deslocamentos e transições.
+
+Gate: QA técnica e comparação visual concluídas em 390, 768, 1024 e 1440 px, sem diferenças P0–P2 identificadas. Falta somente a aprovação visual explícita de Kevin; L-02R5 permanece fechado.
+
+### L-02R5 — CTA, footer e costura global
+
+Estado: **pendente**.
+
+Escopo: refazer CTA e footer, costurar transições e linguagem de movimento entre as dobras já aprovadas e revisar a página completa.
+
+Gate: aprovação visual da experiência completa antes do acabamento global.
 
 ### L-03 — acabamento dirigido do Lume
 
-Estado: **pendente**.
+Estado: **pendente e bloqueado até a conclusão e aprovação de L-02R1 a L-02R5**.
 
 Escopo:
 
@@ -206,7 +290,9 @@ Escopo:
 
 ## Protocolo de retomada em nova task
 
-Use este modelo, substituindo apenas o identificador do checkpoint:
+Kevin não precisa montar nem adaptar o prompt manualmente. O arquivo `PROMPT-PROXIMA-TASK.md` é um ponteiro móvel e contém sempre a próxima instrução pronta para copiar.
+
+Todo prompt futuro deve preservar esta base:
 
 ```text
 Continue a refatoração dos projetos do portfólio no checkpoint [ID].
@@ -216,30 +302,14 @@ Leia primeiro, por completo:
 2. contexto-projeto.md
 3. status-projeto.md
 4. tasks.md
-5. plano-refatoracao-projetos.md
+5. spec.md
 6. direcao-visual.md
 7. plan.md
-8. os arquivos da referência visual indicada no checkpoint
+8. plano-refatoracao-projetos.md
+9. PROMPT-PROXIMA-TASK.md
+10. os documentos e o código específicos do checkpoint
 
-Execute somente o checkpoint [ID]. Preserve decisões já aprovadas e não amplie o escopo. Valide em proporção ao risco, atualize a documentação necessária e, no final, entregue o prompt exato para abrir a próxima task.
+Execute somente o checkpoint [ID]. Preserve decisões já aprovadas e não amplie o escopo. Valide em proporção ao risco, atualize a documentação necessária e, no final, substitua PROMPT-PROXIMA-TASK.md pelo próximo prompt completo e cole o mesmo prompt na resposta final.
 ```
 
-## Prompt exato para a próxima task
-
-```text
-Continue a refatoração dos projetos do portfólio no checkpoint L-01.
-
-Leia primeiro, por completo:
-1. AGENTS.md
-2. contexto-projeto.md
-3. status-projeto.md
-4. tasks.md
-5. plano-refatoracao-projetos.md
-6. direcao-visual.md
-7. plan.md
-8. ds_temporarios/savory-plate.aura.build/STACK.md
-9. ds_temporarios/savory-plate.aura.build/design-system.html
-10. o código e os estilos atuais de /projetos/lume-e-pata
-
-Execute somente o checkpoint L-01. Não faça ainda a refatoração ampla da página. Consolide o contrato visual do Lume & Pata, o mapa completo das dobras, a proposta detalhada do hero bento e o inventário de assets. Preserve conteúdo, rota, CTA de WhatsApp e a moldura superior da Zucco. Não copie marca, conteúdo, integrações ou assets do Savory Plate. No final, atualize a documentação necessária e entregue o prompt exato para o checkpoint L-02.
-```
+O prompt inicial do checkpoint L-01 já está em `PROMPT-PROXIMA-TASK.md`.

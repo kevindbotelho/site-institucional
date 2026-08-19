@@ -1,6 +1,6 @@
 # Status atual — Site institucional
 
-> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-08-10.
+> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-08-13.
 
 ## Estado geral
 
@@ -68,13 +68,14 @@ A seção de Serviços apresenta automações com planilhas e dados sem limitar 
 ## Estado do sistema visual
 
 - A Home e `/projetos` seguem a direção da Zucco documentada a partir do Lumen LP System.
-- Lume & Pata e Brisa de Tecido possuem temas locais e CSS isolado, mas ainda não possuem design systems formais.
+- Lume & Pata e Brisa de Tecido possuem temas locais e CSS isolado. A primeira passada estrutural do Lume foi implementada localmente e reprovada visualmente; a Brisa ainda não possui design system formal.
 - As duas experiências reutilizam alguns padrões de estrutura — especialmente cabeçalho, botões e CTAs — e serão revistas antes da próxima mudança visual.
 - A orientação aprovada é refatorar o visual existente sobre primitivas compartilhadas e temas próprios, preservando conteúdo, rotas, imagens, responsividade e comportamento já construídos.
-- **Lume & Pata** usará o Savory Plate como referência principal de composição, tipografia, componentes e movimento, adaptado à identidade acolhedora e à paleta atual.
+- **Lume & Pata** usa o Savory Plate como referência principal de composição e interação, com OpenDesign como referência secundária de profundidade editorial. A Home da Zucco e o Lumen são apenas régua de qualidade e não podem fornecer ao Lume cabeçalho, tipografia, CTA, silhueta de hero ou linguagem de movimento.
 - **Brisa de Tecido** usará o OpenDesign como referência estrutural e tipográfica, sem adotar sua paleta pastel: permanecem como base o verde profundo, eucalipto, verde ácido e papel/linho do projeto atual.
-- O método aprovado é híbrido: contrato visual curto, passada estrutural completa, revisão dobra a dobra com correções agrupadas e QA final. O roteiro e os prompts de retomada vivem em `plano-refatoracao-projetos.md`.
-- Nenhuma alteração visual dessas referências foi implementada ainda. O próximo checkpoint é **L-01 — contrato visual e mapa completo do Lume & Pata**.
+- O método anterior de contrato textual seguido por passada completa foi invalidado pela revisão. O novo método exige três alvos visuais concretos, escolha de Kevin, implementação e aprovação de uma dobra por vez. Ele foi formalizado na skill global `$design-fold-workshop`, nas instruções do repositório e no playbook do Freela Ops. O roteiro desta refatoração vive em `plano-refatoracao-projetos.md`; `PROMPT-PROXIMA-TASK.md` contém sempre a próxima instrução pronta para abrir uma nova conversa.
+- O contrato original do **Lume & Pata** permanece como registro histórico em `src/app/projetos/lume-e-pata/CONTRATO-VISUAL.md`. A fonte de verdade criativa atual é `src/app/projetos/lume-e-pata/DIRECAO-CRIATIVA-L02R.md`.
+- O checkpoint **L-02** passou pela validação técnica, mas foi reprovado por Kevin no gate visual em 2026-08-11. No checkpoint **L-02R1**, a escolha inicial C foi substituída pela opção A — Portal de acolhimento. A nova fundação, o cabeçalho local e a hero foram implementados, validados e aprovados por Kevin em 2026-08-13. Em L-02R2, Kevin escolheu a direção B — Mosaico de rotinas —; após reprovar a primeira passada de fidelidade, a dobra foi refeita com as medidas e os elementos da referência, passou por nova QA comparativa local e foi aprovada explicitamente em 2026-08-13. Em L-02R3, Kevin escolheu a opção B — Palco em três tempos — e aprovou explicitamente o avanço em 2026-08-18 após revisar a experiência local. A narrativa sticky 1–2–3 passou por lint, build e verificação HTTP; a captura comparativa automatizada permaneceu bloqueada e está registrada como ressalva, sem reabrir a dobra. Em L-02R4, Kevin escolheu a opção A — Prateleira editorial —; a dobra interativa com quatro fotografias foi implementada e validada localmente em 390, 768, 1024 e 1440 px, mas ainda aguarda sua aprovação visual explícita. L-02R5 e L-03 permanecem bloqueados.
 
 ## Validação e publicação
 
@@ -89,15 +90,44 @@ A versão publicada foi validada em 2026-08-10:
 - varredura de conteúdo sem alegações de cliente real, case, depoimento, resultado, métrica ou prêmio;
 - as quatro URLs públicas respondem com HTTP 200.
 
+O resultado local do L-02 foi validado em 2026-08-11:
+
+- `/projetos/lume-e-pata` revisada em desktop e mobile, incluindo primeira dobra, crops, foco visível e ausência de overflow horizontal;
+- navegação por âncoras, saída para `/projetos` e quatro CTAs com a mesma mensagem de WhatsApp conferidos;
+- um único `h1`, imagens carregadas, alvos de toque, `prefers-reduced-motion` e console sem erros conferidos;
+- ESLint dos arquivos envolvidos e build de produção concluídos sem erros;
+- a mudança permanece somente local e não foi publicada.
+
+Resultado do gate visual em 2026-08-11:
+
+- Kevin reprovou a direção visual da versão local;
+- a reprovação reabre composição, tipografia, componentes, slots visuais e movimento, preservando conteúdo, rota, semântica, contato e acessibilidade;
+- Savory Plate, OpenDesign, Lumen/Home e referências de animação foram comparados com a implementação atual;
+- a implementação local atual permanece apenas como baseline técnica durante a reconstrução dobra a dobra.
+
+Resultado local do L-02R1 atualizado em 2026-08-13:
+
+- opção A — Portal de acolhimento — preservada como referência visual e implementada somente na fundação, moldura, cabeçalho e hero; a opção C e seus assets permanecem como registro histórico, sem uso na rota atual;
+- Onest Variable e Fraunces Variable mantidos como fontes locais; React Icons fornece o glifo oficial do WhatsApp e as patas da interface;
+- a fotografia aprovada foi reutilizada nos slots desktop e mobile; o símbolo da casa com pata e as trilhas desenhadas foram extraídos da própria referência escolhida e preservados como assets transparentes;
+- composição comparada com a referência em 1133 × 1058 e 390 × 1180, com normalização de densidade e revisão responsiva da primeira dobra; máscara, cabeçalho, tipografia, CTAs, painel de vidro, separadores e paisagem inferior foram corrigidos a partir dessa comparação;
+- único `h1`, mensagem de WhatsApp, âncora de serviços, foco visível, overflow, imagens prioritárias, console e movimento reduzido conferidos;
+- ESLint restrito aos arquivos alterados e build de produção concluídos sem erros;
+- QA registrada em `design-qa.md` com `final result: passed`;
+- a implementação permanece somente local e não foi publicada;
+- nenhuma diferença P0, P1 ou P2 permanece na QA comparativa; os desvios P3 documentados se limitam ao crop do asset fotográfico de produção e a variações de blur entre navegadores;
+- o CTA principal da hero agora usa “Conversar no WhatsApp”; a linha lateral foi definida como **fio de cuidado**, motivo recorrente que trocará de contraste nas interseções e será desenhado uma dobra por vez;
+- Kevin aprovou explicitamente a implementação final em 2026-08-13; L-02R1 está concluído e `PROMPT-PROXIMA-TASK.md` agora aponta para L-02R2 — Cuidados essenciais.
+
 ## Pendências
 
-- Executar os checkpoints de `plano-refatoracao-projetos.md`, começando por L-01.
+- Revisar e aprovar explicitamente a implementação local de L-02R4 — Essenciais do dia a dia — antes de abrir L-02R5.
 - Criar saídas diretas das demonstrações para a Home da Zucco e para `/projetos`.
 - Quando houver um terceiro trabalho publicável ou um projeto autoral pronto, migrar `/projetos` para destaques seguidos de grade compacta, com no máximo dois agrupamentos: Projetos para negócios e Projetos autorais.
 - Escolher, comprar e conectar o domínio principal, quando aprovado.
 - Publicar futuros cases reais somente após existirem trabalhos contratados autorizados para apresentação.
 - A rota `/servicos` permanece fora do escopo até nova decisão comercial.
-- As alterações desta entrega estão publicadas na Vercel a partir do workspace local; commit e push para a `main` não fizeram parte desta tarefa.
+- A versão pública continua no estado anterior à refatoração do Lume; L-02 não teve publicação.
 
 ## Contrato de sincronização
 
