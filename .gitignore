@@ -18,7 +18,6 @@
 # debug and system files
 *.tsbuildinfo
 npm-debug.log*
-.codex-dev*.log
 .DS_Store
 
 # local working materials

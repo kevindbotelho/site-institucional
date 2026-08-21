@@ -308,24 +308,42 @@ export default function LumeEPataPage() {
           className={styles.contact}
           id="contato"
         >
-          <div className={styles.contactInner} data-scroll-reveal="true">
-            <PawMark />
-            <p className={styles.eyebrow}>Vamos conversar?</p>
-            <h2 id="contact-title">
-              Seu pet merece um cuidado que faça sentido para ele.
-            </h2>
-            <p>
-              Conte um pouco sobre o que você procura. A conversa começa de um
-              jeito simples, pelo WhatsApp.
-            </p>
-            <a
-              className={styles.contactButton}
-              href={whatsappUrl}
-              rel="noreferrer"
-              target="_blank"
-            >
-              Chamar a Lume &amp; Pata
-            </a>
+          <div className={styles.contactStage} data-scroll-reveal="true">
+            <div className={styles.contactCopy}>
+              <p className={styles.contactEyebrow}>
+                <FaPaw aria-hidden="true" />
+                Vamos conversar?
+              </p>
+              <h2 id="contact-title">
+                Seu pet merece<br />
+                um cuidado que<br />
+                faça <em>sentido</em> para ele.
+              </h2>
+              <p className={styles.contactSupport}>
+                Conte um pouco sobre o que você procura. A conversa começa de um
+                jeito simples, pelo WhatsApp.
+              </p>
+              <a
+                className={styles.contactButton}
+                href={whatsappUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <span>Chamar a Lume &amp; Pata</span>
+                <WhatsAppMark />
+              </a>
+            </div>
+
+            <div className={styles.contactPortal}>
+              <Image
+                alt="Cachorro de pelo caramelo descansando em uma cama verde dentro de um pet shop acolhedor."
+                className={styles.contactPortalImage}
+                fill
+                quality={92}
+                sizes="(min-width: 900px) 42vw, 100vw"
+                src="/images/projects/lume-e-pata-cta-portal.png"
+              />
+            </div>
           </div>
         </section>
       </main>
@@ -336,7 +354,16 @@ export default function LumeEPataPage() {
             <Brand />
             <p>Pet shop · banho &amp; tosa</p>
           </div>
-          <Link href="/projetos">Ver todos os projetos Zucco</Link>
+          <nav aria-label="Saídas da experiência Lume & Pata" className={styles.footerNav}>
+            <Link href="/">
+              <span>Voltar para a Home da Zucco</span>
+              <ArrowRight aria-hidden="true" />
+            </Link>
+            <Link href="/projetos">
+              <span>Ver todos os projetos</span>
+              <ArrowRight aria-hidden="true" />
+            </Link>
+          </nav>
         </div>
       </footer>
     </div>

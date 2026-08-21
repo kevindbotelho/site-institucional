@@ -58,6 +58,16 @@ public/
 
 **Alternativa descartada:** manter todo o conteúdo apenas em uma página longa. Isso limitaria a profundidade necessária para serviços e projetos.
 
+### Fronteira entre o Next.js atual e futuros projetos Astro
+
+**Decisão:** manter toda a Zucco e suas rotas internas, incluindo novas demonstrações hospedadas neste mesmo projeto, em Next.js. Sites institucionais, landing pages e portfólios futuros que sejam produtos independentes devem usar Astro por padrão em um projeto separado e podem ser ligados ao portfólio por URL quando aprovados.
+
+**Por quê:** uma rota interna precisa compartilhar o runtime, o roteamento e o processo de build do aplicativo que a hospeda. Misturar um segundo framework dentro deste repositório aumentaria a complexidade sem benefício proporcional. Em projetos independentes e predominantemente estáticos, Astro passa a ser a escolha inicial por entregar uma base orientada a conteúdo e permitir interatividade isolada quando necessária.
+
+**Migração futura:** concluir Lume & Pata, Brisa de Tecido e o ciclo visual da Zucco não cria automaticamente uma tarefa de reescrita. Uma eventual migração para Astro só será avaliada como projeto separado depois que a versão Next estiver concluída e publicada e depois de Astro ter sido validado em ao menos um site independente. Se aprovada, a reconstrução ocorrerá em paralelo, fora deste repositório em uso, com troca apenas após paridade visual, funcional, acessível e de publicação.
+
+**Alternativa descartada:** instalar Astro neste projeto ou converter páginas isoladas no próprio repositório Next. Isso criaria dois modelos de roteamento e build para uma entrega que hoje funciona como uma única aplicação.
+
 ### Conteúdo local tipado
 
 **Decisão:** guardar serviços, projetos e contato em arquivos locais, separados da interface.
@@ -146,3 +156,9 @@ As variáveis abaixo são públicas por definição e existem para que domínio 
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número do WhatsApp com código do país, sem `+` nem espaços. | Número profissional definido pelo proprietário |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | E-mail exibido como canal alternativo de contato. | E-mail profissional definido pelo proprietário |
 | `NEXT_PUBLIC_SITE_URL` | URL pública usada em metadados e links absolutos. | `http://localhost:3001` durante o desenvolvimento |
+
+## Estado de execução visual atual
+
+- L-02R1 a L-02R5 do Lume & Pata estão aprovados e congelados; Kevin considerou a experiência visual local completa em 2026-08-20.
+- O acabamento e a QA local do Lume foram absorvidos pelo fluxo dobra a dobra; a refatoração ainda não foi publicada e o deploy foi adiado para P-01.
+- B-01R1 é o próximo checkpoint aberto: revalidar OpenDesign contra a identidade verde/linho da Brisa e gerar A/B/C para fundação, cabeçalho e hero antes do código.

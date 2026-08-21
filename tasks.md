@@ -81,14 +81,13 @@ Plano detalhado e checkpoints: `plano-refatoracao-projetos.md`. Prompt sempre pr
 - [x] Aprovar L-02R1: Kevin substituiu a direção C pela opção A — Portal de acolhimento —, aprovou o refinamento final em 2026-08-13 e encerrou o gate da fundação, cabeçalho local e hero.
 - [x] Aprovar L-02R2: direção B — Mosaico de rotinas — correção de fidelidade, encerramento em três camadas e remoção do traço residual aprovados explicitamente por Kevin em 2026-08-13.
 - [x] Encerrar L-02R3: opção B — Palco em três tempos — implementada e aprovada explicitamente por Kevin para avanço em 2026-08-18; a captura comparativa automatizada permaneceu bloqueada e está registrada como ressalva em `design-qa.md`.
-- [ ] Encerrar L-02R4: opção A — Prateleira editorial — escolhida, implementada e validada em 390, 768, 1024 e 1440 px; aguarda aprovação visual explícita de Kevin.
-- [ ] Executar L-02R5: refazer CTA/footer e costurar a linguagem global de movimento.
-- [ ] Executar L-03: acabamento dirigido do Lume & Pata.
-- [ ] Executar L-04: QA e publicação do Lume & Pata.
-- [ ] Executar B-01: contrato visual e mapa completo da Brisa usando a estrutura do OpenDesign e preservando sua paleta verde/linho.
-- [ ] Executar B-02: passada estrutural completa da Brisa de Tecido.
-- [ ] Executar B-03: acabamento dirigido da Brisa de Tecido.
-- [ ] Executar B-04: QA e publicação da Brisa de Tecido.
+- [x] Encerrar L-02R4: refinamento A.2 — Trilho de momentos — escolhido, implementado, validado e aprovado explicitamente por Kevin em 2026-08-20.
+- [x] Encerrar L-02R5: opção B — Volta pra casa — refinada até a simplificação final com palco integralmente sálvia, portal fotográfico, CTA coral e footer editorial; aprovada explicitamente por Kevin em 2026-08-20.
+- [x] Encerrar L-03: o acabamento dirigido foi absorvido pelas revisões dobra a dobra e pela correção final de L-02R5; Kevin considerou a experiência completa do Lume & Pata finalizada em 2026-08-20.
+- [x] Encerrar L-04 no escopo local: QA responsiva, console, acessibilidade proporcional, lint e build passaram; a publicação da refatoração foi deliberadamente adiada para o alinhamento final P-01.
+- [ ] Executar B-01R1: revalidar OpenDesign contra a identidade verde/linho da Brisa e produzir exatamente três direções visuais A/B/C para fundação, cabeçalho e hero, sem código antes da escolha de Kevin.
+- [ ] Executar as demais dobras da Brisa uma por vez, definindo o próximo checkpoint somente depois da aprovação da hero.
+- [ ] Executar B-04: QA final da Brisa; publicação das duas experiências permanece coordenada com P-01.
 - [ ] Executar P-01: alinhar Home e `/projetos` aos novos visuais, validar o conjunto e publicar.
 - [ ] Manter primitivas técnicas compartilhadas sem compartilhar a identidade visual de cabeçalhos, botões, cards, CTAs e footers.
 - [ ] Adicionar em cada demonstração caminhos diretos e distintos para a Home da Zucco e para `/projetos`.

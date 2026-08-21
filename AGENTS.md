@@ -27,6 +27,14 @@ Não transforme o arquivo em changelog. Refatorações internas e ajustes visuai
 
 `tasks.md` continua sendo o backlog detalhado. `status-projeto.md` deve responder apenas: o que existe agora, o que ainda não existe, o que está bloqueando o próximo marco e qual é a interface pública disponível.
 
+## Framework deste repositório
+
+- Este projeto permanece em **Next.js 16 com React e App Router**. Não executar `npm create astro@latest`, instalar `astro` nem adicionar configuração do Astro dentro deste repositório.
+- Toda nova página, rota ou demonstração hospedada sob este mesmo projeto deve usar a stack existente em Next.js.
+- Um futuro site institucional, landing page ou portfólio independente pode nascer em Astro num projeto irmão e ser ligado a `/projetos` quando essa inclusão for comercialmente aprovada.
+- Migrar a Zucco para Astro não faz parte do ciclo atual e não acontece automaticamente depois de Lume & Pata e Brisa de Tecido. Essa hipótese só pode ser aberta como tarefa separada, com aprovação explícita, depois da conclusão e publicação da refatoração visual atual e após Astro ter sido validado em ao menos um projeto independente.
+- Se essa migração vier a ser aprovada, construir em um repositório ou diretório irmão, preservar a versão Next funcionando e fazer a troca apenas depois de paridade visual, funcional e técnica; nunca converter este repositório em uso no próprio lugar.
+
 ## Método de construção visual
 
 Este repositório já foi fundado. Não execute `$start-project` nem `$start-project-visual` novamente para recomeçar ou reescrever `spec.md`, `constitution.md`, `plan.md` ou `tasks.md`. A skill visual permanece disponível apenas como referência para novos projetos.
@@ -55,6 +63,14 @@ Não trate as três opções como variações cosméticas e não comprima explor
 - A ausência de `source-motion-system.md` ou `source-motion-inventory.json` não invalida um Design System legado e não deve ser preenchida com inferências inventadas.
 - Criar os artefatos de motion do projeto ao lado da experiência correspondente, não dentro do Design System legado. Para Lume & Pata, usar `src/app/projetos/lume-e-pata/motion-system.md`, `motion-inventory.json` e `components-motion/` conforme existirem decisões ou componentes reais.
 - Preservar integralmente dobras já aprovadas. Motion novo entra nas opções A/B/C da dobra aberta e só é implementado depois da escolha explícita.
+
+### Organização de artefatos
+
+- Reserve a raiz para documentos canônicos de controle e handoff (`AGENTS.md`, `README.md`, `contexto-projeto.md`, `status-projeto.md`, `tasks.md`, `spec.md`, `plan.md`, `constitution.md`, `PROMPT-PROXIMA-TASK.md` e documentos equivalentes já referenciados pelo fluxo) e para arquivos de configuração.
+- Guarde pranchas A/B/C, canvases e referências visuais duráveis em `docs/design/<experiencia>/references/`. Depois da escolha, preserve a direção escolhida e remova explorações rejeitadas ou intermediárias que não tenham valor de auditoria.
+- Mantenha em `public/` somente imagens realmente consumidas pela aplicação. Não use `public/`, a raiz do projeto ou pastas de código como depósito de capturas de discussão.
+- Guarde screenshots e comparações temporárias de QA em `tmp/codex/qa/` e logs de servidores locais em `tmp/codex/logs/`. `tmp/` é material local ignorado pelo Git e não deve ser fonte de verdade documental.
+- Nunca crie logs `.codex-*.log`, canvases ou PNGs de QA na raiz. Antes de remover material antigo, inventarie os alvos exatos, confirme que a referência escolhida está preservada e informe o que é ou não recuperável.
 
 ## Relação com o Freela Ops
 

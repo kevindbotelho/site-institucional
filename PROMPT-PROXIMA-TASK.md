@@ -4,132 +4,125 @@
 
 ## Checkpoint atual
 
-`L-02R4 — Essenciais do dia a dia do Lume & Pata`
+`B-01R1 — Brisa de Tecido — revalidação do Design System, fundação, cabeçalho e hero — gerar A/B/C e aguardar escolha`
 
 ## Prompt para copiar
 
 ```text
-Continue a refatoração dos projetos do portfólio no checkpoint L-02R4 — Essenciais do dia a dia do Lume & Pata.
+Continue a refatoração dos projetos do portfólio no checkpoint B-01R1 — Brisa de Tecido — revalidação do Design System, fundação, cabeçalho e hero.
 
-Os três checkpoints anteriores estão encerrados e devem ser preservados integralmente:
+O Lume & Pata foi concluído e aprovado por Kevin como experiência visual local em 2026-08-20. Preserve integralmente sua rota, seus arquivos e suas decisões; não faça ajustes de oportunidade no Lume. A refatoração ainda não foi publicada e nenhuma publicação está autorizada nesta task.
 
-- L-02R1: opção A — Portal de acolhimento — aprovada em 2026-08-13 para fundação, barra da Zucco, cabeçalho local e hero.
-- L-02R2: opção B — Mosaico de rotinas — combinada com a faixa “Rotina leve, pet feliz sempre.”, aprovada em 2026-08-13 para Cuidados essenciais.
-- L-02R3: opção B — Palco em três tempos — aprovada explicitamente por Kevin para avanço em 2026-08-18. A implementação sticky 1–2–3 atual fica congelada. A QA automatizada permaneceu bloqueada por ausência de captura browser-rendered normalizada; registre essa ressalva sem reabrir ou redesenhar Nosso jeito.
+O objetivo agora é reconstruir o Brisa de Tecido dobra a dobra, como foi feito no Lume. O site atual é funcional, porém visualmente simples demais. A identidade cromática pode permanecer, mas composição, hierarquia, posições, proporções, tipografia, efeitos, componentes e motion podem ser profundamente refeitos. Nesta task, trabalhe somente na fundação, barra de contexto/cabeçalho e hero; as demais dobras devem permanecer intactas.
 
-Antes de propor ou executar trabalho, leia integralmente:
+ANTES DE PROPOR OU EXECUTAR TRABALHO
+
+Leia integralmente:
 
 1. AGENTS.md
 2. contexto-projeto.md
 3. status-projeto.md
 4. tasks.md
 5. spec.md
-6. direcao-visual.md
+6. constitution.md
 7. plan.md
 8. plano-refatoracao-projetos.md
 9. PROMPT-PROXIMA-TASK.md
-10. design-qa.md
-11. src/app/projetos/lume-e-pata/DIRECAO-CRIATIVA-L02R.md
-12. src/app/projetos/lume-e-pata/CONTRATO-VISUAL.md
-13. src/app/projetos/lume-e-pata/motion-system.md
-14. src/app/projetos/lume-e-pata/motion-inventory.json
-15. todos os arquivos atuais de src/app/projetos/lume-e-pata/
-16. src/components/motion/ScrollRevealController.tsx
-17. src/content/site.ts
-18. src/lib/contact.ts
-19. src/app/layout.tsx
-20. src/app/globals.css
-21. `$site-creation-workflow`, instalada no escopo global do Codex
-22. `$design-fold-workshop`, instalada no escopo global do Codex
-23. ds_temporarios/savory-plate.aura.build/STACK.md
-24. ds_temporarios/savory-plate.aura.build/design-system.html
-25. ds_temporarios/open-design.ai/STACK.md
-26. ds_temporarios/open-design.ai/design-system.html
-27. C:\Projetos\design systems\lumen-lp-system\README.md
-28. C:\Projetos\design systems\lumen-lp-system\index.html
-29. public/images/projects/lume-l02r1-opcao-a-reference.png
-30. public/images/projects/lume-l02r3-opcao-b-reference.png
-31. public/images/projects/lume-e-pata-hero.png
-32. public/images/projects/lume-e-pata-nosso-jeito.png
-33. public/images/projects/lume-e-pata-essenciais.png
-34. l02r2-approved-final.png
+10. src/app/projetos/brisa-de-tecido/page.tsx
+11. src/app/projetos/brisa-de-tecido/project.module.css
+12. src/content/site.ts
+13. src/lib/contact.ts
+14. src/app/globals.css
+15. ds_temporarios/open-design.ai/STACK.md
+16. ds_temporarios/open-design.ai/design-system.html
+17. ds_temporarios/echelon.aura.build/STACK.md e design-system.html somente se forem necessários para comparar um comportamento de motion pontual
+18. $site-creation-workflow
+19. $design-fold-workshop
 
-Use obrigatoriamente `$site-creation-workflow` como orquestrador e `$design-fold-workshop` para o checkpoint visual. Trabalhe uma dobra por vez. Nesta task, o único checkpoint aberto é Essenciais do dia a dia.
+STACK E LIMITES TÉCNICOS
 
-Não execute `$start-project` nem `$start-project-visual`: este projeto já está fundado.
+- Este repositório continua em Next.js 16, React e App Router.
+- Não executar $start-project, $start-project-visual, npm create astro, instalar Astro ou migrar o repositório.
+- Os arquivos em ds_temporarios são referências legadas somente leitura. Não regenerar, sobrescrever ou executar $extract-site-system neles.
+- Não fazer deploy, commit, push ou alterar configuração de produção nesta task.
+- Não modificar Home da Zucco, /projetos, Lume & Pata ou dobras posteriores da própria Brisa.
 
-DESIGN SYSTEMS LEGADOS — SOMENTE LEITURA
+PAPEL E CONTEÚDO DA BRISA
 
-- `ds_temporarios/savory-plate.aura.build/design-system.html` é a referência principal aprovada do Lume; `ds_temporarios/open-design.ai/design-system.html` é a referência secundária.
-- Não regenere, não sobrescreva e não execute `$extract-site-system` nesses Design Systems.
-- A ausência de `source-motion-system.md` ou `source-motion-inventory.json` nas referências legadas não é erro e não deve ser preenchida com inferências.
-- Motion aprovado e implementado pertence aos artefatos locais da experiência Lume & Pata.
-- Não altere visualmente Home da Zucco, `/projetos`, Brisa de Tecido ou qualquer arquivo de `ds_temporarios/`.
+- Brisa de Tecido é uma landing page de serviço local de higienização de estofados em domicílio, orientada a entendimento rápido da oferta e conversão pelo WhatsApp.
+- A rota deve continuar sendo /projetos/brisa-de-tecido.
+- Preserve conteúdo honesto: não invente cliente, case, depoimento, resultado, métrica, certificação, preço, disponibilidade, garantia, produto químico, prazo ou promessa técnica.
+- Preserve a configuração central de contato via siteConfig.contact.whatsappNumber e getWhatsAppUrl; não duplique número ou mensagem manualmente.
+- Preserve um único h1, semântica, foco, teclado, toque, movimento reduzido, textos alternativos e navegação funcional.
+- A fundação deve prever saídas diretas e distintas para a Home da Zucco e para /projetos, mas só implemente isso depois da escolha visual de Kevin.
 
-PRESERVE INTEGRALMENTE
+DESIGN SYSTEM — REVALIDAÇÃO OBRIGATÓRIA
 
-- Barra de retorno à Zucco, cabeçalho local e hero do Lume.
-- Cuidados essenciais, incluindo cards, fios, ícones, círculo sálvia, pata e faixa editorial.
-- Nosso jeito atual, incluindo fotografia, superfície sálvia, narrativa sticky, contador e estados 1–2–3.
-- CTA final e footer no estado atual; eles pertencem ao checkpoint L-02R5.
-- Rota, metadados, único `h1`, âncoras, configuração central de WhatsApp, conteúdo honesto, foco, teclado, toque e movimento reduzido.
-- Nenhuma publicação em produção está autorizada.
+OpenDesign é a referência estrutural de partida, não uma aparência para copiar. Revalide-a contra a Brisa atual antes das opções:
 
-FUNÇÃO DE ESSENCIAIS DO DIA A DIA
+- identificar o que continua útil: grid editorial, hierarquia, mistura controlada de fontes, linhas, cards, etapas numeradas, accordion e scroll reveal leve;
+- identificar o que deve ser rejeitado: paleta pastel/artística, linguagem arquitetônica, luxo, abstração excessiva, marca, textos, imagens, métricas e conteúdo da referência;
+- traduzir os princípios úteis para uma identidade prática, tátil, robusta e ligada ao cuidado doméstico;
+- usar Echelon somente como apoio eventual para composição ou movimento, nunca sua paleta dourada ou linguagem de luxo;
+- não usar Lume & Pata nem a Home da Zucco como silhueta, cabeçalho, hero ou linguagem de motion.
 
-A dobra deve ampliar a percepção da Lume & Pata além de banho e tosa, mostrando ajuda prática para a rotina sem simular catálogo, estoque, e-commerce ou disponibilidade de produtos.
+A paleta atual é o ponto de partida a preservar nas três opções:
 
-Conteúdo obrigatório:
+- verde profundo: #17221f;
+- verde profundo secundário: #21302c;
+- eucalipto: #567b6d;
+- verde ácido: #c8f06b, somente como acento;
+- papel/linho: #f2f0e8.
 
-- Eyebrow: “Essenciais do dia a dia”.
-- Título: “O que seu pet precisa, mais perto da rotina.”
-- Apoio: “A Lume & Pata reúne itens úteis para alimentação, passeio, higiene e descanso. Se estiver procurando algo para facilitar a rotina, é só perguntar pelo WhatsApp.”
-- CTA: “Perguntar pelo WhatsApp”, usando a configuração central já existente.
-- Categorias permitidas: alimentação, passeio, higiene e descanso.
-- Imagem atual: `public/images/projects/lume-e-pata-essenciais.png`. Ela é matéria-prima e pode ser recortada, mascarada ou reposicionada nas opções; não é obrigação manter o split atual.
+Revalidar não significa congelar a implementação atual. Tipografia, grid, bordas, textura, botões, tratamento fotográfico e movimento devem ser reconsiderados. A conclusão da revalidação deve aparecer concretamente nas opções visuais, não como um contrato textual longo e separado.
 
-Não invente preços, marcas, quantidade de itens, estoque, entrega, prazo, promoção, avaliação, depoimento, cliente, métrica ou qualquer promessa comercial não existente.
+ESCOPO EXATO DE B-01R1
 
-FASE 1 — EXPLORAÇÃO VISUAL, SEM CÓDIGO
+1. Auditar a barra de retorno/contexto, o cabeçalho local e a hero atuais no navegador em desktop e mobile.
+2. Definir a função comercial da primeira dobra: explicar o serviço, transmitir cuidado técnico e doméstico e levar ao orçamento pelo WhatsApp.
+3. Preservar como conteúdo-base da hero:
+   - eyebrow “Higienização em domicílio”;
+   - promessa “Seu sofá mais leve. Sua sala com outro respiro.”, podendo recalibrar quebras e ênfase sem alterar o sentido;
+   - apoio sobre higienização, rotina e orçamento por fotos e medidas;
+   - CTA prioritário para pedir orçamento pelo WhatsApp;
+   - fotografia local public/images/projects/brisa-de-tecido-hero.png como ativo disponível para as opções;
+   - informações rápidas sobre fotos, medidas e bairro, podendo mudar de posição ou forma visual.
+4. Explorar efeitos e movimento com mais ambição que a versão atual, mas com propósito, desempenho proporcional e fallback para prefers-reduced-motion.
+5. Não redesenhar ainda “O serviço”, “Como funciona”, “Antes de chamar”, CTA final ou footer. Só planeje a saída imediata da hero para a próxima dobra.
 
-1. Abra a rota local e capture em desktop e mobile a saída de Nosso jeito, toda a dobra Essenciais do dia a dia atual e a entrada do CTA final.
-2. Analise a continuidade: a nova dobra deve receber a saída do palco sticky sem alterar sua composição e deve entregar uma transição coerente ao CTA, sem redesenhá-lo.
-3. Produza exatamente três alvos visuais concretos e estruturalmente distintos, A, B e C.
-4. Cada alvo deve mostrar desktop e mobile, a fotografia, as quatro categorias permitidas, o CTA de WhatsApp, a entrada e a saída da dobra.
-5. Faça as opções divergirem em composição, hierarquia, ritmo, relação entre texto e fotografia e comportamento de exploração. Não apresente três variações cosméticas.
-6. Explore caminhos como prateleira editorial, colagem, faixa/marquee controlada ou pilha deslizável, mas escolha estruturas que façam sentido para o conteúdo real. Não use grade genérica de cards iguais.
-7. Dê a cada opção uma assinatura de motion concreta: entrada, interação, scroll, gesto de assinatura e estado reduzido.
-8. Toda informação essencial deve permanecer acessível sem hover. Interações por arraste, scroll ou seleção precisam de alternativa por botões, teclado e toque.
-9. O estado parado deve continuar interessante e compreensível.
-10. Recomende uma direção e explique brevemente por que ela aprofunda a rotina sem parecer catálogo ou repetir Cuidados essenciais e Nosso jeito.
-11. Apresente as três imagens e pare. Não edite código, não produza assets finais e não escolha por Kevin.
+GATE OBRIGATÓRIO — PRIMEIRA RESPOSTA DESTA TASK
 
-FASE 2 — SOMENTE APÓS A ESCOLHA EXPLÍCITA DE KEVIN
+Produza exatamente três alvos visuais concretos e estruturalmente distintos, A/B/C, antes de qualquer alteração no código da aplicação.
 
-Implemente apenas a opção escolhida e somente:
+Cada direção deve:
 
-- a transição imediata de Nosso jeito para Essenciais do dia a dia;
-- a composição completa da dobra em desktop e mobile;
-- seus estados de hover, foco, teclado, toque, scroll e movimento reduzido;
-- a saída imediata para o CTA final, sem redesenhar o CTA.
+- mostrar desktop e mobile;
+- ser uma imagem ou prancha visual suficientemente fiel para julgar composição, tipografia, espaçamento, fotografia, cabeçalho, CTA e transição de saída;
+- usar a mesma identidade cromática e o mesmo conteúdo obrigatório, para a escolha avaliar direção e não requisitos diferentes;
+- diferir de verdade em arquitetura, hierarquia, relação texto/fotografia, ritmo, tratamento de superfície e interação — não apenas em cores ou bordas;
+- trazer uma assinatura de motion concreta: entrada, resposta do CTA/cabeçalho, comportamento de scroll e um único momento memorável;
+- explicar em poucas linhas o princípio herdado do OpenDesign e como foi adaptado à Brisa;
+- permanecer prática e acessível, sem parecer estúdio de arquitetura, marca de luxo, galeria artística, e-commerce ou cópia do Lume.
 
-Depois da escolha:
+Recomende uma das três opções com justificativa objetiva. Preserve a prancha em docs/design/brisa-de-tecido/references/ com nome estável e atualize um README local se for criado.
 
-1. Preserve o alvo escolhido como referência durável.
-2. Use a imagem existente quando ela sustentar a direção; só crie ou substitua asset depois de a escolha demonstrar necessidade real.
-3. Implemente a tecnologia mais simples adequada ao comportamento aprovado.
-4. Compare referência e implementação no mesmo viewport e estado.
-5. Corrija diferenças P0, P1 e P2 antes de pedir aprovação.
-6. Valide 390, 768, 1024 e desktop; console; overflow; foco; teclado; toque; movimento reduzido; assets; lint restrito; build.
-7. Atualize `motion-system.md`, `motion-inventory.json`, `design-qa.md`, `DIRECAO-CRIATIVA-L02R.md`, `plano-refatoracao-projetos.md`, `tasks.md` e `status-projeto.md` conforme o estado real.
-8. Mantenha `PROMPT-PROXIMA-TASK.md` em L-02R4 até implementação, QA e aprovação explícita de Kevin. Somente depois disso avance para L-02R5.
-9. Não faça deploy.
+Depois de apresentar A/B/C, PARE. Aguarde Kevin escolher explicitamente uma direção. Não editar page.tsx, project.module.css, assets de produção, motion-system, status, tasks ou qualquer dobra nesta primeira etapa. Não misturar opções rejeitadas.
 
-CRITÉRIO DO GATE
+SOMENTE DEPOIS DA ESCOLHA EXPLÍCITA
 
-Considere L-02R4 concluído somente quando houver alvo escolhido, implementação funcional, comparação visual válida, validação técnica proporcional e aprovação explícita de Kevin. Até lá, L-02R5 permanece fechado.
+- registre a direção escolhida como fonte de verdade da fundação e hero;
+- implemente somente barra de contexto/cabeçalho, hero e sua saída imediata;
+- preserve todas as dobras posteriores;
+- compare a referência escolhida e o render no mesmo viewport;
+- valide 390, 768, 1024 e desktop, console, overflow, um único h1, foco, teclado, toque, CTA, imagens e movimento reduzido;
+- pare novamente no gate de aprovação da hero;
+- só depois da aprovação substitua PROMPT-PROXIMA-TASK.md pelo checkpoint da próxima dobra da Brisa.
+
+CRITÉRIO DE CONCLUSÃO
+
+B-01R1 só termina quando houver: revalidação concreta do Design System, direção A/B/C escolhida, implementação fiel da opção escolhida, QA visual e técnica proporcional e aprovação explícita de Kevin. Até lá, nenhuma outra dobra da Brisa e nenhuma publicação podem avançar.
 ```
 
 ## Regra de manutenção
 
-Este arquivo é um ponteiro móvel. Ele deve continuar apontando para L-02R4 até exploração, escolha, implementação, QA e gate visual estarem concluídos. Somente depois disso substitua-o pelo prompt autocontido de L-02R5.
+Este arquivo é um ponteiro móvel. Ele deve continuar apontando para B-01R1 até exploração, escolha, implementação, QA e gate visual da fundação/cabeçalho/hero estarem concluídos. Somente depois disso substitua-o pelo prompt autocontido da próxima dobra da Brisa.

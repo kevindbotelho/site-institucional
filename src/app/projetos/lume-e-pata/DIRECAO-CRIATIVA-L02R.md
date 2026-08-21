@@ -284,11 +284,11 @@ As referências são fontes de padrões e qualidade. Não copiar marca, conteúd
 
 ## 11. Próximo passo
 
-Revisar a implementação local da opção A — Prateleira editorial — de `L-02R4`. Manter L-02R5 fechado até aprovação visual explícita de Kevin.
+Revisar no navegador a implementação da opção B — **Volta pra casa** — e parar no gate visual. L-02R1 a L-02R4 permanecem congelados; L-03 só abre depois da aprovação explícita de Kevin.
 
 ## 12. L-02R1 — opção escolhida e implementação
 
-Kevin escolheu inicialmente, em 2026-08-11, a opção C — **Percurso de cuidado**. Antes do gate final, em 2026-08-12, substituiu a escolha pela opção A — **Portal de acolhimento**, por considerar a composição mais limpa e o WhatsApp mais claro. A referência atual está preservada em `public/images/projects/lume-l02r1-opcao-a-reference.png`; a referência C permanece arquivada como histórico.
+Kevin escolheu inicialmente, em 2026-08-11, a opção C — **Percurso de cuidado**. Antes do gate final, em 2026-08-12, substituiu a escolha pela opção A — **Portal de acolhimento**, por considerar a composição mais limpa e o WhatsApp mais claro. A referência escolhida está preservada em `docs/design/lume-e-pata/references/l02r1-opcao-a-reference.png`; a referência C rejeitada foi removida do working tree e permanece recuperável pelo histórico do Git.
 
 Decisões implementadas:
 
@@ -304,14 +304,12 @@ Decisões implementadas:
 - primeiro trecho do fio de cuidado corrigido para trocar do sálvia para o creme exatamente na interseção com a paisagem inferior;
 - CTA principal simplificado para “Conversar no WhatsApp”, preservando intenção, URL e mensagem configurada.
 
-Assets atuais de referência e QA:
+Assets atuais de referência e produção:
 
-- `public/images/projects/lume-l02r1-opcao-a-reference.png` — board escolhido com desktop e mobile;
-- `l02r1-option-a-line-adjustment-final.png` e `l02r1-option-a-line-adjustment-mobile.png` — evidências renderizadas aprovadas após os ajustes do fio e do CTA;
-- `l02r1-option-a-comparison-desktop-adjusted.png` e `l02r1-option-a-comparison-mobile-adjusted.png` — comparações normalizadas finais aprovadas;
-- `l02r1-option-a-comparison-card-final.png` e `l02r1-option-a-comparison-card-mobile-final.png` — comparações focadas do painel;
+- `docs/design/lume-e-pata/references/l02r1-opcao-a-reference.png` — board escolhido com desktop e mobile;
+- as capturas intermediárias de QA foram removidas da raiz após o gate e permanecem recuperáveis pelo histórico do Git;
 - `public/images/projects/lume-portal-house-paw.png`, `lume-portal-card-trail.png` e `lume-portal-closing-trail.png` — microassets transparentes extraídos da referência escolhida;
-- assets `lume-l02r1-opcao-c-reference.png` e `lume-l02r1-route-*.png` — registro histórico da direção substituída.
+- assets `lume-l02r1-route-*.png` — imagens efetivamente consumidas pela rota.
 
 Restrições preservadas:
 
@@ -341,11 +339,11 @@ Restrições preservadas:
 - cinco assets locais de fidelidade foram criados a partir da referência aprovada: três ilustrações lineares e dois fios pontilhados responsivos; nenhum conteúdo comercial foi ampliado;
 - a implementação permanece local; nenhum deploy foi realizado.
 
-Após Kevin reprovar a primeira passada de fidelidade, a composição foi refeita com medidas do alvo visual. QA comparativa concluída em 390, 768, 1024 e 1133 px, sem diferenças P0–P2. Evidências principais: `l02r2-user-adjustments-comparison.png`, `l02r2-user-adjustments-final-desktop.png`, `l02r2-user-adjustments-mobile-bottom.png` e `l02r2-approved-final.png`. Kevin aprovou explicitamente o conjunto em 2026-08-13 e pediu apenas a remoção do traço residual atrás da pata; a captura `l02r2-approved-final.png` confirma o acabamento limpo. `L-02R2` está concluído e `L-02R3` é o próximo checkpoint aberto.
+Após Kevin reprovar a primeira passada de fidelidade, a composição foi refeita com medidas do alvo visual. QA comparativa concluída em 390, 768, 1024 e 1133 px, sem diferenças P0–P2. A captura final aprovada está preservada em `docs/design/lume-e-pata/references/l02r2-opcao-b-approved.png`; as capturas intermediárias foram removidas da raiz e permanecem recuperáveis pelo histórico do Git. Kevin aprovou explicitamente o conjunto em 2026-08-13 e pediu apenas a remoção do traço residual atrás da pata; a referência preservada confirma o acabamento limpo. `L-02R2` está concluído e `L-02R3` é o próximo checkpoint aberto.
 
 ## 14. L-02R3 — direção escolhida e checkpoint encerrado para avanço
 
-Kevin escolheu em 2026-08-18 a opção 2/B — **Palco em três tempos** — e definiu sua assinatura de movimento: ao rolar, a dobra permanece como um palco estático e troca somente o passo narrativo e o contador `01/03` → `02/03` → `03/03`. A referência escolhida está preservada em `public/images/projects/lume-l02r3-opcao-b-reference.png`.
+Kevin escolheu em 2026-08-18 a opção 2/B — **Palco em três tempos** — e definiu sua assinatura de movimento: ao rolar, a dobra permanece como um palco estático e troca somente o passo narrativo e o contador `01/03` → `02/03` → `03/03`. A referência escolhida está preservada em `docs/design/lume-e-pata/references/l02r3-opcao-b-reference.png`.
 
 Decisões implementadas localmente:
 
@@ -364,18 +362,44 @@ Decisão final do gate: em 2026-08-18, Kevin declarou explicitamente L-02R3 apro
 
 ## 15. L-02R4 — direção escolhida e implementação em revisão
 
-Kevin escolheu em 2026-08-18 a opção A — **Prateleira editorial** — e pediu que sua composição fosse preservada, substituindo a fotografia única por quatro cenas relacionadas às categorias. A referência escolhida está preservada em `public/images/projects/lume-l02r4-opcao-a-reference.png`.
+Kevin escolheu primeiro a opção A — **Prateleira editorial** — e, após revisar a interação, aprovou em 2026-08-20 o refinamento A.2 — **Trilho de momentos**. A segunda referência substitui o hover temporário por uma navegação espacial persistente e está preservada em `docs/design/lume-e-pata/references/l02r4-opcao-a2-reference.png`; a referência anterior e a prancha tipográfica intermediária foram removidas depois da decisão final.
 
 Decisões implementadas localmente:
 
-- título editorial com “rotina.” em Fraunces coral, apoio, CTA sólido de WhatsApp e entrada pelo fio pontilhado da referência;
-- uma prateleira horizontal reúne alimentação, passeio, higiene e descanso sem simular catálogo ou cards de produto;
-- no desktop, hover pré-visualiza a categoria; clique ou foco fixa a seleção e a última escolha persiste quando o ponteiro sai;
-- no mobile, a fotografia antecede quatro botões sempre visíveis e toque seleciona a categoria;
-- setas direcionais, Home e End oferecem navegação por teclado, sem depender de hover ou arraste;
-- a categoria ativa recebe cápsula sálvia, ponto sincronizado e seta em respiração curta; a fotografia entra por `clip-path`, escala suave e feixe quente;
-- em movimento reduzido, seta, feixe, transição e deslocamentos são removidos e a troca permanece instantânea;
-- quatro fotografias locais coerentes foram criadas para alimentação, passeio, higiene e descanso, sem preços, marcas, estoque, promoções ou promessas comerciais;
+- título editorial com “rotina.” em Fraunces coral, apoio, CTA sólido de WhatsApp e entrada pelo fio pontilhado foram preservados;
+- alimentação, passeio, higiene e descanso viraram cards fotográficos com faixa branca inferior, legenda editorial contextual e contador `01 / 04`;
+- o card ativo fica centralizado e os vizinhos aparecem parcialmente nas laterais; a seta direita revela o item fisicamente à direita e a esquerda faz o movimento inverso;
+- a seleção não depende de hover e não retorna ao estado anterior quando o ponteiro sai; somente uma nova ação explícita altera o card;
+- no primeiro item aparece apenas a seta direita, nos itens intermediários aparecem as duas e no último somente a esquerda;
+- teclado oferece `ArrowLeft`, `ArrowRight`, `Home` e `End`; no mobile, toque nas setas e gesto lateral completam a navegação;
+- a transição combina deslocamento, pequena redução de escala, rotação mínima e contraposição da fotografia, sem fade brusco e sem autoplay;
+- após uma rodada A/B/C específica para a repetição textual, Kevin escolheu um híbrido: tratamento visual A dentro do card, conteúdo contextual da B e navegação inferior A;
+- a faixa do card não repete a categoria: usa “Para alimentar”, “Para passear”, “Para cuidar” e “Para descansar” em versal sálvia com filete coral; abaixo, “Alimentação”, “Passeio”, “Higiene” e “Descanso” permanecem em Title Case;
+- no desktop, a categoria ativa ganha sálvia, peso, escala e sublinhado coral em sincronia com o deslocamento; no mobile, contador, nome ativo e quatro marcadores preservam a composição escolhida;
+- em movimento reduzido, posições e estados mudam instantaneamente, sem transições;
+- quatro fotografias locais coerentes continuam ligadas às categorias, sem preços, marcas, estoque, promoções ou promessas comerciais;
 - a saída curva entrega a composição ao CTA existente sem redesenhá-lo; L-02R1, L-02R2 e L-02R3 permaneceram intocados.
 
-ESLint restrito, build de produção, HTTP 200, overflow, console, hover, clique, foco, teclado, toque e movimento reduzido foram conferidos. A comparação usa `l02r4-comparison-reference-render.png` e capturas em 390, 768, 1024 e 1440 px. Estado: implementação pronta para revisão visual; gate ainda não aprovado por Kevin.
+ESLint restrito, build de produção, HTTP 200, overflow, console, setas, persistência, teclado, breakpoints 390/768/1024/1440 e movimento reduzido foram conferidos. A comparação consolidada usa `l02r4-a2-qa-comparison.png`. Dois desvios P2 do primeiro passe mobile — ausência do estado central e cápsula ativa clara demais — foram corrigidos.
+
+Decisão final do gate: Kevin aprovou explicitamente o resultado em 2026-08-20 e pediu avanço para a próxima dobra. L-02R4 está encerrada e congelada; L-02R5 passa a ser o único checkpoint aberto.
+
+## 16. L-02R5 — opção B implementada, gate visual aberto
+
+A prancha `docs/design/lume-e-pata/references/l02r5-opcoes-abc.png` materializa as três direções exploradas para CTA, footer e a costura imediata após Essenciais. Em 2026-08-20, Kevin escolheu explicitamente **B — Volta pra casa**, sem mistura com A ou C. A prancha permanece inteira para que o painel B continue disponível em desktop e mobile.
+
+- **A — Abraço coral:** campo coral contínuo, headline branca assimétrica, CTA circular creme ligado ao fio e footer incorporado à mesma superfície. Motion proposto: o fio desenha o abraço, o CTA se aproxima discretamente e o reduzido mantém o estado estático.
+- **B — Volta pra casa:** palco dividido entre sálvia e portal creme/fotográfico, CTA coral atravessando a emenda e footer como trilho editorial claro. Motion proposto: o portal abre suavemente, o fio fecha em pata e o reduzido mostra o portal já aberto.
+- **C — Assinatura de bairro:** encerramento tipográfico em papel creme, “sentido” em Fraunces coral, wordmark Lume & Pata em escala de paisagem e fio atravessando o ampersand. Motion proposto: as palavras assentam, o fio percorre o `&` e o reduzido apresenta a composição final.
+
+Decisão criativa: **B — Volta pra casa**. O alvo aprovado combina palco assimétrico sálvia/creme, portal fotográfico, CTA coral atravessando a emenda e footer como trilho editorial claro. O motion aprovado como intenção abre o portal suavemente, assenta a composição e encerra o fio em pata; em movimento reduzido, o portal já aparece aberto.
+
+Implementação atual:
+
+- palco integralmente sálvia e sem fundo interno próprio, eliminando divisão creme, pseudo-elemento, moldura lateral e qualquer retângulo perceptível; somente o portal fotográfico conserva recorte superior irregular, com lados deliberadamente diferentes;
+- fotografia local `public/images/projects/lume-e-pata-cta-portal.png`, criada para esta dobra, sem texto, marca, cliente ou promessa;
+- CTA coral de WhatsApp preservado; o fio pontilhado e a pata final foram removidos integralmente por decisão de simplificação; footer editorial mantém saídas explícitas para a Home da Zucco e `/projetos`;
+- abertura do portal em 980 ms via CSS e `ScrollRevealController`, sem biblioteca adicional; em movimento reduzido, o estado final nasce aberto;
+- comparação browser-rendered e validação em 390, 768, 1024 e 1440 px, sem overflow, overlay ou diferenças P0–P2 acionáveis após a correção de alinhamento e proporção.
+
+Gate final: após a simplificação do encerramento para palco integralmente sálvia, sem fundo interno e sem fio/pata, Kevin aprovou explicitamente o conjunto em 2026-08-20 e considerou a experiência completa do Lume & Pata finalizada. A implementação permanece local; a publicação foi adiada para o alinhamento final P-01. O próximo checkpoint aberto é a revalidação da fundação e da hero do Brisa de Tecido.

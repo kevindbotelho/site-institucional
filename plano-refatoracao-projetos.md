@@ -186,23 +186,23 @@ Gate: **aprovado por Kevin para avanço**. A comparação browser-rendered autom
 
 ### L-02R4 — Essenciais do dia a dia
 
-Estado: **opção A — Prateleira editorial — escolhida, implementada e validada; aguardando aprovação visual explícita**.
+Estado: **concluído por aprovação explícita de Kevin em 2026-08-20**.
 
-Escopo implementado: cabeçalho editorial, fio pontilhado, CTA de WhatsApp, quatro categorias sempre visíveis e palco fotográfico panorâmico com cenas próprias para alimentação, passeio, higiene e descanso. Hover pré-visualiza; clique ou foco fixa; toque e teclado selecionam; movimento reduzido remove deslocamentos e transições.
+Escopo implementado: cabeçalho editorial, fio pontilhado e CTA de WhatsApp preservados; o antigo palco por hover foi substituído por um trilho espacial com quatro cards fotográficos. Setas, teclado e gesto lateral movem o card na direção física correspondente, a escolha persiste até nova ação e os vizinhos permanecem parcialmente visíveis. A faixa branca usa uma ação contextual distinta da categoria; abaixo, a categoria ativa em Title Case recebe sálvia, escala e sublinhado coral sincronizados. No mobile, contador, nome ativo e quatro marcadores acompanham o card. Movimento reduzido remove deslocamentos e transições.
 
-Gate: QA técnica e comparação visual concluídas em 390, 768, 1024 e 1440 px, sem diferenças P0–P2 identificadas. Falta somente a aprovação visual explícita de Kevin; L-02R5 permanece fechado.
+Gate: QA técnica e comparação visual concluídas em 390, 768, 1024 e 1440 px. Dois desvios P2 do primeiro passe mobile foram corrigidos e a comparação final não mantém diferenças P0–P2. Kevin aprovou explicitamente o resultado e abriu L-02R5; a dobra permanece congelada.
 
 ### L-02R5 — CTA, footer e costura global
 
-Estado: **pendente**.
+Estado: **concluído e aprovado explicitamente por Kevin em 2026-08-20**.
 
-Escopo: refazer CTA e footer, costurar transições e linguagem de movimento entre as dobras já aprovadas e revisar a página completa.
+Escopo final: palco integralmente sálvia e sem fundo interno próprio, portal fotográfico assimétrico, CTA coral de WhatsApp e footer editorial com saídas para a Home da Zucco e `/projetos`. A divisão creme e o fio encerrado em pata foram removidos na simplificação aprovada. A abertura do portal usa CSS e o observador local existente; movimento reduzido entrega o estado final já aberto.
 
-Gate: aprovação visual da experiência completa antes do acabamento global.
+Gate: comparação visual e QA browser-rendered concluídas em 390, 768, 1024 e desktop. Kevin aprovou o resultado final e considerou a experiência completa do Lume & Pata encerrada.
 
 ### L-03 — acabamento dirigido do Lume
 
-Estado: **pendente e bloqueado até a conclusão e aprovação de L-02R1 a L-02R5**.
+Estado: **concluído por absorção nas revisões dobra a dobra e na correção final de L-02R5**.
 
 Escopo:
 
@@ -210,42 +210,43 @@ Escopo:
 - Ajustar ritmo, tipografia, crops, movimento, contraste e estados interativos.
 - Não reabrir decisões aprovadas sem evidência de problema.
 
-Gate: aprovação visual da experiência completa.
+Gate: experiência completa aprovada por Kevin em 2026-08-20.
 
 ### L-04 — QA e publicação do Lume
 
-Estado: **pendente**.
+Estado: **concluído no escopo local; publicação adiada para P-01**.
 
 Escopo:
 
 - Validar desktop e mobile, navegação, WhatsApp, acessibilidade, movimento reduzido, console, lint e build.
-- Publicar preview ou produção conforme a instrução do checkpoint.
-- Atualizar documentação e URL publicada.
+- Não publicar neste checkpoint; preservar a produção atual.
+- Publicar as experiências refatoradas somente no alinhamento final P-01.
 
-### B-01 — contrato visual e mapa completo da Brisa
+### B-01R1 — revalidação da fundação, cabeçalho e hero da Brisa
 
-Estado: **pendente**.
-
-Escopo:
-
-- Traduzir a estrutura do OpenDesign para a paleta verde/linho da Brisa.
-- Definir tipografia, grid, bordas, cards, botões, motion e uso limitado de serif.
-- Mapear hero, situações de uso, escopo do serviço, processo, informações para orçamento, FAQ, CTA e footer.
-- Garantir linguagem visual prática e tátil, não artística, arquitetônica ou luxuosa.
-
-Gate: Kevin aprova a fundação e o mapa.
-
-### B-02 — passada estrutural completa da Brisa
-
-Estado: **pendente**.
+Estado: **próximo checkpoint aberto**.
 
 Escopo:
 
-- Implementar a página inteira com a fundação aprovada.
-- Priorizar clareza da oferta e conversão para WhatsApp.
-- Entregar desktop e mobile navegáveis.
+- Revalidar OpenDesign como referência estrutural contra a Brisa atual, sem alterar os arquivos legados.
+- Preservar a identidade verde/linho como ponto de partida, mas reabrir composição, tipografia, grid, posição dos elementos, efeitos e motion da fundação, do cabeçalho e da hero.
+- Produzir exatamente três alvos visuais A/B/C concretos e estruturalmente distintos, com desktop, mobile e assinatura de motion.
+- Recomendar uma direção e parar antes do código para Kevin escolher.
+- Garantir linguagem visual prática, tátil e robusta, não artística, arquitetônica, luxuosa ou derivada do Lume/Zucco.
 
-Gate: revisão visual dobra a dobra e lista única de acabamento.
+Gate: Kevin escolhe uma direção para fundação, cabeçalho e hero.
+
+### B-01R2+ — demais dobras da Brisa
+
+Estado: **bloqueado até a aprovação e implementação de B-01R1**.
+
+Escopo:
+
+- Trabalhar uma dobra por vez, sempre com três alvos A/B/C antes do código.
+- Priorizar clareza da oferta, conversão para WhatsApp e variedade real de composição e movimento.
+- Definir o próximo checkpoint somente após a aprovação explícita da dobra anterior.
+
+Gate: aprovação visual explícita de cada dobra.
 
 ### B-03 — acabamento dirigido da Brisa
 

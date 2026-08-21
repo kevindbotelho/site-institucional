@@ -2,15 +2,8 @@
 
 ## Alvo e evidências finais
 
-- Fonte visual: `C:\Projetos\ia-projects\site-institucional\public\images\projects\lume-l02r1-opcao-a-reference.png`
-- Referência focada enviada por Kevin para a interseção do fio: `C:\Users\kevin\AppData\Local\Temp\codex-clipboard-fe86a2f4-98d6-44db-9fcb-5cfb3c06ae61.png`
-- Referência desktop normalizada: `C:\Projetos\ia-projects\site-institucional\l02r1-option-a-reference-desktop.png`
-- Referência mobile normalizada: `C:\Projetos\ia-projects\site-institucional\l02r1-option-a-reference-mobile.png`
-- Implementação desktop final após o ajuste do fio: `C:\Projetos\ia-projects\site-institucional\l02r1-option-a-line-adjustment-final.png`
-- Implementação mobile final após o ajuste do CTA: `C:\Projetos\ia-projects\site-institucional\l02r1-option-a-line-adjustment-mobile.png`
-- Comparação desktop final: `C:\Projetos\ia-projects\site-institucional\l02r1-option-a-comparison-desktop-adjusted.png`
-- Comparação mobile final: `C:\Projetos\ia-projects\site-institucional\l02r1-option-a-comparison-mobile-adjusted.png`
-- Comparações focadas do painel: `C:\Projetos\ia-projects\site-institucional\l02r1-option-a-comparison-card-final.png` e `C:\Projetos\ia-projects\site-institucional\l02r1-option-a-comparison-card-mobile-final.png`
+- Fonte visual durável: `docs/design/lume-e-pata/references/l02r1-opcao-a-reference.png`.
+- As capturas intermediárias e comparações normalizadas usadas durante o gate foram removidas da raiz depois da aprovação; continuam recuperáveis pelo histórico do Git.
 - Rota: `http://localhost:3001/projetos/lume-e-pata`
 - Estado: carregamento inicial, tema claro, sem interação persistente.
 
@@ -81,20 +74,14 @@ Gate visual: aprovado explicitamente por Kevin em 2026-08-13.
 
 ## Comparação visual
 
-- Referência escolhida e correção final desktop no mesmo board: `l02r2-comparison-final.png`.
-- Encerramento da direção A e sua aplicação ao final da dobra: `l02r2-final-desktop.png` e `l02r2-closing-mobile.png`.
-- Capturas responsivas de apoio: `l02r2-fidelity-mobile.png` e `l02r2-closing-mobile.png`.
-- Revisão focal de Kevin: `codex-clipboard-c72d143d-8ec4-4558-ac82-31cd9ac7b676.png`, `codex-clipboard-6aee41aa-52ee-4b35-9f22-5fa36bf70897.png`, `codex-clipboard-ab2f46b8-0ebb-4af4-ad01-a7b844581696.png`, `codex-clipboard-69531344-b9e6-4df3-acca-2e3a3597e707.png` e `codex-clipboard-76dfd3dc-b39c-4897-9eaf-8145fe60bd13.png`.
-- Comparação normalizada após a revisão focal: `l02r2-user-adjustments-comparison.png`.
-- Implementação após a revisão focal: `l02r2-user-adjustments-final-desktop.png`, `l02r2-user-adjustments-closing-desktop.png`, `l02r2-user-adjustments-mobile-top.png` e `l02r2-user-adjustments-mobile-bottom.png`.
-- Referência final do traço residual: `C:\Users\kevin\AppData\Local\Temp\codex-clipboard-9bbf5045-bc74-44e0-9fc8-8496b05a4677.png`.
-- Captura final aprovada sem o traço: `l02r2-approved-final.png`, viewport CSS 1133 × 1058, densidade 1× e estado estático após os reveals.
+- Captura final aprovada sem o traço: `docs/design/lume-e-pata/references/l02r2-opcao-b-approved.png`, viewport CSS 1133 × 1058, densidade 1× e estado estático após os reveals.
+- Capturas intermediárias, comparações normalizadas e recortes temporários foram removidos da raiz depois do gate e permanecem recuperáveis pelo histórico do Git.
 
 Uma primeira passada desta implementação foi reprovada por Kevin por sobreposição entre os cards 02 e 03, apoio editorial mal posicionado, ilustrações aproximadas e encerramento visualmente separado. A correção atual mede a referência no mesmo viewport: o apoio termina antes do card 01, os três cards recuperam proporções e posições relativas sem colisão, e números, sublinhados, ilustrações e fios usam os elementos da composição aprovada. No mobile, os três conteúdos aparecem em sequência contínua e sem dependência de ação. O encerramento agora é composto pelas três camadas pedidas — fundo verde, círculo sálvia visto pelo topo e onda creme — dentro da mesma dobra.
 
 Na revisão focal seguinte, Kevin pediu quatro correções: fim claro para o fio esquerdo, remoção da faixa verde sobre o card 03, remoção do arco solto junto ao título e círculo sálvia mais redondo, atravessando a onda creme. O render atual elimina o arco e a faixa, aproxima o fio do card e o encerra com ponto creme junto ao canto inferior; a faixa final agora permite a sobreposição real do círculo entre o fundo verde e o creme, sem comprometer a leitura no mobile.
 
-Kevin aprovou explicitamente o conjunto e identificou somente um traço residual atrás da pata, causado pelo asset `lume-portal-closing-trail.png`. O asset foi removido do encerramento; `l02r2-approved-final.png` confirma a superfície creme limpa, sem deslocamento da pata, do título, do círculo maior ou da onda.
+Kevin aprovou explicitamente o conjunto e identificou somente um traço residual atrás da pata, causado pelo asset `lume-portal-closing-trail.png`. O asset foi removido do encerramento; a captura final preservada confirma a superfície creme limpa, sem deslocamento da pata, do título, do círculo maior ou da onda.
 
 ## Validação técnica e responsiva
 
@@ -124,7 +111,7 @@ Gate visual: **aprovado explicitamente por Kevin em 2026-08-13; acabamento resid
 
 ## Alvo e estado
 
-- Fonte visual: `C:\Projetos\ia-projects\site-institucional\public\images\projects\lume-l02r3-opcao-b-reference.png` (1.968.312 bytes).
+- Fonte visual: `docs/design/lume-e-pata/references/l02r3-opcao-b-reference.png` (1.968.312 bytes).
 - Recorte de foco enviado por Kevin: massa orgânica sálvia à esquerda da fotografia, com “Atenção em cada etapa” e contador integrados à superfície.
 - Captura da primeira correção rejeitada por Kevin: `C:\Users\kevin\AppData\Local\Temp\codex-clipboard-953baabf-677c-4328-bbf8-9b724dd30f2e.png`, 622 × 782 px.
 - Recorte da referência usado na segunda correção: `C:\Users\kevin\AppData\Local\Temp\codex-clipboard-0bc4d09a-0faa-40b8-ab8b-b15c2cb42502.png`, 561 × 530 px.
@@ -189,7 +176,7 @@ Decisão posterior do gate: Kevin aprovou explicitamente o avanço para L-02R4 e
 ## Alvo e implementação
 
 - Direção escolhida: A — Prateleira editorial.
-- Referência preservada: `public/images/projects/lume-l02r4-opcao-a-reference.png`.
+- Referência da primeira direção: removida do working tree após ser substituída pelo refinamento A.2; permanece recuperável pelo histórico do Git.
 - Implementação: `src/app/projetos/lume-e-pata/EssentialsShelf.tsx` e bloco de Essenciais em `project.module.css`.
 - Comparação consolidada: `C:\Users\kevin\.codex\visualizations\2026\08\18\01a01729-1f91-7ad3-8d6d-615d86c457db\l02r4-comparison-reference-render.png`.
 - Capturas renderizadas: 390, 768, 1024 e 1440 px no mesmo código de produção local.
@@ -214,4 +201,113 @@ Decisão posterior do gate: Kevin aprovou explicitamente o avanço para L-02R4 e
 
 final result: passed
 
-Gate visual: **aguardando aprovação explícita de Kevin; L-02R5 permanece fechado**.
+Gate visual desta versão: **substituída pelo refinamento A.2; a decisão final do checkpoint está registrada abaixo**.
+
+---
+
+# Design QA — L-02R4 Lume & Pata — refinamento A.2
+
+## Alvo e evidências
+
+- Direção escolhida: A.2 — Trilho de momentos.
+- Fonte visual de verdade: `docs/design/lume-e-pata/references/l02r4-opcao-a2-reference.png`.
+- Refinamento tipográfico escolhido: híbrido entre A e B; a prancha intermediária foi removida após a decisão e a especificação final permanece registrada neste documento e na direção criativa.
+- Fonte original da referência: `C:\Users\kevin\.codex\visualizations\2026\08\18\01a01729-1f91-7ad3-8d6d-615d86c457db\l02r4-a2-trilho-de-momentos.png` — 1536 × 1024 px, densidade 1.
+- Implementação desktop: `C:\Users\kevin\.codex\visualizations\2026\08\18\01a01729-1f91-7ad3-8d6d-615d86c457db\l02r4-a2-implementation-desktop.png` — viewport 1440 × 1500 CSS px, recorte da dobra 1425 × 1283 px, densidade 1, estado alimentação `01 / 04`.
+- Implementação mobile: `C:\Users\kevin\.codex\visualizations\2026\08\18\01a01729-1f91-7ad3-8d6d-615d86c457db\l02r4-a2-implementation-mobile-passeio.png` — viewport 390 × 844 CSS px, recorte da dobra 375 × 1161 px, densidade 1, estado passeio `02 / 04`.
+- Comparação consolidada no mesmo input: `C:\Users\kevin\.codex\visualizations\2026\08\18\01a01729-1f91-7ad3-8d6d-615d86c457db\l02r4-a2-qa-comparison.png`.
+- Evidências atualizadas do híbrido: `C:\Users\kevin\.codex\visualizations\2026\08\18\01a01729-1f91-7ad3-8d6d-615d86c457db\l02r4-hybrid-desktop-alimentacao.jpg` e `l02r4-hybrid-desktop-passeio.jpg`, ambas renderizadas no Chrome após o build de produção.
+- A referência é uma prancha de apresentação que combina desktop, mobile e sequência de motion, não uma captura de viewport único. A comparação consolidada preserva a proporção de cada artefato e os apresenta juntos; não foi aplicado overlay de pixels porque os estados e enquadramentos de origem são deliberadamente diferentes.
+
+## Comparação visual final
+
+- **Tipografia:** Fraunces mantém a hierarquia editorial e o itálico coral de “rotina.”; Onest preserva a leitura do apoio, CTA, contadores e legenda. Peso, quebra e contraste correspondem à intenção do alvo nos dois tamanhos.
+- **Espaçamento e ritmo:** intro, CTA, trilho e saída curva mantêm respiro equivalente à prancha. O card ativo domina a largura, os vizinhos aparecem nas laterais corretas e a faixa branca inferior permanece legível sem reduzir excessivamente a fotografia.
+- **Cores e tokens:** creme, coral e sálvia usam os tokens existentes do Lume. A faixa branca agora traz filete coral e legenda contextual sálvia, sem cápsula; a categoria ativa usa sálvia e sublinhado coral, enquanto as inativas permanecem neutras.
+- **Imagens e assets:** as quatro fotografias locais correspondem a alimentação, passeio, higiene e descanso, com crop nítido e sem placeholders. A cena genérica da prancha foi substituída pelas cenas específicas já pedidas por Kevin.
+- **Copy e conteúdo:** eyebrow, título, apoio, CTA, quatro categorias e contadores foram preservados sem preço, estoque ou promessa comercial. A faixa do card passou a usar “Para alimentar”, “Para passear”, “Para cuidar” e “Para descansar”, evitando a repetição literal dos nomes da navegação inferior.
+- **Affordance e estados:** no primeiro item existe apenas a seta direita; nos intermediários, duas; no último, somente a esquerda. A seleção persiste. A legenda desktop destaca o item ativo; o mobile mostra `02 / 04 • passeio` e quatro marcadores.
+- Não foi necessário um segundo recorte focado além da captura mobile: os detalhes de rodapé, setas, contador, estado ativo e peeks laterais já estão legíveis nessa evidência.
+
+## Histórico de comparação e correções
+
+1. Primeiro passe — `blocked`:
+   - [P2] O mobile mantinha os quatro nomes sob o card, enquanto o alvo aprovado usa estado central `02 / 04 • passeio` e quatro marcadores.
+   - [P2] A cápsula do card ativo estava clara demais em relação ao sálvia sólido do alvo.
+2. Correções:
+   - o controle mobile passou a ter seta esquerda, estado central persistente e seta direita; a legenda mobile virou um conjunto de quatro marcadores;
+   - a cápsula do card ativo passou a usar sálvia sólido com texto branco.
+3. Segundo passe — evidências atualizadas nas capturas desktop/mobile e em `l02r4-a2-qa-comparison.png`: nenhum P0, P1 ou P2 permanece acionável.
+4. Refino tipográfico híbrido — evidências desktop atualizadas após novo build:
+   - removida a cápsula e aplicado o tratamento editorial A, com versal sálvia e filete coral;
+   - conteúdo interno separado semanticamente da navegação inferior;
+   - nomes inferiores convertidos para Title Case e sublinhado coral movido para baixo do item ativo;
+   - a captura mobile anterior continua sendo a referência geométrica porque controles, peeks, contador e marcadores não mudaram; as regras móveis novas apenas reduzem o filete e o corpo da legenda contextual para caber na mesma faixa.
+
+## Verificações funcionais e técnicas
+
+- Setas: alimentação → passeio confirmou estado persistente, duas setas e legenda sincronizada.
+- Híbrido tipográfico: alimentação → passeio confirmou “Para alimentar” → “Para passear”, `01 / 04` → `02 / 04` e “Alimentação” → “Passeio” no mesmo estado; `End` e `Home` confirmaram “Para descansar” e o retorno a “Para alimentar”.
+- Teclado: `ArrowRight`, `Home` e `End` levaram respectivamente a higiene, alimentação e descanso; os limites mostram somente a seta possível.
+- Breakpoints: 390, 768, 1024 e 1440 px sem overflow horizontal.
+- Movimento reduzido: card, seta e legenda reportaram `transition-duration: 0s` com `prefers-reduced-motion: reduce`.
+- Ações de toque usam os mesmos botões de 48 px; o gesto lateral é opcional e está implementado por eventos de ponteiro, sem substituir os controles primários.
+- Regiões e botões têm nomes acessíveis; o estado ativo usa `aria-current`, o anúncio usa `aria-live` e cards inativos ficam fora da interação.
+- Console de produção sem erro de aplicação ou overlay; a rota respondeu HTTP 200 e renderizou em `http://localhost:3001/projetos/lume-e-pata` durante a QA atualizada.
+- ESLint restrito, `git diff --check`, parse do inventário JSON e build de produção concluíram sem erro.
+
+## Resultado
+
+final result: passed
+
+Gate visual: **aprovado explicitamente por Kevin em 2026-08-20; L-02R4 congelada e L-02R5 aberta**.
+
+---
+
+# Design QA — L-02R5 Lume & Pata — opção B
+
+## Alvo e implementação
+
+- Direção escolhida: B — Volta pra casa.
+- Fonte visual: painel B de `docs/design/lume-e-pata/references/l02r5-opcoes-abc.png`.
+- Implementação: encerramento em `page.tsx`, regras L-02R5 no fim de `project.module.css` e asset `public/images/projects/lume-e-pata-cta-portal.png`.
+- Evidência desktop temporária: `tmp/codex/qa/l02r5-implementation-desktop.png`, viewport solicitado de 1440 × 900 px.
+- Evidência mobile temporária: `tmp/codex/qa/l02r5-implementation-mobile.png`, viewport solicitado de 390 × 844 px.
+
+## Comparação visual
+
+- A transição recebe a curva creme de Essenciais e desemboca em um palco integralmente sálvia, sem painel, faixa ou retângulo interno de outra cor.
+- Headline, eyebrow e apoio preservam a hierarquia editorial do painel B; `sentido` permanece em Fraunces itálica sem introduzir nova mensagem comercial.
+- O portal fotográfico usa uma cena própria de cachorro caramelo em cama sálvia, com enquadramento responsivo e recorte deliberadamente desequilibrado: a curva esquerda é maior que a direita. A fotografia repousa diretamente sobre o campo verde contínuo nos dois breakpoints.
+- O fio pontilhado e sua pata final foram removidos integralmente do JSX e do CSS por decisão de simplificação de Kevin.
+- O footer virou um trilho editorial claro com marca local e saídas explícitas para Home da Zucco e `/projetos`.
+- A e C não foram misturadas. L-02R1 a L-02R4 não foram redesenhadas.
+
+## Histórico de correções
+
+1. Primeiro passe: composição correta, mas copy herdava centralização do CTA anterior e o palco estava alto demais, sobretudo no mobile.
+2. Correção P2: copy e apoio passaram a alinhar à esquerda; escala tipográfica, altura do palco e altura do portal foram reduzidas contra o painel B.
+3. Primeira correção focal mobile: a pata final foi deslocada para não colidir com o ícone do WhatsApp.
+4. Revisão de Kevin: a moldura branca lateral e o retângulo creme isolado foram removidos; o portal ganhou geometria menos regular e o fio foi ancorado no botão.
+5. Correção responsiva final: a curva foi simplificada, a pata recebeu contorno pontilhado mais legível e, no mobile, o conjunto passou para a área sálvia acima do CTA, sem sobrepor a foto do cachorro.
+6. Revisão final browser-rendered: nenhum P0, P1 ou P2 permanece acionável antes do gate de Kevin.
+7. Segunda revisão focal de Kevin: a interpretação orgânica da superfície creme ainda estava incorreta. O pseudo-elemento curvo foi eliminado e substituído por um corte reto 60/40 da própria seção; somente a máscara da fotografia conserva assimetria.
+8. Terceira revisão focal de Kevin: o corte 60/40 ainda produzia uma junção quebrada e deixava visível o retângulo do palco. A divisão foi abandonada; a dobra agora usa uma única superfície verde, o palco é transparente e fio/pata foram removidos do código.
+
+## Verificações funcionais e técnicas
+
+- Viewports solicitados de 390, 768, 1024 e 1440 px: nenhum overflow horizontal, um único `h1`, asset carregado e ausência de overlay de erro.
+- CTA de WhatsApp mantém a URL central existente; footer expõe `href="/"` e `href="/projetos"` com rótulos explícitos.
+- Alvos mobile medidos com pelo menos 44 px de altura; o CTA possui 52,8 px.
+- Foco de teclado no CTA: outline coral sólido de 3 px com offset de 4 px.
+- Movimento reduzido emulado no navegador: portal com `clip-path: none`, opacidade `1`, transform `none` e duração `0s`; conteúdo já nasce revelado.
+- Movimento normal: portal abre e assenta em 980 ms por CSS, disparado pelo `ScrollRevealController` existente.
+- Console sem erro de aplicação. O modo de desenvolvimento emitiu somente o aviso heurístico do Next Image ao saltar sinteticamente para o fim da página e transformar a imagem lazy do CTA em LCP; o asset carregou com dimensões naturais válidas.
+- ESLint restrito, parse do inventário JSON e `git diff --check`: passaram.
+- Build de produção: passou após encerrar a prévia de desenvolvimento usada para a comparação.
+
+## Resultado
+
+final result: passed
+
+Gate visual: **aprovado explicitamente por Kevin em 2026-08-20 após a simplificação final. A experiência local completa do Lume & Pata está encerrada; a publicação foi adiada para P-01**.

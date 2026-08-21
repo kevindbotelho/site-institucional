@@ -1,6 +1,6 @@
 # Status atual — Site institucional
 
-> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-08-13.
+> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-08-20.
 
 ## Estado geral
 
@@ -68,14 +68,14 @@ A seção de Serviços apresenta automações com planilhas e dados sem limitar 
 ## Estado do sistema visual
 
 - A Home e `/projetos` seguem a direção da Zucco documentada a partir do Lumen LP System.
-- Lume & Pata e Brisa de Tecido possuem temas locais e CSS isolado. A primeira passada estrutural do Lume foi implementada localmente e reprovada visualmente; a Brisa ainda não possui design system formal.
-- As duas experiências reutilizam alguns padrões de estrutura — especialmente cabeçalho, botões e CTAs — e serão revistas antes da próxima mudança visual.
+- Lume & Pata e Brisa de Tecido possuem temas locais e CSS isolado. A refatoração visual local do Lume está concluída e aprovada; a Brisa ainda não possui um Design System próprio formalizado.
+- O próximo ciclo ativo é a reconstrução dobra a dobra da Brisa, começando pela revalidação da referência OpenDesign, pela fundação visual, pelo cabeçalho e pela hero.
 - A orientação aprovada é refatorar o visual existente sobre primitivas compartilhadas e temas próprios, preservando conteúdo, rotas, imagens, responsividade e comportamento já construídos.
 - **Lume & Pata** usa o Savory Plate como referência principal de composição e interação, com OpenDesign como referência secundária de profundidade editorial. A Home da Zucco e o Lumen são apenas régua de qualidade e não podem fornecer ao Lume cabeçalho, tipografia, CTA, silhueta de hero ou linguagem de movimento.
 - **Brisa de Tecido** usará o OpenDesign como referência estrutural e tipográfica, sem adotar sua paleta pastel: permanecem como base o verde profundo, eucalipto, verde ácido e papel/linho do projeto atual.
 - O método anterior de contrato textual seguido por passada completa foi invalidado pela revisão. O novo método exige três alvos visuais concretos, escolha de Kevin, implementação e aprovação de uma dobra por vez. Ele foi formalizado na skill global `$design-fold-workshop`, nas instruções do repositório e no playbook do Freela Ops. O roteiro desta refatoração vive em `plano-refatoracao-projetos.md`; `PROMPT-PROXIMA-TASK.md` contém sempre a próxima instrução pronta para abrir uma nova conversa.
 - O contrato original do **Lume & Pata** permanece como registro histórico em `src/app/projetos/lume-e-pata/CONTRATO-VISUAL.md`. A fonte de verdade criativa atual é `src/app/projetos/lume-e-pata/DIRECAO-CRIATIVA-L02R.md`.
-- O checkpoint **L-02** passou pela validação técnica, mas foi reprovado por Kevin no gate visual em 2026-08-11. No checkpoint **L-02R1**, a escolha inicial C foi substituída pela opção A — Portal de acolhimento. A nova fundação, o cabeçalho local e a hero foram implementados, validados e aprovados por Kevin em 2026-08-13. Em L-02R2, Kevin escolheu a direção B — Mosaico de rotinas —; após reprovar a primeira passada de fidelidade, a dobra foi refeita com as medidas e os elementos da referência, passou por nova QA comparativa local e foi aprovada explicitamente em 2026-08-13. Em L-02R3, Kevin escolheu a opção B — Palco em três tempos — e aprovou explicitamente o avanço em 2026-08-18 após revisar a experiência local. A narrativa sticky 1–2–3 passou por lint, build e verificação HTTP; a captura comparativa automatizada permaneceu bloqueada e está registrada como ressalva, sem reabrir a dobra. Em L-02R4, Kevin escolheu a opção A — Prateleira editorial —; a dobra interativa com quatro fotografias foi implementada e validada localmente em 390, 768, 1024 e 1440 px, mas ainda aguarda sua aprovação visual explícita. L-02R5 e L-03 permanecem bloqueados.
+- A reconstrução local do **Lume & Pata** foi concluída dobra a dobra e aprovada como experiência completa por Kevin em 2026-08-20. L-02R1 a L-02R4 permanecem congeladas; em L-02R5, a direção B — Volta pra casa — terminou simplificada para um palco integralmente sálvia, portal fotográfico assimétrico, CTA coral e footer editorial, sem fundo interno próprio e sem fio/pata. A rota passou por QA local em 390, 768, 1024 e desktop, além de console, lint, build e HTTP 200. A refatoração ainda não foi publicada; a produção continua na versão anterior e a publicação foi adiada para o alinhamento final P-01, depois da Brisa.
 
 ## Validação e publicação
 
@@ -121,13 +121,13 @@ Resultado local do L-02R1 atualizado em 2026-08-13:
 
 ## Pendências
 
-- Revisar e aprovar explicitamente a implementação local de L-02R4 — Essenciais do dia a dia — antes de abrir L-02R5.
-- Criar saídas diretas das demonstrações para a Home da Zucco e para `/projetos`.
+- Iniciar B-01R1 na Brisa de Tecido: revalidar OpenDesign contra a identidade atual e produzir três direções visuais A/B/C para fundação, cabeçalho e hero antes de qualquer código.
+- Criar na Brisa de Tecido as saídas diretas e distintas para a Home da Zucco e para `/projetos`; o Lume & Pata já possui ambas.
 - Quando houver um terceiro trabalho publicável ou um projeto autoral pronto, migrar `/projetos` para destaques seguidos de grade compacta, com no máximo dois agrupamentos: Projetos para negócios e Projetos autorais.
 - Escolher, comprar e conectar o domínio principal, quando aprovado.
 - Publicar futuros cases reais somente após existirem trabalhos contratados autorizados para apresentação.
 - A rota `/servicos` permanece fora do escopo até nova decisão comercial.
-- A versão pública continua no estado anterior à refatoração do Lume; L-02 não teve publicação.
+- A versão pública continua no estado anterior à refatoração do Lume; a publicação das experiências refatoradas foi adiada para P-01.
 
 ## Contrato de sincronização
 
