@@ -19,6 +19,23 @@
       "status": "implemented"
     },
     {
+      "id": "lume-hero-routine-word-rotator",
+      "fold": "hero",
+      "element": "portal-copy-routine-qualifier",
+      "category": "editorial-feedback",
+      "trigger": "timed-loop-after-page-enter",
+      "effect": "slow-vertical-word-rotation",
+      "engine": "react-dom-plus-css",
+      "intensity": "restrained",
+      "purpose": "make-the-hero-promise-feel-alive-without-changing-its-reading-rhythm",
+      "source": "shared:src/components/motion/RotatingWord.tsx",
+      "access": "local",
+      "adaptation": "four-safe-routine-qualifiers-held-for-3000ms-with-a-560ms-exit-before-a-560ms-vertical-entry",
+      "reducedMotion": "first-qualifier-static-without-timer-or-transition",
+      "mobile": "same-inline-window-with-reserved-width",
+      "status": "implemented-awaiting-user-gate"
+    },
+    {
       "id": "lume-section-scroll-reveal",
       "fold": "multiple",
       "element": "data-scroll-reveal-elements",

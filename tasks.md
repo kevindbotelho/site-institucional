@@ -85,10 +85,13 @@ Plano detalhado e checkpoints: `plano-refatoracao-projetos.md`. Prompt sempre pr
 - [x] Encerrar L-02R5: opção B — Volta pra casa — refinada até a simplificação final com palco integralmente sálvia, portal fotográfico, CTA coral e footer editorial; aprovada explicitamente por Kevin em 2026-08-20.
 - [x] Encerrar L-03: o acabamento dirigido foi absorvido pelas revisões dobra a dobra e pela correção final de L-02R5; Kevin considerou a experiência completa do Lume & Pata finalizada em 2026-08-20.
 - [x] Encerrar L-04 no escopo local: QA responsiva, console, acessibilidade proporcional, lint e build passaram; a publicação da refatoração foi deliberadamente adiada para o alinhamento final P-01.
-- [ ] Executar B-01R1: revalidar OpenDesign contra a identidade verde/linho da Brisa e produzir exatamente três direções visuais A/B/C para fundação, cabeçalho e hero, sem código antes da escolha de Kevin.
-- [ ] Executar as demais dobras da Brisa uma por vez, definindo o próximo checkpoint somente depois da aprovação da hero.
+- [x] Encerrar B-01R1: a implementação A.1 foi reprovada; a direção A.2 — Centro imersivo — foi escolhida, implementada, validada localmente e aprovada explicitamente por Kevin em 2026-08-27 para fundação, cabeçalho e hero.
+- [x] Encerrar B-01R2: direção A — Ateliê de tramas — implementada e aprovada explicitamente por Kevin em 2026-08-28 para a dobra “O serviço”, incluindo Ficha de atendimento, seleção por peça, fotos próprias e acessibilidade proporcional. A primeira rodada esquemática continua rejeitada e não deve ser reutilizada.
+- [x] Encerrar B-02R1: direção A — Rastro do cuidado — refinada, validada localmente e aprovada explicitamente por Kevin em 2026-08-28. A continuidade “do contato ao local” é exclusivamente tipográfica; os conectores gráficos reprovados não devem voltar.
+- [x] Encerrar B-03: direção A revisada — “A diferença mora no toque” — aprovada explicitamente por Kevin em 2026-08-28. O fechamento usa um comparador único antes/depois, com os dois assets de alta resolução derivados da mesma geometria; `#duvidas` não foi redesenhada e será decidido como próximo checkpoint de conteúdo.
+- [x] Remover `#duvidas` — “Antes de chamar” — e seu link local após a decisão de produto: o conteúdo repetia as orientações já presentes em “O serviço” e “Como funciona”.
 - [ ] Executar B-04: QA final da Brisa; publicação das duas experiências permanece coordenada com P-01.
-- [ ] Executar P-01: alinhar Home e `/projetos` aos novos visuais, validar o conjunto e publicar.
+- [ ] Executar P-01: a direção A — Faixas de projetos — está implementada localmente somente nos cards de `/projetos`, como uma primeira faixa horizontal escalável de capas integrais; falta aprovação visual de Kevin, validação final conjunta e publicação.
 - [ ] Manter primitivas técnicas compartilhadas sem compartilhar a identidade visual de cabeçalhos, botões, cards, CTAs e footers.
 - [ ] Adicionar em cada demonstração caminhos diretos e distintos para a Home da Zucco e para `/projetos`.
 

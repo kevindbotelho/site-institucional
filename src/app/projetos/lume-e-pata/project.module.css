@@ -3190,11 +3190,12 @@
 }
 
 .portalCopy h1 {
+  font-size: clamp(3.7rem, 6.15vw, 5.15rem);
   line-height: 0.99;
 }
 
 .portalCopy h1 em {
-  font-size: 1.45em;
+  font-size: clamp(3.65rem, 5.35vw, 4.95rem);
   line-height: 0.94;
 }
 

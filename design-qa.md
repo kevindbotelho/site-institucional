@@ -311,3 +311,336 @@ Gate visual: **aprovado explicitamente por Kevin em 2026-08-20; L-02R4 congelada
 final result: passed
 
 Gate visual: **aprovado explicitamente por Kevin em 2026-08-20 após a simplificação final. A experiência local completa do Lume & Pata está encerrada; a publicação foi adiada para P-01**.
+
+---
+
+# Design QA — B-01R1 Brisa de Tecido — direção A.1
+
+## Alvo e evidências
+
+- Direção escolhida: A.1 — Etiqueta em movimento.
+- Fonte visual: `docs/design/brisa-de-tecido/references/b01r1-direcao-a1-etiqueta-em-movimento.png`, 1512 × 1040 px, densidade 1×.
+- Implementação: `src/app/projetos/brisa-de-tecido/page.tsx`, `components-motion/BrisaHeroStory.tsx` e regras B-01R1 no final de `project.module.css`.
+- Captura desktop: `tmp/codex/qa/brisa-a1-desktop-pass1.png`, viewport solicitado 1440 × 900 CSS px, raster 1425 × 891 px, densidade 1×, estado 01.
+- Captura mobile final: `tmp/codex/qa/brisa-a1-mobile-pass2.png`, viewport solicitado 390 × 844 CSS px, raster 375 × 811 px, densidade 1×, estado 01.
+- Comparações no mesmo input: `tmp/codex/qa/brisa-a1-comparison-pass1.png` e `tmp/codex/qa/brisa-a1-comparison-final.png`.
+- A fonte é uma prancha de apresentação com desktop, mobile e storyboard; a comparação preserva as proporções e não usa overlay de pixels entre enquadramentos diferentes.
+
+## Comparação visual final
+
+- **Tipografia:** Onest Variable mantém a hierarquia robusta do título e Fraunces Variable concentra a expressão nas três mensagens em itálico. Pesos, quebras e contraste acompanham a prancha nos dois layouts.
+- **Espaçamento e ritmo:** desktop preserva a divisão aproximada de 43/57 entre copy e vídeo; mobile empilha marca, mensagem, apoio, CTA, vídeo e progresso no primeiro viewport.
+- **Cores e tokens:** papel/linho, verde profundo, eucalipto e verde ácido permanecem nos papéis aprovados, sem importar a paleta pastel do OpenDesign.
+- **Imagem e vídeo:** a imagem genérica da prancha foi substituída pelo MP4 real aprovado por Kevin e por um poster derivado do próprio vídeo. O sofá mantém nitidez, crop 16:9 e fundo claro, sem controles visíveis.
+- **Copy:** título estável, três mensagens, apoio comercial, CTA e informações de fotos, medidas e bairro foram preservados sem acrescentar prova, preço ou promessa técnica.
+- **Cabeçalho e saídas:** a barra de contexto expõe Home Zucco e `/projetos` separadamente; o cabeçalho local mantém as âncoras e o WhatsApp responsivo.
+- **Motion:** scroll normal controla `currentTime` do vídeo e ativa 01/03, 02/03 e 03/03; os três marcadores também funcionam como controles explícitos.
+
+## Histórico de comparação e correções
+
+1. Primeiro passe — `blocked`:
+   - [P2] A implementação mobile ocultava o texto de apoio presente na referência e no conteúdo obrigatório.
+   - [P2] Os marcadores mobile tinham área de toque inferior a 44 px.
+2. Correções:
+   - o apoio voltou ao fluxo mobile com escala e entrelinha compactas, mantendo CTA e vídeo no primeiro viewport;
+   - os três marcadores passaram a medir 44 × 44 px.
+3. Segunda comparação: a captura `brisa-a1-mobile-pass2.png` confirma a ordem e a densidade corrigidas; nenhum P0, P1 ou P2 visual permanece.
+
+## Verificações funcionais e técnicas
+
+- Viewports 390, 768, 1024 e 1440 px verificados sem overflow horizontal.
+- Um único `h1` na rota.
+- Scroll desktop: estado 02 ativado em `scrollY=1250` com vídeo em 5,73 s; estado 03 ativado em `scrollY=2150` com vídeo em 9,96 s.
+- Scroll mobile: estado 02 ativado em `scrollY=720` com vídeo em 4,04 s.
+- Clique no marcador 01 reposicionou a seção e atualizou `aria-pressed` e foco corretamente.
+- Movimento reduzido emulado: sticky removido, vídeo fixo em 0,8 s, progresso oculto e três mensagens simultaneamente visíveis.
+- CTA principal mede 48 px de altura no mobile; WhatsApp compacto mede 46,4 × 46,4 px; marcadores medem 44 × 44 px.
+- Os destinos de Home, `/projetos` e WhatsApp permanecem válidos e derivados da configuração central.
+- Console sem erros ou avisos; poster e MP4 carregaram com metadados válidos.
+- ESLint restrito aos TSX alterados e `git diff --check` passaram antes da comparação final.
+
+## Follow-up polish
+
+- P3 de desempenho: o MP4 original tem cerca de 14,3 MB. `preload="metadata"` reduz a transferência inicial, mas a mídia deve ser recomprimida antes da publicação coordenada P-01.
+- Desvio intencional: o poster e o vídeo usam o sofá real fornecido, não a versão sintetizada incorporada à prancha.
+- Escopo preservado: “O serviço” e todas as dobras posteriores da Brisa não foram redesenhadas.
+
+## Resultado
+
+final result: passed
+
+Gate visual: implementação local pronta para aprovação final de Kevin; B-01R1 permanece aberto até essa decisão explícita.
+
+---
+
+# Design QA — B-01R1 Brisa de Tecido — direção A.2
+
+## Alvo e evidências
+
+- Direção escolhida: A.2 — Centro imersivo, opção 2 da exploração de 2026-08-26.
+- Fonte visual vigente: `docs/design/brisa-de-tecido/references/b01r1-direcao-a2-centro-imersivo.png`, 1536 × 1024 px, densidade 1×.
+- Recorte desktop da fonte: 1198 × 730 px; recorte mobile da fonte: 292 × 730 px. A prancha identifica os viewports conceituais como 1440 × 900 e 390 × 844 CSS px.
+- Implementação: `src/app/projetos/brisa-de-tecido/page.tsx`, `components-motion/BrisaHeroStory.tsx` e regras A.2 ao final de `project.module.css`.
+- Captura desktop final: `tmp/codex/qa/brisa-a2-desktop-pass3.png`, viewport solicitado 1440 × 900 CSS px, raster 1425 × 891 px, densidade 1×, estado 01.
+- Captura mobile final: `tmp/codex/qa/brisa-a2-mobile-pass4.png`, viewport solicitado 390 × 844 CSS px, raster 375 × 812 px, densidade 1×, estado 01.
+- Comparações no mesmo input: `tmp/codex/qa/brisa-a2-comparison-desktop-final.png` e `tmp/codex/qa/brisa-a2-comparison-mobile-final.png`.
+
+## Comparação visual final
+
+- **Tipografia:** Onest Variable sustenta o título geométrico em duas linhas; Fraunces Variable concentra a expressão na frase ativa em itálico. Peso, contraste e quebras preservam a hierarquia da referência.
+- **Espaçamento e ritmo:** o conteúdo ocupa o centro óptico e mantém respiro suficiente ao redor do título, da frase e do CTA. O desktop usa progressão vertical à direita; o mobile converte o trilho em progressão horizontal no rodapé visual.
+- **Cores e tokens:** verde profundo, eucalipto, papel e ácido mantêm os papéis definidos para a Brisa. O véu verde com blur leve substitui o antigo quadro branco e protege contraste sem criar card.
+- **Imagem e vídeo:** o MP4 original ocupa o fundo full-bleed, com crops próprios para desktop e mobile, sem moldura, etiqueta ou controles visíveis. A prancha sintetiza um bocal de limpeza; a implementação usa deliberadamente apenas o vídeo original fornecido por Kevin.
+- **Copy:** o título permanece “Seu sofá mais leve.” e as etapas são “Sua sala com outro respiro.”, “Renovar é cuidar do que te acolhe.” e “Mais leveza, todo dia.”.
+- **Cabeçalho e CTAs:** Home Zucco, marca local, navegação, CTA contornado e Projetos compartilham uma única barra sobre o vídeo no desktop. No mobile, permanecem Home, símbolo e Projetos; o CTA principal reproduz o tratamento de ícone, texto, seta e sublinhado ácido.
+- **Motion:** o vídeo reproduz de forma contínua e independente; a rolagem altera somente frase, `aria-pressed` e progresso 01–03.
+
+## Histórico de comparação e correções
+
+1. Primeiro passe — `blocked`:
+   - [P2] cabeçalho e contexto ainda apareciam como duas barras, enquanto a fonte A.2 usa uma navegação única integrada ao vídeo;
+   - [P2] o CTA mobile media 41,6 px de altura, abaixo do alvo mínimo de toque;
+   - [P2] a implementação ainda precisava provar que uma rolagem rápida não saltava o tempo do vídeo.
+2. Correções:
+   - Home, marca, navegação, CTA e Projetos foram reunidos em uma barra única; no mobile, o cabeçalho foi reduzido a Home, símbolo e Projetos;
+   - CTA, links superiores e três seletores de progresso passaram a medir pelo menos 44 px no mobile;
+   - o vínculo entre scroll e `currentTime` foi removido integralmente.
+3. Comparação final: as pranchas `brisa-a2-comparison-desktop-final.png` e `brisa-a2-comparison-mobile-final.png` não apresentam P0, P1 ou P2 acionável.
+
+## Verificações funcionais e técnicas
+
+- Viewports 390, 768, 1024 e 1440 px verificados sem overflow horizontal e com um único `h1`.
+- Reprodução inicial: após cerca de 2,2 s, o vídeo estava em 2,08 s, `paused=false` e `readyState=4`.
+- Rolagem rápida: o estado mudou de 01 para 03 enquanto o vídeo avançou apenas de 0,78 s para 1,01 s, confirmando que o scroll não move mais o playhead.
+- Fim natural: em 10 s, `currentTime=10`, `ended=true`, `paused=true` e `loop=false`; o último quadro permanece no palco.
+- Meio da narrativa: o intervalo central ativa “Renovar é cuidar do que te acolhe.” e somente o botão 02/03 recebe `aria-pressed=true`.
+- CTA principal mantém a URL de WhatsApp derivada da configuração central; Home e Projetos mantêm destinos distintos.
+- Alvos mobile: CTA 227,6 × 44 px; links superiores com 44 px de altura; controles 01–03 com 44 × 44 px.
+- O fallback de `prefers-reduced-motion` pausa o vídeo, remove o sticky e expõe as três mensagens em fluxo. A emulação de mídia não estava disponível na superfície do navegador usada neste passe; o ramo foi revisado no componente e nas regras CSS.
+- ESLint restrito, parse do inventário JSON, `git diff --check` e build de produção passaram.
+- O servidor de desenvolvimento final respondeu 200 sem overlay de erro; o aviso de Fast Refresh visto durante a edição ocorreu apenas enquanto o componente estava transitoriamente incompleto e não reapareceu na versão final.
+
+## Follow-up polish
+
+- P3 de desempenho: o MP4 original tem cerca de 14,3 MB e deve ser recomprimido antes da publicação coordenada P-01, preservando o conteúdo e o enquadramento aprovados.
+- P3 responsivo: a prancha usa um bocal sintetizado como elemento focal no mobile; o crop real privilegia o tecido e as fases existentes no vídeo original, conforme pedido de Kevin.
+- Escopo preservado: “O serviço” e todas as dobras seguintes da Brisa continuam sem redesign neste checkpoint.
+
+## Resultado
+
+final result: passed
+
+Gate visual: implementação local A.2 pronta para aprovação final de Kevin; B-01R1 permanece aberto até essa decisão explícita.
+
+---
+
+# Adendo de QA — refinamento A.2 — 2026-08-27
+
+- Fonte visual: `docs/design/brisa-de-tecido/references/b01r1-direcao-a2-centro-imersivo.png`.
+- Capturas atuais: `tmp/codex/qa/brisa-a2-refined-desktop-final.png` (1440 × 900 CSS px; raster 1425 × 891 px) e `tmp/codex/qa/brisa-a2-refined-mobile-final.png` (390 × 844 CSS px; raster 375 × 812 px).
+- Comparações visuais: `tmp/codex/qa/brisa-a2-refined-comparison-desktop-final.png` e `tmp/codex/qa/brisa-a2-refined-comparison-mobile-final.png`.
+- Correções verificadas: conteúdo reposicionado no centro óptico; selo e linha proporcionais; separador com losango; números removidos do texto dinâmico; CTA com ícone ampliado e seta animada.
+- Interações verificadas: hover ativa a animação da seta; scroll rápido muda de 01 para 03 enquanto o vídeo avança apenas de 0,17 s para 0,41 s; mobile mantém CTA de 48 px e seletores de 44 × 44 px.
+- Regressão: 390, 768, 1024 e 1440 px sem overflow; um único `h1`; console sem erros ou avisos.
+
+## Resultado
+
+final result: passed
+
+Gate visual: implementação local A.2 refinada e pronta para a aprovação visual final de Kevin; B-01R1 permanece aberto até essa decisão explícita.
+
+---
+
+# Adendo de QA — contraste e trilho editorial A.2 — 2026-08-27
+
+- Capturas atuais: `tmp/codex/qa/brisa-a2-contrast-rail-desktop.png` (1440 × 900), `tmp/codex/qa/brisa-a2-contrast-rail-moment-02.png` (1440 × 900, momento 02) e `tmp/codex/qa/brisa-a2-contrast-rail-mobile.png` (390 × 844).
+- Correção do P1 reportado: o pseudo-elemento que produzia uma superfície translúcida e arredondada foi removido (`content: none`). O contraste agora vem do véu global e de sombras difusas no próprio conteúdo, sem borda, fundo local ou efeito de card.
+- Trilho editorial: título, frase ativa e CTA compartilham o mesmo retângulo de leitura. No desktop, os três elementos renderizam entre `500.3px` e `967.5px`; no mobile, entre `21.3px` e `353.7px`.
+- Momento 02: “Renovar é cuidar do que te acolhe.” permanece contido no trilho, em duas linhas, sem exceder as laterais do título.
+- Regressão: 1440 e 390 px sem overflow horizontal; um único `h1`; `::before` sem fundo ou `backdrop-filter`; console sem erros ou avisos.
+
+## Resultado
+
+final result: passed
+
+Gate visual: aprovado explicitamente por Kevin em 2026-08-27; B-01R1 está encerrado e congelado. O próximo checkpoint é B-01R2 — “O serviço”.
+
+---
+
+# Adendo de QA — proporção e recarregamento A.2 — 2026-08-27
+
+- A coluna voltou a seguir a composição da prancha: CTA na largura total de leitura, selo centralizado e mais curto, separador em largura intermediária e título/frase alinhados à esquerda no mesmo início editorial.
+- O contraste atrás da copy agora usa uma camada escura filtrada (`blur(2.75rem)`), propositalmente sem borda, raio ou superfície translúcida aparente.
+- Recarregamento: após forçar `scrollY=1500` e o momento 03, a página foi recarregada; voltou a `scrollY=0` e a “Sua sala com outro respiro.” (momento 01).
+- Regressão local: sem overflow, um único `h1` e console sem erros ou avisos.
+
+---
+
+# Adendo de QA — B-01R2, direção A Ateliê de tramas — 2026-08-28
+
+- Fonte visual: `docs/design/brisa-de-tecido/references/b01r2-nova-direcao-a-ateliê-de-tramas-v2.png`; alvo isolado: `docs/design/brisa-de-tecido/references/b01r2-a-atelie-de-tramas-fidelity-brief.md`.
+- Estado desktop verificado no navegador local: a faixa 01 Sofás ocupa o foco visual com recorte têxtil, 02 Poltronas, 03 Cadeiras e 04 Puffs recuam em contraste; a escolha de Poltronas transfere corretamente o estado ativo.
+- Interação: clique/touch, Enter/Espaço nativos e setas, Home e End atualizam seleção e foco. O modo reduzido remove as transições sem remover conteúdo ou controle.
+- Regressão: um único `h1`, sem overflow horizontal e console sem erros em desktop. `npx tsc --noEmit`, `npm run build` e `git diff --check` passaram após a checagem fora da sandbox, necessária apenas para liberar os arquivos gerados do Next/TypeScript no Windows.
+
+## Resultado
+
+final result: passed
+
+Gate visual: implementação local B-01R2 A pronta para revisão e aprovação explícita de Kevin; nenhuma publicação foi feita.
+
+---
+
+# Adendo de QA — B-01R2, fotos por peça — 2026-08-28
+
+- Escopo desta microetapa: somente os assets ativos do seletor; ícones e aparência das faixas recolhidas permanecem inalterados.
+- Sofás, Poltronas, Cadeiras e Puffs foram testados no navegador local. Cada clique troca para um arquivo de imagem próprio, respectivamente `brisa-service-textile-selector.png`, `brisa-service-armchair.png`, `brisa-service-chair.png` e `brisa-service-pouf.png`.
+- Console sem erros. Não houve publicação, alteração de rota ou mudança em outras dobras.
+
+---
+
+# Adendo de QA — B-01R2, matéria visível e ícones — 2026-08-28
+
+- Escopo desta revisão: somente o seletor de `#servico`, autorizado por Kevin após a validação dos quatro assets.
+- Todas as faixas agora preservam sua foto a 22% de opacidade; ao selecionar uma peça, sua faixa expande e a foto sobe a 100%, mantendo a hierarquia da cópia ativa.
+- A Cadeira deixou de repetir o ícone de poltrona e passou a usar um ícone de cadeira; o Puff recebe um ícone de volume macio. Os quatro pertencem à mesma biblioteca e seguem o mesmo comportamento de entrada.
+- Os quatro estados foram testados no navegador local; não houve erros no console.
+
+---
+
+# Correção de QA — B-01R2, padrão de ícones — 2026-08-28
+
+- A primeira versão dos ícones de Cadeiras e Puffs foi descartada: seus pseudo-elementos CSS invadiam a cópia e criavam linhas sem função no estado expandido.
+- Cadeiras e Puffs foram substituídos por ícones da biblioteca local já usada por Sofás e Poltronas. Agora os quatro painéis compartilham escala, posição, transição e leitura, sem linhas adicionais sobre o texto.
+- Cadeira expandida, Puff expandido, ausência de overflow e console foram conferidos no navegador local.
+
+---
+
+# Adendo de QA — B-01R2, ficha de atendimento — 2026-08-28
+
+- Direção A escolhida por Kevin para a coluna de apresentação; fonte de verdade: `docs/design/brisa-de-tecido/references/b01r2-a-ficha-de-atendimento-fidelity-brief.md`.
+- Fundo atualizado para eucalipto frio e a área textual passa a comunicar os quatro critérios reais — Peça, Tecido, Dimensões e Condição atual — e o significado do primeiro contato: fotos, medidas e bairro.
+- Os quatro painéis não foram alterados. A captura local conferiu os quatro critérios, um único `h1`, ausência de overflow e console sem erros em desktop.
+
+---
+
+# Adendo de QA — B-01R2, guia condensada — 2026-08-28
+
+- O bloco de critérios pequenos e o apoio separado de primeiro contato foram substituídos por uma só guia, após feedback de Kevin sobre densidade de texto.
+- O parágrafo principal continua responsável pelos critérios de avaliação; a guia grande comunica apenas “Para orientar o atendimento / Fotos → Medidas → Bairro”.
+- Navegador local: guia renderizada, nenhum critério antigo remanescente, um único `h1`, sem overflow e console sem erros em desktop. Os quatro painéis permaneceram fora do escopo.
+
+## Resultado
+
+final result: passed
+
+Gate visual: B-01R2 — O serviço, direção A Ateliê de tramas — aprovado explicitamente por Kevin em 2026-08-28 e congelado. O próximo checkpoint é B-02 — Como funciona.
+
+---
+
+# Adendo de QA — B-02, direção A Fio de chegada — 2026-08-28
+
+- Fonte visual: `docs/design/brisa-de-tecido/references/b02-direcao-a-fio-de-chegada.png`; alvo operacional: `docs/design/brisa-de-tecido/references/b02-a-fio-de-chegada-fidelity-brief.md`.
+- Escopo: somente `#como-funciona`. B-01R1 A.2 e B-01R2 A permanecem sem alteração.
+- Desktop 1440 × 900: cabeçalho editorial, as três estações de matéria, o fio horizontal e as cópias obrigatórias renderizam; um único `h1`, sem overflow e sem overlay de erro.
+- Mobile 390 × 844: eixo vertical, marcador 01–03 completo, três etapas no fluxo e saída de WhatsApp com 156.14 × 44 px. Um primeiro recorte do marcador 01 foi corrigido ao liberar o overflow da estação no layout empilhado.
+- Regressão: 768, 1024 e 1440 px sem overflow, sem overlay de erro e com `#como-funciona` presente. Console do navegador sem avisos ou erros.
+- Movimento reduzido emulado: as três estações ficam visíveis e `animation-name` é `none` para todas. `npx tsc --noEmit`, `npm run build` e `git diff --check` passaram; não houve publicação.
+
+## Resultado
+
+final result: passed
+
+Gate visual: implementação local B-02 A — Fio de chegada — pronta para aprovação explícita de Kevin. Não avançar para B-03 antes dessa decisão.
+
+---
+
+# Revisão de QA — B-02, refinamento solicitado por Kevin — 2026-08-28
+
+- O cabeçalho de `#como-funciona` agora inicia como as dobras aprovadas: ícone de percurso, rótulo “Como funciona” e linha editorial. O texto de apoio concorrente foi removido.
+- O fio horizontal foi dividido por estação para iniciar após cada marcador e encerrar antes do próximo; os marcadores 02 e 03 não são mais atravessados.
+- A estação 02 foi refeita como ficha eucalipto legível, com a cópia obrigatória e os apoios “Peça” e “Condições do atendimento”; as miniaturas sem função foram removidas.
+- Em ponteiro com hover, cada estação recebe elevação e sombra curta; o ramo reduzido mantém as etapas estáticas. A automação de navegador confirmou a regra de layout e os viewports, mas não reproduziu o estado de ponteiro; a percepção do hover permanece para revisão visual de Kevin.
+- Regressão: 390, 768, 1024 e 1440 px sem overflow; marcador mobile íntegro em `left: 16px`; lint restrito, TypeScript, build e `git diff --check` passaram. Nenhuma publicação foi feita.
+
+## Resultado
+
+final result: passed
+
+Gate visual: B-02 A continua aguardando a aprovação explícita de Kevin.
+
+---
+
+# Reabertura — B-02R1, história visual dos cards — 2026-08-28
+
+- Kevin não aprovou B-02 A — Fio de chegada. A linha longa no topo, o fio pontilhado entre os cards e a relação visual das três imagens foram rejeitados.
+- A identificação compacta com ícone, rótulo “Como funciona” e linha curta permanece como linguagem desejada. O título pode usar uma conexão editorial `→`, sem quebra conceitual entre “cuidado” e “do contato ao local”.
+- O próximo gate é uma nova exploração A/B/C restrita às três etapas; não implementar a nova direção antes de uma escolha explícita.
+
+---
+
+# Adendo de QA — B-02R1 A Rastro do cuidado — 2026-08-28
+
+- Direção escolhida: estrutura limpa de A com fotografia orientada por B; fonte: `b02r1-a-rastro-do-cuidado-fidelity-brief.md`.
+- Os assets próprios `brisa-process-contact.png`, `brisa-process-alignment.png` e `brisa-process-on-site.png` correspondem, respectivamente, ao contato, à observação/alinhamento e à higienização no local. A imagem central não contém fita de medida nem números.
+- A linha superior e os conectores pontilhados foram removidos. O cabeçalho compacto permanece; no título desktop, o trajeto visual agora liga “do contato” a “ao local” em uma única linha.
+- Navegador local: 1440 e 390 px sem overflow, um único `h1` e três etapas renderizadas. A implementação aguarda aprovação visual explícita; não houve publicação.
+
+---
+
+# Refinamento de QA — B-02R1, matéria e percurso — 2026-08-28
+
+- O fundo de `#como-funciona` deixou a retícula pontilhada da dobra anterior e recebeu uma trama cruzada discreta, próxima de linho/papel.
+- O primeiro card ganhou gradiente inferior mais profundo e cópia clara para recuperar contraste sobre a fotografia; os marcadores 01 e 02 passaram a ter silhuetas distintas (círculo e quadrado acidulado rotacionado).
+- A saída do terceiro card agora usa o ícone e a estrutura de WhatsApp da hero; a seta permanece um feedback curto, não um segundo CTA concorrente.
+- O percurso editorial foi deslocado para entre “do contato” e “ao local”, com seta longa e contraste suficiente contra o novo fundo.
+- Lint restrito, TypeScript e `git diff --check` passaram. Não houve publicação.
+
+---
+
+# Refinamento de QA — B-02R1, fio editorial — 2026-08-28
+
+- A seta reta entre “do contato” e “ao local” foi substituída por um percurso pontilhado em onda. Ele mantém a ideia de deslocamento, mas sem ponta de seta nem conexão com os cards.
+- Captura local em 1440 px conferida após a troca; o título, os três cards e a linha editorial permanecem legíveis e sem overflow.
+
+---
+
+# Refinamento de QA — B-02R1, arco de chegada — 2026-08-28
+
+- O percurso pontilhado foi rejeitado por Kevin e substituído por um arco vetorial contínuo, fino e com terminação discreta. O arco acompanha “do contato” até “ao local” sem transformar o título em um ícone.
+- Capturas locais em 1440 × 900 e 390 × 844 confirmaram o arco, a quebra natural do título no mobile e a ausência de overflow. A dobra continua aguardando aprovação explícita; não houve publicação.
+
+---
+
+# Refinamento de QA — B-02R1, conector tipográfico — 2026-08-28
+
+- O arco longo não atingiu o acabamento desejado e foi retirado. A relação “do contato” → “ao local” agora é sugerida por um único conector curvo tipográfico, em acid, sem linha desenhada ou elemento gráfico concorrente.
+- Captura local em 1440 px confirmou que a nova marca preserva a hierarquia do título e não altera os cards. A dobra continua aguardando aprovação explícita; não houve publicação.
+
+---
+
+# Refinamento de QA — B-02R1, continuidade tipográfica — 2026-08-28
+
+- O conector curvo tipográfico também foi reprovado na captura local: parecia um glifo solto e concorria com a frase. Ele foi removido, sem substituição gráfica.
+- “Do contato ao local” agora é uma única sequência serifada, com espaçamento ajustado para a leitura no mobile. As capturas locais em 1440 × 900 e 390 × 844 mostram o título mais coeso, sem linha, ícone ou ornamento gráfico adicional.
+- Decisão de QA interna: esta é a primeira alternativa que passa por coerência tipográfica e responsividade; a dobra ainda precisa da aprovação explícita de Kevin. Não houve publicação.
+
+---
+
+# Resultado — B-02R1, aprovação de Kevin — 2026-08-28
+
+- Kevin aprovou explicitamente B-02R1 A — Rastro do cuidado — após a revisão final da continuidade tipográfica “do contato ao local”.
+- B-02R1 está congelada junto de B-01R1 e B-01R2. O próximo checkpoint aberto é B-03 — `#duvidas`, “Antes de chamar”. Nenhuma publicação foi feita.
+
+---
+
+# Design QA — B-03 A revisada, A diferença mora no toque — 2026-08-28
+
+- A direção escolhida usa um único palco com o registro Antes sobreposto ao Depois; a camada limpa é normalizada somente por CSS, sem editar os assets originais.
+- Desktop em 1440 px e mobile em 390 px conferidos: largura total, régua vertical e rótulos Antes/Depois legíveis.
+- Teclado confirmado: 50 → 55 pelas setas, Home → 0 e End → 100. O mesmo handler atende pointer e toque.
+- Lint restrito e build de produção passaram; não houve publicação. A automação não reproduziu o drag de pointer com confiança, portanto esse gesto permanece para a revisão manual de Kevin.
+
+final result: passed
+
+Gate visual: Kevin aprovou explicitamente B-03 A revisada em 2026-08-28. O par final usa o sofá sujo original e uma versão limpa de alta resolução recriada a partir dele; B-03 está congelada. Não houve publicação.

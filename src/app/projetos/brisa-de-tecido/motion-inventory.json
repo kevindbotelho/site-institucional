@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "brisa-hero-autoplay-three-moments",
+      "fold": "foundation-header-hero",
+      "element": "full-bleed-autoplay-video-optical-center-copy-changing-serif-message-and-progress-controls",
+      "category": "structural-and-signature",
+      "trigger": "scroll-or-explicit-moment-selection",
+      "effect": "sticky-stage-independent-one-shot-video-message-crossfade-and-progress-update",
+      "engine": "react-dom-plus-css",
+      "intensity": "immersive",
+      "purpose": "keep-the-cleaning-video-fluid-while-the-copy-forms-a-clear-three-part-commercial-narrative",
+      "source": "approved-reference:docs/design/brisa-de-tecido/references/b01r1-direcao-a2-centro-imersivo.png",
+      "access": "local",
+      "adaptation": "real-ten-second-mp4-plays-once-while-three-scroll-intervals-control-copy-only-and-the-whatsapp-cta-arrow-crosses-on-hover-or-focus",
+      "reducedMotion": "sticky-disabled-static-video-frame-and-all-three-messages-visible-in-flow",
+      "mobile": "full-bleed-focal-crop-with-centered-copy-and-touch-friendly-progress-controls",
+      "status": "implemented-awaiting-user-gate"
+    },
+    {
+      "id": "brisa-service-atelier-piece-selection",
+      "fold": "service",
+      "element": "four-piece-editorial-selector-with-active-textile-panel",
+      "category": "functional-feedback",
+      "trigger": "click-touch-or-keyboard-selection",
+      "effect": "selected-panel-expands-raises-its-photo-opacity-and-reveals-guidance-while-the-other-panels-keep-their-own-images-recessed",
+      "engine": "react-state-plus-css",
+      "intensity": "restrained",
+      "purpose": "let-the-visitor-identify-the-piece-while-explaining-the-first-contact-evaluation",
+      "source": "approved-reference:docs/design/brisa-de-tecido/references/b01r2-nova-direcao-a-ateliê-de-tramas-v2.png",
+      "access": "keyboard-buttons-arrow-keys-home-end-and-visible-focus",
+      "adaptation": "the-active-panel-uses-the-project-textile-asset-and-the-four-panel-states-remain-available-on-touch",
+      "reducedMotion": "selection-switches-directly-without-panel-or-text-transition",
+      "mobile": "vertical-stacked-panels-preserve-the-same-one-active-piece-state",
+      "status": "implemented-awaiting-user-gate"
+    },
+    {
+      "id": "brisa-process-thread-three-stations",
+      "fold": "how-it-works",
+      "element": "three-material-editorial-stations-with-a-continuous-contact-to-location-serif-line-and-a-subordinate-whatsapp-exit",
+      "category": "structural-and-feedback",
+      "trigger": "initial-section-render-card-hover-when-available-and-whatsapp-link-hover-or-focus",
+      "effect": "one-time-01-to-03-settle-cascade-subtle-card-lift-and-small-exit-arrow-shift",
+      "engine": "css",
+      "intensity": "restrained",
+      "purpose": "make-the-real-contact-to-on-site-service-sequence-scannable-without-repeating-the-piece-selector-and-provide-tactile-feedback-without-selection",
+      "source": "selected-reference:docs/design/brisa-de-tecido/references/b02r1-a-rastro-do-cuidado-fidelity-brief.md",
+      "access": "semantic-ordered-list-with-a-standard-whatsapp-link-and-visible-focus",
+      "adaptation": "uses-the-local-process-assets-for-contact-alignment-and-on-site-care, while-the-continuous-serif-phrase-communicates-the-contact-to-location-transition-without-a-drawn-line-or-symbol",
+      "reducedMotion": "all-three-stations-render-in-their-final-position-without-animation-and-the-link-remains-available",
+      "mobile": "vertical-thread-and-three-stacked-stations-without-required-interaction",
+      "status": "implemented-awaiting-user-gate"
+    }
+  ]
+}

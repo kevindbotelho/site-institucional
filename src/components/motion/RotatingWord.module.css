@@ -1,0 +1,58 @@
+.root {
+  display: inline-block;
+}
+
+.window {
+  display: inline-grid;
+  height: 1.18em;
+  min-width: var(--rotating-word-min-width);
+  overflow: hidden;
+  position: relative;
+  vertical-align: -0.13em;
+}
+
+.word,
+.entering,
+.leaving {
+  display: block;
+  white-space: nowrap;
+}
+
+.entering {
+  animation: rotating-word-in var(--rotating-word-duration) cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.leaving {
+  animation: rotating-word-out var(--rotating-word-duration) cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes rotating-word-in {
+  from {
+    opacity: var(--rotating-word-entry-opacity);
+    transform: translateY(calc(var(--rotating-word-travel) * -1));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotating-word-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: var(--rotating-word-exit-opacity);
+    transform: translateY(var(--rotating-word-travel));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entering,
+  .leaving {
+    animation: none;
+  }
+}

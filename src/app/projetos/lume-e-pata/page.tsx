@@ -8,6 +8,7 @@ import {
 import { FaCircle, FaPaw } from "react-icons/fa6";
 import { SiWhatsapp } from "react-icons/si";
 
+import { RotatingWord } from "@/components/motion/RotatingWord";
 import { ScrollRevealController } from "@/components/motion/ScrollRevealController";
 import { siteConfig } from "@/content/site";
 import { getWhatsAppUrl } from "@/lib/contact";
@@ -135,7 +136,13 @@ export default function LumeEPataPage() {
               <h1 id="lume-title">
                 Cuidado leve<br />
                 para uma<br />
-                rotina mais <em>feliz.</em>
+                rotina mais{" "}
+                <em>
+                  <RotatingWord
+                    minWidth="10ch"
+                    words={["feliz.", "tranquila.", "simples.", "acolhedora."]}
+                  />
+                </em>
               </h1>
               <p className={styles.portalText}>
                 Um espaço de bairro para cuidar do seu pet com atenção, explicar

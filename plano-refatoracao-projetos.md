@@ -224,7 +224,7 @@ Escopo:
 
 ### B-01R1 — revalidação da fundação, cabeçalho e hero da Brisa
 
-Estado: **próximo checkpoint aberto**.
+Estado: **concluído e aprovado explicitamente por Kevin em 2026-08-27**.
 
 Escopo:
 
@@ -236,28 +236,47 @@ Escopo:
 
 Gate: Kevin escolhe uma direção para fundação, cabeçalho e hero.
 
-### B-01R2+ — demais dobras da Brisa
+### B-01R2 — O serviço da Brisa
 
-Estado: **bloqueado até a aprovação e implementação de B-01R1**.
-
-Escopo:
-
-- Trabalhar uma dobra por vez, sempre com três alvos A/B/C antes do código.
-- Priorizar clareza da oferta, conversão para WhatsApp e variedade real de composição e movimento.
-- Definir o próximo checkpoint somente após a aprovação explícita da dobra anterior.
-
-Gate: aprovação visual explícita de cada dobra.
-
-### B-03 — acabamento dirigido da Brisa
-
-Estado: **pendente**.
+Estado: **direção A — Ateliê de tramas — implementada localmente e aprovada explicitamente por Kevin em 2026-08-28**.
 
 Escopo:
 
-- Corrigir em lote as observações da revisão.
-- Refinar hierarquia, contraste, textura, movimento, componentes e CTA.
+- Trabalhar somente a dobra atual “O serviço”, sempre com três alvos A/B/C antes do código.
+- A primeira rodada é registro rejeitado: as pranchas esquemáticas, com tipografia aproximada e sem direção de arte final não podem ser implementadas. A nova rodada precisa apresentar qualidade visual final julgável, sem depender de “polimento” posterior.
+- Comunicar que a higienização varia conforme tipo de peça, tecido, dimensões e condição atual.
+- A direção escolhida usa seleção por peça: sofás, poltronas, cadeiras e puffs; a peça ativa se expande e revela o texto, enquanto as demais recuam em contraste.
+- Priorizar clareza da oferta, conversão para WhatsApp, variedade estrutural e uma assinatura de motion orientada ao clique, não a uma nova hero com scrollytelling.
 
-Gate: aprovação visual da experiência completa.
+Gate: concluído.
+
+### B-02 — Como funciona
+
+Estado: **concluído e aprovado explicitamente por Kevin em 2026-08-28. B-02R1 A — Rastro do cuidado — preserva a estrutura limpa de A e assets próprios orientados pela direção B, sem fita métrica/números em imagem. O título concluiu como continuidade tipográfica, sem conector gráfico.**
+
+Escopo:
+
+- Trabalhar somente a dobra `#como-funciona`, preservando B-01R1 e B-01R2 integralmente.
+- Comunicar a sequência real: mostrar o estofado; alinhar os detalhes; receber o serviço no local.
+- Não inventar preço, prazo, garantia, produto químico, certificação, resultado, métrica, cliente ou promessa técnica.
+- Criar exatamente três direções visuais finalizadas, desktop e mobile, antes de escrever código.
+- Priorizar continuidade com a matéria e o ritmo editorial de B-01R2 sem repetir a interação de faixas nem abrir uma nova hero.
+
+Gate: concluído.
+
+### B-03 — Fechamento final da Brisa — antes/depois
+
+Estado: **concluído e aprovado explicitamente por Kevin em 2026-08-28.**
+
+Escopo:
+
+- Trabalhar somente a última dobra existente depois de `#duvidas`, sem alterar B-01R1, B-01R2 ou B-02R1.
+- A antiga proposta `#duvidas` — “Antes de chamar” — foi interrompida antes de implementação, pois repetia “Fotos → Medidas → Bairro”, já explicado em B-01R2 e B-02R1.
+- Encerrar a experiência com uma prova visual honesta de antes/depois e uma única saída para WhatsApp, a partir de `public/images/projects/brisa-before-sofa.png` e `brisa-after-sofa.jpg`.
+- Explorar exatamente três direções visuais A/B/C concretas, com desktop, mobile e assinatura de motion, antes de código.
+- Não inventar preço, prazo, garantia, produto, certificação, resultado, métrica, cliente ou promessa técnica. Não transformar a dobra em uma nova hero nem repetir a seleção de peças ou os três cards de B-02. O comparador arrastável antes/depois é uma hipótese a ser julgada nas opções, não uma decisão implementável antecipadamente; a diferença de crop entre os dois assets precisa ser tratada com honestidade.
+
+Resultado: direção A revisada — “A diferença mora no toque” — implementada como um único comparador vertical. O registro limpo foi recriado a partir do sujo de alta resolução para manter a mesma geometria; o CTA final usa o padrão WhatsApp com resposta de motion. Nenhuma publicação foi feita.
 
 ### B-04 — QA e publicação da Brisa
 
@@ -271,11 +290,11 @@ Escopo:
 
 ### P-01 — alinhamento final do portfólio
 
-Estado: **pendente**.
+Estado: **em revisão visual local**. A direção A — Faixas de projetos — foi escolhida por Kevin e aplicada somente aos cards de `/projetos`; a primeira faixa já é horizontal e escalável, sem conteúdos fictícios para preencher categorias futuras. Ainda falta o gate visual, a QA conjunta e a publicação.
 
 Escopo:
 
-- Atualizar capas ou apresentação dos dois projetos na Home e em `/projetos`, apenas se os novos visuais exigirem.
+- Manter a Home inalterada neste checkpoint e aplicar a apresentação escalável aprovada apenas aos dois cards de `/projetos`.
 - Validar transições entre Zucco, `/projetos` e as duas experiências.
 - Manter `/projetos` otimizada para dois destaques até existir um terceiro trabalho publicável.
 - Rodar QA integral e publicar o conjunto final.

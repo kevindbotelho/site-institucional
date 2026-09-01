@@ -1,6 +1,6 @@
 # Status atual — Site institucional
 
-> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-08-20.
+> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-08-31.
 
 ## Estado geral
 
@@ -67,9 +67,9 @@ A seção de Serviços apresenta automações com planilhas e dados sem limitar 
 
 ## Estado do sistema visual
 
-- A Home e `/projetos` seguem a direção da Zucco documentada a partir do Lumen LP System.
-- Lume & Pata e Brisa de Tecido possuem temas locais e CSS isolado. A refatoração visual local do Lume está concluída e aprovada; a Brisa ainda não possui um Design System próprio formalizado.
-- O próximo ciclo ativo é a reconstrução dobra a dobra da Brisa, começando pela revalidação da referência OpenDesign, pela fundação visual, pelo cabeçalho e pela hero.
+- A Home e `/projetos` seguem a direção da Zucco documentada a partir do Lumen LP System. Em P-01, somente a apresentação de projetos foi atualizada localmente para a direção aprovada A — Faixas de projetos: hero, catálogo e CTA compartilham uma superfície contínua; o título usa a mesma escala da Home e alterna lentamente o destaque final entre expressões compatíveis, com o texto de apoio menor à direita. A primeira faixa, “Projetos em destaque”, é escalável e usa capas integrais com etiqueta de tipo, título, resumo e seta horizontal, sem moldura interna. No celular, o próximo card fica parcialmente visível e a faixa aceita toque, teclado, arraste real por mouse e controles laterais quando houver conteúdo fora da área visível; o arraste nativo de links/imagens é bloqueado para preservar a navegação por clique. O hover aplica apenas uma inclinação tridimensional leve e concentra a resposta de motion na seta. A mesma roleta tipográfica lenta foi aplicada ao destaque da hero de Lume & Pata, respeitando `prefers-reduced-motion`. A taxonomia, o contrato de novos itens e o padrão de motion reutilizável estão em `docs/design/zucco/portfolio-catalog.md`. A Home, a estrutura, os CTAs e a navegação da Zucco permanecem inalterados. A implementação aguarda aprovação visual de Kevin e ainda não foi publicada.
+- Lume & Pata e Brisa de Tecido possuem temas locais e CSS isolado. A refatoração visual local do Lume está concluída e aprovada; a Brisa agora possui a fundação visual A.2 e um sistema de motion local documentado.
+- B-01R1 da Brisa foi aprovado localmente por Kevin: a barra de contexto integrada, o cabeçalho e a hero A.2 — Centro imersivo — estão congelados. O vídeo original ocupa o fundo, toca uma vez de forma independente e repousa no último quadro; o scroll altera somente as três mensagens e o progresso. B-01R2 — “O serviço” — foi aprovado explicitamente por Kevin em 2026-08-28: a direção A — Ateliê de tramas — usa seleção por peça, foco e teclado, fotos próprias de sofá, poltrona, cadeira e puff, e uma coluna Ficha de atendimento com a guia “Fotos → Medidas → Bairro”. A primeira rodada esquemática A/B/C continua rejeitada e não deve ser reutilizada. B-02R1 — “Como funciona” — foi aprovada explicitamente por Kevin em 2026-08-28: a direção A — Rastro do cuidado — usa três painéis locais para contato, observação/alinhamento e higienização no estofado, com continuidade tipográfica no título e sem linha pontilhada, arco ou símbolo decorativo. B-01R1, B-01R2 e B-02R1 permanecem congelados.
 - A orientação aprovada é refatorar o visual existente sobre primitivas compartilhadas e temas próprios, preservando conteúdo, rotas, imagens, responsividade e comportamento já construídos.
 - **Lume & Pata** usa o Savory Plate como referência principal de composição e interação, com OpenDesign como referência secundária de profundidade editorial. A Home da Zucco e o Lumen são apenas régua de qualidade e não podem fornecer ao Lume cabeçalho, tipografia, CTA, silhueta de hero ou linguagem de movimento.
 - **Brisa de Tecido** usará o OpenDesign como referência estrutural e tipográfica, sem adotar sua paleta pastel: permanecem como base o verde profundo, eucalipto, verde ácido e papel/linho do projeto atual.
@@ -121,13 +121,13 @@ Resultado local do L-02R1 atualizado em 2026-08-13:
 
 ## Pendências
 
-- Iniciar B-01R1 na Brisa de Tecido: revalidar OpenDesign contra a identidade atual e produzir três direções visuais A/B/C para fundação, cabeçalho e hero antes de qualquer código.
-- Criar na Brisa de Tecido as saídas diretas e distintas para a Home da Zucco e para `/projetos`; o Lume & Pata já possui ambas.
+- `#duvidas` (“Antes de chamar”) foi removida em 2026-08-28 por repetir as informações de contato já comunicadas em B-01R2 e B-02R1; o link local correspondente também saiu do cabeçalho. O fechamento B-03 — “A diferença mora no toque” — aprovado explicitamente, passa a seguir diretamente “Como funciona”; B-01R1, B-01R2, B-02R1 e B-03 permanecem congelados.
+- A Brisa retorna para `/projetos` pela barra de contexto superior (“Projetos Zucco”) e também mantém a saída de projetos no cabeçalho e no rodapé; a navegação de retorno não aponta mais para a Home da Zucco.
 - Quando houver um terceiro trabalho publicável ou um projeto autoral pronto, migrar `/projetos` para destaques seguidos de grade compacta, com no máximo dois agrupamentos: Projetos para negócios e Projetos autorais.
 - Escolher, comprar e conectar o domínio principal, quando aprovado.
 - Publicar futuros cases reais somente após existirem trabalhos contratados autorizados para apresentação.
 - A rota `/servicos` permanece fora do escopo até nova decisão comercial.
-- A versão pública continua no estado anterior à refatoração do Lume; a publicação das experiências refatoradas foi adiada para P-01.
+- A versão pública continua no estado anterior à refatoração do Lume; a publicação das experiências refatoradas continua condicionada à aprovação visual e à validação final de P-01.
 
 ## Contrato de sincronização
 

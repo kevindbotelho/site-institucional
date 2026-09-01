@@ -54,6 +54,14 @@ Fluxo obrigatório por dobra:
 5. compare a referência e a captura renderizada no mesmo viewport, corrija diferenças relevantes e pare no gate de aprovação;
 6. avance apenas depois da aprovação explícita de Kevin.
 
+### Qualidade do alvo criativo
+
+- A prancha A/B/C é uma proposta de direção de arte para o site final, não wireframe, diagrama de arquitetura, documentação de componentes nem versão propositalmente crua que “ficará bonita depois”. A opção escolhida deve poder ser implementada visualmente muito próxima do que Kevin julgou.
+- Cada opção deve já expressar a tipografia, densidade, contraste, escala, matéria, ícones, composição e motion da experiência. Não apresentar `Arial`, `Georgia`, texto genérico, SVG esquemático, boxes vazios, ilustração improvisada ou estética de site antigo como substituto de uma prancha visual de verdade.
+- A exploração pode propor um asset novo ou uma transformação visual que ainda não exista no repositório quando isso fortalecer a direção. Em cada opção, declarar em uma linha se o asset é existente, será criado depois da escolha ou é somente referência de intenção; a ausência de asset local nunca justifica rebaixar a direção para um layout genérico.
+- Depois da escolha, a IA deve criar ou adaptar o asset previsto, quando isso estiver no escopo e não exigir custo, licença fechada ou uma decisão comercial. Se houver esse impedimento, deve avisar Kevin antes de substituir silenciosamente a composição por uma versão mais fraca.
+- Motion precisa ser visível e julgável na prancha por frames, estados ou anotação concreta. Não prometer que uma animação futura transformará uma composição fraca em uma experiência forte.
+
 Não trate as três opções como variações cosméticas e não comprima exploração, escolha, implementação e QA em uma única passada. Quando o pedido envolver um site inteiro, divida-o em checkpoints de dobra e concentre a energia no primeiro checkpoint aberto.
 
 ### Design Systems legados e motion

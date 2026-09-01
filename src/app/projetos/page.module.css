@@ -1,0 +1,263 @@
+.projectsCanvas {
+  background:
+    radial-gradient(circle at 8% 0%, rgb(191 219 254 / 0.72), transparent 36rem),
+    radial-gradient(circle at 92% 10%, rgb(199 210 254 / 0.64), transparent 34rem),
+    linear-gradient(180deg, #f6f9ff 0%, #eef4ff 100%);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.projectRotator {
+  color: #2563eb;
+  line-height: 1.34;
+}
+
+.projectRotator [aria-hidden="true"] {
+  height: 1.42em;
+  vertical-align: -0.2em;
+}
+
+.projectRotator [aria-hidden="true"] > span {
+  background: linear-gradient(105deg, #2563eb 10%, #4f46e5 62%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200% auto;
+  color: transparent;
+}
+
+.catalogSection {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.catalogSectionHeading h2 {
+  color: #0f172a;
+  font-family: Manrope, Arial, sans-serif;
+  font-size: clamp(1.65rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  margin: 0.55rem 0 0;
+}
+
+.railFrame {
+  min-width: 0;
+  position: relative;
+}
+
+.catalogRail {
+  cursor: grab;
+  display: grid;
+  gap: 1rem;
+  grid-auto-columns: clamp(17.5rem, 32vw, 24rem);
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding: 0.15rem 0 1.15rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+}
+
+.catalogRailDragging,
+.catalogRailDragging .catalogLink {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.catalogRail::-webkit-scrollbar {
+  display: none;
+}
+
+.catalogCard {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.catalogLink {
+  aspect-ratio: 1.42 / 1;
+  border-radius: 1.1rem;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  display: block;
+  isolation: isolate;
+  overflow: hidden;
+  perspective: 900px;
+  position: relative;
+  text-decoration: none;
+  transform-style: preserve-3d;
+  transition: box-shadow 360ms ease, transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.catalogImage {
+  -webkit-user-drag: none;
+  user-select: none;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.catalogWash {
+  background: linear-gradient(180deg, transparent 32%, rgb(8 14 31 / 0.76) 100%);
+  inset: 0;
+  position: absolute;
+  transition: background 500ms ease;
+  z-index: 1;
+}
+
+.catalogCopy {
+  bottom: 1.2rem;
+  left: 1.2rem;
+  max-width: calc(100% - 5.75rem);
+  position: absolute;
+  z-index: 4;
+}
+
+.catalogTag {
+  backdrop-filter: blur(8px);
+  background: rgb(238 255 190 / 0.88);
+  border-radius: 999px;
+  color: #234237;
+  display: inline-flex;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  padding: 0.48rem 0.62rem;
+  text-transform: uppercase;
+}
+
+.catalogTitle {
+  font-family: Manrope, Arial, sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  margin: 0.85rem 0 0;
+}
+
+.catalogSummary {
+  display: block;
+  font-size: clamp(0.73rem, 1.25vw, 0.88rem);
+  line-height: 1.45;
+  margin-top: 0.6rem;
+  opacity: 0.92;
+}
+
+.catalogArrow {
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgb(255 255 255 / 0.94);
+  border-radius: 999px;
+  bottom: 1.2rem;
+  color: #17316d;
+  display: flex;
+  height: 2.65rem;
+  justify-content: center;
+  position: absolute;
+  right: 1.2rem;
+  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 2.5rem;
+  z-index: 4;
+}
+
+.catalogLink:hover .catalogImage {
+  transform: scale(1.045);
+}
+
+.catalogLink:hover .catalogWash {
+  background: linear-gradient(180deg, transparent 22%, rgb(8 14 31 / 0.84) 100%);
+}
+
+.catalogLink:hover .catalogArrow {
+  background: #17316d;
+  color: white;
+  transform: translateX(0.2rem) scale(1.05);
+}
+
+.catalogLink:hover .catalogArrow svg,
+.catalogLink:focus-visible .catalogArrow svg {
+  animation: catalog-arrow-prompt 360ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes catalog-arrow-prompt {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0.28rem);
+  }
+}
+
+.catalogLink:hover {
+  box-shadow: 0 12px 22px rgb(30 64 175 / 0.12);
+  transform: perspective(900px) translateY(-0.3rem) rotateX(1deg) rotateY(-0.8deg);
+}
+
+.catalogLink:focus-visible,
+.catalogRail:focus-visible,
+.railButton:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+}
+
+.railControls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.railButton {
+  align-items: center;
+  background: rgb(255 255 255 / 0.82);
+  border: 1px solid rgb(148 163 184 / 0.35);
+  border-radius: 999px;
+  color: #17316d;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.35rem;
+  justify-content: center;
+  transition: background 200ms ease, color 200ms ease, transform 200ms ease;
+  width: 2.35rem;
+}
+
+.railButton:hover:not(:disabled) {
+  background: #17316d;
+  color: white;
+  transform: translateX(0.14rem);
+}
+
+.railButton:disabled {
+  cursor: default;
+  opacity: 0.36;
+}
+
+.railButtonPrevious {
+  transform: rotate(180deg);
+}
+
+.railButtonPrevious:hover:not(:disabled) {
+  transform: rotate(180deg) translateX(0.14rem);
+}
+
+@media (max-width: 720px) {
+  .catalogRail {
+    grid-auto-columns: minmax(15.5rem, 78vw);
+    margin-right: -1rem;
+    padding-right: 1rem;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalogImage,
+  .catalogWash,
+  .catalogArrow,
+  .catalogLink,
+  .railButton,
+  .catalogArrow svg {
+    animation: none;
+    transition: none;
+  }
+}
