@@ -157,7 +157,10 @@ export function ProjectRail({ projects }: { projects: readonly Project[] }) {
         tabIndex={0}
       >
         {projects.map((project, index) => (
-          <article className={styles.catalogCard} key={project.href}>
+          <article
+            className={`${styles.catalogCard} ${styles.projectsEntranceCard}`}
+            key={project.href}
+          >
             <Link
               aria-label={`Abrir ${project.kind.toLocaleLowerCase("pt-BR")} ${project.title}`}
               className={styles.catalogLink}
@@ -171,7 +174,7 @@ export function ProjectRail({ projects }: { projects: readonly Project[] }) {
                 className={styles.catalogImage}
                 draggable={false}
                 fill
-                priority={index === 0}
+                loading="eager"
                 quality={90}
                 sizes="(min-width: 1024px) 25rem, (min-width: 640px) 48vw, 78vw"
                 src={project.image}

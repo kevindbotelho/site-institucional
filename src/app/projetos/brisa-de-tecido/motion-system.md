@@ -32,6 +32,12 @@
 - Em dispositivos com hover, cada estação sobe discretamente e ganha profundidade sem alterar seu conteúdo. A saída contextual “Enviar pelo WhatsApp” mantém sua seta curta em hover ou foco.
 - Em movimento reduzido, as três estações aparecem diretamente no estado final e a seta não se move.
 
+## B-03R1 — Moldura de ateliê
+
+- O divisor do comparador antes/depois permanece operável por ponteiro, toque e teclado; o rótulo de cada lado acompanha a presença da respectiva imagem.
+- Quando o divisor deixa uma camada praticamente fora de cena (até 14% para “Antes” ou a partir de 86% para “Depois”), o rótulo correspondente desaparece com um recuo curto de 180 ms.
+- Com movimento reduzido, essa transição é removida, mas a visibilidade contextual dos rótulos e a operação do slider permanecem disponíveis.
+
 ## Tokens
 
 - Troca de frase: 360 ms de opacidade e 520 ms de deslocamento, com `cubic-bezier(0.16, 1, 0.3, 1)`.

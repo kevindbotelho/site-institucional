@@ -89,9 +89,19 @@ Plano detalhado e checkpoints: `plano-refatoracao-projetos.md`. Prompt sempre pr
 - [x] Encerrar B-01R2: direção A — Ateliê de tramas — implementada e aprovada explicitamente por Kevin em 2026-08-28 para a dobra “O serviço”, incluindo Ficha de atendimento, seleção por peça, fotos próprias e acessibilidade proporcional. A primeira rodada esquemática continua rejeitada e não deve ser reutilizada.
 - [x] Encerrar B-02R1: direção A — Rastro do cuidado — refinada, validada localmente e aprovada explicitamente por Kevin em 2026-08-28. A continuidade “do contato ao local” é exclusivamente tipográfica; os conectores gráficos reprovados não devem voltar.
 - [x] Encerrar B-03: direção A revisada — “A diferença mora no toque” — aprovada explicitamente por Kevin em 2026-08-28. O fechamento usa um comparador único antes/depois, com os dois assets de alta resolução derivados da mesma geometria; `#duvidas` não foi redesenhada e será decidido como próximo checkpoint de conteúdo.
+- [x] Corrigir localmente o reveal ausente no topo de `/projetos`, a sobreposição de conteúdo no seletor de peças da Brisa e a escala excessiva do comparador antes/depois; lint, build, overflow mobile e console passaram em 2026-09-01. A aprovação visual final permanece pendente.
+- [x] Restaurar o sticky e a sincronização de rolagem/marcadores da hero da Brisa e suavizar suas linhas decorativas; o clique em 03/03 foi validado localmente em 2026-09-01. A aprovação visual final permanece pendente.
+- [x] Implementar B-03R1 — direção A “Moldura de ateliê” — com os assets reais do sofá, moldura, instrução de arraste e rótulos antes/depois; validação técnica e responsiva inicial passaram em 2026-09-01.
+- [x] Ajustar B-03R1 para ocultar o rótulo da camada que sai de cena nos extremos do slider; comportamento validado com Home e End em 2026-09-01.
+- [x] Corrigir a reinicialização da hero da Brisa após navegação client-side e adicionar ícone ao eyebrow da dobra do comparador em 2026-09-01.
+- [x] Uniformizar a entrada animada de `/projetos` em refresh e navegação interna, limpando o estado anterior do reveal e reiniciando a página no topo em 2026-09-01.
+- [x] Animar individualmente os cards de `/projetos` com a mesma sequência de reveal do topo, em cascata curta, em 2026-09-01.
+- [x] Corrigir o atraso zero do primeiro card para garantir a animação do Lume no refresh; o Brisa permanece em cascata logo depois, em 2026-09-01.
+- [x] Substituir a entrada principal de `/projetos` por animação local determinística, eliminando a diferença causada pelo estado global herdado entre Home/Lume e F5/Brisa, em 2026-09-01.
+- [x] Aprovar visualmente B-03R1 — “Moldura de ateliê” — aprovada explicitamente por Kevin em 2026-09-03.
 - [x] Remover `#duvidas` — “Antes de chamar” — e seu link local após a decisão de produto: o conteúdo repetia as orientações já presentes em “O serviço” e “Como funciona”.
-- [ ] Executar B-04: QA final da Brisa; publicação das duas experiências permanece coordenada com P-01.
-- [ ] Executar P-01: a direção A — Faixas de projetos — está implementada localmente somente nos cards de `/projetos`, como uma primeira faixa horizontal escalável de capas integrais; falta aprovação visual de Kevin, validação final conjunta e publicação.
+- [x] Executar B-04: QA final local da Brisa concluído em 2026-09-03, incluindo navegação client-side, progressão da hero, seletor de serviço, comparador por teclado, desktop, mobile, imagens, overflow, semântica, console e movimento reduzido. Publicação permanece coordenada com P-01.
+- [x] Executar P-01: direção A — Faixas de projetos — aprovada por Kevin e validada localmente em 2026-09-03 nos fluxos Home, Lume, Brisa e refresh, com a mesma entrada determinística do topo e dos dois cards. Publicação permanece pendente.
 - [ ] Manter primitivas técnicas compartilhadas sem compartilhar a identidade visual de cabeçalhos, botões, cards, CTAs e footers.
 - [ ] Adicionar em cada demonstração caminhos diretos e distintos para a Home da Zucco e para `/projetos`.
 

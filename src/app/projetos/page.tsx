@@ -59,12 +59,14 @@ export default function ProjectsPage() {
     <>
       <SiteNavigation />
       <div className="home-canvas">
-        <ScrollRevealController />
+        <ScrollRevealController resetOnMount />
         <main>
           <div className={styles.projectsCanvas}>
             <section className="relative px-4 pb-16 pt-16 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8 lg:pb-24 lg:pt-24">
               <div className="mx-auto max-w-6xl">
-                <p className="flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue-700">
+                <p
+                  className={`${styles.projectsEntrance} flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue-700`}
+                >
                   <span
                     aria-hidden="true"
                     className="h-px w-7 bg-gradient-to-r from-blue-600 to-indigo-600"
@@ -72,7 +74,9 @@ export default function ProjectsPage() {
                   Projetos
                 </p>
                 <div className="mt-5 grid gap-6 lg:grid-cols-[minmax(0,0.96fr)_minmax(18rem,0.8fr)] lg:items-end lg:gap-16">
-                  <h1 className="max-w-xl font-[family-name:Manrope,Arial,sans-serif] text-[2.25rem] font-extrabold leading-[1.16] tracking-[-0.065em] text-slate-950 sm:text-[2.9rem] lg:text-[3rem]">
+                  <h1
+                    className={`${styles.projectsEntrance} ${styles.projectsEntranceDelayOne} max-w-xl font-[family-name:Manrope,Arial,sans-serif] text-[2.25rem] font-extrabold leading-[1.16] tracking-[-0.065em] text-slate-950 sm:text-[2.9rem] lg:text-[3rem]`}
+                  >
                     Projetos que ganham{" "}
                     <RotatingWord
                       className={styles.projectRotator}
@@ -81,7 +85,9 @@ export default function ProjectsPage() {
                       words={["vida digital.", "clareza.", "presença.", "direção."]}
                     />
                   </h1>
-                  <p className="max-w-[29rem] text-[0.88rem] leading-6 text-slate-600 sm:text-[0.94rem] sm:leading-[1.7]">
+                  <p
+                    className={`${styles.projectsEntrance} ${styles.projectsEntranceDelayTwo} max-w-[29rem] text-[0.88rem] leading-6 text-slate-600 sm:text-[0.94rem] sm:leading-[1.7]`}
+                  >
                     Cada trabalho parte de um contexto diferente e escolhe a
                     estrutura que melhor ajuda o visitante a entender, confiar e
                     dar o próximo passo.
@@ -95,7 +101,7 @@ export default function ProjectsPage() {
               className="relative px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8 lg:pb-28"
             >
               <div className="mx-auto max-w-6xl">
-                <div className={styles.catalogSection} data-scroll-reveal="true">
+                <div className={`${styles.catalogSection} ${styles.projectsEntrance}`}>
                   <div className={styles.catalogSectionHeading}>
                     <h2 id="projects-list-title">Projetos em destaque</h2>
                   </div>

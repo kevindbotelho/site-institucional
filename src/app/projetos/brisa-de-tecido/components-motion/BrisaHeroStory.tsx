@@ -89,15 +89,15 @@ export function BrisaHeroStory({ whatsappUrl }: BrisaHeroStoryProps) {
   useEffect(() => {
     const video = videoRef.current;
     const motionQuery = window.matchMedia(reducedMotionQuery);
-    const navigation = performance.getEntriesByType("navigation")[0] as
-      | PerformanceNavigationTiming
-      | undefined;
     const previousScrollRestoration = window.history.scrollRestoration;
 
-    if (navigation?.type === "reload") {
-      window.history.scrollRestoration = "manual";
-      window.scrollTo(0, 0);
-    }
+    // Next preserves the previous document position during client navigation.
+    // This story needs to start at its first interval every time the route opens.
+    window.history.scrollRestoration = "manual";
+    const resetStoryPosition = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      updateStory();
+    };
 
     const scheduleUpdate = () => {
       if (frameRef.current !== null) return;
@@ -145,7 +145,15 @@ export function BrisaHeroStory({ whatsappUrl }: BrisaHeroStoryProps) {
     window.addEventListener("resize", scheduleUpdate);
     document.addEventListener("visibilitychange", resumeVideoOnReturn);
     motionQuery.addEventListener("change", syncMotionPreference);
-    scheduleUpdate();
+    resetStoryPosition();
+
+    // Next may apply its own scroll restoration just after the route mounts.
+    // Re-sync on the next frames so client-side entry and a hard reload behave alike.
+    const firstFrame = window.requestAnimationFrame(() => {
+      resetStoryPosition();
+      window.requestAnimationFrame(scheduleUpdate);
+    });
+    const deferredReset = window.setTimeout(resetStoryPosition, 0);
 
     if (video?.readyState && video.readyState >= HTMLMediaElement.HAVE_METADATA) {
       startVideo();
@@ -161,6 +169,8 @@ export function BrisaHeroStory({ whatsappUrl }: BrisaHeroStoryProps) {
       if (frameRef.current !== null) {
         window.cancelAnimationFrame(frameRef.current);
       }
+      window.cancelAnimationFrame(firstFrame);
+      window.clearTimeout(deferredReset);
     };
   }, [updateStory]);
 

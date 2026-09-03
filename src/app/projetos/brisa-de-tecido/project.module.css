@@ -1311,6 +1311,7 @@
   color: var(--paper);
   height: 100svh;
   isolation: isolate;
+  position: sticky;
   top: 0;
 }
 
@@ -1365,7 +1366,6 @@
 
 .heroEyebrow {
   align-items: center;
-  border-bottom: 1px solid rgb(242 240 232 / 0.65);
   color: var(--paper);
   display: flex;
   font-size: 0.67rem;
@@ -1408,7 +1408,7 @@
 
 .heroSeparator::before,
 .heroSeparator::after {
-  background: rgb(242 240 232 / 0.58);
+  background: rgb(200 240 107 / 0.42);
   content: "";
   flex: 1;
   height: 1px;
@@ -1919,6 +1919,8 @@
   border-right: 1px solid rgb(242 240 232 / 0.2);
   color: var(--paper);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
   flex: 0.7 1 0;
   isolation: isolate;
   min-width: 0;
@@ -1945,7 +1947,7 @@
 .serviceAtelierPieceMeta svg { color: var(--acid); height: clamp(1.35rem, 2.1vw, 2rem); opacity: 0; transition: opacity 240ms ease; width: clamp(1.35rem, 2.1vw, 2rem); }
 .serviceAtelierPiece[data-active="true"] .serviceAtelierPieceMeta svg { opacity: 1; }
 .serviceAtelierPieceName { border-bottom: 1px solid rgb(242 240 232 / 0.52); display: block; font-size: clamp(0.67rem, 0.95vw, 0.82rem); font-weight: 780; letter-spacing: 0.1em; margin-top: 1rem; padding-bottom: 0.75rem; position: relative; text-transform: uppercase; white-space: nowrap; }
-.serviceAtelierDescription { bottom: clamp(3.5rem, 7vw, 6rem); font-family: "Fraunces Variable", Fraunces, serif; font-size: clamp(1.55rem, 2.1vw, 2.45rem); font-style: italic; left: clamp(1rem, 2.2vw, 1.75rem); line-height: 1.04; max-width: 12ch; position: absolute; }
+.serviceAtelierDescription { font-family: "Fraunces Variable", Fraunces, serif; font-size: clamp(1.55rem, 2.1vw, 2.45rem); font-style: italic; line-height: 1.04; margin: auto 0 clamp(3.5rem, 7vw, 6rem); max-width: 12ch; position: relative; }
 .serviceAtelierTrace { background: var(--acid); bottom: 2rem; height: 2px; left: clamp(1rem, 2.2vw, 1.75rem); position: absolute; transform-origin: left; width: min(76%, 20rem); }
 
 .serviceAtelierCta { align-items: center; border-bottom: 1px solid var(--acid); color: var(--dark); display: none; font-size: 0.78rem; font-weight: 760; gap: 0.6rem; min-height: 3rem; text-decoration: none; }
@@ -1971,7 +1973,7 @@
   .serviceAtelierPieceMeta { font-size: 2.25rem; }
   .serviceAtelierPieceMeta svg { display: none; }
   .serviceAtelierPieceName { font-size: 0.55rem; letter-spacing: 0.04em; margin-top: 0.65rem; padding-bottom: 0.55rem; }
-  .serviceAtelierDescription { bottom: 4.25rem; font-size: 1.38rem; left: 0.75rem; max-width: 10ch; }
+  .serviceAtelierDescription { font-size: 1.38rem; margin: auto 0 4.25rem; max-width: 10ch; }
   .serviceAtelierTrace { bottom: 1.55rem; left: 0.75rem; }
   .serviceAtelierCta { display: flex; }
 }
@@ -2419,12 +2421,15 @@
   aspect-ratio: 1.6684;
   background: white;
   cursor: ew-resize;
+  height: min(72svh, 42rem);
   isolation: isolate;
   overflow: hidden;
   position: relative;
   touch-action: none;
   user-select: none;
-  width: 100%;
+  margin-inline: auto;
+  max-width: 88rem;
+  width: auto;
 }
 
 .finalComparisonStage:focus-visible {
@@ -2557,7 +2562,7 @@
 }
 
 @media (max-width: 620px) {
-  .finalComparisonStage { aspect-ratio: 0.86; }
+  .finalComparisonStage { aspect-ratio: 0.86; height: auto; width: 100%; }
   .finalComparisonAfter img,
   .finalComparisonBefore img { height: 100%; left: -50%; top: 0; width: 200%; }
   .finalComparisonGrip { height: 2.8rem; width: 2.8rem; }
@@ -2568,5 +2573,143 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .finalComparisonStage { scroll-behavior: auto; }
+  .finalComparisonStage,
+  .finalComparisonLabelBefore,
+  .finalComparisonLabelAfter { scroll-behavior: auto; transition: none; }
+}
+
+/* B-03 A revisada — Moldura de ateliê */
+.finalCta {
+  background:
+    radial-gradient(circle at 12% 8%, rgb(86 123 109 / 0.22), transparent 24rem),
+    var(--dark);
+  color: var(--paper);
+  padding: clamp(4rem, 8vw, 8rem) max(1rem, calc((100vw - 88rem) / 2));
+}
+
+.finalComparisonIntro {
+  margin: 0 auto clamp(2.25rem, 4vw, 3.75rem);
+  max-width: 76rem;
+  width: 100%;
+}
+
+.finalComparisonEyebrow {
+  align-items: center;
+  border-bottom: 1px solid rgb(200 240 107 / 0.6);
+  color: var(--acid);
+  display: flex;
+  font-size: 0.68rem;
+  font-weight: 800;
+  gap: 0.55rem;
+  letter-spacing: 0.15em;
+  margin: 0 0 1.6rem;
+  max-width: 20rem;
+  padding-bottom: 0.72rem;
+  text-transform: uppercase;
+}
+
+.finalComparisonEyebrow svg { flex: 0 0 auto; height: 1rem; width: 1rem; }
+
+.finalComparisonIntro h2 {
+  color: var(--paper);
+  font-family: "Onest Variable", "DM Sans", Arial, sans-serif;
+  font-size: clamp(3.3rem, 6vw, 6.6rem);
+  font-weight: 690;
+  letter-spacing: -0.075em;
+  line-height: 0.88;
+  margin: 0;
+  max-width: 11ch;
+  text-wrap: balance;
+}
+
+.finalComparisonIntro h2 em {
+  color: var(--acid);
+  display: block;
+  font-family: "Fraunces Variable", Fraunces, serif;
+  font-size: 0.88em;
+  font-style: italic;
+  font-weight: 440;
+}
+
+.finalComparisonFrame {
+  background: var(--paper);
+  border: 1px solid rgb(242 240 232 / 0.55);
+  border-radius: 1.35rem;
+  box-shadow: 0 2rem 5rem rgb(3 15 12 / 0.28);
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: clamp(0.55rem, 1.4vw, 1rem);
+  position: relative;
+  width: 100%;
+}
+
+.finalComparisonFrame::before {
+  border: 1px dashed rgb(86 123 109 / 0.72);
+  border-radius: 0.8rem;
+  content: "";
+  inset: clamp(0.3rem, 0.75vw, 0.55rem);
+  pointer-events: none;
+  position: absolute;
+  z-index: 4;
+}
+
+.finalComparisonStage {
+  aspect-ratio: 1.6684;
+  height: auto;
+  max-width: none;
+  width: 100%;
+}
+
+.finalComparisonLabelBefore,
+.finalComparisonLabelAfter {
+  font-size: 0.62rem;
+  padding: 0.55rem 0.7rem;
+  white-space: nowrap;
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+}
+
+.finalComparisonStage[data-before-label-visible="false"] .finalComparisonLabelBefore {
+  opacity: 0;
+  transform: translateY(-0.35rem);
+  visibility: hidden;
+}
+
+.finalComparisonStage[data-after-label-visible="false"] .finalComparisonLabelAfter {
+  opacity: 0;
+  transform: translateY(-0.35rem);
+  visibility: hidden;
+}
+
+.finalComparisonInstruction {
+  color: var(--paper);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  margin: 1.35rem auto 0;
+  max-width: 76rem;
+  text-align: center;
+}
+
+.finalComparisonClosure {
+  background: transparent;
+  margin: clamp(3.5rem, 7vw, 6rem) auto 0;
+  max-width: 76rem;
+  padding: 0;
+}
+
+@media (max-width: 620px) {
+  .finalCta { padding: 3.5rem 1rem 4.5rem; }
+  .finalComparisonIntro { margin-bottom: 2rem; }
+  .finalComparisonIntro h2 { font-size: clamp(3rem, 14vw, 4.6rem); }
+  .finalComparisonFrame { border-radius: 1rem; padding: 0.55rem; }
+  .finalComparisonStage { aspect-ratio: 0.86; }
+  .finalComparisonLabelBefore,
+  .finalComparisonLabelAfter {
+    font-size: 0.5rem;
+    letter-spacing: 0.07em;
+    padding: 0.42rem 0.48rem;
+  }
+  .finalComparisonLabelBefore,
+  .finalComparisonLabelAfter { transition-duration: 140ms; }
+  .finalComparisonInstruction { font-size: 0.72rem; margin-top: 1rem; }
+  .finalComparisonClosure { margin-top: 3.5rem; }
 }

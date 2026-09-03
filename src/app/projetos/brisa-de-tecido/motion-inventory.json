@@ -51,6 +51,23 @@
       "reducedMotion": "all-three-stations-render-in-their-final-position-without-animation-and-the-link-remains-available",
       "mobile": "vertical-thread-and-three-stacked-stations-without-required-interaction",
       "status": "implemented-awaiting-user-gate"
+    },
+    {
+      "id": "brisa-final-comparison-atelier-frame",
+      "fold": "before-after",
+      "element": "contained-before-after-slider-inside-a-tactile-paper-frame",
+      "category": "structural-and-functional",
+      "trigger": "pointer-touch-or-keyboard-slider-control",
+      "effect": "same-photo-comparison-remains-stable-while-the-divider-reveals-before-or-after-and-hides-the-label-of-the-layer-that-leaves-the-frame",
+      "engine": "react-state-plus-css",
+      "intensity": "restrained",
+      "purpose": "give-the-final-proof-a-clear-editorial-frame-and-instruction-without-making-the-photo-fill-the-entire-viewport",
+      "source": "selected-reference:docs/design/brisa-de-tecido/references/b03r1-a-moldura-de-atelie-fidelity-brief.md",
+      "access": "semantic-slider-with-pointer-touch-arrows-home-end-and-visible-focus",
+      "adaptation": "reuses-the-existing-before-and-after-sofa-assets-with-a-paper-frame-stitched-border-treatment-and-contextual-label-visibility-at-slider-extremes",
+      "reducedMotion": "comparison-remains-fully-operable-without-transitions",
+      "mobile": "narrow-paper-frame-with-portrait-comparison-stage-and-readable-before-after-labels",
+      "status": "implemented-awaiting-user-gate"
     }
   ]
 }

@@ -162,7 +162,7 @@ export function SiteNavigation() {
             alt=""
             className="h-8 w-auto sm:h-9"
             height={479}
-            priority
+            loading="eager"
             quality={90}
             sizes="(min-width: 640px) 8.25rem, 7.4rem"
             src="/brand/zucco-lockup-gradient.png"

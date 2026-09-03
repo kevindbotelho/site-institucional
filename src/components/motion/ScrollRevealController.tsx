@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const revealSelector = "[data-scroll-reveal]";
 
-export function ScrollRevealController() {
+export function ScrollRevealController({ resetOnMount = false }: { resetOnMount?: boolean }) {
   useEffect(() => {
     const root = document.documentElement;
     const elements = Array.from(
@@ -15,6 +15,19 @@ export function ScrollRevealController() {
     );
     const pendingTimers = new Set<number>();
     let observer: IntersectionObserver | null = null;
+
+    // A page reached through client-side navigation can inherit reveal state
+    // from the previous render. Start this page from the same clean state as a
+    // fresh entry, while keeping hash navigation opt-in for other pages.
+    elements.forEach((element) => {
+      delete element.dataset.scrollRevealState;
+    });
+    delete root.dataset.scrollRevealReady;
+
+    if (resetOnMount) {
+      window.history.scrollRestoration = "manual";
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
 
     const revealImmediately = (element: HTMLElement) => {
       element.dataset.scrollRevealState = "revealed";
@@ -85,7 +98,7 @@ export function ScrollRevealController() {
       reducedMotionQuery.removeEventListener("change", finishAllReveals);
       delete root.dataset.scrollRevealReady;
     };
-  }, []);
+  }, [resetOnMount]);
 
   return null;
 }
