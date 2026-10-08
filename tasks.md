@@ -9,8 +9,10 @@
 - [x] Trocar a marca nos textos, metadados e saídas dos projetos para Asoka, usando a configuração central.
 - [x] Atualizar o e-mail público no ambiente local e a saudação institucional dos links de WhatsApp.
 - [x] Trocar o destino de todos os CTAs de WhatsApp para o número completo informado por Kevin, sem acrescentar dígitos: 19 links conferidos nas quatro rotas locais.
-- [x] Aplicar a logo escolhida por Kevin: nome completo grafite sem degradê no cabeçalho/rodapé, recorte das margens transparentes e símbolo nos ícones da aba e do celular. Paleta do site preservada; implementação conferida localmente em desktop e 390px. Aprovação visual da aplicação ainda pendente.
-- [ ] Commit e publicação desta troca, incluindo as variáveis públicas do ambiente online, quando autorizados.
+- [x] Aplicar a logo escolhida por Kevin: nome completo grafite sem degradê no cabeçalho/rodapé, recorte das margens transparentes e símbolo nos ícones da aba e do celular. Paleta do site preservada; implementação conferida localmente em desktop e 390px. Kevin autorizou commit, push e publicação desta versão.
+- [x] Commit e push da identidade Asoka (`1a53da9`), publicação Vercel READY e contatos online atualizados em produção/preview. Quatro rotas públicas e 19 links de WhatsApp conferidos em 08/10/2026.
+
+- [x] Organizar originais em `docs/design/asoka/references/` e exportar logo completa e símbolo em 1024px para WhatsApp em `docs/design/asoka/exports/`.
 
 ## Setup Técnico
 

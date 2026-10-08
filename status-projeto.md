@@ -5,9 +5,9 @@
 ## Estado geral
 
 - A Home, a página de projetos e dois projetos próprios navegáveis estão construídos e publicados.
-- Os textos, títulos das abas, metadados e links de retorno da versão local usam **Asoka**, mantendo o descritor **Design e Tecnologia**. Kevin escolheu a nova logo e autorizou sua aplicação. Cabeçalho e rodapé agora usam o nome completo em grafite, sem degradê; os ícones da aba e do celular usam o símbolo em placa clara. A paleta do site foi preservada. A aplicação foi conferida localmente e Kevin autorizou commit, push e publicação em 08/10/2026. Publicação desta identidade em andamento. O domínio informado no planejamento relacionado é `asoka.com.br`; sua vinculação não foi verificada nesta etapa.
+- Os textos, títulos das abas, metadados e links de retorno da versão publicada usam **Asoka**, mantendo o descritor **Design e Tecnologia**. Kevin escolheu a nova logo e autorizou sua aplicação. Cabeçalho e rodapé agora usam o nome completo em grafite, sem degradê; os ícones da aba e do celular usam o símbolo em placa clara. A paleta do site foi preservada. A aplicação foi conferida localmente e Kevin autorizou commit, push e publicação em 08/10/2026. Identidade publicada em 08/10/2026: deployment `dpl_HECQJ4u1nwiHFoA6yAbtf8zsq2LA`, commit funcional `1a53da9`, estado READY. Domínios `asoka.com.br` e `www.asoka.com.br` vinculados ao deployment; `https://asoka.com.br` respondeu e foi conferido nesta etapa.
 - O código-fonte está versionado publicamente em `https://github.com/kevindbotelho/site-institucional`.
-- A produção está disponível em `https://site-institucional-plum.vercel.app`.
+- A produção está disponível em `https://asoka.com.br` e também em `https://site-institucional-plum.vercel.app`.
 - O gate técnico e visual anterior ao início da prospecção está concluído. O início efetivo da operação comercial continua sob decisão do Freela Ops.
 - O desenvolvimento local deste repositório usa `http://localhost:3001`; a porta `3000` fica livre para outros projetos.
 - Não existe rota `/servicos`; Serviços continua como seção da Home.
@@ -15,17 +15,17 @@
 
 ## Rotas e interface pública
 
-- `/`: Home institucional da Asoka na versão local.
+- `/`: Home institucional da Asoka publicada.
 - `/projetos`: visão geral dos dois trabalhos, apresentados pelo nicho, problema e solução construída, com CTA para conversar sobre uma solução semelhante.
 - `/projetos/lume-e-pata`: site institucional simples para o nicho de pet shop e banho e tosa, com direção visual editorial, acolhedora e própria.
 - `/projetos/brisa-de-tecido`: landing page para limpeza de estofados, focada em uma oferta local e conversão para WhatsApp, com direção visual distinta do primeiro projeto.
 
-URLs públicas:
+URLs públicas (também disponíveis no alias anterior `site-institucional-plum.vercel.app`):
 
-- `https://site-institucional-plum.vercel.app/`
-- `https://site-institucional-plum.vercel.app/projetos`
-- `https://site-institucional-plum.vercel.app/projetos/lume-e-pata`
-- `https://site-institucional-plum.vercel.app/projetos/brisa-de-tecido`
+- `https://asoka.com.br/`
+- `https://asoka.com.br/projetos`
+- `https://asoka.com.br/projetos/lume-e-pata`
+- `https://asoka.com.br/projetos/brisa-de-tecido`
 
 As marcas **Lume & Pata** e **Brisa de Tecido**, seus textos e seus assets foram criados para estes trabalhos. O site não atribui os projetos a clientes, contratos ou cases e não apresenta depoimentos, resultados, métricas, prêmios ou outros sinais de mercado inventados.
 
@@ -43,7 +43,7 @@ A ordem atual das seções é:
 6. Sobre.
 7. CTA final.
 
-O CTA final usa WhatsApp como canal principal e e-mail como alternativa. O endereço pode ser copiado diretamente com confirmação visual e acessível. Os contatos são gerados pela configuração central. Localmente, o e-mail foi atualizado em `.env.local` para o endereço comercial informado por Kevin, sem versionar o arquivo. O número completo de WhatsApp foi informado por Kevin e aplicado em `.env.local`, exatamente como recebido. Todos os CTAs locais usam o novo destino, sem repetir o número nos componentes nem versionar o arquivo de ambiente. A saudação institucional das mensagens usa Asoka. Alterações desta etapa não foram commitadas nem publicadas; produção e suas variáveis de contato não foram alteradas.
+O CTA final usa WhatsApp como canal principal e e-mail como alternativa. O endereço pode ser copiado diretamente com confirmação visual e acessível. Os contatos são gerados pela configuração central. Localmente, o e-mail foi atualizado em `.env.local` para o endereço comercial informado por Kevin, sem versionar o arquivo. O número completo de WhatsApp foi informado por Kevin e aplicado em `.env.local`, exatamente como recebido. Todos os CTAs locais usam o novo destino, sem repetir o número nos componentes nem versionar o arquivo de ambiente. A saudação institucional das mensagens usa Asoka. Identidade commitada e enviada ao GitHub em 08/10/2026, com contatos atualizados na Vercel em produção e preview; site público conferido com e-mail comercial e número exato informado.
 
 A seção de Serviços apresenta automações com planilhas e dados sem limitar a oferta a uma escala específica. A seção de Projetos apresenta somente os dois trabalhos publicados — Lume & Pata e Brisa de Tecido — e cada card leva à experiência correspondente.
 
@@ -67,9 +67,9 @@ A seção de Serviços apresenta automações com planilhas e dados sem limitar 
 
 ## Estado do sistema visual
 
-- A Home e `/projetos` seguem a direção da Zucco documentada a partir do Lumen LP System. Em P-01, somente a apresentação de projetos foi atualizada localmente para a direção aprovada A — Faixas de projetos: hero, catálogo e CTA compartilham uma superfície contínua; o título usa a mesma escala da Home e alterna lentamente o destaque final entre expressões compatíveis, com o texto de apoio menor à direita. A primeira faixa, “Projetos em destaque”, é escalável e usa capas integrais com etiqueta de tipo, título, resumo e seta horizontal, sem moldura interna. No celular, o próximo card fica parcialmente visível e a faixa aceita toque, teclado, arraste real por mouse e controles laterais quando houver conteúdo fora da área visível; o arraste nativo de links/imagens é bloqueado para preservar a navegação por clique. O hover aplica apenas uma inclinação tridimensional leve e concentra a resposta de motion na seta. A mesma roleta tipográfica lenta foi aplicada ao destaque da hero de Lume & Pata, respeitando `prefers-reduced-motion`. A taxonomia, o contrato de novos itens e o padrão de motion reutilizável estão em `docs/design/zucco/portfolio-catalog.md`. A Home, a estrutura, os CTAs e a navegação da Zucco permanecem inalterados. Kevin aprovou a implementação em 2026-09-03; ela ainda não foi publicada.
+- A Home e `/projetos` seguem a direção da Zucco documentada a partir do Lumen LP System. Em P-01, somente a apresentação de projetos foi atualizada localmente para a direção aprovada A — Faixas de projetos: hero, catálogo e CTA compartilham uma superfície contínua; o título usa a mesma escala da Home e alterna lentamente o destaque final entre expressões compatíveis, com o texto de apoio menor à direita. A primeira faixa, “Projetos em destaque”, é escalável e usa capas integrais com etiqueta de tipo, título, resumo e seta horizontal, sem moldura interna. No celular, o próximo card fica parcialmente visível e a faixa aceita toque, teclado, arraste real por mouse e controles laterais quando houver conteúdo fora da área visível; o arraste nativo de links/imagens é bloqueado para preservar a navegação por clique. O hover aplica apenas uma inclinação tridimensional leve e concentra a resposta de motion na seta. A mesma roleta tipográfica lenta foi aplicada ao destaque da hero de Lume & Pata, respeitando `prefers-reduced-motion`. A taxonomia, o contrato de novos itens e o padrão de motion reutilizável estão em `docs/design/zucco/portfolio-catalog.md`. A Home, a estrutura, os CTAs e a navegação da Zucco permanecem inalterados. Kevin aprovou a implementação em 2026-09-03; ela integra a versão publicada e conferida em 08/10/2026.
 - Lume & Pata e Brisa de Tecido possuem temas locais e CSS isolado. A refatoração visual local do Lume está concluída e aprovada; a Brisa agora possui a fundação visual A.2 e um sistema de motion local documentado.
-- Em 2026-09-01, foram corrigidos localmente três problemas objetivos antes do B-04: o topo de `/projetos` passou a usar o reveal sequencial compartilhado; a descrição do seletor de peças da Brisa voltou ao fluxo sem sobrepor número, nome ou linha; e o comparador antes/depois passou a ter escala limitada e centralizada em desktop. Kevin aprovou o resultado visual em 2026-09-03; a publicação continua pendente.
+- Em 2026-09-01, foram corrigidos localmente três problemas objetivos antes do B-04: o topo de `/projetos` passou a usar o reveal sequencial compartilhado; a descrição do seletor de peças da Brisa voltou ao fluxo sem sobrepor número, nome ou linha; e o comparador antes/depois passou a ter escala limitada e centralizada em desktop. Kevin aprovou o resultado visual em 2026-09-03; o resultado integra a versão pública conferida em 08/10/2026.
 - Ainda em 2026-09-01, a hero da Brisa teve o palco sticky restaurado no bloco CSS efetivo, corrigindo a sincronização entre rolagem, frases e marcadores 01–03; as linhas horizontais decorativas também foram suavizadas. O clique em 03/03 foi validado localmente com a terceira frase visível.
 - B-03R1 — “Moldura de ateliê” foi escolhida e implementada localmente em 2026-09-01: a dobra usa fundo verde profundo, título com nome e linha, moldura de papel/linho com detalhe pontilhado, comparador contido com os assets reais e instrução de arraste. A composição foi aprovada por Kevin em 2026-09-03.
 - No comparador B-03R1, os rótulos “Antes · sem Brisa” e “Depois · Brisa de Tecido” agora desaparecem gradualmente quando o divisor chega ao extremo oposto, acompanhando a camada que deixou de estar visível; Home e End foram validados localmente.
@@ -84,11 +84,11 @@ A seção de Serviços apresenta automações com planilhas e dados sem limitar 
 - **Brisa de Tecido** usará o OpenDesign como referência estrutural e tipográfica, sem adotar sua paleta pastel: permanecem como base o verde profundo, eucalipto, verde ácido e papel/linho do projeto atual.
 - O método anterior de contrato textual seguido por passada completa foi invalidado pela revisão. O novo método exige três alvos visuais concretos, escolha de Kevin, implementação e aprovação de uma dobra por vez. Ele foi formalizado na skill global `$design-fold-workshop`, nas instruções do repositório e no playbook do Freela Ops. O roteiro desta refatoração vive em `plano-refatoracao-projetos.md`; `PROMPT-PROXIMA-TASK.md` contém sempre a próxima instrução pronta para abrir uma nova conversa.
 - O contrato original do **Lume & Pata** permanece como registro histórico em `src/app/projetos/lume-e-pata/CONTRATO-VISUAL.md`. A fonte de verdade criativa atual é `src/app/projetos/lume-e-pata/DIRECAO-CRIATIVA-L02R.md`.
-- A reconstrução local do **Lume & Pata** foi concluída dobra a dobra e aprovada como experiência completa por Kevin em 2026-08-20. L-02R1 a L-02R4 permanecem congeladas; em L-02R5, a direção B — Volta pra casa — terminou simplificada para um palco integralmente sálvia, portal fotográfico assimétrico, CTA coral e footer editorial, sem fundo interno próprio e sem fio/pata. A rota passou por QA local em 390, 768, 1024 e desktop, além de console, lint, build e HTTP 200. A refatoração ainda não foi publicada; a produção continua na versão anterior e a publicação foi adiada para o alinhamento final P-01, depois da Brisa.
+- A reconstrução local do **Lume & Pata** foi concluída dobra a dobra e aprovada como experiência completa por Kevin em 2026-08-20. L-02R1 a L-02R4 permanecem congeladas; em L-02R5, a direção B — Volta pra casa — terminou simplificada para um palco integralmente sálvia, portal fotográfico assimétrico, CTA coral e footer editorial, sem fundo interno próprio e sem fio/pata. A rota passou por QA local em 390, 768, 1024 e desktop, além de console, lint, build e HTTP 200. A refatoração integra a versão pública conferida em 08/10/2026.
 
 ## Validação e publicação
 
-A troca local para Asoka em 08/10/2026 passou no build de produção, na checagem de tipos e no ESLint dos cinco arquivos alterados. No navegador, foram conferidos títulos/metadados, e-mail e confirmação de cópia da Home, página de projetos e links de retorno das duas experiências. Após a confirmação do número, o build foi repetido com sucesso e os 19 links de WhatsApp foram conferidos no navegador nas quatro páginas (Home: 6; projetos: 4; Lume: 4; Brisa: 5), todos com o novo destino. Nenhum link externo foi acionado nem mensagem enviada. A logo escolhida foi aplicada localmente no cabeçalho/rodapé e nos ícones em 08/10/2026. Build e tipos passaram; ESLint dos dois componentes e do novo gerador passou. Cabeçalho e rodapé foram inspecionados em desktop e celular (390px), sem overflow horizontal. Originais preservados em `docs/design/asoka/references/`; assets da Zucco preservados para recuperação e sem uso pela interface atual. O lint geral encontra erros/avisos nas referências antigas de terceiros em `ds_temporarios` e avisos legados do comparador; não é uma validação global aprovada. Nome, e-mail, WhatsApp e logo estão implementados; Kevin autorizou commit, push e publicação em 08/10/2026. Os dois contatos públicos já foram atualizados na Vercel, preservando os ambientes existentes (produção e preview). Publicação em andamento.
+A troca local para Asoka em 08/10/2026 passou no build de produção, na checagem de tipos e no ESLint dos cinco arquivos alterados. No navegador, foram conferidos títulos/metadados, e-mail e confirmação de cópia da Home, página de projetos e links de retorno das duas experiências. Após a confirmação do número, o build foi repetido com sucesso e os 19 links de WhatsApp foram conferidos no navegador nas quatro páginas (Home: 6; projetos: 4; Lume: 4; Brisa: 5), todos com o novo destino. Nenhum link externo foi acionado nem mensagem enviada. A logo escolhida foi aplicada localmente no cabeçalho/rodapé e nos ícones em 08/10/2026. Build e tipos passaram; ESLint dos dois componentes e do novo gerador passou. Cabeçalho e rodapé foram inspecionados em desktop e celular (390px), sem overflow horizontal. Originais preservados em `docs/design/asoka/references/`; assets da Zucco preservados para recuperação e sem uso pela interface atual. O lint geral encontra erros/avisos nas referências antigas de terceiros em `ds_temporarios` e avisos legados do comparador; não é uma validação global aprovada. Nome, e-mail, WhatsApp e logo estão implementados; Kevin autorizou commit, push e publicação em 08/10/2026. Os dois contatos públicos já foram atualizados na Vercel, preservando os ambientes existentes (produção e preview). Commit funcional `1a53da9` enviado ao GitHub e publicado na Vercel com estado READY. As quatro rotas públicas responderam HTTP 200; todos os 19 links de WhatsApp usam `553180258470`, Home e Projetos exibem `contatoasoka@gmail.com` e a nova logo; o ícone público é idêntico ao arquivo local. Home pública inspecionada em desktop e celular. Exportações para WhatsApp em `docs/design/asoka/exports/`.
 
 O fechamento local conjunto de P-01 e B-04 foi concluído em 2026-09-03:
 
@@ -97,7 +97,7 @@ O fechamento local conjunto de P-01 e B-04 foi concluído em 2026-09-03:
 - o seletor de serviço e o comparador antes/depois responderam corretamente, incluindo Home e End no teclado e o desaparecimento contextual dos rótulos;
 - `/projetos`, Lume & Pata e Brisa de Tecido foram verificadas em desktop e 390 × 844 sem overflow horizontal, imagens quebradas ou duplicidade de `h1`;
 - `prefers-reduced-motion` desliga as animações de entrada de `/projetos`;
-- a publicação deste fechamento ainda não foi executada.
+- o fechamento integra a versão pública conferida em 08/10/2026.
 
 A versão publicada foi validada em 2026-08-10:
 
@@ -142,12 +142,12 @@ Resultado local do L-02R1 atualizado em 2026-08-13:
 ## Pendências
 
 - `#duvidas` (“Antes de chamar”) foi removida em 2026-08-28 por repetir as informações de contato já comunicadas em B-01R2 e B-02R1; o link local correspondente também saiu do cabeçalho. O fechamento B-03 — “A diferença mora no toque” — aprovado explicitamente, passa a seguir diretamente “Como funciona”; B-01R1, B-01R2, B-02R1 e B-03 permanecem congelados.
-- A Brisa retorna para `/projetos` pela barra de contexto superior (“Projetos Zucco”) e também mantém a saída de projetos no cabeçalho e no rodapé; a navegação de retorno não aponta mais para a Home da Zucco.
+- A Brisa retorna para `/projetos` pela barra de contexto superior (“Projetos Asoka”) e também mantém a saída de projetos no cabeçalho e no rodapé; a navegação de retorno não aponta mais para a Home da Asoka.
 - Quando houver um terceiro trabalho publicável ou um projeto autoral pronto, migrar `/projetos` para destaques seguidos de grade compacta, com no máximo dois agrupamentos: Projetos para negócios e Projetos autorais.
-- Escolher, comprar e conectar o domínio principal, quando aprovado.
+- Domínio principal `asoka.com.br` conectado e disponível; nenhuma compra ou alteração de DNS foi realizada nesta tarefa.
 - Publicar futuros cases reais somente após existirem trabalhos contratados autorizados para apresentação.
 - A rota `/servicos` permanece fora do escopo até nova decisão comercial.
-- A versão pública continua no estado anterior à refatoração; P-01 e B-04 estão aprovados e validados localmente, faltando somente publicar o fechamento.
+- P-01, B-04 e identidade Asoka integram a versão pública conferida em 08/10/2026; nenhuma nova direção visual está aberta.
 
 ## Contrato de sincronização
 
