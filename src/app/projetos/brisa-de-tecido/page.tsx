@@ -42,7 +42,7 @@ export default function BrisaDeTecidoPage() {
     <div className={styles.page}>
       <header className={styles.header}>
         <Link className={styles.headerHome} href="/projetos">
-          ← Projetos Zucco
+          ← Projetos {siteConfig.brandName}
         </Link>
         <a className={styles.brand} href="#inicio">
           <WeaveMark />
@@ -142,7 +142,7 @@ export default function BrisaDeTecidoPage() {
           </span>
         </div>
         <p>Higienização de estofados em domicílio.</p>
-        <Link href="/projetos">Ver todos os projetos Zucco</Link>
+        <Link href="/projetos">Ver todos os projetos {siteConfig.brandName}</Link>
       </footer>
     </div>
   );

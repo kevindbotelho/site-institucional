@@ -11,7 +11,7 @@ import { getWhatsAppUrl } from "@/lib/contact";
 
 export const metadata: Metadata = {
   description:
-    "Projetos de site institucional e landing page criados pela Zucco para necessidades de negócios locais.",
+    `Projetos de site institucional e landing page criados pela ${siteConfig.brandName} para necessidades de negócios locais.`,
   title: "Projetos",
 };
 
@@ -52,7 +52,7 @@ function ArrowIcon() {
 export default function ProjectsPage() {
   const whatsappUrl = getWhatsAppUrl(
     siteConfig.contact.whatsappNumber,
-    "Olá, Kevin! Vi seus projetos e queria conversar sobre uma solução semelhante para o meu negócio.",
+    "Olá, Asoka! Vi seus projetos e queria conversar sobre uma solução semelhante para o meu negócio.",
   );
 
   return (

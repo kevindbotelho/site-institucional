@@ -1,11 +1,11 @@
 # Status atual — Site institucional
 
-> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-09-03.
+> Fonte de verdade compartilhada sobre o estado atual do site. Atualizado em 2026-10-08.
 
 ## Estado geral
 
 - A Home, a página de projetos e dois projetos próprios navegáveis estão construídos e publicados.
-- A marca institucional permanece **Zucco**, com logo em gradiente azul-elétrico para índigo e o descritor **Design e Tecnologia**. O domínio principal ainda não foi escolhido nem comprado.
+- Os textos, títulos das abas, metadados e links de retorno da versão local usam **Asoka**, mantendo o descritor **Design e Tecnologia**. Kevin escolheu a nova logo e autorizou sua aplicação. Cabeçalho e rodapé agora usam o nome completo em grafite, sem degradê; os ícones da aba e do celular usam o símbolo em placa clara. A paleta do site foi preservada. A aplicação foi conferida localmente e Kevin autorizou commit, push e publicação em 08/10/2026. Publicação desta identidade em andamento. O domínio informado no planejamento relacionado é `asoka.com.br`; sua vinculação não foi verificada nesta etapa.
 - O código-fonte está versionado publicamente em `https://github.com/kevindbotelho/site-institucional`.
 - A produção está disponível em `https://site-institucional-plum.vercel.app`.
 - O gate técnico e visual anterior ao início da prospecção está concluído. O início efetivo da operação comercial continua sob decisão do Freela Ops.
@@ -15,7 +15,7 @@
 
 ## Rotas e interface pública
 
-- `/`: Home institucional da Zucco.
+- `/`: Home institucional da Asoka na versão local.
 - `/projetos`: visão geral dos dois trabalhos, apresentados pelo nicho, problema e solução construída, com CTA para conversar sobre uma solução semelhante.
 - `/projetos/lume-e-pata`: site institucional simples para o nicho de pet shop e banho e tosa, com direção visual editorial, acolhedora e própria.
 - `/projetos/brisa-de-tecido`: landing page para limpeza de estofados, focada em uma oferta local e conversão para WhatsApp, com direção visual distinta do primeiro projeto.
@@ -43,7 +43,7 @@ A ordem atual das seções é:
 6. Sobre.
 7. CTA final.
 
-O CTA final usa WhatsApp como canal principal e e-mail como alternativa. O endereço pode ser copiado diretamente com confirmação visual e acessível. Os contatos são gerados pela configuração central.
+O CTA final usa WhatsApp como canal principal e e-mail como alternativa. O endereço pode ser copiado diretamente com confirmação visual e acessível. Os contatos são gerados pela configuração central. Localmente, o e-mail foi atualizado em `.env.local` para o endereço comercial informado por Kevin, sem versionar o arquivo. O número completo de WhatsApp foi informado por Kevin e aplicado em `.env.local`, exatamente como recebido. Todos os CTAs locais usam o novo destino, sem repetir o número nos componentes nem versionar o arquivo de ambiente. A saudação institucional das mensagens usa Asoka. Alterações desta etapa não foram commitadas nem publicadas; produção e suas variáveis de contato não foram alteradas.
 
 A seção de Serviços apresenta automações com planilhas e dados sem limitar a oferta a uma escala específica. A seção de Projetos apresenta somente os dois trabalhos publicados — Lume & Pata e Brisa de Tecido — e cada card leva à experiência correspondente.
 
@@ -87,6 +87,8 @@ A seção de Serviços apresenta automações com planilhas e dados sem limitar 
 - A reconstrução local do **Lume & Pata** foi concluída dobra a dobra e aprovada como experiência completa por Kevin em 2026-08-20. L-02R1 a L-02R4 permanecem congeladas; em L-02R5, a direção B — Volta pra casa — terminou simplificada para um palco integralmente sálvia, portal fotográfico assimétrico, CTA coral e footer editorial, sem fundo interno próprio e sem fio/pata. A rota passou por QA local em 390, 768, 1024 e desktop, além de console, lint, build e HTTP 200. A refatoração ainda não foi publicada; a produção continua na versão anterior e a publicação foi adiada para o alinhamento final P-01, depois da Brisa.
 
 ## Validação e publicação
+
+A troca local para Asoka em 08/10/2026 passou no build de produção, na checagem de tipos e no ESLint dos cinco arquivos alterados. No navegador, foram conferidos títulos/metadados, e-mail e confirmação de cópia da Home, página de projetos e links de retorno das duas experiências. Após a confirmação do número, o build foi repetido com sucesso e os 19 links de WhatsApp foram conferidos no navegador nas quatro páginas (Home: 6; projetos: 4; Lume: 4; Brisa: 5), todos com o novo destino. Nenhum link externo foi acionado nem mensagem enviada. A logo escolhida foi aplicada localmente no cabeçalho/rodapé e nos ícones em 08/10/2026. Build e tipos passaram; ESLint dos dois componentes e do novo gerador passou. Cabeçalho e rodapé foram inspecionados em desktop e celular (390px), sem overflow horizontal. Originais preservados em `docs/design/asoka/references/`; assets da Zucco preservados para recuperação e sem uso pela interface atual. O lint geral encontra erros/avisos nas referências antigas de terceiros em `ds_temporarios` e avisos legados do comparador; não é uma validação global aprovada. Nome, e-mail, WhatsApp e logo estão implementados; Kevin autorizou commit, push e publicação em 08/10/2026. Os dois contatos públicos já foram atualizados na Vercel, preservando os ambientes existentes (produção e preview). Publicação em andamento.
 
 O fechamento local conjunto de P-01 e B-04 foi concluído em 2026-09-03:
 

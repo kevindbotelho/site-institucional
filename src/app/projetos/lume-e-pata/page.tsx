@@ -85,7 +85,7 @@ export default function LumeEPataPage() {
       <ScrollRevealController />
 
       <div className={styles.portfolioBar}>
-        <Link href="/projetos">← Projetos Zucco</Link>
+        <Link href="/projetos">← Projetos {siteConfig.brandName}</Link>
         <span>Site institucional</span>
       </div>
 
@@ -363,7 +363,7 @@ export default function LumeEPataPage() {
           </div>
           <nav aria-label="Saídas da experiência Lume & Pata" className={styles.footerNav}>
             <Link href="/">
-              <span>Voltar para a Home da Zucco</span>
+              <span>Voltar para a Home da {siteConfig.brandName}</span>
               <ArrowRight aria-hidden="true" />
             </Link>
             <Link href="/projetos">

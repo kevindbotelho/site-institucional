@@ -161,12 +161,12 @@ export function SiteNavigation() {
           <Image
             alt=""
             className="h-8 w-auto sm:h-9"
-            height={479}
+            height={527}
             loading="eager"
             quality={90}
-            sizes="(min-width: 640px) 8.25rem, 7.4rem"
-            src="/brand/zucco-lockup-gradient.png"
-            width={1766}
+            sizes="(min-width: 640px) 7.75rem, 6.9rem"
+            src="/brand/asoka-lockup-dark.png"
+            width={1816}
           />
         </HomeSectionLink>
 

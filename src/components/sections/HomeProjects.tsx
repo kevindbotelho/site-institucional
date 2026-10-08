@@ -29,7 +29,7 @@ function ArrowRightIcon() {
 export function HomeProjects() {
   const whatsappUrl = getWhatsAppUrl(
     siteConfig.contact.whatsappNumber,
-    "Olá, Kevin! Vi as soluções no seu site e queria conversar sobre algo semelhante para o meu negócio.",
+    "Olá, Asoka! Vi as soluções no seu site e queria conversar sobre algo semelhante para o meu negócio.",
   );
 
   return (

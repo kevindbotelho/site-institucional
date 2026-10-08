@@ -13,7 +13,7 @@ Construir o site institucional para transformar contatos de prospecção manual,
 - O MVP técnico foi revisado em celular e desktop; o próximo ciclo é uma revisão colaborativa do sistema visual antes de novas expansões.
 - A página interna de Serviços permanece como evolução futura; Sobre continua apenas como seção da Home.
 - No desenvolvimento local, este projeto usa a porta `3001` para não disputar a porta `3000` com outros projetos.
-- O nome da marca foi definido como **Zucco**. O domínio principal ainda não foi escolhido nem comprado; `zuccoweb.com` e `zuccoweb.com.br` são os candidatos atuais.
+- Kevin definiu a marca **Asoka** e escolheu a logo em 08/10/2026. A versão local usa o nome completo em grafite, sem degradê, no cabeçalho/rodapé e o símbolo nos ícones, mantendo a paleta do site. Originais preservados em `docs/design/asoka/references/`. O domínio informado no planejamento relacionado é `asoka.com.br`; esta etapa não verifica nem altera sua vinculação.
 - **Design e Tecnologia** é o descritor institucional aprovado para metadados e peças de marca. A assinatura compacta usada no cabeçalho e no rodapé permanece sem essa linha.
 
 ## Oferta inicial — em ordem de prioridade

@@ -4,6 +4,14 @@
 >
 > Atualizar este arquivo ao concluir cada tarefa.
 
+## Identidade Asoka — 08/10/2026
+
+- [x] Trocar a marca nos textos, metadados e saídas dos projetos para Asoka, usando a configuração central.
+- [x] Atualizar o e-mail público no ambiente local e a saudação institucional dos links de WhatsApp.
+- [x] Trocar o destino de todos os CTAs de WhatsApp para o número completo informado por Kevin, sem acrescentar dígitos: 19 links conferidos nas quatro rotas locais.
+- [x] Aplicar a logo escolhida por Kevin: nome completo grafite sem degradê no cabeçalho/rodapé, recorte das margens transparentes e símbolo nos ícones da aba e do celular. Paleta do site preservada; implementação conferida localmente em desktop e 390px. Aprovação visual da aplicação ainda pendente.
+- [ ] Commit e publicação desta troca, incluindo as variáveis públicas do ambiente online, quando autorizados.
+
 ## Setup Técnico
 
 - [x] Inicializar o projeto Next.js com TypeScript, Tailwind CSS, ESLint, App Router e diretório `src`.

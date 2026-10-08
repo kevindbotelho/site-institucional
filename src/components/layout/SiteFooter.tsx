@@ -40,11 +40,11 @@ export function SiteFooter() {
               <Image
                 alt=""
                 className="h-9 w-auto sm:h-10"
-                height={479}
+                height={527}
                 quality={90}
-                sizes="(min-width: 640px) 9.25rem, 8.25rem"
-                src="/brand/zucco-lockup-gradient.png"
-                width={1766}
+                sizes="(min-width: 640px) 8.65rem, 7.75rem"
+                src="/brand/asoka-lockup-dark.png"
+                width={1816}
               />
             </HomeSectionLink>
             <p className="mt-4 text-sm leading-6 text-slate-600">
